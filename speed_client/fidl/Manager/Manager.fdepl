@@ -1,0 +1,20 @@
+import "platform:/plugin/org.genivi.commonapi.someip/deployment/CommonAPI-4-SOMEIP_deployment_spec.fdepl"
+import "Manager.fidl"
+
+define org.genivi.commonapi.someip.deployment for interface commonapi.Manager {
+        SomeIpServiceID = 5000
+
+        method setSensorRpm {
+                SomeIpMethodID = 100
+        }
+        method setBatteryLevel {
+                SomeIpMethodID = 200
+        }
+}
+
+define org.genivi.commonapi.someip.deployment for provider as MyService {
+        instance commonapi.Manager {
+                InstanceId = "seame"
+                SomeIpInstanceID = 20000
+        }
+}
