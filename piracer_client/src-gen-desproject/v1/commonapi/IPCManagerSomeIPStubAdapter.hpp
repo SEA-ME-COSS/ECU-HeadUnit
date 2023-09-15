@@ -7,10 +7,10 @@
  * If a copy of the MPL was not distributed with this file, You can obtain one at
  * http://mozilla.org/MPL/2.0/.
  */
-#ifndef V1_COMMONAPI_MANAGER_SOMEIP_STUB_ADAPTER_HPP_
-#define V1_COMMONAPI_MANAGER_SOMEIP_STUB_ADAPTER_HPP_
+#ifndef V1_COMMONAPI_IPC_MANAGER_SOMEIP_STUB_ADAPTER_HPP_
+#define V1_COMMONAPI_IPC_MANAGER_SOMEIP_STUB_ADAPTER_HPP_
 
-#include <v1/commonapi/ManagerStub.hpp>
+#include <v1/commonapi/IPCManagerStub.hpp>
 
 #if !defined (COMMONAPI_INTERNAL_COMPILATION)
 #define COMMONAPI_INTERNAL_COMPILATION
@@ -32,29 +32,29 @@
 namespace v1 {
 namespace commonapi {
 
-template <typename _Stub = ::v1::commonapi::ManagerStub, typename... _Stubs>
-class ManagerSomeIPStubAdapterInternal
-    : public virtual ManagerStubAdapter,
+template <typename _Stub = ::v1::commonapi::IPCManagerStub, typename... _Stubs>
+class IPCManagerSomeIPStubAdapterInternal
+    : public virtual IPCManagerStubAdapter,
       public CommonAPI::SomeIP::StubAdapterHelper< _Stub, _Stubs...>,
-      public std::enable_shared_from_this< ManagerSomeIPStubAdapterInternal<_Stub, _Stubs...>>
+      public std::enable_shared_from_this< IPCManagerSomeIPStubAdapterInternal<_Stub, _Stubs...>>
 {
 public:
-    typedef CommonAPI::SomeIP::StubAdapterHelper< _Stub, _Stubs...> ManagerSomeIPStubAdapterHelper;
+    typedef CommonAPI::SomeIP::StubAdapterHelper< _Stub, _Stubs...> IPCManagerSomeIPStubAdapterHelper;
 
-    ~ManagerSomeIPStubAdapterInternal() {
+    ~IPCManagerSomeIPStubAdapterInternal() {
         deactivateManagedInstances();
-        ManagerSomeIPStubAdapterHelper::deinit();
+        IPCManagerSomeIPStubAdapterHelper::deinit();
     }
 
     void deactivateManagedInstances() {}
     
     CommonAPI::SomeIP::GetAttributeStubDispatcher<
-        ::v1::commonapi::ManagerStub,
+        ::v1::commonapi::IPCManagerStub,
         CommonAPI::Version
-    > getManagerInterfaceVersionStubDispatcher;
+    > getIPCManagerInterfaceVersionStubDispatcher;
 
     CommonAPI::SomeIP::MethodWithReplyStubDispatcher<
-        ::v1::commonapi::ManagerStub,
+        ::v1::commonapi::IPCManagerStub,
         std::tuple< uint16_t>,
         std::tuple< std::string>,
         std::tuple< CommonAPI::SomeIP::IntegerDeployment<uint16_t>>,
@@ -62,25 +62,25 @@ public:
     > setSensorRpmStubDispatcher;
     
     CommonAPI::SomeIP::MethodWithReplyStubDispatcher<
-        ::v1::commonapi::ManagerStub,
+        ::v1::commonapi::IPCManagerStub,
         std::tuple< uint16_t>,
         std::tuple< std::string>,
         std::tuple< CommonAPI::SomeIP::IntegerDeployment<uint16_t>>,
         std::tuple< CommonAPI::SomeIP::StringDeployment>
     > setBatteryLevelStubDispatcher;
     
-    ManagerSomeIPStubAdapterInternal(
+    IPCManagerSomeIPStubAdapterInternal(
         const CommonAPI::SomeIP::Address &_address,
         const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection,
         const std::shared_ptr<CommonAPI::StubBase> &_stub):
         CommonAPI::SomeIP::StubAdapter(_address, _connection),
-        ManagerSomeIPStubAdapterHelper(
+        IPCManagerSomeIPStubAdapterHelper(
             _address,
             _connection,
-            std::dynamic_pointer_cast< ManagerStub>(_stub)),
-        getManagerInterfaceVersionStubDispatcher(&ManagerStub::lockInterfaceVersionAttribute, &ManagerStub::getInterfaceVersion, false, true),
+            std::dynamic_pointer_cast< IPCManagerStub>(_stub)),
+        getIPCManagerInterfaceVersionStubDispatcher(&IPCManagerStub::lockInterfaceVersionAttribute, &IPCManagerStub::getInterfaceVersion, false, true),
         setSensorRpmStubDispatcher(
-            &ManagerStub::setSensorRpm,
+            &IPCManagerStub::setSensorRpm,
             false,
             _stub->hasElement(0),
             std::make_tuple(static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr)),
@@ -88,15 +88,15 @@ public:
         
         ,
         setBatteryLevelStubDispatcher(
-            &ManagerStub::setBatteryLevel,
+            &IPCManagerStub::setBatteryLevel,
             false,
             _stub->hasElement(1),
             std::make_tuple(static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr)),
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
         
     {
-        ManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x64) }, &setSensorRpmStubDispatcher );
-        ManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0xc8) }, &setBatteryLevelStubDispatcher );
+        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x64) }, &setSensorRpmStubDispatcher );
+        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0xc8) }, &setBatteryLevelStubDispatcher );
         // Provided events/fields
     }
 
@@ -108,26 +108,26 @@ public:
 
 
 template <typename _Stub, typename... _Stubs>
-void ManagerSomeIPStubAdapterInternal<_Stub, _Stubs...>::registerSelectiveEventHandlers() {
+void IPCManagerSomeIPStubAdapterInternal<_Stub, _Stubs...>::registerSelectiveEventHandlers() {
 }
 
 template <typename _Stub, typename... _Stubs>
-void ManagerSomeIPStubAdapterInternal<_Stub, _Stubs...>::unregisterSelectiveEventHandlers() {
+void IPCManagerSomeIPStubAdapterInternal<_Stub, _Stubs...>::unregisterSelectiveEventHandlers() {
 }
 
-template <typename _Stub = ::v1::commonapi::ManagerStub, typename... _Stubs>
-class ManagerSomeIPStubAdapter
-    : public ManagerSomeIPStubAdapterInternal<_Stub, _Stubs...> {
+template <typename _Stub = ::v1::commonapi::IPCManagerStub, typename... _Stubs>
+class IPCManagerSomeIPStubAdapter
+    : public IPCManagerSomeIPStubAdapterInternal<_Stub, _Stubs...> {
 public:
-    ManagerSomeIPStubAdapter(const CommonAPI::SomeIP::Address &_address,
+    IPCManagerSomeIPStubAdapter(const CommonAPI::SomeIP::Address &_address,
                                             const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection,
                                             const std::shared_ptr<CommonAPI::StubBase> &_stub)
         : CommonAPI::SomeIP::StubAdapter(_address, _connection),
-          ManagerSomeIPStubAdapterInternal<_Stub, _Stubs...>(_address, _connection, _stub) {
+          IPCManagerSomeIPStubAdapterInternal<_Stub, _Stubs...>(_address, _connection, _stub) {
     }
 };
 
 } // namespace commonapi
 } // namespace v1
 
-#endif // V1_COMMONAPI_Manager_SOMEIP_STUB_ADAPTER_HPP_
+#endif // V1_COMMONAPI_IPC_Manager_SOMEIP_STUB_ADAPTER_HPP_

@@ -7,10 +7,10 @@
 * If a copy of the MPL was not distributed with this file, You can obtain one at
 * http://mozilla.org/MPL/2.0/.
 */
-#ifndef V1_COMMONAPI_Manager_PROXY_HPP_
-#define V1_COMMONAPI_Manager_PROXY_HPP_
+#ifndef V1_COMMONAPI_IPC_Manager_PROXY_HPP_
+#define V1_COMMONAPI_IPC_Manager_PROXY_HPP_
 
-#include <v1/commonapi/ManagerProxyBase.hpp>
+#include <v1/commonapi/IPCManagerProxyBase.hpp>
 
 
 #if !defined (COMMONAPI_INTERNAL_COMPILATION)
@@ -28,15 +28,15 @@ namespace v1 {
 namespace commonapi {
 
 template <typename ... _AttributeExtensions>
-class ManagerProxy
-    : virtual public Manager,
-      virtual public ManagerProxyBase,
+class IPCManagerProxy
+    : virtual public IPCManager,
+      virtual public IPCManagerProxyBase,
       virtual public _AttributeExtensions... {
 public:
-    ManagerProxy(std::shared_ptr<CommonAPI::Proxy> delegate);
-    ~ManagerProxy();
+    IPCManagerProxy(std::shared_ptr<CommonAPI::Proxy> delegate);
+    ~IPCManagerProxy();
 
-    typedef Manager InterfaceType;
+    typedef IPCManager InterfaceType;
 
 
     /**
@@ -114,72 +114,72 @@ public:
 
 
  private:
-    std::shared_ptr< ManagerProxyBase> delegate_;
+    std::shared_ptr< IPCManagerProxyBase> delegate_;
 };
 
-typedef ManagerProxy<> ManagerProxyDefault;
+typedef IPCManagerProxy<> IPCManagerProxyDefault;
 
 
 //
-// ManagerProxy Implementation
+// IPCManagerProxy Implementation
 //
 template <typename ... _AttributeExtensions>
-ManagerProxy<_AttributeExtensions...>::ManagerProxy(std::shared_ptr<CommonAPI::Proxy> delegate):
-        _AttributeExtensions(*(std::dynamic_pointer_cast< ManagerProxyBase>(delegate)))...,
-        delegate_(std::dynamic_pointer_cast< ManagerProxyBase>(delegate)) {
+IPCManagerProxy<_AttributeExtensions...>::IPCManagerProxy(std::shared_ptr<CommonAPI::Proxy> delegate):
+        _AttributeExtensions(*(std::dynamic_pointer_cast< IPCManagerProxyBase>(delegate)))...,
+        delegate_(std::dynamic_pointer_cast< IPCManagerProxyBase>(delegate)) {
 }
 
 template <typename ... _AttributeExtensions>
-ManagerProxy<_AttributeExtensions...>::~ManagerProxy() {
+IPCManagerProxy<_AttributeExtensions...>::~IPCManagerProxy() {
 }
 
 template <typename ... _AttributeExtensions>
-void ManagerProxy<_AttributeExtensions...>::setSensorRpm(uint16_t _SensorRpm, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
+void IPCManagerProxy<_AttributeExtensions...>::setSensorRpm(uint16_t _SensorRpm, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
     delegate_->setSensorRpm(_SensorRpm, _internalCallStatus, _message, _info);
 }
 
 template <typename ... _AttributeExtensions>
-std::future<CommonAPI::CallStatus> ManagerProxy<_AttributeExtensions...>::setSensorRpmAsync(const uint16_t &_SensorRpm, SetSensorRpmAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+std::future<CommonAPI::CallStatus> IPCManagerProxy<_AttributeExtensions...>::setSensorRpmAsync(const uint16_t &_SensorRpm, SetSensorRpmAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
     return delegate_->setSensorRpmAsync(_SensorRpm, _callback, _info);
 }
 template <typename ... _AttributeExtensions>
-void ManagerProxy<_AttributeExtensions...>::setBatteryLevel(uint16_t _BatteryLevel, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
+void IPCManagerProxy<_AttributeExtensions...>::setBatteryLevel(uint16_t _BatteryLevel, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
     delegate_->setBatteryLevel(_BatteryLevel, _internalCallStatus, _message, _info);
 }
 
 template <typename ... _AttributeExtensions>
-std::future<CommonAPI::CallStatus> ManagerProxy<_AttributeExtensions...>::setBatteryLevelAsync(const uint16_t &_BatteryLevel, SetBatteryLevelAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+std::future<CommonAPI::CallStatus> IPCManagerProxy<_AttributeExtensions...>::setBatteryLevelAsync(const uint16_t &_BatteryLevel, SetBatteryLevelAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
     return delegate_->setBatteryLevelAsync(_BatteryLevel, _callback, _info);
 }
 
 template <typename ... _AttributeExtensions>
-const CommonAPI::Address &ManagerProxy<_AttributeExtensions...>::getAddress() const {
+const CommonAPI::Address &IPCManagerProxy<_AttributeExtensions...>::getAddress() const {
     return delegate_->getAddress();
 }
 
 template <typename ... _AttributeExtensions>
-bool ManagerProxy<_AttributeExtensions...>::isAvailable() const {
+bool IPCManagerProxy<_AttributeExtensions...>::isAvailable() const {
     return delegate_->isAvailable();
 }
 
 template <typename ... _AttributeExtensions>
-bool ManagerProxy<_AttributeExtensions...>::isAvailableBlocking() const {
+bool IPCManagerProxy<_AttributeExtensions...>::isAvailableBlocking() const {
     return delegate_->isAvailableBlocking();
 }
 
 template <typename ... _AttributeExtensions>
-CommonAPI::ProxyStatusEvent& ManagerProxy<_AttributeExtensions...>::getProxyStatusEvent() {
+CommonAPI::ProxyStatusEvent& IPCManagerProxy<_AttributeExtensions...>::getProxyStatusEvent() {
     return delegate_->getProxyStatusEvent();
 }
 
 template <typename ... _AttributeExtensions>
-CommonAPI::InterfaceVersionAttribute& ManagerProxy<_AttributeExtensions...>::getInterfaceVersionAttribute() {
+CommonAPI::InterfaceVersionAttribute& IPCManagerProxy<_AttributeExtensions...>::getInterfaceVersionAttribute() {
     return delegate_->getInterfaceVersionAttribute();
 }
 
 
 template <typename ... _AttributeExtensions>
-std::future<void> ManagerProxy<_AttributeExtensions...>::getCompletionFuture() {
+std::future<void> IPCManagerProxy<_AttributeExtensions...>::getCompletionFuture() {
     return delegate_->getCompletionFuture();
 }
 
@@ -191,4 +191,4 @@ std::future<void> ManagerProxy<_AttributeExtensions...>::getCompletionFuture() {
 // Compatibility
 namespace v1_0 = v1;
 
-#endif // V1_COMMONAPI_Manager_PROXY_HPP_
+#endif // V1_COMMONAPI_IPC_Manager_PROXY_HPP_

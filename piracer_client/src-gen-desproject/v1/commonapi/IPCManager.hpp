@@ -7,8 +7,8 @@
 * If a copy of the MPL was not distributed with this file, You can obtain one at
 * http://mozilla.org/MPL/2.0/.
 */
-#ifndef V1_COMMONAPI_MANAGER_HPP_
-#define V1_COMMONAPI_MANAGER_HPP_
+#ifndef V1_COMMONAPI_IPC_MANAGER_HPP_
+#define V1_COMMONAPI_IPC_MANAGER_HPP_
 
 
 
@@ -28,19 +28,19 @@
 namespace v1 {
 namespace commonapi {
 
-class Manager {
+class IPCManager {
 public:
-    virtual ~Manager() { }
+    virtual ~IPCManager() { }
 
     static inline const char* getInterface();
     static inline CommonAPI::Version getInterfaceVersion();
 };
 
-const char* Manager::getInterface() {
-    return ("commonapi.Manager:v1_0");
+const char* IPCManager::getInterface() {
+    return ("commonapi.IPCManager:v1_0");
 }
 
-CommonAPI::Version Manager::getInterfaceVersion() {
+CommonAPI::Version IPCManager::getInterfaceVersion() {
     return CommonAPI::Version(1, 0);
 }
 
@@ -55,4 +55,4 @@ namespace CommonAPI {
 // Compatibility
 namespace v1_0 = v1;
 
-#endif // V1_COMMONAPI_MANAGER_HPP_
+#endif // V1_COMMONAPI_IPC_MANAGER_HPP_

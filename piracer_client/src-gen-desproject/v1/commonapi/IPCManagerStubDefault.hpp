@@ -7,13 +7,13 @@
 * If a copy of the MPL was not distributed with this file, You can obtain one at
 * http://mozilla.org/MPL/2.0/.
 */
-#ifndef V1_COMMONAPI_Manager_STUB_DEFAULT_HPP_
-#define V1_COMMONAPI_Manager_STUB_DEFAULT_HPP_
+#ifndef V1_COMMONAPI_IPC_Manager_STUB_DEFAULT_HPP_
+#define V1_COMMONAPI_IPC_Manager_STUB_DEFAULT_HPP_
 
 
 #include <CommonAPI/Export.hpp>
 
-#include <v1/commonapi/ManagerStub.hpp>
+#include <v1/commonapi/IPCManagerStub.hpp>
 #include <cassert>
 #include <sstream>
 
@@ -33,8 +33,8 @@ namespace v1 {
 namespace commonapi {
 
 /**
- * Provides a default implementation for ManagerStubRemoteEvent and
- * ManagerStub. Method callbacks have an empty implementation,
+ * Provides a default implementation for IPCManagerStubRemoteEvent and
+ * IPCManagerStub. Method callbacks have an empty implementation,
  * remote set calls on attributes will always change the value of the attribute
  * to the one received.
  *
@@ -42,12 +42,12 @@ namespace commonapi {
  * that would be defined for this service, and/or if you do not need any non-default
  * behaviour.
  */
-class COMMONAPI_EXPORT_CLASS_EXPLICIT ManagerStubDefault
-    : public virtual ManagerStub {
+class COMMONAPI_EXPORT_CLASS_EXPLICIT IPCManagerStubDefault
+    : public virtual IPCManagerStub {
 public:
-    COMMONAPI_EXPORT ManagerStubDefault()
+    COMMONAPI_EXPORT IPCManagerStubDefault()
         : remoteEventHandler_(this),
-          interfaceVersion_(Manager::getInterfaceVersion()) {
+          interfaceVersion_(IPCManager::getInterfaceVersion()) {
     }
 
     COMMONAPI_EXPORT const CommonAPI::Version& getInterfaceVersion(std::shared_ptr<CommonAPI::ClientId> _client) {
@@ -55,8 +55,8 @@ public:
         return interfaceVersion_;
     }
 
-    COMMONAPI_EXPORT ManagerStubRemoteEvent* initStubAdapter(const std::shared_ptr< ManagerStubAdapter> &_adapter) {
-        CommonAPI::Stub<ManagerStubAdapter, ManagerStubRemoteEvent>::stubAdapter_ = _adapter;
+    COMMONAPI_EXPORT IPCManagerStubRemoteEvent* initStubAdapter(const std::shared_ptr< IPCManagerStubAdapter> &_adapter) {
+        CommonAPI::Stub<IPCManagerStubAdapter, IPCManagerStubRemoteEvent>::stubAdapter_ = _adapter;
         return &remoteEventHandler_;
     }
 
@@ -75,19 +75,19 @@ public:
 
 
 protected:
-    class COMMONAPI_EXPORT_CLASS_EXPLICIT RemoteEventHandler: public virtual ManagerStubRemoteEvent {
+    class COMMONAPI_EXPORT_CLASS_EXPLICIT RemoteEventHandler: public virtual IPCManagerStubRemoteEvent {
     public:
-        COMMONAPI_EXPORT RemoteEventHandler(ManagerStubDefault *_defaultStub)
+        COMMONAPI_EXPORT RemoteEventHandler(IPCManagerStubDefault *_defaultStub)
             : 
               defaultStub_(_defaultStub) {
         }
 
 
     private:
-        ManagerStubDefault *defaultStub_;
+        IPCManagerStubDefault *defaultStub_;
     };
 protected:
-    ManagerStubDefault::RemoteEventHandler remoteEventHandler_;
+    IPCManagerStubDefault::RemoteEventHandler remoteEventHandler_;
 
 private:
 
@@ -102,4 +102,4 @@ private:
 // Compatibility
 namespace v1_0 = v1;
 
-#endif // V1_COMMONAPI_Manager_STUB_DEFAULT
+#endif // V1_COMMONAPI_IPC_Manager_STUB_DEFAULT

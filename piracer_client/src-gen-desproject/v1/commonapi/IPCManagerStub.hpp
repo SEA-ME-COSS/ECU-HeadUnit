@@ -7,8 +7,8 @@
 * If a copy of the MPL was not distributed with this file, You can obtain one at
 * http://mozilla.org/MPL/2.0/.
 */
-#ifndef V1_COMMONAPI_Manager_STUB_HPP_
-#define V1_COMMONAPI_Manager_STUB_HPP_
+#ifndef V1_COMMONAPI_IPC_Manager_STUB_HPP_
+#define V1_COMMONAPI_IPC_Manager_STUB_HPP_
 
 #include <functional>
 #include <sstream>
@@ -16,7 +16,7 @@
 
 
 
-#include <v1/commonapi/Manager.hpp>
+#include <v1/commonapi/IPCManager.hpp>
 
 #if !defined (COMMONAPI_INTERNAL_COMPILATION)
 #define COMMONAPI_INTERNAL_COMPILATION
@@ -38,13 +38,13 @@ namespace commonapi {
 
 /**
  * Receives messages from remote and handles all dispatching of deserialized calls
- * to a stub for the service Manager. Also provides means to send broadcasts
+ * to a stub for the service IPCManager. Also provides means to send broadcasts
  * and attribute-changed-notifications of observable attributes as defined by this service.
  * An application developer should not need to bother with this class.
  */
-class ManagerStubAdapter
+class IPCManagerStubAdapter
     : public virtual CommonAPI::StubAdapter,
-      public virtual Manager {
+      public virtual IPCManager {
  public:
 
 
@@ -61,7 +61,7 @@ protected:
 
 /**
  * Defines the necessary callbacks to handle remote set events related to the attributes
- * defined in the IDL description for Manager.
+ * defined in the IDL description for IPCManager.
  * For each attribute two callbacks are defined:
  * - a verification callback that allows to verify the requested value and to prevent setting
  *   e.g. an invalid value ("onRemoteSet<AttributeName>").
@@ -71,27 +71,27 @@ protected:
  * This class and the one below are the ones an application developer needs to have
  * a look at if he wants to implement a service.
  */
-class ManagerStubRemoteEvent
+class IPCManagerStubRemoteEvent
 {
 public:
-    virtual ~ManagerStubRemoteEvent() { }
+    virtual ~IPCManagerStubRemoteEvent() { }
 
 };
 
 /**
  * Defines the interface that must be implemented by any class that should provide
- * the service Manager to remote clients.
+ * the service IPCManager to remote clients.
  * This class and the one above are the ones an application developer needs to have
  * a look at if he wants to implement a service.
  */
-class ManagerStub
-    : public virtual CommonAPI::Stub<ManagerStubAdapter, ManagerStubRemoteEvent>
+class IPCManagerStub
+    : public virtual CommonAPI::Stub<IPCManagerStubAdapter, IPCManagerStubRemoteEvent>
 {
 public:
     typedef std::function<void (std::string _message)> setSensorRpmReply_t;
     typedef std::function<void (std::string _message)> setBatteryLevelReply_t;
 
-    virtual ~ManagerStub() {}
+    virtual ~IPCManagerStub() {}
     void lockInterfaceVersionAttribute(bool _lockAccess) { static_cast<void>(_lockAccess); }
     bool hasElement(const uint32_t _id) const {
         return (_id < 2);
@@ -104,11 +104,11 @@ public:
     virtual void setBatteryLevel(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _BatteryLevel, setBatteryLevelReply_t _reply) = 0;
 
 
-    using CommonAPI::Stub<ManagerStubAdapter, ManagerStubRemoteEvent>::initStubAdapter;
-    typedef CommonAPI::Stub<ManagerStubAdapter, ManagerStubRemoteEvent>::StubAdapterType StubAdapterType;
-    typedef CommonAPI::Stub<ManagerStubAdapter, ManagerStubRemoteEvent>::RemoteEventHandlerType RemoteEventHandlerType;
-    typedef ManagerStubRemoteEvent RemoteEventType;
-    typedef Manager StubInterface;
+    using CommonAPI::Stub<IPCManagerStubAdapter, IPCManagerStubRemoteEvent>::initStubAdapter;
+    typedef CommonAPI::Stub<IPCManagerStubAdapter, IPCManagerStubRemoteEvent>::StubAdapterType StubAdapterType;
+    typedef CommonAPI::Stub<IPCManagerStubAdapter, IPCManagerStubRemoteEvent>::RemoteEventHandlerType RemoteEventHandlerType;
+    typedef IPCManagerStubRemoteEvent RemoteEventType;
+    typedef IPCManager StubInterface;
 };
 
 } // namespace commonapi
@@ -118,4 +118,4 @@ public:
 // Compatibility
 namespace v1_0 = v1;
 
-#endif // V1_COMMONAPI_Manager_STUB_HPP_
+#endif // V1_COMMONAPI_IPC_Manager_STUB_HPP_

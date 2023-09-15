@@ -1,8 +1,8 @@
 import "platform:/plugin/org.genivi.commonapi.someip/deployment/CommonAPI-4-SOMEIP_deployment_spec.fdepl"
-import "Manager.fidl"
+import "DESProject.fidl"
 
-define org.genivi.commonapi.someip.deployment for interface commonapi.Manager {
-        SomeIpServiceID = 5000
+define org.genivi.commonapi.someip.deployment for interface commonapi.IPCManager {
+        SomeIpServiceID = 1000
 
         method setSensorRpm {
                 SomeIpMethodID = 100
@@ -13,8 +13,8 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.Manager {
 }
 
 define org.genivi.commonapi.someip.deployment for provider as MyService {
-        instance commonapi.Manager {
-                InstanceId = "seame"
-                SomeIpInstanceID = 20000
+        instance commonapi.IPCManager {
+                InstanceId = "IPCManager"
+                SomeIpInstanceID = 10000
         }
 }

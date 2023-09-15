@@ -7,7 +7,7 @@
 #include <string>
 #include <unistd.h>
 #include <CommonAPI/CommonAPI.hpp>
-#include <v1/commonapi/ManagerProxy.hpp>
+#include <v1/commonapi/IPCManagerProxy.hpp>
 
 // Include CANbuffer header
 #include "CANbuffer.h"

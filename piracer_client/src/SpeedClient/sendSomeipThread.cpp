@@ -14,7 +14,7 @@ using namespace v1_0::commonapi;
 void *sendSomeipThread(void *arg)
 {
     std::shared_ptr<CommonAPI::Runtime> runtime = CommonAPI::Runtime::get();
-    std::shared_ptr<ManagerProxy<>> myProxy = runtime->buildProxy<ManagerProxy>("local", "seame");
+    std::shared_ptr<IPCManagerProxy<>> myProxy = runtime->buildProxy<IPCManagerProxy>("local", "IPCManager");
     
     std::cout << "Checking availability!" << std::endl;
     while (!myProxy->isAvailable())

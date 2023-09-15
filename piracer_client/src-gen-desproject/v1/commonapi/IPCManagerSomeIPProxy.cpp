@@ -7,7 +7,7 @@
  * If a copy of the MPL was not distributed with this file, You can obtain one at
  * http://mozilla.org/MPL/2.0/.
  */
-#include <v1/commonapi/ManagerSomeIPProxy.hpp>
+#include <v1/commonapi/IPCManagerSomeIPProxy.hpp>
 
 #if !defined (COMMONAPI_INTERNAL_COMPILATION)
 #define COMMONAPI_INTERNAL_COMPILATION
@@ -24,39 +24,39 @@
 namespace v1 {
 namespace commonapi {
 
-std::shared_ptr<CommonAPI::SomeIP::Proxy> createManagerSomeIPProxy(
+std::shared_ptr<CommonAPI::SomeIP::Proxy> createIPCManagerSomeIPProxy(
     const CommonAPI::SomeIP::Address &_address,
     const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection) {
-    return std::make_shared< ManagerSomeIPProxy>(_address, _connection);
+    return std::make_shared< IPCManagerSomeIPProxy>(_address, _connection);
 }
 
-void initializeManagerSomeIPProxy() {
+void initializeIPCManagerSomeIPProxy() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
-        "local:commonapi.Manager:v1_0:seame",
-        0x1388, 0x4e20, 1, 0);
+        "local:commonapi.IPCManager:v1_0:IPCManager",
+        0x3e8, 0x2710, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerProxyCreateMethod(
-        "commonapi.Manager:v1_0",
-        &createManagerSomeIPProxy);
+        "commonapi.IPCManager:v1_0",
+        &createIPCManagerSomeIPProxy);
 }
 
-INITIALIZER(registerManagerSomeIPProxy) {
-    CommonAPI::SomeIP::Factory::get()->registerInterface(initializeManagerSomeIPProxy);
+INITIALIZER(registerIPCManagerSomeIPProxy) {
+    CommonAPI::SomeIP::Factory::get()->registerInterface(initializeIPCManagerSomeIPProxy);
 }
 
-ManagerSomeIPProxy::ManagerSomeIPProxy(
+IPCManagerSomeIPProxy::IPCManagerSomeIPProxy(
     const CommonAPI::SomeIP::Address &_address,
     const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection)
         : CommonAPI::SomeIP::Proxy(_address, _connection)
 {
 }
 
-ManagerSomeIPProxy::~ManagerSomeIPProxy() {
+IPCManagerSomeIPProxy::~IPCManagerSomeIPProxy() {
     completed_.set_value();
 }
 
 
 
-void ManagerSomeIPProxy::setSensorRpm(uint16_t _SensorRpm, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
+void IPCManagerSomeIPProxy::setSensorRpm(uint16_t _SensorRpm, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
     CommonAPI::Deployable< uint16_t, CommonAPI::SomeIP::IntegerDeployment<uint16_t>> deploy_SensorRpm(_SensorRpm, static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr));
     CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
     CommonAPI::SomeIP::ProxyHelper<
@@ -84,7 +84,7 @@ void ManagerSomeIPProxy::setSensorRpm(uint16_t _SensorRpm, CommonAPI::CallStatus
     _message = deploy_message.getValue();
 }
 
-std::future<CommonAPI::CallStatus> ManagerSomeIPProxy::setSensorRpmAsync(const uint16_t &_SensorRpm, SetSensorRpmAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setSensorRpmAsync(const uint16_t &_SensorRpm, SetSensorRpmAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
     CommonAPI::Deployable< uint16_t, CommonAPI::SomeIP::IntegerDeployment<uint16_t>> deploy_SensorRpm(_SensorRpm, static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr));
     CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
     return CommonAPI::SomeIP::ProxyHelper<
@@ -114,7 +114,7 @@ std::future<CommonAPI::CallStatus> ManagerSomeIPProxy::setSensorRpmAsync(const u
         std::make_tuple(deploy_message));
 }
 
-void ManagerSomeIPProxy::setBatteryLevel(uint16_t _BatteryLevel, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
+void IPCManagerSomeIPProxy::setBatteryLevel(uint16_t _BatteryLevel, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
     CommonAPI::Deployable< uint16_t, CommonAPI::SomeIP::IntegerDeployment<uint16_t>> deploy_BatteryLevel(_BatteryLevel, static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr));
     CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
     CommonAPI::SomeIP::ProxyHelper<
@@ -142,7 +142,7 @@ void ManagerSomeIPProxy::setBatteryLevel(uint16_t _BatteryLevel, CommonAPI::Call
     _message = deploy_message.getValue();
 }
 
-std::future<CommonAPI::CallStatus> ManagerSomeIPProxy::setBatteryLevelAsync(const uint16_t &_BatteryLevel, SetBatteryLevelAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setBatteryLevelAsync(const uint16_t &_BatteryLevel, SetBatteryLevelAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
     CommonAPI::Deployable< uint16_t, CommonAPI::SomeIP::IntegerDeployment<uint16_t>> deploy_BatteryLevel(_BatteryLevel, static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr));
     CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
     return CommonAPI::SomeIP::ProxyHelper<
@@ -172,12 +172,12 @@ std::future<CommonAPI::CallStatus> ManagerSomeIPProxy::setBatteryLevelAsync(cons
         std::make_tuple(deploy_message));
 }
 
-void ManagerSomeIPProxy::getOwnVersion(uint16_t& ownVersionMajor, uint16_t& ownVersionMinor) const {
+void IPCManagerSomeIPProxy::getOwnVersion(uint16_t& ownVersionMajor, uint16_t& ownVersionMinor) const {
     ownVersionMajor = 1;
     ownVersionMinor = 0;
 }
 
-std::future<void> ManagerSomeIPProxy::getCompletionFuture() {
+std::future<void> IPCManagerSomeIPProxy::getCompletionFuture() {
     return completed_.get_future();
 }
 

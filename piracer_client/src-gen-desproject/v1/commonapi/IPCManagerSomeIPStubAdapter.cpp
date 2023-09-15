@@ -7,8 +7,8 @@
  * If a copy of the MPL was not distributed with this file, You can obtain one at
  * http://mozilla.org/MPL/2.0/.
  */
-#include <v1/commonapi/ManagerSomeIPStubAdapter.hpp>
-#include <v1/commonapi/Manager.hpp>
+#include <v1/commonapi/IPCManagerSomeIPStubAdapter.hpp>
+#include <v1/commonapi/IPCManager.hpp>
 
 #if !defined (COMMONAPI_INTERNAL_COMPILATION)
 #define COMMONAPI_INTERNAL_COMPILATION
@@ -25,24 +25,24 @@
 namespace v1 {
 namespace commonapi {
 
-std::shared_ptr<CommonAPI::SomeIP::StubAdapter> createManagerSomeIPStubAdapter(
+std::shared_ptr<CommonAPI::SomeIP::StubAdapter> createIPCManagerSomeIPStubAdapter(
                    const CommonAPI::SomeIP::Address &_address,
                    const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection,
                    const std::shared_ptr<CommonAPI::StubBase> &_stub) {
-    return std::make_shared< ManagerSomeIPStubAdapter<::v1::commonapi::ManagerStub>>(_address, _connection, _stub);
+    return std::make_shared< IPCManagerSomeIPStubAdapter<::v1::commonapi::IPCManagerStub>>(_address, _connection, _stub);
 }
 
-void initializeManagerSomeIPStubAdapter() {
+void initializeIPCManagerSomeIPStubAdapter() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
-        "local:commonapi.Manager:v1_0:seame",
-         0x1388, 0x4e20, 1, 0);
+        "local:commonapi.IPCManager:v1_0:IPCManager",
+         0x3e8, 0x2710, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerStubAdapterCreateMethod(
-        "commonapi.Manager:v1_0",
-        &createManagerSomeIPStubAdapter);
+        "commonapi.IPCManager:v1_0",
+        &createIPCManagerSomeIPStubAdapter);
 }
 
-INITIALIZER(registerManagerSomeIPStubAdapter) {
-    CommonAPI::SomeIP::Factory::get()->registerInterface(initializeManagerSomeIPStubAdapter);
+INITIALIZER(registerIPCManagerSomeIPStubAdapter) {
+    CommonAPI::SomeIP::Factory::get()->registerInterface(initializeIPCManagerSomeIPStubAdapter);
 }
 
 } // namespace commonapi

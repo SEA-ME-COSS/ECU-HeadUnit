@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <Python.h>
 #include <CommonAPI/CommonAPI.hpp>
-#include <v1/commonapi/ManagerProxy.hpp>
+#include <v1/commonapi/IPCManagerProxy.hpp>
 
 
 using namespace v1_0::commonapi;
@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
     PyObject* pInstance = PyObject_CallObject(pClass, NULL);
     
     std::shared_ptr<CommonAPI::Runtime> runtime = CommonAPI::Runtime::get();
-    std::shared_ptr<ManagerProxy<>> myProxy = runtime->buildProxy<ManagerProxy>("local", "seame");
+    std::shared_ptr<IPCManagerProxy<>> myProxy = runtime->buildProxy<IPCManagerProxy>("local", "IPCManager");
     
     std::cout << "Checking availability!" << std::endl;
     while (!myProxy->isAvailable())

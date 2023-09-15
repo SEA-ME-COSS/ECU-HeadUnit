@@ -7,11 +7,11 @@
  * If a copy of the MPL was not distributed with this file, You can obtain one at
  * http://mozilla.org/MPL/2.0/.
  */
-#include <v1/commonapi/ManagerSomeIPDeployment.hpp>
+#include <v1/commonapi/IPCManagerSomeIPDeployment.hpp>
 
 namespace v1 {
 namespace commonapi {
-namespace Manager_ {
+namespace IPCManager_ {
 
 // Type-specific deployments
 
@@ -21,6 +21,6 @@ namespace Manager_ {
 
 // Broadcast-specific deployments
 
-} // namespace Manager_
+} // namespace IPCManager_
 } // namespace commonapi
 } // namespace v1

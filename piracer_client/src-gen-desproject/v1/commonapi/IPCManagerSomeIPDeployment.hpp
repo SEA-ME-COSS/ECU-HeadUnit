@@ -8,8 +8,8 @@
  * http://mozilla.org/MPL/2.0/.
  */
 
-#ifndef V1_COMMONAPI_Manager_SOMEIP_DEPLOYMENT_HPP_
-#define V1_COMMONAPI_Manager_SOMEIP_DEPLOYMENT_HPP_
+#ifndef V1_COMMONAPI_IPC_Manager_SOMEIP_DEPLOYMENT_HPP_
+#define V1_COMMONAPI_IPC_Manager_SOMEIP_DEPLOYMENT_HPP_
 
 
 #if !defined (COMMONAPI_INTERNAL_COMPILATION)
@@ -24,7 +24,7 @@
 
 namespace v1 {
 namespace commonapi {
-namespace Manager_ {
+namespace IPCManager_ {
 
 // Interface-specific deployment types
 
@@ -36,8 +36,8 @@ namespace Manager_ {
 
 // Broadcast-specific deployments
 
-} // namespace Manager_
+} // namespace IPCManager_
 } // namespace commonapi
 } // namespace v1
 
-#endif // V1_COMMONAPI_Manager_SOMEIP_DEPLOYMENT_HPP_
+#endif // V1_COMMONAPI_IPC_Manager_SOMEIP_DEPLOYMENT_HPP_

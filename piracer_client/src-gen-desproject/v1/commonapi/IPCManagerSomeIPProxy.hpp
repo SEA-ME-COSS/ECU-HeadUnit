@@ -7,10 +7,10 @@
  * If a copy of the MPL was not distributed with this file, You can obtain one at
  * http://mozilla.org/MPL/2.0/.
  */
-#ifndef V1_COMMONAPI_MANAGER_SOMEIP_PROXY_HPP_
-#define V1_COMMONAPI_MANAGER_SOMEIP_PROXY_HPP_
+#ifndef V1_COMMONAPI_IPC_MANAGER_SOMEIP_PROXY_HPP_
+#define V1_COMMONAPI_IPC_MANAGER_SOMEIP_PROXY_HPP_
 
-#include <v1/commonapi/ManagerProxyBase.hpp>
+#include <v1/commonapi/IPCManagerProxyBase.hpp>
 
 #if !defined (COMMONAPI_INTERNAL_COMPILATION)
 #define COMMONAPI_INTERNAL_COMPILATION
@@ -43,15 +43,15 @@
 namespace v1 {
 namespace commonapi {
 
-class ManagerSomeIPProxy
-    : virtual public ManagerProxyBase,
+class IPCManagerSomeIPProxy
+    : virtual public IPCManagerProxyBase,
       virtual public CommonAPI::SomeIP::Proxy {
 public:
-    ManagerSomeIPProxy(
+    IPCManagerSomeIPProxy(
         const CommonAPI::SomeIP::Address &_address,
         const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection);
 
-    virtual ~ManagerSomeIPProxy();
+    virtual ~IPCManagerSomeIPProxy();
 
     virtual void setSensorRpm(uint16_t _SensorRpm, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info);
 
@@ -73,4 +73,4 @@ private:
 } // namespace commonapi
 } // namespace v1
 
-#endif // V1_COMMONAPI_Manager_SOMEIP_PROXY_HPP_
+#endif // V1_COMMONAPI_IPC_Manager_SOMEIP_PROXY_HPP_
