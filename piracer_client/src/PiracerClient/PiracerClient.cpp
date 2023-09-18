@@ -30,10 +30,12 @@ int main(int argc, char *argv[]) {
     while (1)
     {
         PyObject* result = PyObject_CallMethod(pInstance, "get_battery_voltage", NULL);
-        PyObject* str = PyObject_Str(result);
-	const char* cstr = PyUnicode_AsUTF8(str);
+	double voltageLevel = PyFloat_AsDouble(result);
+        
+        //PyObject* str = PyObject_Str(result);
+	//const char* cstr = PyUnicode_AsUTF8(str);
 	
-	double voltageLevel = (double)std::stoi(cstr);
+	//double voltageLevel = (double)std::stoi(cstr);
 	uint16_t batteryLevel = (uint16_t)((voltageLevel - 2.8 * 3.0) / (12.3 - 2.8 * 3.0) * 100.0);
         
 	myProxy->setBatteryLevel(batteryLevel, callStatus, returnMessage);
