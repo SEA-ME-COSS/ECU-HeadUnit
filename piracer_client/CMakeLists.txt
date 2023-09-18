@@ -19,25 +19,25 @@ link_directories(
 )
 
 
-add_executable(SpeedClient
-        src/SpeedClient/SpeedClient.cpp
-        src/SpeedClient/readCANThread.c
-        src/SpeedClient/CANbuffer.c
-        src/SpeedClient/sendSomeipThread.cpp
-        src/SpeedClient/kalmanFilter.c
+add_executable(CANSender
+        src/CANSender/CANSender.cpp
+        src/CANSender/readCANThread.c
+        src/CANSender/CANbuffer.c
+        src/CANSender/sendSomeipThread.cpp
+        src/CANSender/kalmanFilter.c
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
 )
-target_link_libraries(SpeedClient CommonAPI CommonAPI-SomeIP vsomeip3)
+target_link_libraries(CANSender CommonAPI CommonAPI-SomeIP vsomeip3)
 
 
-add_executable(PiracerClient
-        src/PiracerClient/PiracerClient.cpp
-        src/PiracerClient/piracerClass.cpp
+add_executable(PiracerOperator
+        src/PiracerOperator/PiracerOperator.cpp
+        src/PiracerOperator/piracerClass.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
 )
-target_link_libraries(PiracerClient ${PYTHON_LIBRARIES} CommonAPI CommonAPI-SomeIP vsomeip3)
+target_link_libraries(PiracerOperator ${PYTHON_LIBRARIES} CommonAPI CommonAPI-SomeIP vsomeip3)
 
 
 add_executable(IPCManager
@@ -47,3 +47,4 @@ add_executable(IPCManager
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
 )
 target_link_libraries(IPCManager CommonAPI CommonAPI-SomeIP vsomeip3)
+
