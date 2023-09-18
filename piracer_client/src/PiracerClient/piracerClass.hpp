@@ -12,7 +12,7 @@
 class PiracerClass
 {
     private:
-        PyObject pModule, pClass, pInstance, pResult;
+        PyObject* pModule, pClass, pInstance, pResult;
         double voltageLevel;
         uint16_t batteryLevel;
         
