@@ -21,9 +21,6 @@ uint16_t PiracerClass::getBatteryLevel()
        
 PiracerClass::~PiracerClass()
 {
-    Py_DECREF(pResult);
-    Py_DECREF(pInstance);
-    Py_DECREF(pClass);
-    Py_DECREF(pModule);
     Py_Finalize();
 }
+
