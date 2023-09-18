@@ -28,4 +28,3 @@ PiracerClass::~PiracerClass()
     Py_Finalize();
 }
 
-
