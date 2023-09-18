@@ -33,6 +33,7 @@ target_link_libraries(SpeedClient CommonAPI CommonAPI-SomeIP vsomeip3)
 
 add_executable(PiracerClient
         src/PiracerClient/PiracerClient.cpp
+        src/PiracerClient/piracerClass.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
 )
