@@ -12,7 +12,7 @@
 using namespace v1_0::commonapi;
 
 int main(int argc, char *argv[]) {
-    PiracerClass piracer();
+    PiracerClass piracer;
     
     std::shared_ptr<CommonAPI::Runtime> runtime = CommonAPI::Runtime::get();
     std::shared_ptr<IPCManagerProxy<>> myProxy = runtime->buildProxy<IPCManagerProxy>("local", "IPCManager");
