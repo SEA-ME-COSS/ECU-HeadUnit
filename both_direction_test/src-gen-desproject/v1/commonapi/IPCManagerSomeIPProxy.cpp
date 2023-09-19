@@ -132,7 +132,7 @@ void IPCManagerSomeIPProxy::setBatteryLevel(uint16_t _BatteryLevel, CommonAPI::C
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0xc8),
+        CommonAPI::SomeIP::method_id_t(0x65),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -160,7 +160,7 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setBatteryLevelAsync(c
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0xc8),
+        CommonAPI::SomeIP::method_id_t(0x65),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),

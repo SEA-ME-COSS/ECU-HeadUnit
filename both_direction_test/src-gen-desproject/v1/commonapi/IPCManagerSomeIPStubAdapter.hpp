@@ -96,7 +96,7 @@ public:
         
     {
         IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x64) }, &setSensorRpmStubDispatcher );
-        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0xc8) }, &setBatteryLevelStubDispatcher );
+        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x65) }, &setBatteryLevelStubDispatcher );
         // Provided events/fields
     }
 

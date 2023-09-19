@@ -10,7 +10,7 @@
 
 using namespace v1_0::commonapi;
 
-int main() {
+int main(int argc, char *argv[]) {
     std::shared_ptr<CommonAPI::Runtime> runtime;
     std::shared_ptr<IPCManagerStubImpl> IPCManagerService;
     std::shared_ptr<PiracerOperatorProxy<>> targetProxy;
@@ -19,7 +19,6 @@ int main() {
     IPCManagerService = std::make_shared<IPCManagerStubImpl>();
     runtime->registerService("local", "IPCManager", IPCManagerService);
     targetProxy = runtime->buildProxy<PiracerOperatorProxy>("local", "PiracerOperator");
-
 
     std::cout << "Checking availability!" << std::endl;
     while (!targetProxy->isAvailable())

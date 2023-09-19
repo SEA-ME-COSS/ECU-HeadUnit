@@ -33,8 +33,8 @@ target_link_libraries(CANSender CommonAPI CommonAPI-SomeIP vsomeip3)
 
 add_executable(PiracerOperator
         src/PiracerOperator/PiracerOperator.cpp
-        src/PiracerOperator/PiracerClass.cpp
         src/PiracerOperator/PiracerOperatorStubImpl.cpp
+        src/PiracerOperator/PiracerClass.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPStubAdapter.cpp
@@ -46,6 +46,8 @@ target_link_libraries(PiracerOperator ${PYTHON_LIBRARIES} CommonAPI CommonAPI-So
 add_executable(IPCManager
         src/IPCManager/IPCManager.cpp
         src/IPCManager/IPCManagerStubImpl.cpp
+        src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp
+        src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAdapter.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
 )

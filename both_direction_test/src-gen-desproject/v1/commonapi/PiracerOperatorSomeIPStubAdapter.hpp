@@ -79,7 +79,7 @@ public:
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
         
     {
-        PiracerOperatorSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x12c) }, &setGearModeStubDispatcher );
+        PiracerOperatorSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x66) }, &setGearModeStubDispatcher );
         // Provided events/fields
     }
 

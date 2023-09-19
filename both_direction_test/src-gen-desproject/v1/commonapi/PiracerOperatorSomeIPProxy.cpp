@@ -33,7 +33,7 @@ std::shared_ptr<CommonAPI::SomeIP::Proxy> createPiracerOperatorSomeIPProxy(
 void initializePiracerOperatorSomeIPProxy() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
         "local:commonapi.PiracerOperator:v1_0:PiracerOperator",
-        0x7d0, 0x4e20, 1, 0);
+        0x3e9, 0x2711, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerProxyCreateMethod(
         "commonapi.PiracerOperator:v1_0",
         &createPiracerOperatorSomeIPProxy);
@@ -74,7 +74,7 @@ void PiracerOperatorSomeIPProxy::setGearMode(uint16_t _GearMode, CommonAPI::Call
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x12c),
+        CommonAPI::SomeIP::method_id_t(0x66),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -102,7 +102,7 @@ std::future<CommonAPI::CallStatus> PiracerOperatorSomeIPProxy::setGearModeAsync(
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x12c),
+        CommonAPI::SomeIP::method_id_t(0x66),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
