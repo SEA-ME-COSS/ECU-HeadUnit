@@ -1,0 +1,36 @@
+import "platform:/plugin/org.genivi.commonapi.someip/deployment/CommonAPI-4-SOMEIP_deployment_spec.fdepl"
+import "DESProject.fidl"
+
+
+define org.genivi.commonapi.someip.deployment for interface commonapi.IPCManager {
+        SomeIpServiceID = 1000
+
+        method setSensorRpm {
+                SomeIpMethodID = 100
+        }
+        method setBatteryLevel {
+                SomeIpMethodID = 200
+        }
+}
+define org.genivi.commonapi.someip.deployment for provider as IPCManager {
+        instance commonapi.IPCManager {
+                InstanceId = "IPCManager"
+                SomeIpInstanceID = 10000
+        }
+}
+
+
+define org.genivi.commonapi.someip.deployment for interface commonapi.PiracerOperator {
+        SomeIpServiceID = 2000
+
+        method setGearMode {
+                SomeIpMethodID = 300
+        }
+}
+define org.genivi.commonapi.someip.deployment for provider as PiracerOperator {
+        instance commonapi.PiracerOperator {
+                InstanceId = "PiracerOperator"
+                SomeIpInstanceID = 20000
+        }
+}
+
