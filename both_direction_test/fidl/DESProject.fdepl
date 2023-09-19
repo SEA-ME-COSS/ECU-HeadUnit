@@ -12,7 +12,7 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.IPCManager
                 SomeIpMethodID = 200
         }
 }
-define org.genivi.commonapi.someip.deployment for provider as IPCManager {
+define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.IPCManager {
                 InstanceId = "IPCManager"
                 SomeIpInstanceID = 10000
@@ -27,7 +27,7 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.PiracerOpe
                 SomeIpMethodID = 300
         }
 }
-define org.genivi.commonapi.someip.deployment for provider as PiracerOperator {
+define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.PiracerOperator {
                 InstanceId = "PiracerOperator"
                 SomeIpInstanceID = 20000

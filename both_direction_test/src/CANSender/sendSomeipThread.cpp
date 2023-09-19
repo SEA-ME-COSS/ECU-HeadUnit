@@ -14,10 +14,10 @@ using namespace v1_0::commonapi;
 void *sendSomeipThread(void *arg)
 {
     std::shared_ptr<CommonAPI::Runtime> runtime = CommonAPI::Runtime::get();
-    std::shared_ptr<IPCManagerProxy<>> myProxy = runtime->buildProxy<IPCManagerProxy>("local", "IPCManager");
+    std::shared_ptr<IPCManagerProxy<>> targetProxy = runtime->buildProxy<IPCManagerProxy>("local", "IPCManager");
     
     std::cout << "Checking availability!" << std::endl;
-    while (!myProxy->isAvailable())
+    while (!targetProxy->isAvailable())
         usleep(10);
     std::cout << "Available!" << std::endl;
     
@@ -44,7 +44,7 @@ void *sendSomeipThread(void *arg)
         
         uint16_t kf_speed_sensor_rpm = filter(speed_sensor_rpm);
 
-	myProxy->setSensorRpm(kf_speed_sensor_rpm, callStatus, returnMessage);
+	targetProxy->setSensorRpm(kf_speed_sensor_rpm, callStatus, returnMessage);
 
         usleep(500000);
     }

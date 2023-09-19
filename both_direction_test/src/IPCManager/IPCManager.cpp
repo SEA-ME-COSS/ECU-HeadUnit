@@ -11,13 +11,18 @@
 using namespace v1_0::commonapi;
 
 int main() {
-    std::shared_ptr<CommonAPI::Runtime> runtime = CommonAPI::Runtime::get();
-    std::shared_ptr<PiracerOperatorProxy<>> myProxy = runtime->buildProxy<PiracerOperatorProxy>("local", "PiracerOperator");
-    std::shared_ptr<IPCManagerStubImpl> IPCManager = std::make_shared<IPCManagerStubImpl>();
-    runtime->registerService("local", "IPCManager", IPCManager);
+    std::shared_ptr<CommonAPI::Runtime> runtime;
+    std::shared_ptr<IPCManagerStubImpl> IPCManagerService;
+    std::shared_ptr<PiracerOperatorProxy<>> targetProxy;
+    
+    runtime = CommonAPI::Runtime::get();
+    IPCManagerService = std::make_shared<IPCManagerStubImpl>();
+    runtime->registerService("local", "IPCManager", IPCManagerService);
+    targetProxy = runtime->buildProxy<PiracerOperatorProxy>("local", "PiracerOperator");
+
 
     std::cout << "Checking availability!" << std::endl;
-    while (!myProxy->isAvailable())
+    while (!targetProxy->isAvailable())
         usleep(10);
     std::cout << "Available!" << std::endl;
     
@@ -26,7 +31,7 @@ int main() {
     
     while (1)
     {
-	myProxy->setGearMode(6974, callStatus, returnMessage);
+	targetProxy->setGearMode(69, callStatus, returnMessage);
         usleep(500000);
     }
     
