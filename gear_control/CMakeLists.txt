@@ -35,12 +35,12 @@ add_executable(PiracerOperator
         src/PiracerOperator/PiracerOperator.cpp
         src/PiracerOperator/sendBatteryThread.cpp
         src/PiracerOperator/PiracerClass.cpp
-        #src/PiracerOperator/takeControlThread.cpp
-        #src/PiracerOperator/PiracerOperatorStubImpl.cpp
+        src/PiracerOperator/takeControlThread.cpp
+        src/PiracerOperator/PiracerOperatorStubImpl.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
-        #src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPStubAdapter.cpp
-        #src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp
+        src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPStubAdapter.cpp
+        src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp
 )
 target_link_libraries(PiracerOperator ${PYTHON_LIBRARIES} CommonAPI CommonAPI-SomeIP vsomeip3)
 
