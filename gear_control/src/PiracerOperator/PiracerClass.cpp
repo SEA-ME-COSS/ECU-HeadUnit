@@ -1,7 +1,7 @@
 // Include header
 #include "PiracerClass.hpp"
 #include <iostream>
-#include <unistd>
+#include <unistd.h>
 
 
 PiracerClass::PiracerClass()
