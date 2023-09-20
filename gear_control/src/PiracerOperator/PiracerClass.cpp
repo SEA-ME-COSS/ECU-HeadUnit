@@ -51,10 +51,10 @@ void PiracerClass::applySteering(double steering)
 
 PiracerClass::~PiracerClass()
 {
-    //Py_DECREF(pArgs);
-    //Py_DECREF(pVoltage);
-    //Py_DECREF(pInstance);
-    //Py_DECREF(pClass);
+    Py_DECREF(pArgs);
+    Py_DECREF(pVoltage);
+    Py_DECREF(pInstance);
+    Py_DECREF(pClass);
     Py_DECREF(pModule);
     Py_Finalize();
     
@@ -64,7 +64,6 @@ PiracerClass::~PiracerClass()
 
 PiracerController::PiracerController()
 {
-    Py_Initialize();
     pModule = PyImport_ImportModule("piracer.gamepads");
     pClass = PyObject_GetAttrString(pModule, "ShanWanGamepad");
     pInstance = PyObject_CallObject(pClass, NULL);
@@ -95,13 +94,12 @@ double PiracerController::getSteering()
 
 PiracerController::~PiracerController()
 {
-    //Py_DECREF(pThrottle);
-    //Py_DECREF(pSteering);
-    //Py_DECREF(pInput);
-    //Py_DECREF(pInstance);
-    //Py_DECREF(pClass);
+    Py_DECREF(pThrottle);
+    Py_DECREF(pSteering);
+    Py_DECREF(pInput);
+    Py_DECREF(pInstance);
+    Py_DECREF(pClass);
     Py_DECREF(pModule);
-    Py_Finalize();
     
     std::cout << "Goodbye controller" << std::endl;
 }
