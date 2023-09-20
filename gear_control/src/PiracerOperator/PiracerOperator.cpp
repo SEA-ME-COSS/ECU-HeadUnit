@@ -2,8 +2,9 @@
 #include <pthread.h>
 
 // Include Thread header
-#include "sendBatteryThread.hpp"
+//#include "sendBatteryThread.hpp"
 //#include "takeControlThread.hpp"
+#include "PiracerClass.hpp"
 
 
 int main (int argc, char **argv)
