@@ -14,7 +14,7 @@
 #include "PiracerOperatorStubImpl.hpp"
 
 
-void *takeContorlThread(void *arg);    // Function for thread
+void *takeControlThread(void *arg);    // Function for thread
 
 
 #endif
