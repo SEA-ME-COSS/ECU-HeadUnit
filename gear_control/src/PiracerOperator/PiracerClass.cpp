@@ -55,7 +55,7 @@ PiracerClass::~PiracerClass()
     //Py_DECREF(pVoltage);
     //Py_DECREF(pInstance);
     //Py_DECREF(pClass);
-    //Py_DECREF(pModule);
+    Py_DECREF(pModule);
     Py_Finalize();
     
     std::cout << "Goodbye piracer" << std::endl;
@@ -99,8 +99,7 @@ PiracerController::~PiracerController()
     //Py_DECREF(pInput);
     //Py_DECREF(pInstance);
     //Py_DECREF(pClass);
-    //Py_DECREF(pModule);
-    //Py_Finalize();
+    Py_DECREF(pModule);
     Py_Finalize();
     
     std::cout << "Goodbye controller" << std::endl;
