@@ -1,6 +1,5 @@
 // Include header
 #include "takeControlThread.hpp"
-#include <iostream>
 
 
 using namespace v1_0::commonapi;
@@ -14,8 +13,6 @@ void *takeControlThread(void *arg) {
     runtime->registerService("local", "PiracerOperator", PiracerOperatorService);
     
     double throttle, steering;
-    
-    std::cout << "Hello World" << std::endl;
     
     while (1)
     {
