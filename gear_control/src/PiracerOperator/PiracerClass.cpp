@@ -56,7 +56,6 @@ PiracerClass::~PiracerClass()
     Py_DECREF(pInstance);
     Py_DECREF(pClass);
     Py_DECREF(pModule);
-    Py_Finalize();
 }
 
 
