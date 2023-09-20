@@ -28,3 +28,5 @@ PiracerClass::~PiracerClass()
     Py_Finalize();
 }
 
+PiracerClass piracer;
+
