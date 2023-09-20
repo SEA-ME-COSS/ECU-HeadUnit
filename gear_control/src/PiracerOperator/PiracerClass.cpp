@@ -48,8 +48,8 @@ void PiracerClass::applySteering(double steering)
 
 PiracerClass::~PiracerClass()
 {
-    //Py_DECREF(pArgs);
-    //Py_DECREF(pVoltage);
+    Py_DECREF(pArgs);
+    Py_DECREF(pVoltage);
     Py_DECREF(pInstance);
     Py_DECREF(pClass);
     Py_DECREF(pModule);
@@ -87,9 +87,9 @@ double PiracerController::getSteering()
 
 PiracerController::~PiracerController()
 {
-    //Py_DECREF(pThrottle);
-    //Py_DECREF(pSteering);
-    //Py_DECREF(pInput);
+    Py_DECREF(pThrottle);
+    Py_DECREF(pSteering);
+    Py_DECREF(pInput);
     Py_DECREF(pInstance);
     Py_DECREF(pClass);
     Py_DECREF(pModule);
