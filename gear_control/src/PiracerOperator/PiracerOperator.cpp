@@ -16,6 +16,7 @@ int main (int argc, char **argv)
 
     //pthread_join(batteryThread, NULL);
     //pthread_join(controlThread, NULL);
+    std:cout << "hasdfaefaf" << std::endl;
 
     return 0;
 }
