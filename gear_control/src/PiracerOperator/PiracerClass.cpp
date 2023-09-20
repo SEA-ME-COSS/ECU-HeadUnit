@@ -56,6 +56,8 @@ PiracerClass::~PiracerClass()
     Py_DECREF(pInstance);
     Py_DECREF(pClass);
     Py_DECREF(pModule);
+    
+    std::cout << "Goodbye World" << std::endl;
 }
 
 
@@ -91,13 +93,15 @@ double PiracerController::getSteering()
 
 PiracerController::~PiracerController()
 {
-    Py_DECREF(pInput);
     Py_DECREF(pThrottle);
     Py_DECREF(pSteering);
+    Py_DECREF(pInput);
     Py_DECREF(pInstance);
     Py_DECREF(pClass);
     Py_DECREF(pModule);
     Py_Finalize();
+    
+    std::cout << "Goodbye World" << std::endl;
 }
 
 
