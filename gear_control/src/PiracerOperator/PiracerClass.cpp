@@ -1,5 +1,6 @@
 // Include header
 #include "PiracerClass.hpp"
+#include <iostream>
 
 
 PiracerClass::PiracerClass()
@@ -10,6 +11,8 @@ PiracerClass::PiracerClass()
     pInstance = PyObject_CallObject(pClass, NULL);
     
     gearMode = 0;    // P
+    
+    std::cout << "Hello World" << std::endl;
 }
 
 void PiracerClass::setGearMode(uint16_t _gearMode)
@@ -62,6 +65,8 @@ PiracerController::PiracerController()
     pModule = PyImport_ImportModule("piracer.gamepads");
     pClass = PyObject_GetAttrString(pModule, "ShanWanGamepad");
     pInstance = PyObject_CallObject(pClass, NULL);
+    
+    std::cout << "Hello World" << std::endl;
 }
 
 void PiracerController::readControl()
