@@ -1,6 +1,5 @@
 // Include header
 #include "PiracerClass.hpp"
-#include <iostream>
 
 
 PiracerClass::PiracerClass()
@@ -11,8 +10,6 @@ PiracerClass::PiracerClass()
     pInstance = PyObject_CallObject(pClass, NULL);
     
     gearMode = 0;    // P
-    
-    std::cout << "Hello World" << std::endl;
 }
 
 void PiracerClass::setGearMode(uint16_t _gearMode)
@@ -53,23 +50,18 @@ PiracerClass::~PiracerClass()
 {
     //Py_DECREF(pArgs);
     //Py_DECREF(pVoltage);
-    //Py_DECREF(pInstance);
-    //Py_DECREF(pClass);
+    Py_DECREF(pInstance);
+    Py_DECREF(pClass);
     Py_DECREF(pModule);
     Py_Finalize();
-    
-    std::cout << "Goodbye piracer" << std::endl;
 }
 
 
 PiracerController::PiracerController()
 {
-    Py_Initialize();
     pModule = PyImport_ImportModule("piracer.gamepads");
     pClass = PyObject_GetAttrString(pModule, "ShanWanGamepad");
     pInstance = PyObject_CallObject(pClass, NULL);
-    
-    std::cout << "Hello World" << std::endl;
 }
 
 void PiracerController::readControl()
@@ -98,11 +90,9 @@ PiracerController::~PiracerController()
     //Py_DECREF(pThrottle);
     //Py_DECREF(pSteering);
     //Py_DECREF(pInput);
-    //Py_DECREF(pInstance);
-    //Py_DECREF(pClass);
+    Py_DECREF(pInstance);
+    Py_DECREF(pClass);
     Py_DECREF(pModule);
-    
-    std::cout << "Goodbye controller" << std::endl;
 }
 
 
