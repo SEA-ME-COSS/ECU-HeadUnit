@@ -5,6 +5,7 @@
 //#include "sendBatteryThread.hpp"
 //#include "takeControlThread.hpp"
 #include "PiracerClass.hpp"
+#include <iostream>
 
 
 int main (int argc, char **argv)
