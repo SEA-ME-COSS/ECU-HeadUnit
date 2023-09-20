@@ -51,13 +51,13 @@ void PiracerClass::applySteering(double steering)
 
 PiracerClass::~PiracerClass()
 {
-    Py_DECREF(pArgs);
-    Py_DECREF(pVoltage);
-    Py_DECREF(pInstance);
-    Py_DECREF(pClass);
-    Py_DECREF(pModule);
+    //Py_DECREF(pArgs);
+    //Py_DECREF(pVoltage);
+    //Py_DECREF(pInstance);
+    //Py_DECREF(pClass);
+    //Py_DECREF(pModule);
     
-    std::cout << "Goodbye World" << std::endl;
+    std::cout << "Goodbye piracer" << std::endl;
 }
 
 
@@ -93,15 +93,15 @@ double PiracerController::getSteering()
 
 PiracerController::~PiracerController()
 {
-    Py_DECREF(pThrottle);
-    Py_DECREF(pSteering);
-    Py_DECREF(pInput);
-    Py_DECREF(pInstance);
-    Py_DECREF(pClass);
-    Py_DECREF(pModule);
-    Py_Finalize();
+    //Py_DECREF(pThrottle);
+    //Py_DECREF(pSteering);
+    //Py_DECREF(pInput);
+    //Py_DECREF(pInstance);
+    //Py_DECREF(pClass);
+    //Py_DECREF(pModule);
+    //Py_Finalize();
     
-    std::cout << "Goodbye World" << std::endl;
+    std::cout << "Goodbye controller" << std::endl;
 }
 
 
