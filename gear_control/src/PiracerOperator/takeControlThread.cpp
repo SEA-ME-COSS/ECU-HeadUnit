@@ -22,10 +22,10 @@ void *takeControlThread(void *arg) {
         throttle = controller.getThrottle();
         steering = controller.getSteering();
         
-        std::cout << "hello world" << std::endl;
+        piracer.applyThrottle(throttle);
+        piracer.applySteering(steering);
         
-        //piracer.applyThrottle(throttle);
-        //piracer.applySteering(steering);
+        std::cout << "hello world" << std::endl;
     }
 
     return NULL;
