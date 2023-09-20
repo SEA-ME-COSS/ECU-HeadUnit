@@ -7,9 +7,6 @@
 #include <string>
 #include <unistd.h>
 
-// Include piracer class header
-#include "PiracerClass.hpp"
-
 // Include piracer operator service header
 #include "PiracerOperatorStubImpl.hpp"
 

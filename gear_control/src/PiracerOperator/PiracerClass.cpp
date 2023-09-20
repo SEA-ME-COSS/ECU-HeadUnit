@@ -2,31 +2,111 @@
 #include "PiracerClass.hpp"
 
 
+enum gearState
+{
+    P = 0,
+    R = 1,
+    N = 2,
+    D = 3
+};
+
+
 PiracerClass::PiracerClass()
 {
     Py_Initialize();
     pModule = PyImport_ImportModule("piracer.vehicles");
     pClass = PyObject_GetAttrString(pModule, "PiRacerStandard");
     pInstance = PyObject_CallObject(pClass, NULL);
+    
+    gearMode = P;    // using gearState enum
+}
+
+void PiracerClass::setGearMode(uint16_t _gearMode)
+{
+    gearMode = _gearMode;
+    return
+}
+
+uint16_t PiracerClass::getGearMode()
+{
+    return gearMode;
 }
 
 uint16_t PiracerClass::getBatteryLevel()
 {
-    pValue = PyObject_CallMethod(pInstance, "get_battery_voltage", NULL);
-    voltageLevel = PyFloat_AsDouble(pValue);
+    pVoltage = PyObject_CallMethod(pInstance, "get_battery_voltage", NULL);
+    voltageLevel = PyFloat_AsDouble(pVoltage);
     batteryLevel = (uint16_t)((voltageLevel - 2.8 * 3.0) / (12.3 - 2.8 * 3.0) * 100.0);
     
     return batteryLevel;
 }
 
+void applyThrottle(double throttle)
+{
+    pArgs = PyTuple_Pack(1, PyFloat_FromDouble(throttle));
+    PyObject_CallMethod(pInstance, "set_throttle_percent", pArgs);
+    return
+}
+
+void applySteering(double steering);
+{
+    pArgs = PyTuple_Pack(1, PyFloat_FromDouble(steering));
+    PyObject_CallMethod(pInstance, "set_steering_percent", pArgs);
+    return
+}
+
 PiracerClass::~PiracerClass()
 {
-    Py_DECREF(pValue);
+    Py_DECREF(pArgs);
+    Py_DECREF(pVoltage);
     Py_DECREF(pInstance);
     Py_DECREF(pClass);
     Py_DECREF(pModule);
     Py_Finalize();
 }
 
+
+PiracerController::PiracerController()
+{
+    Py_Initialize();
+    pModule = PyImport_ImportModule("piracer.gamepads");
+    pClass = PyObject_GetAttrString(pModule, "ShanWanGamepad");
+    pInstance = PyObject_CallObject(pClass, NULL);
+}
+
+void PiracerController::readControl()
+{
+    pInput = PyObject_CallMethod(pInstance, "read_data", NULL);
+    pThrottle = PyObject_GetAttrString(pInput, "analog_stick_right.y");
+    pSteering = PyObject_GetAttrString(pInput, "analog_stick_left.x");
+    
+    throttle = PyFloat_AsDouble(pThrottle) * 0.5;
+    steering = PyFloat_AsDouble(pSteering);
+    return
+}
+
+double PiracerController::getThrottle()
+{
+    return throttle;
+}
+
+double PiracerController::getSteering();
+{
+    return steering;
+}
+
+PiracerController::~PiracerController()
+{
+    Py_DECREF(pInput);
+    Py_DECREF(pThrottle);
+    Py_DECREF(pSteering);
+    Py_DECREF(pInstance);
+    Py_DECREF(pClass);
+    Py_DECREF(pModule);
+    Py_Finalize();
+}
+
+
 PiracerClass piracer;
+PiracerController controller;
 

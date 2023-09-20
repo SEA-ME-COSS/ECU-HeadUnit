@@ -5,6 +5,12 @@
 #include <CommonAPI/CommonAPI.hpp>
 #include <v1/commonapi/PiracerOperatorStubDefault.hpp>
 
+// Include piracer class header
+#include "PiracerClass.hpp"
+
+
+char gearName[];
+
 
 class PiracerOperatorStubImpl: public v1_0::commonapi::PiracerOperatorStubDefault {
 public:

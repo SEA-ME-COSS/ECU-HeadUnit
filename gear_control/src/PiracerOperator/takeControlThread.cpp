@@ -12,7 +12,18 @@ void *takeControlThread(void *arg) {
     PiracerOperatorService = std::make_shared<PiracerOperatorStubImpl>();
     runtime->registerService("local", "PiracerOperator", PiracerOperatorService);
     
-    while (1) {}
+    double throttle, steering;
+    
+    while (1)
+    {
+        controller.readControl();
+        
+        throttle = controller.getThrottle();
+        steering = controller.getSteering();
+        
+        piracer.applyThrottle(throttle);
+        piracer.applySteering(steering);
+    }
 
     return NULL;
 }
