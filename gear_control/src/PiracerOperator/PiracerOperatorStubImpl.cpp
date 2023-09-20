@@ -1,7 +1,7 @@
 #include "PiracerOperatorStubImpl.hpp"
 
 
-char gearName[4] = {'P', 'R', 'N', 'D'};
+char gearName[] = "PRND";
 
 
 PiracerOperatorStubImpl::PiracerOperatorStubImpl() { }

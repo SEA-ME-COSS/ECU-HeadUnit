@@ -2,15 +2,6 @@
 #include "PiracerClass.hpp"
 
 
-enum gearState
-{
-    P = 0,
-    R = 1,
-    N = 2,
-    D = 3
-};
-
-
 PiracerClass::PiracerClass()
 {
     Py_Initialize();
@@ -18,13 +9,13 @@ PiracerClass::PiracerClass()
     pClass = PyObject_GetAttrString(pModule, "PiRacerStandard");
     pInstance = PyObject_CallObject(pClass, NULL);
     
-    gearMode = P;    // using gearState enum
+    gearMode = 0;    // P
 }
 
 void PiracerClass::setGearMode(uint16_t _gearMode)
 {
     gearMode = _gearMode;
-    return
+    return;
 }
 
 uint16_t PiracerClass::getGearMode()
@@ -41,18 +32,18 @@ uint16_t PiracerClass::getBatteryLevel()
     return batteryLevel;
 }
 
-void applyThrottle(double throttle)
+void PiracerClass::applyThrottle(double throttle)
 {
     pArgs = PyTuple_Pack(1, PyFloat_FromDouble(throttle));
-    PyObject_CallMethod(pInstance, "set_throttle_percent", pArgs);
-    return
+    PyObject_CallMethod(pInstance, "set_throttle_percent", "O", pArgs);
+    return;
 }
 
-void applySteering(double steering);
+void PiracerClass::applySteering(double steering)
 {
     pArgs = PyTuple_Pack(1, PyFloat_FromDouble(steering));
-    PyObject_CallMethod(pInstance, "set_steering_percent", pArgs);
-    return
+    PyObject_CallMethod(pInstance, "set_steering_percent", "O", pArgs);
+    return;
 }
 
 PiracerClass::~PiracerClass()
@@ -82,7 +73,7 @@ void PiracerController::readControl()
     
     throttle = PyFloat_AsDouble(pThrottle) * 0.5;
     steering = PyFloat_AsDouble(pSteering);
-    return
+    return;
 }
 
 double PiracerController::getThrottle()
@@ -90,7 +81,7 @@ double PiracerController::getThrottle()
     return throttle;
 }
 
-double PiracerController::getSteering();
+double PiracerController::getSteering()
 {
     return steering;
 }

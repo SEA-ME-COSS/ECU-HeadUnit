@@ -9,9 +9,6 @@
 #include "PiracerClass.hpp"
 
 
-char gearName[4];
-
-
 class PiracerOperatorStubImpl: public v1_0::commonapi::PiracerOperatorStubDefault {
 public:
     PiracerOperatorStubImpl();

@@ -9,15 +9,6 @@
 #include <Python.h>
 
 
-enum gearState
-{
-    P,
-    R,
-    N,
-    D
-};
-
-
 class PiracerClass
 {
     private:
