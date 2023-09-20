@@ -3,7 +3,7 @@
 
 // Include Thread header
 #include "sendBatteryThread.hpp"
-#include "takeControlThread.hpp"
+//#include "takeControlThread.hpp"
 
 
 int main (int argc, char **argv)
