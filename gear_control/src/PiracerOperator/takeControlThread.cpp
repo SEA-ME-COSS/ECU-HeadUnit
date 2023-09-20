@@ -16,7 +16,7 @@ void *takeControlThread(void *arg) {
     
     while (1)
     {
-        //controller.readControl();
+        controller.readControl();
         
         //throttle = controller.getThrottle();
         //steering = controller.getSteering();
