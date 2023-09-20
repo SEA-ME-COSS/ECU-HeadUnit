@@ -1,5 +1,6 @@
 // Include header
 #include "PiracerClass.hpp"
+#include <iostream>
 
 
 PiracerClass::PiracerClass()
