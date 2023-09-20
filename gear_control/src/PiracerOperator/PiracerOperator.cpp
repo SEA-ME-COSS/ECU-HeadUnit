@@ -9,7 +9,7 @@
 int main (int argc, char **argv)
 {
     // Create threads for battery and control
-    pthread_t batteryThread // controlThread;
+    pthread_t batteryThread; // controlThread;
     pthread_create(&batteryThread, NULL, sendBatteryThread, NULL);
     //pthread_create(&controlThread, NULL, takeControlThread, NULL);
 
