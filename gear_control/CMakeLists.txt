@@ -54,4 +54,3 @@ add_executable(IPCManager
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
 )
 target_link_libraries(IPCManager CommonAPI CommonAPI-SomeIP vsomeip3)
-
