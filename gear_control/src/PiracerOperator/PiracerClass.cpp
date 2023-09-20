@@ -1,5 +1,6 @@
 // Include header
 #include "PiracerClass.hpp"
+#include <iostream>
 
 
 PiracerClass::PiracerClass()
@@ -67,6 +68,7 @@ PiracerController::PiracerController()
 void PiracerController::readControl()
 {
     pInput = PyObject_CallMethod(pInstance, "read_data", NULL);
+    std::cout << "Hello World" << std::endl;
     //pThrottle = PyObject_GetAttrString(pInput, "analog_stick_right.y");
     //pSteering = PyObject_GetAttrString(pInput, "analog_stick_left.x");
     
