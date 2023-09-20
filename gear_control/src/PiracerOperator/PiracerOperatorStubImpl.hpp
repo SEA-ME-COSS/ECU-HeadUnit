@@ -9,7 +9,7 @@
 #include "PiracerClass.hpp"
 
 
-char gearName[];
+char gearName[4];
 
 
 class PiracerOperatorStubImpl: public v1_0::commonapi::PiracerOperatorStubDefault {
