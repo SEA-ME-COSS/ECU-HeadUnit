@@ -31,8 +31,10 @@ int main(int argc, char *argv[]) {
     uint16_t gear = 0;
     while (1)
     {
-	targetProxy->setGearMode(0, callStatus, returnMessage);
+	targetProxy->setGearMode(gear, callStatus, returnMessage);
         gear++;
+        if(gear == 4)
+            gear = 0;
         usleep(10000000);
     }
     
