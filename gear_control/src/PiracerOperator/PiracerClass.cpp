@@ -56,7 +56,7 @@ PiracerClass::~PiracerClass()
     //Py_DECREF(pInstance);
     //Py_DECREF(pClass);
     Py_DECREF(pModule);
-    //Py_Finalize();
+    Py_Finalize();
     
     std::cout << "Goodbye piracer" << std::endl;
 }
@@ -64,6 +64,7 @@ PiracerClass::~PiracerClass()
 
 PiracerController::PiracerController()
 {
+    Py_Initialize();
     pModule = PyImport_ImportModule("piracer.gamepads");
     pClass = PyObject_GetAttrString(pModule, "ShanWanGamepad");
     pInstance = PyObject_CallObject(pClass, NULL);
@@ -100,7 +101,6 @@ PiracerController::~PiracerController()
     //Py_DECREF(pInstance);
     //Py_DECREF(pClass);
     Py_DECREF(pModule);
-    Py_Finalize();
     
     std::cout << "Goodbye controller" << std::endl;
 }
