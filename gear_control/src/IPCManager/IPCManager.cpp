@@ -28,10 +28,12 @@ int main(int argc, char *argv[]) {
     CommonAPI::CallStatus callStatus;
     std::string returnMessage;
     
+    uint16_t gear = 0;
     while (1)
     {
-	targetProxy->setGearMode(69, callStatus, returnMessage);
-        usleep(500000);
+	targetProxy->setGearMode(0, callStatus, returnMessage);
+        gear++;
+        usleep(10000000);
     }
     
     return 0;
