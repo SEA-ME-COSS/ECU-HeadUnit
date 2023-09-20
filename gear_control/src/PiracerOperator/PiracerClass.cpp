@@ -73,10 +73,10 @@ void PiracerController::readControl()
     pSteering = PyObject_GetAttrString(pInput, "analog_stick_left");
     pSteering = PyObject_GetAttrString(pSteering, "x");
     
-    std::cout << "Hello World" << std::endl;
+    throttle = PyFloat_AsDouble(pThrottle) * 0.5;
+    steering = PyFloat_AsDouble(pSteering);
     
-    //throttle = PyFloat_AsDouble(pThrottle) * 0.5;
-    //steering = PyFloat_AsDouble(pSteering);
+    std::cout << "Hello World" << std::endl;
     return;
 }
 
