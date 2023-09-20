@@ -14,7 +14,7 @@ int main (int argc, char **argv)
     pthread_create(&controlThread, NULL, takeControlThread, NULL);
 
     pthread_join(batteryThread, NULL);
-    pthread_join(controlThread, NULL);
+    //pthread_join(controlThread, NULL);
 
     return 0;
 }
