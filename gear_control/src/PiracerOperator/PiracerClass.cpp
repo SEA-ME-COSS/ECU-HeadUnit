@@ -1,6 +1,5 @@
 // Include header
 #include "PiracerClass.hpp"
-#include <iostream>
 
 
 PiracerClass::PiracerClass()
@@ -75,8 +74,6 @@ void PiracerController::readControl()
     
     throttle = PyFloat_AsDouble(pThrottle) * 0.5;
     steering = PyFloat_AsDouble(pSteering);
-    
-    std::cout << "Hello World" << std::endl;
     return;
 }
 
