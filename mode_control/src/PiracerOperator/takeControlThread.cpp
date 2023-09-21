@@ -2,15 +2,6 @@
 #include "takeControlThread.hpp"
 
 
-enum gearName
-{
-    P = 0;
-    R = 1;
-    N = 2;
-    D = 3;
-};
-
-
 using namespace v1_0::commonapi;
 
 void *takeControlThread(void *arg) {
@@ -35,12 +26,12 @@ void *takeControlThread(void *arg) {
         
         switch (gearMode)
         {
-            case P:
+            case 0:    // P
                 piracer.applyThrottle(0.0);
                 piracer.applySteering(0.0);
                 break;
                 
-            case R:
+            case 1:    // R
                 if (throttle <= 0)
                     piracer.applyThrottle(throttle);
                     piracer.applySteering(steering);
@@ -49,12 +40,12 @@ void *takeControlThread(void *arg) {
                     piracer.applySteering(steering);
                 break;
                 
-            case N:
+            case 2:    // N
                 piracer.applyThrottle(0.0);
                 piracer.applySteering(steering);
                 break;
                 
-            case D:
+            case 3:    // D
                 if (throttle >= 0)
                     piracer.applyThrottle(throttle);
                     piracer.applySteering(steering);
