@@ -101,3 +101,5 @@ PiracerController::~PiracerController()
 PiracerClass piracer;
 PiracerController controller;
 
+pthread_mutex_t piracerMutex = PTHREAD_MUTEX_INITIALIZER;
+

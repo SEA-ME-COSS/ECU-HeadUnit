@@ -50,6 +50,7 @@ class PiracerController
 extern PiracerClass piracer;
 extern PiracerController controller;
 
+extern pthread_mutex_t piracerMutex;
 
 #endif
 

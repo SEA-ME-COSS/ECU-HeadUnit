@@ -22,9 +22,9 @@ void *sendBatteryThread(void *arg)
     
     while (1)
     {
-        pthread_mutex_lock(&piracer);
+        pthread_mutex_lock(&piracerMutex);
 	targetPoxy->setBatteryLevel(piracer.getBatteryLevel(), callStatus, returnMessage);
-	pthread_mutex_unlock(&piracer);
+	pthread_mutex_unlock(&piracerMutex);
 	
         usleep(500000);
     }

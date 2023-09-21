@@ -22,7 +22,7 @@ void *takeControlThread(void *arg) {
         throttle = controller.getThrottle();
         steering = controller.getSteering();
         
-        pthread_mutex_lock(&piracer);
+        pthread_mutex_lock(&piracerMutex);
         
         gearMode = piracer.getGearMode();
         switch (gearMode)
@@ -64,7 +64,7 @@ void *takeControlThread(void *arg) {
                 break;
         }
         
-        pthread_mutex_unlock(&piracer);
+        pthread_mutex_unlock(&piracerMutex);
     }
 
     return NULL;
