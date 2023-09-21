@@ -9,7 +9,7 @@ PiracerClass::PiracerClass()
     pClass = PyObject_GetAttrString(pModule, "PiRacerStandard");
     pInstance = PyObject_CallObject(pClass, NULL);
     
-    gearMode = 0;    // P
+    gearMode = 3;    // P
 }
 
 void PiracerClass::setGearMode(uint16_t _gearMode)
