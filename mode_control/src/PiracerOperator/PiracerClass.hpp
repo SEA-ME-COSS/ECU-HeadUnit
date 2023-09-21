@@ -31,26 +31,10 @@ class PiracerClass
 };
 
 
-class PiracerController
-{
-    private:
-        PyObject *pModule, *pClass, *pInstance, *pInput, *pThrottle, *pSteering;
-        double throttle;
-        double steering;
-        
-    public:
-        PiracerController();
-        void readControl();
-        double getThrottle();
-        double getSteering();
-        ~PiracerController();
-};
-
-
 extern PiracerClass piracer;
-extern PiracerController controller;
 
 extern pthread_mutex_t piracerMutex;
+
 
 #endif
 

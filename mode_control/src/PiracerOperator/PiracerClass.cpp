@@ -46,60 +46,10 @@ void PiracerClass::applySteering(double steering)
     return;
 }
 
-PiracerClass::~PiracerClass()
-{
-    Py_DECREF(pArgs);
-    Py_DECREF(pVoltage);
-    Py_DECREF(pInstance);
-    Py_DECREF(pClass);
-    Py_DECREF(pModule);
-    Py_Finalize();
-}
-
-
-PiracerController::PiracerController()
-{
-    pModule = PyImport_ImportModule("piracer.gamepads");
-    pClass = PyObject_GetAttrString(pModule, "ShanWanGamepad");
-    pInstance = PyObject_CallObject(pClass, NULL);
-}
-
-void PiracerController::readControl()
-{
-    pInput = PyObject_CallMethod(pInstance, "read_data", NULL);
-    pThrottle = PyObject_GetAttrString(pInput, "analog_stick_right");
-    pThrottle = PyObject_GetAttrString(pThrottle, "y");
-    pSteering = PyObject_GetAttrString(pInput, "analog_stick_left");
-    pSteering = PyObject_GetAttrString(pSteering, "x");
-    
-    throttle = PyFloat_AsDouble(pThrottle) * 0.5;
-    steering = PyFloat_AsDouble(pSteering);
-    return;
-}
-
-double PiracerController::getThrottle()
-{
-    return throttle;
-}
-
-double PiracerController::getSteering()
-{
-    return steering;
-}
-
-PiracerController::~PiracerController()
-{
-    Py_DECREF(pThrottle);
-    Py_DECREF(pSteering);
-    Py_DECREF(pInput);
-    Py_DECREF(pInstance);
-    Py_DECREF(pClass);
-    Py_DECREF(pModule);
-}
+PiracerClass::~PiracerClass() {}
 
 
 PiracerClass piracer;
-PiracerController controller;
 
 pthread_mutex_t piracerMutex = PTHREAD_MUTEX_INITIALIZER;
 

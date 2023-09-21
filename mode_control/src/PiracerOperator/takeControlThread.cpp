@@ -17,11 +17,11 @@ void *takeControlThread(void *arg) {
     
     while (1)
     {
-        pthread_mutex_lock(&piracerMutex);
-    
         controller.readControl();
         throttle = controller.getThrottle();
         steering = controller.getSteering();
+        
+        pthread_mutex_lock(&piracerMutex);
         
         gearMode = piracer.getGearMode();
         switch (gearMode)
@@ -64,7 +64,7 @@ void *takeControlThread(void *arg) {
         }
         
         pthread_mutex_unlock(&piracerMutex);
-        usleep(100000);
+        //usleep(1000000);
     }
 
     return NULL;

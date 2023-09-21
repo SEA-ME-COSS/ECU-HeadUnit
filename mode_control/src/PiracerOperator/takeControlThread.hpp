@@ -7,6 +7,9 @@
 #include <string>
 #include <unistd.h>
 
+// Include controller class header
+#include "ControllerClass.hpp"
+
 // Include piracer operator service header
 #include "PiracerOperatorStubImpl.hpp"
 
