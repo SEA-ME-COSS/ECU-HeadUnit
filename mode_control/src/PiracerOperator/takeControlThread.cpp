@@ -33,11 +33,15 @@ void *takeControlThread(void *arg) {
                 
             case 1:    // R
                 if (throttle <= 0)
+                {
                     piracer.applyThrottle(throttle);
                     piracer.applySteering(steering);
+                }
                 else
+                {
                     piracer.applyThrottle(0.0);
                     piracer.applySteering(steering);
+                }
                 break;
                 
             case 2:    // N
@@ -47,11 +51,15 @@ void *takeControlThread(void *arg) {
                 
             case 3:    // D
                 if (throttle >= 0)
+                {
                     piracer.applyThrottle(throttle);
                     piracer.applySteering(steering);
+                }
                 else
+                {
                     piracer.applyThrottle(0.0);
                     piracer.applySteering(steering);
+                }
                 break;
         }
     }
