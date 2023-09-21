@@ -19,9 +19,8 @@ void *takeControlThread(void *arg) {
     while (1)
     {
         controller.readControl();
-        std::cout<<"hello world"<<std::endl;
         
-        /*throttle = controller.getThrottle();
+        throttle = controller.getThrottle();
         steering = controller.getSteering();
         
         gearMode = piracer.getGearMode();
@@ -63,7 +62,7 @@ void *takeControlThread(void *arg) {
                     piracer.applySteering(steering);
                 }
                 break;
-        } */
+        }
     }
 
     return NULL;
