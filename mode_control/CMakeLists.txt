@@ -36,6 +36,7 @@ add_executable(PiracerOperator
         src/PiracerOperator/sendBatteryThread.cpp
         src/PiracerOperator/PiracerClass.cpp
         src/PiracerOperator/takeControlThread.cpp
+        src/PiracerOperator/ControllerClass.cpp
         src/PiracerOperator/PiracerOperatorStubImpl.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
