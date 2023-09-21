@@ -1,6 +1,5 @@
 // Include header
 #include "takeControlThread.hpp"
-#include <iostream>
 
 
 using namespace v1_0::commonapi;
@@ -23,8 +22,9 @@ void *takeControlThread(void *arg) {
         throttle = controller.getThrottle();
         steering = controller.getSteering();
         
-        gearMode = piracer.getGearMode();
+        pthread_mutex_lock(&piracer);
         
+        gearMode = piracer.getGearMode();
         switch (gearMode)
         {
             case 0:    // P
@@ -63,6 +63,8 @@ void *takeControlThread(void *arg) {
                 }
                 break;
         }
+        
+        pthread_mutex_unlock(&piracer);
     }
 
     return NULL;

@@ -12,7 +12,9 @@ void PiracerOperatorStubImpl::setGearMode(const std::shared_ptr<CommonAPI::Clien
 		std::cout << "Gear Mode: " << gearName[_gearMode] << std::endl;
 		std::cout << "********************" << std::endl;
 
+                pthread_mutex_lock(&piracer);
 		piracer.setGearMode(_gearMode);
+		pthread_mutex_unlock(&piracer);
 
 		_reply(":)");
 };
