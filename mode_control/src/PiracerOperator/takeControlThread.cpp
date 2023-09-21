@@ -15,13 +15,10 @@ void *takeControlThread(void *arg) {
     double throttle, steering;
     uint16_t gearMode;
     
-    while (1) {}
-    
-    /*
     while (1)
     {
         controller.readControl();
-        
+        /*
         throttle = controller.getThrottle();
         steering = controller.getSteering();
         
@@ -63,10 +60,9 @@ void *takeControlThread(void *arg) {
                     piracer.applyThrottle(0.0);
                     piracer.applySteering(steering);
                 }
-                break;
+                break; */
         }
     }
-    */
 
     return NULL;
 }
