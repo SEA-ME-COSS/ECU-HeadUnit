@@ -1,5 +1,6 @@
 // Include header
 #include "takeControlThread.hpp"
+#include <iostream>
 
 
 using namespace v1_0::commonapi;
@@ -17,9 +18,10 @@ void *takeControlThread(void *arg) {
     
     while (1)
     {
-        /*controller.readControl();
+        controller.readControl();
+        std::cout<<"hello world"<<std::endl;
         
-        throttle = controller.getThrottle();
+        /*throttle = controller.getThrottle();
         steering = controller.getSteering();
         
         gearMode = piracer.getGearMode();
