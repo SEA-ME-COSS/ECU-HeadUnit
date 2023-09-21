@@ -60,8 +60,8 @@ void *takeControlThread(void *arg) {
                     piracer.applyThrottle(0.0);
                     piracer.applySteering(steering);
                 }
-                break; */
-        }
+                break;
+        } */
     }
 
     return NULL;
