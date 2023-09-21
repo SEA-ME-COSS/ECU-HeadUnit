@@ -15,6 +15,9 @@ void *takeControlThread(void *arg) {
     double throttle, steering;
     uint16_t gearMode;
     
+    while (1) {}
+    
+    /*
     while (1)
     {
         controller.readControl();
@@ -63,6 +66,7 @@ void *takeControlThread(void *arg) {
                 break;
         }
     }
+    */
 
     return NULL;
 }
