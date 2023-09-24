@@ -50,11 +50,11 @@ Item {
     }
 
     function run_ui() {
-        valueSource.speed = carinfo.getSpeed()
-        valueSource.rpm = carinfo.getRPM()
-        valueSource.battery = carinfo.getBattery()
-        valueSource.gear = carinfo.getGear()
-        valueSource.direction = carinfo.getDirection()
+        valueSource.speed = carinfo.getQSpeed()
+        valueSource.rpm = carinfo.getQRPM()
+        valueSource.battery = carinfo.getQBattery()
+        valueSource.gear = carinfo.getQGear()
+        valueSource.direction = carinfo.getQDirection()
 
         if (valueSource.direction === 1) {
             valueSource.blink_left()

@@ -70,12 +70,15 @@ target_link_libraries(IPCManager CommonAPI CommonAPI-SomeIP vsomeip3)
 
 
 add_executable(InstrumentCluster
-	src/InstrumentCluster/main.cpp
-	src/InstrumentCluster/CarInformation.cpp
+	src/InstrumentCluster/InstrumentCluster.cpp
+	src/InstrumentCluster/InstrumentClusterStubImpl.cpp
+        src/InstrumentCluster/CarInformation.cpp
 	src/InstrumentCluster/qml.qrc
+	src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPStubAdapter.cpp
+        src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp
 )
 target_compile_definitions(InstrumentCluster
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(InstrumentCluster
-  PRIVATE Qt5::Core Qt5::Quick Qt5::Gui)
+  PRIVATE Qt5::Core Qt5::Quick Qt5::Gui CommonAPI CommonAPI-SomeIP vsomeip3)
 
