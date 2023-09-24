@@ -142,6 +142,30 @@ InstrumentCluster_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/InstrumentCluster_autogen.dir/build.make CMakeFiles/InstrumentCluster_autogen.dir/build
 .PHONY : InstrumentCluster_autogen/fast
 
+CarInformation.o: CarInformation.cpp.o
+.PHONY : CarInformation.o
+
+# target to build an object file
+CarInformation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/InstrumentCluster.dir/build.make CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.o
+.PHONY : CarInformation.cpp.o
+
+CarInformation.i: CarInformation.cpp.i
+.PHONY : CarInformation.i
+
+# target to preprocess a source file
+CarInformation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/InstrumentCluster.dir/build.make CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.i
+.PHONY : CarInformation.cpp.i
+
+CarInformation.s: CarInformation.cpp.s
+.PHONY : CarInformation.s
+
+# target to generate assembly for a file
+CarInformation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/InstrumentCluster.dir/build.make CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.s
+.PHONY : CarInformation.cpp.s
+
 InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.o: InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.cpp.o
 .PHONY : InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.o
 
@@ -224,6 +248,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... InstrumentCluster_autogen"
 	@echo "... InstrumentCluster"
+	@echo "... CarInformation.o"
+	@echo "... CarInformation.i"
+	@echo "... CarInformation.s"
 	@echo "... InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.o"
 	@echo "... InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.i"
 	@echo "... InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.s"

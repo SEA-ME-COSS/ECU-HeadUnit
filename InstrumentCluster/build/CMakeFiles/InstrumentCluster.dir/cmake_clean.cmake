@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/InstrumentCluster_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/InstrumentCluster_autogen.dir/ParseCache.txt"
   "InstrumentCluster_autogen"
+  "CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.o"
+  "CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.o.d"
   "CMakeFiles/InstrumentCluster.dir/InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.cpp.o"
   "CMakeFiles/InstrumentCluster.dir/InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.cpp.o.d"
   "CMakeFiles/InstrumentCluster.dir/InstrumentCluster_autogen/mocs_compilation.cpp.o"

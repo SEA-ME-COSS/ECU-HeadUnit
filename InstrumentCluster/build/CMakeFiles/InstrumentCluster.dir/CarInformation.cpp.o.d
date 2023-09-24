@@ -1,9 +1,11 @@
-CMakeFiles/InstrumentCluster.dir/main.cpp.o: \
- /home/ha/바탕화면/DES-Head-Unit/InstrumentCluster/main.cpp \
+CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.o: \
+ /home/ha/바탕화면/DES-Head-Unit/InstrumentCluster/CarInformation.cpp \
  /usr/include/stdc-predef.h \
- /opt/Qt/5.15.0/gcc_64/include/QtGui/QGuiApplication \
- /opt/Qt/5.15.0/gcc_64/include/QtGui/qguiapplication.h \
- /opt/Qt/5.15.0/gcc_64/include/QtGui/qtguiglobal.h \
+ /home/ha/바탕화면/DES-Head-Unit/InstrumentCluster/CarInformation.hpp \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/QObject \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qobject.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qobjectdefs.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qnamespace.h \
  /opt/Qt/5.15.0/gcc_64/include/QtCore/qglobal.h \
  /usr/include/c++/11/type_traits \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -97,13 +99,11 @@ CMakeFiles/InstrumentCluster.dir/main.cpp.o: \
  /opt/Qt/5.15.0/gcc_64/include/QtCore/qglobalstatic.h \
  /opt/Qt/5.15.0/gcc_64/include/QtCore/qnumeric.h \
  /opt/Qt/5.15.0/gcc_64/include/QtCore/qversiontagging.h \
- /opt/Qt/5.15.0/gcc_64/include/QtGui/qtgui-config.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qcoreapplication.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
  /opt/Qt/5.15.0/gcc_64/include/QtCore/qstring.h \
  /opt/Qt/5.15.0/gcc_64/include/QtCore/qchar.h \
  /opt/Qt/5.15.0/gcc_64/include/QtCore/qbytearray.h \
  /opt/Qt/5.15.0/gcc_64/include/QtCore/qrefcount.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qnamespace.h \
  /opt/Qt/5.15.0/gcc_64/include/QtCore/qarraydata.h /usr/include/string.h \
  /usr/include/strings.h /usr/include/c++/11/stdlib.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
@@ -178,9 +178,6 @@ CMakeFiles/InstrumentCluster.dir/main.cpp.o: \
  /opt/Qt/5.15.0/gcc_64/include/QtCore/qstringliteral.h \
  /opt/Qt/5.15.0/gcc_64/include/QtCore/qstringalgorithms.h \
  /opt/Qt/5.15.0/gcc_64/include/QtCore/qstringview.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qobject.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qobjectdefs.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
  /opt/Qt/5.15.0/gcc_64/include/QtCore/qlist.h \
  /opt/Qt/5.15.0/gcc_64/include/QtCore/qalgorithms.h \
  /opt/Qt/5.15.0/gcc_64/include/QtCore/qiterator.h \
@@ -224,54 +221,4 @@ CMakeFiles/InstrumentCluster.dir/main.cpp.o: \
  /opt/Qt/5.15.0/gcc_64/include/QtCore/qobject_impl.h \
  /usr/include/c++/11/chrono /usr/include/c++/11/ratio \
  /usr/include/c++/11/limits /usr/include/c++/11/ctime \
- /usr/include/c++/11/bits/parse_numbers.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qcoreevent.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qeventloop.h \
- /opt/Qt/5.15.0/gcc_64/include/QtGui/qwindowdefs.h \
- /opt/Qt/5.15.0/gcc_64/include/QtGui/qinputmethod.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qlocale.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qvariant.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qmap.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qhash.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qshareddata.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qpoint.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qsize.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qmargins.h \
- /opt/Qt/5.15.0/gcc_64/include/QtQml/QQmlApplicationEngine \
- /opt/Qt/5.15.0/gcc_64/include/QtQml/qqmlapplicationengine.h \
- /opt/Qt/5.15.0/gcc_64/include/QtQml/qqmlengine.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qurl.h \
- /opt/Qt/5.15.0/gcc_64/include/QtQml/qjsengine.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qsharedpointer.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
- /usr/include/c++/11/memory \
- /usr/include/c++/11/bits/stl_raw_storage_iter.h \
- /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
- /usr/include/c++/11/bits/unique_ptr.h \
- /usr/include/c++/11/bits/shared_ptr.h \
- /usr/include/c++/11/bits/shared_ptr_base.h \
- /usr/include/c++/11/ext/concurrence.h \
- /usr/include/c++/11/bits/shared_ptr_atomic.h \
- /usr/include/c++/11/backward/auto_ptr.h \
- /opt/Qt/5.15.0/gcc_64/include/QtQml/qjsvalue.h \
- /opt/Qt/5.15.0/gcc_64/include/QtQml/qtqmlglobal.h \
- /opt/Qt/5.15.0/gcc_64/include/QtQml/qtqml-config.h \
- /opt/Qt/5.15.0/gcc_64/include/QtNetwork/qtnetworkglobal.h \
- /opt/Qt/5.15.0/gcc_64/include/QtNetwork/qtnetwork-config.h \
- /opt/Qt/5.15.0/gcc_64/include/QtQml/qqmldebug.h \
- /opt/Qt/5.15.0/gcc_64/include/QtQml/qqml.h \
- /opt/Qt/5.15.0/gcc_64/include/QtQml/qqmlprivate.h \
- /opt/Qt/5.15.0/gcc_64/include/QtQml/qqmlparserstatus.h \
- /opt/Qt/5.15.0/gcc_64/include/QtQml/qqmllist.h \
- /opt/Qt/5.15.0/gcc_64/include/QtQml/qqmlpropertyvaluesource.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qpointer.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qmetaobject.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qdebug.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qtextstream.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qiodevice.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qset.h \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qcontiguouscache.h \
- /opt/Qt/5.15.0/gcc_64/include/QtQml/qqmlerror.h \
- /home/ha/바탕화면/DES-Head-Unit/InstrumentCluster/CarInformation.hpp \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/QObject \
- /opt/Qt/5.15.0/gcc_64/include/QtCore/qobject.h
+ /usr/include/c++/11/bits/parse_numbers.h

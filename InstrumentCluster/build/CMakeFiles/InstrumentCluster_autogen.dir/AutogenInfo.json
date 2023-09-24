@@ -226,7 +226,15 @@
 	"CMAKE_SOURCE_DIR" : "/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/InstrumentCluster",
 	"DEP_FILE" : "",
 	"DEP_FILE_RULE_NAME" : "",
-	"HEADERS" : [],
+	"HEADERS" : 
+	[
+		[
+			"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/InstrumentCluster/CarInformation.hpp",
+			"MU",
+			"EWIEGA46WW/moc_CarInformation.cpp",
+			null
+		]
+	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/InstrumentCluster/build/InstrumentCluster_autogen/include",
 	"MOC_COMPILATION_FILE" : "/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/InstrumentCluster/build/InstrumentCluster_autogen/mocs_compilation.cpp",
@@ -291,6 +299,11 @@
 	"SETTINGS_FILE" : "/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/InstrumentCluster/build/CMakeFiles/InstrumentCluster_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/InstrumentCluster/CarInformation.cpp",
+			"MU",
+			null
+		],
 		[
 			"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/InstrumentCluster/main.cpp",
 			"MU",

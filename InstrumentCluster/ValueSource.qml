@@ -1,9 +1,14 @@
 import QtQuick 2.2
+import com.example 1.0
 
 Item {
     id: valueSource
 
-    property int speed: 0
+    CarInformation {
+        id: carinfo
+    }
+
+    property int speed: carinfo.getSpeed()
     property int rpm: 0
     property int battery: 0
     property int gear: 0

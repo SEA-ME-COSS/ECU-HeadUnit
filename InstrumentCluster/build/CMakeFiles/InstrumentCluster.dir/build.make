@@ -113,10 +113,24 @@ CMakeFiles/InstrumentCluster.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/InstrumentCluster.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ha/바탕화면/DES-Head-Unit/InstrumentCluster/main.cpp -o CMakeFiles/InstrumentCluster.dir/main.cpp.s
 
+CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.o: CMakeFiles/InstrumentCluster.dir/flags.make
+CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.o: ../CarInformation.cpp
+CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.o: CMakeFiles/InstrumentCluster.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/InstrumentCluster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.o -MF CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.o.d -o CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/InstrumentCluster/CarInformation.cpp
+
+CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ha/바탕화면/DES-Head-Unit/InstrumentCluster/CarInformation.cpp > CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.i
+
+CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ha/바탕화면/DES-Head-Unit/InstrumentCluster/CarInformation.cpp -o CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.s
+
 CMakeFiles/InstrumentCluster.dir/InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.cpp.o: CMakeFiles/InstrumentCluster.dir/flags.make
 CMakeFiles/InstrumentCluster.dir/InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.cpp.o: InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.cpp
 CMakeFiles/InstrumentCluster.dir/InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.cpp.o: CMakeFiles/InstrumentCluster.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/InstrumentCluster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/InstrumentCluster.dir/InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/InstrumentCluster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/InstrumentCluster.dir/InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/InstrumentCluster.dir/InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.cpp.o -MF CMakeFiles/InstrumentCluster.dir/InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.cpp.o.d -o CMakeFiles/InstrumentCluster.dir/InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/InstrumentCluster/build/InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.cpp
 
 CMakeFiles/InstrumentCluster.dir/InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.cpp.i: cmake_force
@@ -131,6 +145,7 @@ CMakeFiles/InstrumentCluster.dir/InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.cp
 InstrumentCluster_OBJECTS = \
 "CMakeFiles/InstrumentCluster.dir/InstrumentCluster_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/InstrumentCluster.dir/main.cpp.o" \
+"CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.o" \
 "CMakeFiles/InstrumentCluster.dir/InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.cpp.o"
 
 # External object files for target InstrumentCluster
@@ -138,16 +153,17 @@ InstrumentCluster_EXTERNAL_OBJECTS =
 
 InstrumentCluster: CMakeFiles/InstrumentCluster.dir/InstrumentCluster_autogen/mocs_compilation.cpp.o
 InstrumentCluster: CMakeFiles/InstrumentCluster.dir/main.cpp.o
+InstrumentCluster: CMakeFiles/InstrumentCluster.dir/CarInformation.cpp.o
 InstrumentCluster: CMakeFiles/InstrumentCluster.dir/InstrumentCluster_autogen/EWIEGA46WW/qrc_qml.cpp.o
 InstrumentCluster: CMakeFiles/InstrumentCluster.dir/build.make
 InstrumentCluster: /opt/Qt/5.15.0/gcc_64/lib/libQt5Quick.so.5.15.0
+InstrumentCluster: /opt/Qt/5.15.0/gcc_64/lib/libQt5Gui.so.5.15.0
 InstrumentCluster: /opt/Qt/5.15.0/gcc_64/lib/libQt5QmlModels.so.5.15.0
 InstrumentCluster: /opt/Qt/5.15.0/gcc_64/lib/libQt5Qml.so.5.15.0
 InstrumentCluster: /opt/Qt/5.15.0/gcc_64/lib/libQt5Network.so.5.15.0
-InstrumentCluster: /opt/Qt/5.15.0/gcc_64/lib/libQt5Gui.so.5.15.0
 InstrumentCluster: /opt/Qt/5.15.0/gcc_64/lib/libQt5Core.so.5.15.0
 InstrumentCluster: CMakeFiles/InstrumentCluster.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ha/바탕화면/DES-Head-Unit/InstrumentCluster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable InstrumentCluster"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ha/바탕화면/DES-Head-Unit/InstrumentCluster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable InstrumentCluster"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/InstrumentCluster.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

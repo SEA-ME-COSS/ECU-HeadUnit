@@ -17,10 +17,11 @@ find_package(Qt5 COMPONENTS Core Quick Gui REQUIRED)
 
 add_executable(InstrumentCluster
 	main.cpp
+	CarInformation.cpp
 	qml.qrc
 )
 target_compile_definitions(InstrumentCluster
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(InstrumentCluster
-  PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick)
+  PRIVATE Qt5::Core Qt5::Quick Qt5::Gui)
 

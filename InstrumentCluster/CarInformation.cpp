@@ -2,64 +2,60 @@
 
 CarInformation::CarInformation(QObject *parent) : QObject(parent)
 {
-    speed = 0;
-    battery = 0.0;
-    gear = 0;
-    rpm = 0;
+    speed = 50;
+    rpm = 50;
+    battery = 50;
+    gear = 1;
+    direction = 1;
 }
 
-// Set the car's speed.
-QString CarInformation::setSpeed(quint16 speed)
+QString CarInformation::setSpeedRPM(quint16 _sensorRPM)
 {
-    this->speed = speed;
-    qDebug() << "Receive Speed Data : " << speed;
-    return "Get Speed";
+    rpm = (quint16)((qreal)_sensorRPM / 2.6);
+    speed = (quint16)((qreal)rpm * 3.4);
+    return ":)";
 }
 
-// Set the car's battery level.
-QString CarInformation::setBattery(qreal battery)
+QString CarInformation::setBattery(quint16 _battery)
 {
-    this->battery = battery;
-    qDebug() << "Receive Battery Data : " << battery;
-    return "Get Battery";
+    battery = _battery;
+    return ":)";
 }
 
-// Set the car's gear.
-QString CarInformation::setGear(quint8 gear)
+QString CarInformation::setGear(quint16 _gear)
 {
-    this->gear = gear;
-    qDebug() << "Receive Gear Data : " << gear;
-    return "Get Gear";
+    gear = _gear;
+    return ":)";
 }
 
-// Set the car's RPM.
-QString CarInformation::setRpm(quint16 rpm)
+QString CarInformation::setDirection(quint16 _direction)
 {
-    this->rpm = rpm;
-    qDebug() << "Receive Rpm Data : " << rpm;
-    return "Get Rpm";
+    direction = _direction;
+    return ":)";
 }
 
-// Return the car's speed.
 Q_INVOKABLE quint16 CarInformation::getSpeed()
 {
     return speed;
 }
 
-// Return the car's battery level.
-Q_INVOKABLE qreal CarInformation::getBattery()
+Q_INVOKABLE quint16 CarInformation::getRPM()
+{
+    return rpm;
+}
+
+Q_INVOKABLE quint16 CarInformation::getBattery()
 {
     return battery;
 }
 
-// Return the car's gear.
-Q_INVOKABLE quint8 CarInformation::getGear()
+Q_INVOKABLE quint16 CarInformation::getGear()
 {
     return gear;
 }
 
-// Return the car's RPM.
-Q_INVOKABLE quint16 CarInformation::getRpm()
+Q_INVOKABLE quint16 CarInformation::getDirection()
 {
-    return rpm;
+    return direction;
 }
+
