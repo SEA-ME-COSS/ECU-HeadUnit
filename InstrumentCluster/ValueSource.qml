@@ -22,16 +22,18 @@ Item {
         valueSource.left_direction = (valueSource.left_direction === 0) ? 1 : 0
     }
     function blink_right() {
-        valueSource.right_direction = (valueSource.right_direction) === 0 ? 1 : 0
+        valueSource.right_direction = (valueSource.right_direction === 0) ? 1 : 0
     }
     function blink_direction() {
         if (valueSource.direction === 1) {
             valueSource.blink_left()
         } else if (valueSource.direction === 2) {
             valueSource.blink_right()
+        } else {
+            valueSource.left_direction = 0
+            valueSource.right_direction = 0
         }
     }
-
     Timer {
        interval: 500; running: true; repeat: true
        onTriggered: valueSource.blink_direction()
