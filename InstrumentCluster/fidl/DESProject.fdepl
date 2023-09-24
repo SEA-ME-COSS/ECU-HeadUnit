@@ -34,3 +34,27 @@ define org.genivi.commonapi.someip.deployment for provider as Service {
         }
 }
 
+
+define org.genivi.commonapi.someip.deployment for interface commonapi.InstrumentCluster {
+        SomeIpServiceID = 1002
+
+        method setSpeedRPM {
+                SomeIpMethodID = 103
+        }
+        method setBattery {
+                SomeIpMethodID = 104
+        }
+        method setGear {
+                SomeIpMethodID = 105
+        }
+        method setDirection {
+                SomeIpMethodID = 106
+        }
+}
+define org.genivi.commonapi.someip.deployment for provider as Service {
+        instance commonapi.InstrumentCluster {
+                InstanceId = "InstrumentCluster"
+                SomeIpInstanceID = 10002
+        }
+}
+
