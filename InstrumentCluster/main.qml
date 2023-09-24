@@ -101,7 +101,7 @@ Window {
             text: "P"
             font.family: font.name
             font.pixelSize: 70
-            color: "black"
+            color: (valueSource.gear === 0) ? "black" : "lightgray"
             x: parent.width / 2 - width / 2 - 180
             y: 180
         }
@@ -110,7 +110,7 @@ Window {
             text: "D"
             font.family: font.name
             font.pixelSize: 70
-            color: "lightgray"
+            color: (valueSource.gear === 3) ? "black" : "lightgray"
             x: parent.width / 2 - width / 2 + 190
             y: 180
         }
@@ -119,7 +119,7 @@ Window {
             text: "R"
             font.family: font.name
             font.pixelSize: 70
-            color: "lightgray"
+            color: (valueSource.gear === 1) ? "black" : "lightgray"
             x: parent.width / 2 - width / 2 - 140
             y: 250
         }
@@ -128,7 +128,7 @@ Window {
             text: "N"
             font.family: font.name
             font.pixelSize: 70
-            color: "lightgray"
+            color: (valueSource.gear === 2) ? "black" : "lightgray"
             x: parent.width / 2 - width / 2 + 150
             y: 250
         }
@@ -141,7 +141,7 @@ Window {
             fillMode: Image.PreserveAspectFit
             x: parent.width / 2 - width / 2 - 180
             y: 30
-            opacity: 1.0
+            opacity: (valueSource.left_direction === 1) ? 1.0 : 0.2
         }
 
         Image {
@@ -151,7 +151,7 @@ Window {
             rotation: 90
             x: parent.width / 2 - width / 2 + 180
             y: 30
-            opacity: 0.2
+            opacity: (valueSource.right_direction === 1) ? 1.0 : 0.2
         }
     }
 }

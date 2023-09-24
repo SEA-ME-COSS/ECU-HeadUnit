@@ -6,72 +6,34 @@ Item {
     property int speed: 0
     property int rpm: 0
     property int battery: 0
+    property int gear: 0
+    property int direction: 0
 
-    SequentialAnimation {
-        running: true
-        loops: 1
+    property int left_direction: 0
+    property int right_direction: 0
 
-        PropertyAction {
-            target: valueSource
-            property: "start"
-            value: false
+    //function run_ui() {
+    //    valueSource.speed = carinfo.getSpeed()
+    //    valueSource.battery = carinfo.getBattery()
+    //    valueSource.rpm = carinfo.getRpm()
+    //}
+
+    function blink_left() {
+        valueSource.left_direction = (valueSource.left_direction === 0) ? 1 : 0
+    }
+    function blink_right() {
+        valueSource.right_direction = (valueSource.right_direction) === 0 ? 1 : 0
+    }
+    function blink_direction() {
+        if (valueSource.direction === 1) {
+            valueSource.blink_left()
+        } else if (valueSource.direction === 2) {
+            valueSource.blink_right()
         }
+    }
 
-        SequentialAnimation {
-            loops: Animation.Infinite
-
-            ParallelAnimation {
-                NumberAnimation {
-                    target: valueSource
-                    property: "speed"
-                    easing.type: Easing.InOutSine
-                    from: 0
-                    to: 200
-                    duration: 3000
-                }
-                NumberAnimation {
-                    target: valueSource
-                    property: "rpm"
-                    easing.type: Easing.InOutSine
-                    from: 0
-                    to: 400
-                    duration: 3000
-                }
-                NumberAnimation {
-                    target: valueSource
-                    property: "battery"
-                    easing.type: Easing.InOutSine
-                    from: 0
-                    to: 100
-                    duration: 3000
-                }
-            }
-            ParallelAnimation {
-                NumberAnimation {
-                    target: valueSource
-                    property: "speed"
-                    easing.type: Easing.InOutSine
-                    from: 200
-                    to: 0
-                    duration: 3000
-                }
-                NumberAnimation {
-                    target: valueSource
-                    property: "rpm"
-                    easing.type: Easing.InOutSine
-                    from: 400
-                    to: 0
-                    duration: 3000
-                }
-                NumberAnimation {
-                    target: valueSource
-                    property: "battery"
-                    easing.type: Easing.InOutSine
-                    from: 100
-                    to: 0
-                    duration: 3000
-                }
-            }
-        }
+    Timer {
+       interval: 500; running: true; repeat: true
+       onTriggered: valueSource.blink_direction()
     }
 }
