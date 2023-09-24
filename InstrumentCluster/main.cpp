@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
     
-    qmlRegisterType<CarInformation>("com.example", 1, 0, "CarInformation");
+    qmlRegisterType<CarInformation>("DataModule", 1, 0, "CarInformation");
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));

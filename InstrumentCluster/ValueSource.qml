@@ -1,5 +1,5 @@
 import QtQuick 2.2
-import com.example 1.0
+import DataModule 1.0
 
 Item {
     id: valueSource
