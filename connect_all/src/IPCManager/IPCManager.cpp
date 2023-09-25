@@ -22,23 +22,19 @@ int main(int argc, char *argv[]) {
     runtime->registerService("local", "IPCManager", IPCManagerService);
     targetProxy1 = runtime->buildProxy<PiracerOperatorProxy>("local", "PiracerOperator");
     targetProxy2 = runtime->buildProxy<InstrumentClusterProxy>("local", "InstrumentCluster");
-
-    std::cout << "Checking availability!" << std::endl;
-    while (!targetProxy2->isAvailable())
-        usleep(10);
-    std::cout << "Available!" << std::endl;
     
     CommonAPI::CallStatus callStatus;
     std::string returnMessage;
     
     uint16_t sensorRPM = 0;
+    uint16_t gear = 0;
     while (1)
     {
-        targetProxy2->setSpeedRpm(sensorRPM, callStatus, returnMessage);
-        sensorRPM += 30;
-        if(sensorRPM > 350)
-            sensorRPM = 0;
-        usleep(500000);
+        targetProxy1->setGearMode(gear, callStatus, returnMessage);
+        gear++;
+        if(gear == 4)
+            gear = 0;
+        usleep(5000000);
     }
     
     return 0;
