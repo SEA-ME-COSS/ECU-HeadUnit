@@ -1,5 +1,5 @@
 #include "InstrumentClusterStubImpl.hpp"
-#include <iostream>
+
 
 InstrumentClusterStubImpl::InstrumentClusterStubImpl() { }
 InstrumentClusterStubImpl::~InstrumentClusterStubImpl() { }
@@ -9,8 +9,7 @@ void InstrumentClusterStubImpl::setSpeedRPM(const std::shared_ptr<CommonAPI::Cli
     rpm = (uint16_t)((float)_sensorRPM / 2.6);
     speed = (uint16_t)((float)rpm * 3.4);
     pthread_mutex_unlock(&CarInformationMutex);
-    
-    std::cout<<rpm<<' '<<speed<<std::endl;
+
     _reply(":)");
 };
 

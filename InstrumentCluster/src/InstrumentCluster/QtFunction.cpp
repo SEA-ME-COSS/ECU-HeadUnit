@@ -1,32 +1,45 @@
 #include "QtFunction.hpp"
-#include <iostream>
+
 
 QtFunction::QtFunction(QObject *parent) : QObject(parent) { }
 
 Q_INVOKABLE quint16 QtFunction::getSpeed()
 {
-    std::cout<<speed<<std::endl;
-    return speed;
+    pthread_mutex_lock(&CarInformationMutex);
+    temp = speed;
+    pthread_mutex_unlock(&CarInformationMutex);
+    return temp;
 }
 
 Q_INVOKABLE quint16 QtFunction::getRPM()
 {
-    std::cout<<rpm<<std::endl;
-    return rpm;
+    pthread_mutex_lock(&CarInformationMutex);
+    temp = rpm;
+    pthread_mutex_unlock(&CarInformationMutex);
+    return temp;
 }
 
 Q_INVOKABLE quint16 QtFunction::getBattery()
 {
-    return battery;
+    pthread_mutex_lock(&CarInformationMutex);
+    temp = battery;
+    pthread_mutex_unlock(&CarInformationMutex);
+    return temp;
 }
 
 Q_INVOKABLE quint16 QtFunction::getGear()
 {
-    return gear;
+    pthread_mutex_lock(&CarInformationMutex);
+    temp = gear;
+    pthread_mutex_unlock(&CarInformationMutex);
+    return temp;
 }
 
 Q_INVOKABLE quint16 QtFunction::getDirection()
 {
-    return direction;
+    pthread_mutex_lock(&CarInformationMutex);
+    temp = direction;
+    pthread_mutex_unlock(&CarInformationMutex);
+    return temp;
 }
 

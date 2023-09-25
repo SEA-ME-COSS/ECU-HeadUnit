@@ -35,8 +35,8 @@ int main(int argc, char *argv[]) {
     while (1)
     {
         targetProxy2->setSpeedRPM(sensorRPM, callStatus, returnMessage);
-        sensorRPM += 10;
-        if(sensorRPM == 150)
+        sensorRPM += 30;
+        if(sensorRPM > 350)
             sensorRPM = 0;
         usleep(500000);
     }
