@@ -4,7 +4,7 @@ import DataModule 1.0
 Item {
     id: valueSource
 
-    CarInformation {
+    QtFunction {
         id: carinfo
     }
 
@@ -50,11 +50,11 @@ Item {
     }
 
     function run_ui() {
-        valueSource.speed = carinfo.getQSpeed()
-        valueSource.rpm = carinfo.getQRPM()
-        valueSource.battery = carinfo.getQBattery()
-        valueSource.gear = carinfo.getQGear()
-        valueSource.direction = carinfo.getQDirection()
+        valueSource.speed = carinfo.getSpeed()
+        valueSource.rpm = carinfo.getRPM()
+        valueSource.battery = carinfo.getBattery()
+        valueSource.gear = carinfo.getGear()
+        valueSource.direction = carinfo.getDirection()
 
         if (valueSource.direction === 1) {
             valueSource.blink_left()

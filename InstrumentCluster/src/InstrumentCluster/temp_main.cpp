@@ -5,9 +5,8 @@
 #include <string>
 #include <unistd.h>
 
-//#include "InstrumentClusterStubImpl.hpp"
 #include "InstrumentClusterStubImpl.hpp"
-#include "QtFunction.hpp"
+#include "CarInformation.hpp"
 
 
 using namespace v1_0::commonapi;
@@ -25,7 +24,7 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
     
-    qmlRegisterType<QtFunction>("DataModule", 1, 0, "QtFunction");
+    qmlRegisterType<CarInformation>("DataModule", 1, 0, "CarInformation");
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));

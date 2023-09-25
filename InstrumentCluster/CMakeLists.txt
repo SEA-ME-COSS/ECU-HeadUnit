@@ -63,6 +63,8 @@ add_executable(IPCManager
         src/IPCManager/IPCManagerStubImpl.cpp
         src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp
+        src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp
+        src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAdapter.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
 )
@@ -73,6 +75,7 @@ add_executable(InstrumentCluster
 	src/InstrumentCluster/InstrumentCluster.cpp
 	src/InstrumentCluster/InstrumentClusterStubImpl.cpp
         src/InstrumentCluster/CarInformation.cpp
+        src/InstrumentCluster/QtFunction.cpp
 	src/InstrumentCluster/qml.qrc
 	src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPStubAdapter.cpp
         src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp

@@ -1,24 +1,21 @@
 #ifndef CARINFORMATION_HPP
 #define CARINFORMATION_HPP
 
-#include <QObject>
-#include "InstrumentClusterStubImpl.hpp"
+
+// Include necessary header
+#include <stdint.h>
+
+// Include Multi-thread header
+#include <pthread.h>
 
 
-class CarInformation : public QObject, public InstrumentClusterStubImpl
-{
-    Q_OBJECT
+extern uint16_t speed;
+extern uint16_t rpm;
+extern uint16_t battery;
+extern uint16_t gear;
+extern uint16_t direction;
 
-public:
-    explicit CarInformation(QObject *parent = nullptr);
-
-public Q_SLOTS:
-    Q_INVOKABLE quint16 getQSpeed();
-    Q_INVOKABLE quint16 getQRPM();
-    Q_INVOKABLE quint16 getQBattery();
-    Q_INVOKABLE quint16 getQGear();
-    Q_INVOKABLE quint16 getQDirection();
-};
+extern pthread_mutex_t CarInformationMutex;
 
 
 #endif

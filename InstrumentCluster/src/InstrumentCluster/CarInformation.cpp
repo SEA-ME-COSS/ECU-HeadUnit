@@ -1,30 +1,12 @@
+// Include header
 #include "CarInformation.hpp"
 
 
-CarInformation::CarInformation(QObject *parent) : QObject(parent) { }
+uint16_t speed = 0;
+uint16_t rpm = 0;
+uint16_t battery = 0;
+uint16_t gear = 0;
+uint16_t direction = 1;
 
-Q_INVOKABLE quint16 CarInformation::getQSpeed()
-{
-    return getSpeed();
-}
-
-Q_INVOKABLE quint16 CarInformation::getQRPM()
-{
-    return getRPM();
-}
-
-Q_INVOKABLE quint16 CarInformation::getQBattery()
-{
-    return getBattery();
-}
-
-Q_INVOKABLE quint16 CarInformation::getQGear()
-{
-    return getGear();
-}
-
-Q_INVOKABLE quint16 CarInformation::getQDirection()
-{
-    return getDirection();
-}
+pthread_mutex_t CarInformationMutex = PTHREAD_MUTEX_INITIALIZER;
 
