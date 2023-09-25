@@ -1,11 +1,11 @@
-#ifndef PIRACEROPERATORSTUBIMPL_H_
-#define PIRACEROPERATORSTUBIMPL_H_
+#ifndef PIRACEROPERATORSTUBIMPL_HPP
+#define PIRACEROPERATORSTUBIMPL_HPP
 
 
+#include <iostream>
 #include <CommonAPI/CommonAPI.hpp>
 #include <v1/commonapi/PiracerOperatorStubDefault.hpp>
 
-// Include piracer class header
 #include "PiracerClass.hpp"
 
 

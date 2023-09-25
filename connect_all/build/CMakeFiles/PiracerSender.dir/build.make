@@ -69,24 +69,10 @@ include CMakeFiles/PiracerSender.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/PiracerSender.dir/flags.make
 
-CMakeFiles/PiracerSender.dir/PiracerSender_autogen/mocs_compilation.cpp.o: CMakeFiles/PiracerSender.dir/flags.make
-CMakeFiles/PiracerSender.dir/PiracerSender_autogen/mocs_compilation.cpp.o: PiracerSender_autogen/mocs_compilation.cpp
-CMakeFiles/PiracerSender.dir/PiracerSender_autogen/mocs_compilation.cpp.o: CMakeFiles/PiracerSender.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PiracerSender.dir/PiracerSender_autogen/mocs_compilation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PiracerSender.dir/PiracerSender_autogen/mocs_compilation.cpp.o -MF CMakeFiles/PiracerSender.dir/PiracerSender_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/PiracerSender.dir/PiracerSender_autogen/mocs_compilation.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/connect_all/build/PiracerSender_autogen/mocs_compilation.cpp
-
-CMakeFiles/PiracerSender.dir/PiracerSender_autogen/mocs_compilation.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PiracerSender.dir/PiracerSender_autogen/mocs_compilation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ha/바탕화면/DES-Head-Unit/connect_all/build/PiracerSender_autogen/mocs_compilation.cpp > CMakeFiles/PiracerSender.dir/PiracerSender_autogen/mocs_compilation.cpp.i
-
-CMakeFiles/PiracerSender.dir/PiracerSender_autogen/mocs_compilation.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PiracerSender.dir/PiracerSender_autogen/mocs_compilation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ha/바탕화면/DES-Head-Unit/connect_all/build/PiracerSender_autogen/mocs_compilation.cpp -o CMakeFiles/PiracerSender.dir/PiracerSender_autogen/mocs_compilation.cpp.s
-
 CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerSender.cpp.o: CMakeFiles/PiracerSender.dir/flags.make
 CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerSender.cpp.o: ../src/PiracerSender/PiracerSender.cpp
 CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerSender.cpp.o: CMakeFiles/PiracerSender.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerSender.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerSender.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerSender.cpp.o -MF CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerSender.cpp.o.d -o CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerSender.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/connect_all/src/PiracerSender/PiracerSender.cpp
 
 CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerSender.cpp.i: cmake_force
@@ -100,7 +86,7 @@ CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerSender.cpp.s: cmake_force
 CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerClass.cpp.o: CMakeFiles/PiracerSender.dir/flags.make
 CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerClass.cpp.o: ../src/PiracerSender/PiracerClass.cpp
 CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerClass.cpp.o: CMakeFiles/PiracerSender.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerClass.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerClass.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerClass.cpp.o -MF CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerClass.cpp.o.d -o CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerClass.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/connect_all/src/PiracerSender/PiracerClass.cpp
 
 CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerClass.cpp.i: cmake_force
@@ -114,7 +100,7 @@ CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerClass.cpp.s: cmake_force
 CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o: CMakeFiles/PiracerSender.dir/flags.make
 CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o: ../src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
 CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o: CMakeFiles/PiracerSender.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o -MF CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o.d -o CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/connect_all/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
 
 CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.i: cmake_force
@@ -128,7 +114,7 @@ CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPPro
 CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o: CMakeFiles/PiracerSender.dir/flags.make
 CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o: ../src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
 CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o: CMakeFiles/PiracerSender.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o -MF CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o.d -o CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/connect_all/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
 
 CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.i: cmake_force
@@ -141,7 +127,6 @@ CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDep
 
 # Object files for target PiracerSender
 PiracerSender_OBJECTS = \
-"CMakeFiles/PiracerSender.dir/PiracerSender_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerSender.cpp.o" \
 "CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerClass.cpp.o" \
 "CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o" \
@@ -150,7 +135,6 @@ PiracerSender_OBJECTS = \
 # External object files for target PiracerSender
 PiracerSender_EXTERNAL_OBJECTS =
 
-PiracerSender: CMakeFiles/PiracerSender.dir/PiracerSender_autogen/mocs_compilation.cpp.o
 PiracerSender: CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerSender.cpp.o
 PiracerSender: CMakeFiles/PiracerSender.dir/src/PiracerSender/PiracerClass.cpp.o
 PiracerSender: CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o
@@ -158,7 +142,7 @@ PiracerSender: CMakeFiles/PiracerSender.dir/src-gen-desproject/v1/commonapi/IPCM
 PiracerSender: CMakeFiles/PiracerSender.dir/build.make
 PiracerSender: /usr/lib/x86_64-linux-gnu/libpython3.10.so
 PiracerSender: CMakeFiles/PiracerSender.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable PiracerSender"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable PiracerSender"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PiracerSender.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

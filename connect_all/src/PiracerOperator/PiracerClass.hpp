@@ -2,12 +2,9 @@
 #define PIRACERCLASS_HPP
 
 
-// Include necessary header
 #include <stdint.h>
-
-// Include python header
 #include <Python.h>
-
+#include <pthread.h>
 
 class PiracerClass
 {
@@ -26,6 +23,7 @@ class PiracerClass
 
 
 extern PiracerClass piracer;
+extern pthread_mutex_t PiracerClassMutex;
 
 
 #endif

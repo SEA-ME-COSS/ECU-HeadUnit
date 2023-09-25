@@ -69,24 +69,10 @@ include CMakeFiles/IPCManager.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/IPCManager.dir/flags.make
 
-CMakeFiles/IPCManager.dir/IPCManager_autogen/mocs_compilation.cpp.o: CMakeFiles/IPCManager.dir/flags.make
-CMakeFiles/IPCManager.dir/IPCManager_autogen/mocs_compilation.cpp.o: IPCManager_autogen/mocs_compilation.cpp
-CMakeFiles/IPCManager.dir/IPCManager_autogen/mocs_compilation.cpp.o: CMakeFiles/IPCManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/IPCManager.dir/IPCManager_autogen/mocs_compilation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IPCManager.dir/IPCManager_autogen/mocs_compilation.cpp.o -MF CMakeFiles/IPCManager.dir/IPCManager_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/IPCManager.dir/IPCManager_autogen/mocs_compilation.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/connect_all/build/IPCManager_autogen/mocs_compilation.cpp
-
-CMakeFiles/IPCManager.dir/IPCManager_autogen/mocs_compilation.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/IPCManager.dir/IPCManager_autogen/mocs_compilation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ha/바탕화면/DES-Head-Unit/connect_all/build/IPCManager_autogen/mocs_compilation.cpp > CMakeFiles/IPCManager.dir/IPCManager_autogen/mocs_compilation.cpp.i
-
-CMakeFiles/IPCManager.dir/IPCManager_autogen/mocs_compilation.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/IPCManager.dir/IPCManager_autogen/mocs_compilation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ha/바탕화면/DES-Head-Unit/connect_all/build/IPCManager_autogen/mocs_compilation.cpp -o CMakeFiles/IPCManager.dir/IPCManager_autogen/mocs_compilation.cpp.s
-
 CMakeFiles/IPCManager.dir/src/IPCManager/IPCManager.cpp.o: CMakeFiles/IPCManager.dir/flags.make
 CMakeFiles/IPCManager.dir/src/IPCManager/IPCManager.cpp.o: ../src/IPCManager/IPCManager.cpp
 CMakeFiles/IPCManager.dir/src/IPCManager/IPCManager.cpp.o: CMakeFiles/IPCManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/IPCManager.dir/src/IPCManager/IPCManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/IPCManager.dir/src/IPCManager/IPCManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IPCManager.dir/src/IPCManager/IPCManager.cpp.o -MF CMakeFiles/IPCManager.dir/src/IPCManager/IPCManager.cpp.o.d -o CMakeFiles/IPCManager.dir/src/IPCManager/IPCManager.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/connect_all/src/IPCManager/IPCManager.cpp
 
 CMakeFiles/IPCManager.dir/src/IPCManager/IPCManager.cpp.i: cmake_force
@@ -100,7 +86,7 @@ CMakeFiles/IPCManager.dir/src/IPCManager/IPCManager.cpp.s: cmake_force
 CMakeFiles/IPCManager.dir/src/IPCManager/IPCManagerStubImpl.cpp.o: CMakeFiles/IPCManager.dir/flags.make
 CMakeFiles/IPCManager.dir/src/IPCManager/IPCManagerStubImpl.cpp.o: ../src/IPCManager/IPCManagerStubImpl.cpp
 CMakeFiles/IPCManager.dir/src/IPCManager/IPCManagerStubImpl.cpp.o: CMakeFiles/IPCManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/IPCManager.dir/src/IPCManager/IPCManagerStubImpl.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/IPCManager.dir/src/IPCManager/IPCManagerStubImpl.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IPCManager.dir/src/IPCManager/IPCManagerStubImpl.cpp.o -MF CMakeFiles/IPCManager.dir/src/IPCManager/IPCManagerStubImpl.cpp.o.d -o CMakeFiles/IPCManager.dir/src/IPCManager/IPCManagerStubImpl.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/connect_all/src/IPCManager/IPCManagerStubImpl.cpp
 
 CMakeFiles/IPCManager.dir/src/IPCManager/IPCManagerStubImpl.cpp.i: cmake_force
@@ -114,7 +100,7 @@ CMakeFiles/IPCManager.dir/src/IPCManager/IPCManagerStubImpl.cpp.s: cmake_force
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp.o: CMakeFiles/IPCManager.dir/flags.make
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp.o: ../src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp.o: CMakeFiles/IPCManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp.o -MF CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp.o.d -o CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/connect_all/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp
 
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp.i: cmake_force
@@ -128,7 +114,7 @@ CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPP
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp.o: CMakeFiles/IPCManager.dir/flags.make
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp.o: ../src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp.o: CMakeFiles/IPCManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp.o -MF CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp.o.d -o CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/connect_all/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp
 
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp.i: cmake_force
@@ -142,7 +128,7 @@ CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPD
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp.o: CMakeFiles/IPCManager.dir/flags.make
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp.o: ../src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp.o: CMakeFiles/IPCManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp.o -MF CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp.o.d -o CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/connect_all/src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp
 
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp.i: cmake_force
@@ -156,7 +142,7 @@ CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/InstrumentClusterSomeI
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp.o: CMakeFiles/IPCManager.dir/flags.make
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp.o: ../src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp.o: CMakeFiles/IPCManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp.o -MF CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp.o.d -o CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/connect_all/src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp
 
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp.i: cmake_force
@@ -170,7 +156,7 @@ CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/InstrumentClusterSomeI
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAdapter.cpp.o: CMakeFiles/IPCManager.dir/flags.make
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAdapter.cpp.o: ../src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAdapter.cpp
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAdapter.cpp.o: CMakeFiles/IPCManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAdapter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAdapter.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAdapter.cpp.o -MF CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAdapter.cpp.o.d -o CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAdapter.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/connect_all/src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAdapter.cpp
 
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAdapter.cpp.i: cmake_force
@@ -184,7 +170,7 @@ CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAd
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o: CMakeFiles/IPCManager.dir/flags.make
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o: ../src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o: CMakeFiles/IPCManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o -MF CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o.d -o CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/connect_all/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
 
 CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.i: cmake_force
@@ -197,7 +183,6 @@ CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeploy
 
 # Object files for target IPCManager
 IPCManager_OBJECTS = \
-"CMakeFiles/IPCManager.dir/IPCManager_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/IPCManager.dir/src/IPCManager/IPCManager.cpp.o" \
 "CMakeFiles/IPCManager.dir/src/IPCManager/IPCManagerStubImpl.cpp.o" \
 "CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp.o" \
@@ -210,7 +195,6 @@ IPCManager_OBJECTS = \
 # External object files for target IPCManager
 IPCManager_EXTERNAL_OBJECTS =
 
-IPCManager: CMakeFiles/IPCManager.dir/IPCManager_autogen/mocs_compilation.cpp.o
 IPCManager: CMakeFiles/IPCManager.dir/src/IPCManager/IPCManager.cpp.o
 IPCManager: CMakeFiles/IPCManager.dir/src/IPCManager/IPCManagerStubImpl.cpp.o
 IPCManager: CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp.o
@@ -221,7 +205,7 @@ IPCManager: CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManager
 IPCManager: CMakeFiles/IPCManager.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o
 IPCManager: CMakeFiles/IPCManager.dir/build.make
 IPCManager: CMakeFiles/IPCManager.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable IPCManager"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ha/바탕화면/DES-Head-Unit/connect_all/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable IPCManager"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/IPCManager.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

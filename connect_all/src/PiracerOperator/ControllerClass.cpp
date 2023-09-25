@@ -1,4 +1,3 @@
-// Include header
 #include "ControllerClass.hpp"
 
 
@@ -20,6 +19,7 @@ void PiracerController::readControl()
     
     throttle = PyFloat_AsDouble(pThrottle) * 0.5;
     steering = PyFloat_AsDouble(pSteering);
+    
     return;
 }
 

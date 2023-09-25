@@ -2,7 +2,6 @@
 #define CONTROLLERCLASS_HPP
 
 
-// Include python header
 #include <Python.h>
 
 

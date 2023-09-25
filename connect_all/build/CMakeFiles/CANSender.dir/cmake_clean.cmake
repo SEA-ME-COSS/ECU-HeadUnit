@@ -1,11 +1,6 @@
 file(REMOVE_RECURSE
-  "CANSender_autogen"
-  "CMakeFiles/CANSender_autogen.dir/AutogenUsed.txt"
-  "CMakeFiles/CANSender_autogen.dir/ParseCache.txt"
   "CANSender"
   "CANSender.pdb"
-  "CMakeFiles/CANSender.dir/CANSender_autogen/mocs_compilation.cpp.o"
-  "CMakeFiles/CANSender.dir/CANSender_autogen/mocs_compilation.cpp.o.d"
   "CMakeFiles/CANSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o"
   "CMakeFiles/CANSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o.d"
   "CMakeFiles/CANSender.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o"

@@ -1,4 +1,3 @@
-// Include header
 #include "PiracerClass.hpp"
 
 
@@ -15,6 +14,7 @@ PiracerClass::PiracerClass()
 void PiracerClass::setGearMode(uint16_t _gearMode)
 {
     gearMode = _gearMode;
+    
     return;
 }
 
@@ -27,6 +27,7 @@ void PiracerClass::applyThrottle(double throttle)
 {
     pArgs = PyTuple_Pack(1, PyFloat_FromDouble(throttle));
     PyObject_CallMethod(pInstance, "set_throttle_percent", "O", pArgs);
+    
     return;
 }
 
@@ -34,6 +35,7 @@ void PiracerClass::applySteering(double steering)
 {
     pArgs = PyTuple_Pack(1, PyFloat_FromDouble(steering * -1.0));
     PyObject_CallMethod(pInstance, "set_steering_percent", "O", pArgs);
+    
     return;
 }
 
@@ -48,4 +50,5 @@ PiracerClass::~PiracerClass()
 
 
 PiracerClass piracer;
+pthread_mutex_t PiracerClassMutex = PTHREAD_MUTEX_INITIALIZER;
 

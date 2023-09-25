@@ -1,18 +1,13 @@
-// Include necessary header
-#include <iostream>
 #include <string>
 #include <unistd.h>
 
-// Include controller class header
 #include "ControllerClass.hpp"
-
-// Include piracer operator service header
 #include "PiracerOperatorStubImpl.hpp"
 
 
 using namespace v1_0::commonapi;
 
-int main (int argc, char **argv)
+int main ()
 {
     std::shared_ptr<CommonAPI::Runtime> runtime;
     std::shared_ptr<PiracerOperatorStubImpl> PiracerOperatorService;
@@ -30,6 +25,7 @@ int main (int argc, char **argv)
         throttle = controller.getThrottle();
         steering = controller.getSteering();
 
+        pthread_mutex_lock(&PiracerClassMutex);
         gearMode = piracer.getGearMode();
         switch (gearMode)
         {
@@ -69,6 +65,7 @@ int main (int argc, char **argv)
                 }
                 break;
         }
+        pthread_mutex_unlock(&PiracerClassMutex);
     }
 
     return 0;
