@@ -25,6 +25,8 @@ int main()
     CommonAPI::CallStatus callStatus;
     std::string returnMessage;
     
+    uint16_t temp = 0;
+    
     while (1)
     {
         pthread_mutex_lock(&IPCManagerDataMutex);
@@ -40,8 +42,11 @@ int main()
         }
         pthread_mutex_unlock(&IPCManagerDataMutex);
 
-        PiracerOperatorTargetProxy->setGearMode(3, callStatus, returnMessage);
-        InstrumentClusterTargetProxy->setGear(3, callStatus, returnMessage);
+        PiracerOperatorTargetProxy->setGearMode(temp, callStatus, returnMessage);
+        InstrumentClusterTargetProxy->setGear(temp, callStatus, returnMessage);
+        temp++;
+        if (temp == 4)
+            temp = 0;
         usleep(500000);
     }
     
