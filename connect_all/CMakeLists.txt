@@ -7,10 +7,10 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_PREFIX_PATH "/opt/Qt/5.15.0/gcc_64")
+# set(CMAKE_PREFIX_PATH "/opt/Qt/5.15.0/gcc_64")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -std=c++0x")
 
-find_package(Qt5 COMPONENTS Core Quick Gui REQUIRED)
+# find_package(Qt5 COMPONENTS Core Quick Gui REQUIRED)
 find_package(PythonLibs REQUIRED)
 include_directories(${PYTHON_INCLUDE_DIRS})
 include_directories(
@@ -71,17 +71,17 @@ add_executable(IPCManager
 target_link_libraries(IPCManager CommonAPI CommonAPI-SomeIP vsomeip3)
 
 
-add_executable(InstrumentCluster
-	src/InstrumentCluster/InstrumentCluster.cpp
-	src/InstrumentCluster/InstrumentClusterStubImpl.cpp
-        src/InstrumentCluster/CarInformation.cpp
-        src/InstrumentCluster/QtFunction.cpp
-	src/InstrumentCluster/qml.qrc
-	src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPStubAdapter.cpp
-        src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp
-)
-target_compile_definitions(InstrumentCluster
-  PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
-target_link_libraries(InstrumentCluster
-  PRIVATE Qt5::Core Qt5::Quick Qt5::Gui CommonAPI CommonAPI-SomeIP vsomeip3)
+# add_executable(InstrumentCluster
+# 	src/InstrumentCluster/InstrumentCluster.cpp
+# 	src/InstrumentCluster/InstrumentClusterStubImpl.cpp
+#         src/InstrumentCluster/CarInformation.cpp
+#         src/InstrumentCluster/QtFunction.cpp
+# 	src/InstrumentCluster/qml.qrc
+# 	src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPStubAdapter.cpp
+#         src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp
+# )
+# target_compile_definitions(InstrumentCluster
+#   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
+# target_link_libraries(InstrumentCluster
+#   PRIVATE Qt5::Core Qt5::Quick Qt5::Gui CommonAPI CommonAPI-SomeIP vsomeip3)
 
