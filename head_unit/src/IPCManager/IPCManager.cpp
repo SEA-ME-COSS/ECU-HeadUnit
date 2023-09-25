@@ -26,6 +26,7 @@ int main()
     std::string returnMessage;
     
     uint16_t temp = 0;
+    int wait = 0;
     
     while (1)
     {
@@ -44,7 +45,12 @@ int main()
 
         PiracerOperatorTargetProxy->setGearMode(temp, callStatus, returnMessage);
         InstrumentClusterTargetProxy->setGear(temp, callStatus, returnMessage);
-        temp++;
+        wait++;
+        if (wait == 4)
+        {
+            temp++;
+            wait = 0;
+        }
         if (temp == 4)
             temp = 0;
         usleep(500000);
