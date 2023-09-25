@@ -119,7 +119,7 @@ Window {
             text: "R"
             font.family: font.name
             font.pixelSize: 70
-            color: (valueSource.gear === 1) ? "black" : "lightgray"
+            color: (valueSource.gear === 1) ? "#FF6868" : "#FFCECE"
             x: parent.width / 2 - width / 2 - 140
             y: 250
         }
@@ -128,7 +128,7 @@ Window {
             text: "N"
             font.family: font.name
             font.pixelSize: 70
-            color: (valueSource.gear === 2) ? "black" : "lightgray"
+            color: (valueSource.gear === 2) ? "#35CA3D" : "#AEFFAE"
             x: parent.width / 2 - width / 2 + 150
             y: 250
         }
