@@ -74,7 +74,7 @@ void InstrumentClusterSomeIPProxy::setSpeedRpm(uint16_t _SensorRpm, CommonAPI::C
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x67),
+        CommonAPI::SomeIP::method_id_t(0x69),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -102,7 +102,7 @@ std::future<CommonAPI::CallStatus> InstrumentClusterSomeIPProxy::setSpeedRpmAsyn
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x67),
+        CommonAPI::SomeIP::method_id_t(0x69),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -132,7 +132,7 @@ void InstrumentClusterSomeIPProxy::setBattery(uint16_t _Battery, CommonAPI::Call
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x68),
+        CommonAPI::SomeIP::method_id_t(0x6a),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -160,7 +160,7 @@ std::future<CommonAPI::CallStatus> InstrumentClusterSomeIPProxy::setBatteryAsync
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x68),
+        CommonAPI::SomeIP::method_id_t(0x6a),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -190,7 +190,7 @@ void InstrumentClusterSomeIPProxy::setGear(uint16_t _Gear, CommonAPI::CallStatus
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x69),
+        CommonAPI::SomeIP::method_id_t(0x6b),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -218,7 +218,7 @@ std::future<CommonAPI::CallStatus> InstrumentClusterSomeIPProxy::setGearAsync(co
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x69),
+        CommonAPI::SomeIP::method_id_t(0x6b),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -248,7 +248,7 @@ void InstrumentClusterSomeIPProxy::setDirection(uint16_t _Direction, CommonAPI::
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x6a),
+        CommonAPI::SomeIP::method_id_t(0x6c),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -276,7 +276,7 @@ std::future<CommonAPI::CallStatus> InstrumentClusterSomeIPProxy::setDirectionAsy
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x6a),
+        CommonAPI::SomeIP::method_id_t(0x6c),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),

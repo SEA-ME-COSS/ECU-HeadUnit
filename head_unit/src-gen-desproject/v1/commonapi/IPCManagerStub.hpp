@@ -90,11 +90,13 @@ class IPCManagerStub
 public:
     typedef std::function<void (std::string _message)> setSensorRpmReply_t;
     typedef std::function<void (std::string _message)> setBatteryLevelReply_t;
+    typedef std::function<void (std::string _message)> setGearModeReply_t;
+    typedef std::function<void (std::string _message)> setDirectionReply_t;
 
     virtual ~IPCManagerStub() {}
     void lockInterfaceVersionAttribute(bool _lockAccess) { static_cast<void>(_lockAccess); }
     bool hasElement(const uint32_t _id) const {
-        return (_id < 2);
+        return (_id < 4);
     }
     virtual const CommonAPI::Version& getInterfaceVersion(std::shared_ptr<CommonAPI::ClientId> _client) = 0;
 
@@ -102,6 +104,10 @@ public:
     virtual void setSensorRpm(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _SensorRpm, setSensorRpmReply_t _reply) = 0;
     /// This is the method that will be called on remote calls on the method setBatteryLevel.
     virtual void setBatteryLevel(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _BatteryLevel, setBatteryLevelReply_t _reply) = 0;
+    /// This is the method that will be called on remote calls on the method setGearMode.
+    virtual void setGearMode(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _GearMode, setGearModeReply_t _reply) = 0;
+    /// This is the method that will be called on remote calls on the method setDirection.
+    virtual void setDirection(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _Direction, setDirectionReply_t _reply) = 0;
 
 
     using CommonAPI::Stub<IPCManagerStubAdapter, IPCManagerStubRemoteEvent>::initStubAdapter;

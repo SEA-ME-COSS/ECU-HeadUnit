@@ -61,6 +61,14 @@ public:
 
     virtual std::future<CommonAPI::CallStatus> setBatteryLevelAsync(const uint16_t &_BatteryLevel, SetBatteryLevelAsyncCallback _callback, const CommonAPI::CallInfo *_info);
 
+    virtual void setGearMode(uint16_t _GearMode, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info);
+
+    virtual std::future<CommonAPI::CallStatus> setGearModeAsync(const uint16_t &_GearMode, SetGearModeAsyncCallback _callback, const CommonAPI::CallInfo *_info);
+
+    virtual void setDirection(uint16_t _Direction, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info);
+
+    virtual std::future<CommonAPI::CallStatus> setDirectionAsync(const uint16_t &_Direction, SetDirectionAsyncCallback _callback, const CommonAPI::CallInfo *_info);
+
     virtual void getOwnVersion(uint16_t &_major, uint16_t &_minor) const;
 
     virtual std::future<void> getCompletionFuture();

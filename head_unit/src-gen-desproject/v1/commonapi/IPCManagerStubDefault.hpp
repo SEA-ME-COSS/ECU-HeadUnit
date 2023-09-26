@@ -72,6 +72,18 @@ public:
         std::string message = "";
         _reply(message);
     }
+    COMMONAPI_EXPORT virtual void setGearMode(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _GearMode, setGearModeReply_t _reply) {
+        (void)_client;
+        (void)_GearMode;
+        std::string message = "";
+        _reply(message);
+    }
+    COMMONAPI_EXPORT virtual void setDirection(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _Direction, setDirectionReply_t _reply) {
+        (void)_client;
+        (void)_Direction;
+        std::string message = "";
+        _reply(message);
+    }
 
 
 protected:

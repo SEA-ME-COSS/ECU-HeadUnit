@@ -5,7 +5,7 @@ uint16_t speed = 0;
 uint16_t rpm = 0;
 uint16_t battery = 0;
 uint16_t gear = 0;
-uint16_t direction = 2;
+uint16_t direction = 0;
 
 bool setSpeedRpmCalled = false;
 bool setBatteryCalled = false;

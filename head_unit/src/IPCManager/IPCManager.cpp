@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <v1/commonapi/PiracerOperatorProxy.hpp>
 #include <v1/commonapi/InstrumentClusterProxy.hpp>
+#include <v1/commonapi/HeadUnitProxy.hpp>
 
 #include "IPCManagerStubImpl.hpp"
 #include "IPCManagerData.hpp"
@@ -15,18 +16,17 @@ int main()
     std::shared_ptr<IPCManagerStubImpl> IPCManagerService;
     std::shared_ptr<PiracerOperatorProxy<>> PiracerOperatorTargetProxy;
     std::shared_ptr<InstrumentClusterProxy<>> InstrumentClusterTargetProxy;
+    std::shared_ptr<HeadUnitProxy<>> HeadUnitTargetProxy;
     
     runtime = CommonAPI::Runtime::get();
     IPCManagerService = std::make_shared<IPCManagerStubImpl>();
     runtime->registerService("local", "IPCManager", IPCManagerService);
     PiracerOperatorTargetProxy = runtime->buildProxy<PiracerOperatorProxy>("local", "PiracerOperator");
     InstrumentClusterTargetProxy = runtime->buildProxy<InstrumentClusterProxy>("local", "InstrumentCluster");
+    HeadUnitTargetProxy = runtime->buildProxy<HeadUnitProxy>("local", "HeadUnit");
     
     CommonAPI::CallStatus callStatus;
     std::string returnMessage;
-    
-    uint16_t temp = 0;
-    int wait = 0;
     
     while (1)
     {
@@ -34,6 +34,7 @@ int main()
         if (setSensorRpmCalled)
         {
             InstrumentClusterTargetProxy->setSpeedRpm(sensorRpm, callStatus, returnMessage);
+            HeadUnitTargetProxy->setSensorRpm(sensorRpm, callStatus, returnMessage);
             setSensorRpmCalled = false;
         }
         if (setBatteryLevelCalled)
@@ -41,19 +42,18 @@ int main()
             InstrumentClusterTargetProxy->setBattery(batteryLevel, callStatus, returnMessage);
             setBatteryLevelCalled = false;
         }
-        pthread_mutex_unlock(&IPCManagerDataMutex);
-
-        PiracerOperatorTargetProxy->setGearMode(temp, callStatus, returnMessage);
-        InstrumentClusterTargetProxy->setGear(temp, callStatus, returnMessage);
-        wait++;
-        if (wait == 4)
+        if (setGearModeCalled)
         {
-            temp++;
-            wait = 0;
+            PiracerOperatorTargetProxy->setGearMode(gearMode, callStatus, returnMessage);
+            InstrumentClusterTargetProxy->setGear(gearMode, callStatus, returnMessage);
+            setGearModeCalled = false;
         }
-        if (temp == 4)
-            temp = 0;
-        usleep(500000);
+        if (setDirectionCalled)
+        {
+            InstrumentClusterTargetProxy->setDirection(direction, callStatus, returnMessage);
+            setDirectionCalled = false;
+        }
+        pthread_mutex_unlock(&IPCManagerDataMutex);
     }
     
     return 0;

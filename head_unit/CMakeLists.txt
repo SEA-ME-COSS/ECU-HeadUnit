@@ -66,6 +66,8 @@ add_executable(IPCManager
         src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp
+        src-gen-desproject/v1/commonapi/HeadUnitSomeIPProxy.cpp
+        src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAdapter.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
 )
@@ -86,3 +88,19 @@ target_compile_definitions(InstrumentCluster
 target_link_libraries(InstrumentCluster
   PRIVATE Qt5::Core Qt5::Quick Qt5::Gui CommonAPI CommonAPI-SomeIP vsomeip3)
 
+
+add_executable(HeadUnit
+        src/HeadUnit/HeadUnit.cpp
+        src/HeadUnit/HeadUnitStubImpl.cpp
+        src/HeadUnit/HeadUnitData.cpp
+        src/HeadUnit/QtFunction.cpp
+        src/HeadUnit/qml.qrc
+        src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
+        src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
+        src-gen-desproject/v1/commonapi/HeadUnitSomeIPStubAdapter.cpp
+        src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp
+)
+target_compile_definitions(HeadUnit
+PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
+target_link_libraries(HeadUnit
+PRIVATE Qt5::Core Qt5::Quick Qt5::Gui CommonAPI CommonAPI-SomeIP vsomeip3)

@@ -67,7 +67,7 @@ Item {
     }
 
     Timer {
-        interval: 500; running: true; repeat: true
+        interval: 100; running: true; repeat: true
         onTriggered: valueSource.run_ui()
     }
 }

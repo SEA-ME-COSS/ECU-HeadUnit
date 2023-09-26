@@ -11,6 +11,12 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.IPCManager
         method setBatteryLevel {
                 SomeIpMethodID = 101
         }
+        method setGearMode {
+                SomeIpMethodID = 102
+        }
+        method setDirection {
+                SomeIpMethodID = 103
+        }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.IPCManager {
@@ -24,7 +30,7 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.PiracerOpe
         SomeIpServiceID = 1001
 
         method setGearMode {
-                SomeIpMethodID = 102
+                SomeIpMethodID = 104
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
@@ -39,22 +45,37 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.Instrument
         SomeIpServiceID = 1002
 
         method setSpeedRpm {
-                SomeIpMethodID = 103
-        }
-        method setBattery {
-                SomeIpMethodID = 104
-        }
-        method setGear {
                 SomeIpMethodID = 105
         }
-        method setDirection {
+        method setBattery {
                 SomeIpMethodID = 106
+        }
+        method setGear {
+                SomeIpMethodID = 107
+        }
+        method setDirection {
+                SomeIpMethodID = 108
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.InstrumentCluster {
                 InstanceId = "InstrumentCluster"
                 SomeIpInstanceID = 10002
+        }
+}
+
+
+define org.genivi.commonapi.someip.deployment for interface commonapi.HeadUnit {
+        SomeIpServiceID = 1003
+
+        method setSensorRpm {
+                SomeIpMethodID = 109
+        }
+}
+define org.genivi.commonapi.someip.deployment for provider as Service {
+        instance commonapi.HeadUnit {
+                InstanceId = "HeadUnit"
+                SomeIpInstanceID = 10003
         }
 }
 

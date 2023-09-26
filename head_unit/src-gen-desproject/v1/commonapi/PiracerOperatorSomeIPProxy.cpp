@@ -74,7 +74,7 @@ void PiracerOperatorSomeIPProxy::setGearMode(uint16_t _GearMode, CommonAPI::Call
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x66),
+        CommonAPI::SomeIP::method_id_t(0x68),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -102,7 +102,7 @@ std::future<CommonAPI::CallStatus> PiracerOperatorSomeIPProxy::setGearModeAsync(
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x66),
+        CommonAPI::SomeIP::method_id_t(0x68),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
