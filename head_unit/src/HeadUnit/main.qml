@@ -3,6 +3,7 @@ import QtQuick.Window 2.1
 import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Extras 1.4
+import DataModule 1.0
 
 Window {
     id: root
@@ -20,6 +21,10 @@ Window {
 
     ValueSource {
         id: valueSource
+    }
+
+    QtFunction {
+        id: carinfo
     }
 
     Item {
@@ -59,6 +64,39 @@ Window {
             color: "black"
             anchors.horizontalCenter: parent.horizontalCenter
             y: 400
+        }
+
+        Button {
+            text: "P"
+            anchors.verticalCenter: parent.verticalCenter
+            x: parent.verticalCenter - 60
+            onClicked: {
+                carinfo.setGear(0)
+            }
+        }
+        Button {
+            text: "R"
+            anchors.verticalCenter: parent.verticalCenter
+            x: parent.verticalCenter - 20
+            onClicked: {
+                carinfo.setGear(1)
+            }
+        }
+        Button {
+            text: "N"
+            anchors.verticalCenter: parent.verticalCenter
+            x: parent.verticalCenter + 20
+            onClicked: {
+                carinfo.setGear(2)
+            }
+        }
+        Button {
+            text: "D"
+            anchors.verticalCenter: parent.verticalCenter
+            x: parent.verticalCenter + 60
+            onClicked: {
+                carinfo.setGear(3)
+            }
         }
     }
 }
