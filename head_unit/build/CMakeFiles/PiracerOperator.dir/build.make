@@ -69,10 +69,24 @@ include CMakeFiles/PiracerOperator.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/PiracerOperator.dir/flags.make
 
+CMakeFiles/PiracerOperator.dir/PiracerOperator_autogen/mocs_compilation.cpp.o: CMakeFiles/PiracerOperator.dir/flags.make
+CMakeFiles/PiracerOperator.dir/PiracerOperator_autogen/mocs_compilation.cpp.o: PiracerOperator_autogen/mocs_compilation.cpp
+CMakeFiles/PiracerOperator.dir/PiracerOperator_autogen/mocs_compilation.cpp.o: CMakeFiles/PiracerOperator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PiracerOperator.dir/PiracerOperator_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PiracerOperator.dir/PiracerOperator_autogen/mocs_compilation.cpp.o -MF CMakeFiles/PiracerOperator.dir/PiracerOperator_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/PiracerOperator.dir/PiracerOperator_autogen/mocs_compilation.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/head_unit/build/PiracerOperator_autogen/mocs_compilation.cpp
+
+CMakeFiles/PiracerOperator.dir/PiracerOperator_autogen/mocs_compilation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PiracerOperator.dir/PiracerOperator_autogen/mocs_compilation.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ha/바탕화면/DES-Head-Unit/head_unit/build/PiracerOperator_autogen/mocs_compilation.cpp > CMakeFiles/PiracerOperator.dir/PiracerOperator_autogen/mocs_compilation.cpp.i
+
+CMakeFiles/PiracerOperator.dir/PiracerOperator_autogen/mocs_compilation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PiracerOperator.dir/PiracerOperator_autogen/mocs_compilation.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ha/바탕화면/DES-Head-Unit/head_unit/build/PiracerOperator_autogen/mocs_compilation.cpp -o CMakeFiles/PiracerOperator.dir/PiracerOperator_autogen/mocs_compilation.cpp.s
+
 CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperator.cpp.o: CMakeFiles/PiracerOperator.dir/flags.make
 CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperator.cpp.o: ../src/PiracerOperator/PiracerOperator.cpp
 CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperator.cpp.o: CMakeFiles/PiracerOperator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperator.cpp.o -MF CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperator.cpp.o.d -o CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperator.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/head_unit/src/PiracerOperator/PiracerOperator.cpp
 
 CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperator.cpp.i: cmake_force
@@ -86,7 +100,7 @@ CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperator.cpp.s: cmake_
 CMakeFiles/PiracerOperator.dir/src/PiracerOperator/ControllerClass.cpp.o: CMakeFiles/PiracerOperator.dir/flags.make
 CMakeFiles/PiracerOperator.dir/src/PiracerOperator/ControllerClass.cpp.o: ../src/PiracerOperator/ControllerClass.cpp
 CMakeFiles/PiracerOperator.dir/src/PiracerOperator/ControllerClass.cpp.o: CMakeFiles/PiracerOperator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PiracerOperator.dir/src/PiracerOperator/ControllerClass.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PiracerOperator.dir/src/PiracerOperator/ControllerClass.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PiracerOperator.dir/src/PiracerOperator/ControllerClass.cpp.o -MF CMakeFiles/PiracerOperator.dir/src/PiracerOperator/ControllerClass.cpp.o.d -o CMakeFiles/PiracerOperator.dir/src/PiracerOperator/ControllerClass.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/head_unit/src/PiracerOperator/ControllerClass.cpp
 
 CMakeFiles/PiracerOperator.dir/src/PiracerOperator/ControllerClass.cpp.i: cmake_force
@@ -100,7 +114,7 @@ CMakeFiles/PiracerOperator.dir/src/PiracerOperator/ControllerClass.cpp.s: cmake_
 CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperatorStubImpl.cpp.o: CMakeFiles/PiracerOperator.dir/flags.make
 CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperatorStubImpl.cpp.o: ../src/PiracerOperator/PiracerOperatorStubImpl.cpp
 CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperatorStubImpl.cpp.o: CMakeFiles/PiracerOperator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperatorStubImpl.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperatorStubImpl.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperatorStubImpl.cpp.o -MF CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperatorStubImpl.cpp.o.d -o CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperatorStubImpl.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/head_unit/src/PiracerOperator/PiracerOperatorStubImpl.cpp
 
 CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperatorStubImpl.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperatorStubImpl.cpp.s
 CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerClass.cpp.o: CMakeFiles/PiracerOperator.dir/flags.make
 CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerClass.cpp.o: ../src/PiracerOperator/PiracerClass.cpp
 CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerClass.cpp.o: CMakeFiles/PiracerOperator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerClass.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerClass.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerClass.cpp.o -MF CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerClass.cpp.o.d -o CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerClass.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/head_unit/src/PiracerOperator/PiracerClass.cpp
 
 CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerClass.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerClass.cpp.s: cmake_for
 CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPStubAdapter.cpp.o: CMakeFiles/PiracerOperator.dir/flags.make
 CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPStubAdapter.cpp.o: ../src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPStubAdapter.cpp
 CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPStubAdapter.cpp.o: CMakeFiles/PiracerOperator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPStubAdapter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPStubAdapter.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPStubAdapter.cpp.o -MF CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPStubAdapter.cpp.o.d -o CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPStubAdapter.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/head_unit/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPStubAdapter.cpp
 
 CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPStubAdapter.cpp.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSo
 CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp.o: CMakeFiles/PiracerOperator.dir/flags.make
 CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp.o: ../src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp
 CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp.o: CMakeFiles/PiracerOperator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp.o -MF CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp.o.d -o CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/head_unit/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp
 
 CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp.i: cmake_force
@@ -155,6 +169,7 @@ CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSo
 
 # Object files for target PiracerOperator
 PiracerOperator_OBJECTS = \
+"CMakeFiles/PiracerOperator.dir/PiracerOperator_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperator.cpp.o" \
 "CMakeFiles/PiracerOperator.dir/src/PiracerOperator/ControllerClass.cpp.o" \
 "CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperatorStubImpl.cpp.o" \
@@ -165,6 +180,7 @@ PiracerOperator_OBJECTS = \
 # External object files for target PiracerOperator
 PiracerOperator_EXTERNAL_OBJECTS =
 
+PiracerOperator: CMakeFiles/PiracerOperator.dir/PiracerOperator_autogen/mocs_compilation.cpp.o
 PiracerOperator: CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperator.cpp.o
 PiracerOperator: CMakeFiles/PiracerOperator.dir/src/PiracerOperator/ControllerClass.cpp.o
 PiracerOperator: CMakeFiles/PiracerOperator.dir/src/PiracerOperator/PiracerOperatorStubImpl.cpp.o
@@ -174,7 +190,7 @@ PiracerOperator: CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/
 PiracerOperator: CMakeFiles/PiracerOperator.dir/build.make
 PiracerOperator: /usr/lib/x86_64-linux-gnu/libpython3.10.so
 PiracerOperator: CMakeFiles/PiracerOperator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable PiracerOperator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable PiracerOperator"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PiracerOperator.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -20,9 +20,6 @@ public Q_SLOTS:
     Q_INVOKABLE quint16 getBattery();
     Q_INVOKABLE quint16 getGear();
     Q_INVOKABLE quint16 getDirection();
-    
-private:
-    uint16_t temp;
 };
 
 

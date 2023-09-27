@@ -2,7 +2,6 @@
 #define HEADUNITSTUBIMPL_HPP
 
 
-#include <iostream>
 #include <CommonAPI/CommonAPI.hpp>
 #include <v1/commonapi/HeadUnitStubDefault.hpp>
 

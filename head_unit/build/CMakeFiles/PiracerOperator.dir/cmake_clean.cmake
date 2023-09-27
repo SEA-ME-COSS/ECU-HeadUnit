@@ -1,4 +1,9 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/PiracerOperator_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/PiracerOperator_autogen.dir/ParseCache.txt"
+  "PiracerOperator_autogen"
+  "CMakeFiles/PiracerOperator.dir/PiracerOperator_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/PiracerOperator.dir/PiracerOperator_autogen/mocs_compilation.cpp.o.d"
   "CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp.o"
   "CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp.o.d"
   "CMakeFiles/PiracerOperator.dir/src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPStubAdapter.cpp.o"
