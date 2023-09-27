@@ -61,7 +61,7 @@ target_link_libraries(PiracerOperator ${PYTHON_LIBRARIES} CommonAPI CommonAPI-So
 add_executable(IPCManager
         src/IPCManager/IPCManager.cpp
         src/IPCManager/IPCManagerStubImpl.cpp
-        src/IPCManager/IPCManagerData.cpp
+        src/IPCManager/IPCManagerSenderClass.cpp
         src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp

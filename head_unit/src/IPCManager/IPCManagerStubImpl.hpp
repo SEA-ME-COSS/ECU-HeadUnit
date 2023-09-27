@@ -2,15 +2,17 @@
 #define IPCMANAGERSTUBIMPL_HPP
 
 
-#include <iostream>
 #include <CommonAPI/CommonAPI.hpp>
 #include <v1/commonapi/IPCManagerStubDefault.hpp>
 
-#include "IPCManagerData.hpp"
+#include "IPCManagerSenderClass.hpp"
 
 
 class IPCManagerStubImpl: public v1_0::commonapi::IPCManagerStubDefault
 {
+private:
+    IPCManagerSenderClass sender;
+
 public:
     IPCManagerStubImpl();
     virtual ~IPCManagerStubImpl();
