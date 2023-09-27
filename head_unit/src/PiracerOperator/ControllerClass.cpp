@@ -44,6 +44,3 @@ double ControllerClass::getSteering()
     return steering;
 }
 
-
-ControllerClass controller;
-

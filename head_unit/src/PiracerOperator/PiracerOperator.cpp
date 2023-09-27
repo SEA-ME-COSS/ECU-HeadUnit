@@ -1,6 +1,3 @@
-#include <string>
-#include <unistd.h>
-
 #include "ControllerClass.hpp"
 #include "PiracerClass.hpp"
 #include "PiracerOperatorStubImpl.hpp"
@@ -16,6 +13,8 @@ int main ()
     runtime = CommonAPI::Runtime::get();
     PiracerOperatorService = std::make_shared<PiracerOperatorStubImpl>();
     runtime->registerService("local", "PiracerOperator", PiracerOperatorService);
+    
+    ControllerClass controller;
     
     double throttle, steering;
     

@@ -1,4 +1,5 @@
 #include "PiracerOperatorStubImpl.hpp"
+#include <iostream>
 
 
 char gearName[] = "PRND";
