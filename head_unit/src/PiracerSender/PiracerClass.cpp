@@ -1,4 +1,5 @@
 #include "PiracerClass.hpp"
+#include <iostream>
 
 
 PiracerClass::PiracerClass()
@@ -23,6 +24,7 @@ uint16_t PiracerClass::getBatteryLevel()
     pVoltage = PyObject_CallMethod(pInstance, "get_battery_voltage", NULL);
     voltageLevel = PyFloat_AsDouble(pVoltage);
     batteryLevel = (uint16_t) ((voltageLevel - 2.8 * 3.0) / (12.3 - 2.8 * 3.0) * 100.0);
+    std::cout<<voltageLevel<<batteryLevel<<std::endl;
     
     return batteryLevel;
 }
