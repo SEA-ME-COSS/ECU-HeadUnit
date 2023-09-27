@@ -41,7 +41,9 @@ void kalmanFilter_(double measuredstate, double estimation[SIZE], double letterP
     double temp_result[SIZE][SIZE];
     matrix_multiply(letterA, (double (*)[SIZE])estimation, temp_result);
     for (int i = 0; i < SIZE; i++)
+    {
         predicted_e[i] = temp_result[i][0];
+    }
     double predicted_P[SIZE][SIZE];
     matrix_multiply(letterA, letterP, predicted_P);
     for (int i = 0; i < SIZE; i++) 
@@ -97,9 +99,11 @@ uint16_t filter(uint16_t speed_sensor_rpm)
     kalmanFilter_(speed_sensor_measuredstate, speed_sensor_estimation, speed_sensor_letterP, speed_sensor_dt, speed_sensor_renewed_e, speed_sensor_renewed_P);
         
     // Update the estimation and covariance for the next iteration
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < SIZE; i++)
+    {
         speed_sensor_estimation[i] = speed_sensor_renewed_e[i];
-        for (int j = 0; j < SIZE; j++) {
+        for (int j = 0; j < SIZE; j++)
+        {
             speed_sensor_letterP[i][j] = speed_sensor_renewed_P[i][j];
         }
     }

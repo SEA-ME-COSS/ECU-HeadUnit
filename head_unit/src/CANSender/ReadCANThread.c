@@ -3,6 +3,8 @@
 
 int soc;
 
+uint16_t speed_sensor_rpm;
+
 
 int open_port(const char *port)
 {
@@ -82,7 +84,6 @@ void *ReadCANThread(void *arg)
     open_port("can0");
     while (1) 
     {
-        uint16_t speed_sensor_rpm;
         read_port(&speed_sensor_rpm);
         
         pthread_mutex_lock(&CANBufferMutex);

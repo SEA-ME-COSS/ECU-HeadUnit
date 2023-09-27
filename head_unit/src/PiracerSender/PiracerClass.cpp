@@ -9,15 +9,6 @@ PiracerClass::PiracerClass()
     pInstance = PyObject_CallObject(pClass, NULL);
 }
 
-uint16_t PiracerClass::getBatteryLevel()
-{
-    pVoltage = PyObject_CallMethod(pInstance, "get_battery_voltage", NULL);
-    voltageLevel = PyFloat_AsDouble(pVoltage);
-    batteryLevel = (uint16_t)((voltageLevel - 2.8 * 3.0) / (12.3 - 2.8 * 3.0) * 100.0);
-    
-    return batteryLevel;
-}
-
 PiracerClass::~PiracerClass()
 {
     Py_DECREF(pVoltage);
@@ -27,6 +18,12 @@ PiracerClass::~PiracerClass()
     Py_Finalize();
 }
 
-
-PiracerClass piracer;
+uint16_t PiracerClass::getBatteryLevel()
+{
+    pVoltage = PyObject_CallMethod(pInstance, "get_battery_voltage", NULL);
+    voltageLevel = PyFloat_AsDouble(pVoltage);
+    batteryLevel = (uint16_t) ((voltageLevel - 2.8 * 3.0) / (12.3 - 2.8 * 3.0) * 100.0);
+    
+    return batteryLevel;
+}
 

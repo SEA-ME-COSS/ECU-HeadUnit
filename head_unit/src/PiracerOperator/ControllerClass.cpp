@@ -1,7 +1,7 @@
 #include "ControllerClass.hpp"
 
 
-PiracerController::PiracerController()
+ControllerClass::ControllerClass()
 {
     Py_Initialize();
     pModule = PyImport_ImportModule("piracer.gamepads");
@@ -9,7 +9,18 @@ PiracerController::PiracerController()
     pInstance = PyObject_CallObject(pClass, NULL);
 }
 
-void PiracerController::readControl()
+ControllerClass::~ControllerClass()
+{
+    Py_DECREF(pThrottle);
+    Py_DECREF(pSteering);
+    Py_DECREF(pInput);
+    Py_DECREF(pInstance);
+    Py_DECREF(pClass);
+    Py_DECREF(pModule);
+    Py_Finalize();
+}
+
+void ControllerClass::readControl()
 {
     pInput = PyObject_CallMethod(pInstance, "read_data", NULL);
     pThrottle = PyObject_GetAttrString(pInput, "analog_stick_right");
@@ -23,27 +34,13 @@ void PiracerController::readControl()
     return;
 }
 
-double PiracerController::getThrottle()
+double ControllerClass::getThrottle()
 {
     return throttle;
 }
 
-double PiracerController::getSteering()
+double ControllerClass::getSteering()
 {
     return steering;
 }
-
-PiracerController::~PiracerController()
-{
-    Py_DECREF(pThrottle);
-    Py_DECREF(pSteering);
-    Py_DECREF(pInput);
-    Py_DECREF(pInstance);
-    Py_DECREF(pClass);
-    Py_DECREF(pModule);
-    Py_Finalize();
-}
-
-
-PiracerController controller;
 

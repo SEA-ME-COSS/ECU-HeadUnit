@@ -11,6 +11,15 @@ PiracerClass::PiracerClass()
     gearMode = 0;
 }
 
+PiracerClass::~PiracerClass()
+{
+    Py_DECREF(pArgs);
+    Py_DECREF(pInstance);
+    Py_DECREF(pClass);
+    Py_DECREF(pModule);
+    Py_Finalize();
+}
+
 void PiracerClass::setGearMode(uint16_t _gearMode)
 {
     gearMode = _gearMode;
@@ -39,16 +48,6 @@ void PiracerClass::applySteering(double steering)
     return;
 }
 
-PiracerClass::~PiracerClass()
-{
-    Py_DECREF(pArgs);
-    Py_DECREF(pInstance);
-    Py_DECREF(pClass);
-    Py_DECREF(pModule);
-    Py_Finalize();
-}
-
 
 PiracerClass piracer;
-pthread_mutex_t PiracerClassMutex = PTHREAD_MUTEX_INITIALIZER;
 

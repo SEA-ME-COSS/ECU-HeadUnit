@@ -15,12 +15,9 @@ class PiracerClass
         
     public:
         PiracerClass();
-        uint16_t getBatteryLevel();
         ~PiracerClass();
+        uint16_t getBatteryLevel();
 };
-
-
-extern PiracerClass piracer;
 
 
 #endif

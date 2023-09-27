@@ -22,8 +22,6 @@ extern "C" {
 #include "CANBuffer.h"
 
 
-//extern int soc;
-
 int open_port(const char *port);
 void read_port(uint16_t *speed_sensor_rpm);
 int close_port();

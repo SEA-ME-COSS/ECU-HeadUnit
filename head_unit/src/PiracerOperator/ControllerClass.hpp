@@ -5,7 +5,7 @@
 #include <Python.h>
 
 
-class PiracerController
+class ControllerClass
 {
     private:
         PyObject *pModule, *pClass, *pInstance, *pInput, *pThrottle, *pSteering;
@@ -13,15 +13,12 @@ class PiracerController
         double steering;
         
     public:
-        PiracerController();
+        ControllerClass();
+        ~ControllerClass();
         void readControl();
         double getThrottle();
         double getSteering();
-        ~PiracerController();
 };
-
-
-extern PiracerController controller;
 
 
 #endif

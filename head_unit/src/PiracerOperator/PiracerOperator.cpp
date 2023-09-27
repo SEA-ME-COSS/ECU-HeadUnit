@@ -2,6 +2,7 @@
 #include <unistd.h>
 
 #include "ControllerClass.hpp"
+#include "PiracerClass.hpp"
 #include "PiracerOperatorStubImpl.hpp"
 
 
@@ -16,8 +17,9 @@ int main ()
     PiracerOperatorService = std::make_shared<PiracerOperatorStubImpl>();
     runtime->registerService("local", "PiracerOperator", PiracerOperatorService);
     
+    ControllerClass controller;
+    
     double throttle, steering;
-    uint16_t gearMode;
     
     while (1)
     {
@@ -25,9 +27,7 @@ int main ()
         throttle = controller.getThrottle();
         steering = controller.getSteering();
 
-        pthread_mutex_lock(&PiracerClassMutex);
-        gearMode = piracer.getGearMode();
-        switch (gearMode)
+        switch (piracer.getGearMode())
         {
             case 0:    // P
                 piracer.applyThrottle(0.0);
@@ -65,7 +65,6 @@ int main ()
                 }
                 break;
         }
-        pthread_mutex_unlock(&PiracerClassMutex);
     }
 
     return 0;

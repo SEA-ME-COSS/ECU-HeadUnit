@@ -4,7 +4,7 @@
 
 #include <stdint.h>
 #include <Python.h>
-#include <pthread.h>
+
 
 class PiracerClass
 {
@@ -14,16 +14,16 @@ class PiracerClass
         
     public:
         PiracerClass();
+        ~PiracerClass();
         void setGearMode(uint16_t _gearMode);
         uint16_t getGearMode();
         void applyThrottle(double throttle);
         void applySteering(double steering);
-        ~PiracerClass();
+
 };
 
 
 extern PiracerClass piracer;
-extern pthread_mutex_t PiracerClassMutex;
 
 
 #endif
