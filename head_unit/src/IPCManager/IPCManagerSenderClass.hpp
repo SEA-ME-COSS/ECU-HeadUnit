@@ -15,6 +15,7 @@ class IPCManagerSenderClass
 {
 public:
     IPCManagerSenderClass();
+    ~IPCManagerSenderClass();
 
     std::shared_ptr<CommonAPI::Runtime> runtime;
     std::shared_ptr<PiracerOperatorProxy<>> PiracerOperatorTargetProxy;
@@ -23,9 +24,8 @@ public:
     
     CommonAPI::CallStatus callStatus;
     std::string returnMessage;
-    
-    ~IPCManagerSenderClass();
 };
+
 
 #endif
 

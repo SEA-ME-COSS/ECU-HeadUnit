@@ -9,7 +9,7 @@ void IPCManagerStubImpl::setSensorRpm(const std::shared_ptr<CommonAPI::ClientId>
     sender.InstrumentClusterTargetProxy->setSpeedRpm(_sensorRpm, sender.callStatus, sender.returnMessage);
     sender.HeadUnitTargetProxy->setSensorRpm(_sensorRpm, sender.callStatus, sender.returnMessage);
 
-    _reply(":)");
+    _reply("");
 
     return;
 }
@@ -18,7 +18,7 @@ void IPCManagerStubImpl::setBatteryLevel(const std::shared_ptr<CommonAPI::Client
 {
     sender.InstrumentClusterTargetProxy->setBattery(_batteryLevel, sender.callStatus, sender.returnMessage);
     
-    _reply(":)");
+    _reply("");
 
     return;
 }
@@ -28,7 +28,7 @@ void IPCManagerStubImpl::setGearMode(const std::shared_ptr<CommonAPI::ClientId> 
     sender.PiracerOperatorTargetProxy->setGearMode(_gearMode, sender.callStatus, sender.returnMessage);
     sender.InstrumentClusterTargetProxy->setGear(_gearMode, sender.callStatus, sender.returnMessage);
 
-    _reply(":)");
+    _reply("");
 
     return;
 }
@@ -37,7 +37,7 @@ void IPCManagerStubImpl::setDirection(const std::shared_ptr<CommonAPI::ClientId>
 {
     sender.InstrumentClusterTargetProxy->setDirection(_direction, sender.callStatus, sender.returnMessage);
 
-    _reply(":)");
+    _reply("");
 
     return;
 }
