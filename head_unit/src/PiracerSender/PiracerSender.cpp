@@ -16,8 +16,6 @@ int main ()
     runtime = CommonAPI::Runtime::get();
     IPCManagerTargetProxy = runtime->buildProxy<IPCManagerProxy>("local", "IPCManager");
     
-    PiracerClass piracer;
-    
     CommonAPI::CallStatus callStatus;
     std::string returnMessage;
     

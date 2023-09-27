@@ -20,5 +20,8 @@ class PiracerClass
 };
 
 
+extern PiracerClass piracer;
+
+
 #endif
 

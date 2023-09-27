@@ -27,3 +27,6 @@ uint16_t PiracerClass::getBatteryLevel()
     return batteryLevel;
 }
 
+
+PiracerClass piracer;
+
