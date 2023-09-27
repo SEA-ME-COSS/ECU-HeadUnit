@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>font/Nebula-Regular.otf</file>
+        <file>image/logo.png</file>
+        <file>ValueSource.qml</file>
+    </qresource>
+</RCC>
