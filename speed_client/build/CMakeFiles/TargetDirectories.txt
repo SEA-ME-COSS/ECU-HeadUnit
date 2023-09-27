@@ -1,4 +1,0 @@
-/home/ha/project-manager 10/build/CMakeFiles/SpeedClient.dir
-/home/ha/project-manager 10/build/CMakeFiles/ManagerService.dir
-/home/ha/project-manager 10/build/CMakeFiles/edit_cache.dir
-/home/ha/project-manager 10/build/CMakeFiles/rebuild_cache.dir
