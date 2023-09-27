@@ -1,6 +1,4 @@
 IMAGE_INSTALL += " \
-                wpa-supplicant \
-                openssh \
                 python3-adafruit-blinka \
                 python3-adafruit-circuitpython-busdevice \
                 python3-adafruit-circuitpython-pca9685 \
@@ -20,5 +18,16 @@ IMAGE_INSTALL += " \
                 python-pyftdi \
                 python-piracer-py \
                 opencv \
-                helloworld
+"
+
+IMAGE_INSTALL += " \
+                python3 \
+                python3-numpy \
+                bash \
+                openssh \
+                wpa-supplicant \
+"
+
+IMAGE_INSTALL += " \
+                helloworld \
 "
