@@ -21,5 +21,8 @@ class ControllerClass
 };
 
 
+extern ControllerClass controller;
+
+
 #endif
 

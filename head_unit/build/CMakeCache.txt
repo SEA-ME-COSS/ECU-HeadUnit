@@ -227,27 +227,6 @@ PYTHON_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpython3.10.so
 //Path to a library.
 PYTHON_LIBRARY_DEBUG:FILEPATH=PYTHON_LIBRARY_DEBUG-NOTFOUND
 
-//The directory containing a CMake configuration file for Qt5Core.
-Qt5Core_DIR:PATH=/opt/Qt/5.15.0/gcc_64/lib/cmake/Qt5Core
-
-//The directory containing a CMake configuration file for Qt5Gui.
-Qt5Gui_DIR:PATH=/opt/Qt/5.15.0/gcc_64/lib/cmake/Qt5Gui
-
-//The directory containing a CMake configuration file for Qt5Network.
-Qt5Network_DIR:PATH=/opt/Qt/5.15.0/gcc_64/lib/cmake/Qt5Network
-
-//The directory containing a CMake configuration file for Qt5QmlModels.
-Qt5QmlModels_DIR:PATH=/opt/Qt/5.15.0/gcc_64/lib/cmake/Qt5QmlModels
-
-//The directory containing a CMake configuration file for Qt5Qml.
-Qt5Qml_DIR:PATH=/opt/Qt/5.15.0/gcc_64/lib/cmake/Qt5Qml
-
-//The directory containing a CMake configuration file for Qt5Quick.
-Qt5Quick_DIR:PATH=/opt/Qt/5.15.0/gcc_64/lib/cmake/Qt5Quick
-
-//The directory containing a CMake configuration file for Qt5.
-Qt5_DIR:PATH=/opt/Qt/5.15.0/gcc_64/lib/cmake/Qt5
-
 
 ########################
 # INTERNAL cache entries

@@ -2,13 +2,5 @@
 /home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles/PiracerSender.dir
 /home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles/PiracerOperator.dir
 /home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles/IPCManager.dir
-/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles/InstrumentCluster.dir
-/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles/HeadUnit.dir
 /home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles/edit_cache.dir
 /home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles/rebuild_cache.dir
-/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles/CANSender_autogen.dir
-/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles/PiracerSender_autogen.dir
-/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles/PiracerOperator_autogen.dir
-/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles/IPCManager_autogen.dir
-/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles/InstrumentCluster_autogen.dir
-/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles/HeadUnit_autogen.dir

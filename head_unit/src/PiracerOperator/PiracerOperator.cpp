@@ -17,8 +17,6 @@ int main ()
     PiracerOperatorService = std::make_shared<PiracerOperatorStubImpl>();
     runtime->registerService("local", "PiracerOperator", PiracerOperatorService);
     
-    ControllerClass controller;
-    
     double throttle, steering;
     
     while (1)
