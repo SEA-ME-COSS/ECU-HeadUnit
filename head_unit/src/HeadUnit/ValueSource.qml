@@ -9,13 +9,14 @@ Item {
     }
 
     property int sensorRpm: 0
+    property int gear: 0
 
     function run_ui() {
         valueSource.sensorRpm = carinfo.getSensorRpm()
     }
 
     Timer {
-        interval: 500; running: true; repeat: true
+        interval: 100; running: true; repeat: true
         onTriggered: valueSource.run_ui()
     }
 }

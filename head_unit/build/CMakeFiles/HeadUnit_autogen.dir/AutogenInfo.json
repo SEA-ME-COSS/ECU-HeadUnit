@@ -226,7 +226,6 @@
 		"/usr/share/cmake-3.22/Modules/SelectLibraryConfigurations.cmake",
 		"/usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake",
 		"/usr/share/cmake-3.22/Modules/FindPackageMessage.cmake",
-		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/src/InstrumentCluster/qml.qrc",
 		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/src/HeadUnit/qml.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit",
@@ -335,15 +334,7 @@
 	],
 	"MOC_PREDEFS_FILE" : "/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/build/HeadUnit_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
-	"MOC_SKIP" : 
-	[
-		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/build/CANSender_autogen/mocs_compilation.cpp",
-		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/build/IPCManager_autogen/mocs_compilation.cpp",
-		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/build/InstrumentCluster_autogen/34HRDSO23Q/qrc_qml.cpp",
-		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/build/InstrumentCluster_autogen/mocs_compilation.cpp",
-		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/build/PiracerOperator_autogen/mocs_compilation.cpp",
-		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/build/PiracerSender_autogen/mocs_compilation.cpp"
-	],
+	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 4,
 	"PARSE_CACHE_FILE" : "/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/build/CMakeFiles/HeadUnit_autogen.dir/ParseCache.txt",
@@ -397,15 +388,7 @@
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
-	"UIC_SKIP" : 
-	[
-		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/build/CANSender_autogen/mocs_compilation.cpp",
-		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/build/IPCManager_autogen/mocs_compilation.cpp",
-		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/build/InstrumentCluster_autogen/34HRDSO23Q/qrc_qml.cpp",
-		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/build/InstrumentCluster_autogen/mocs_compilation.cpp",
-		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/build/PiracerOperator_autogen/mocs_compilation.cpp",
-		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/build/PiracerSender_autogen/mocs_compilation.cpp"
-	],
+	"UIC_SKIP" : [],
 	"UIC_UI_FILES" : [],
 	"VERBOSITY" : 0
 }

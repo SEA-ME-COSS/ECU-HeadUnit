@@ -12,7 +12,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.22.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeSystem.cmake"
   "../src/HeadUnit/qml.qrc"
-  "../src/InstrumentCluster/qml.qrc"
   "/opt/Qt/5.15.0/gcc_64/lib/cmake/Qt5/Qt5Config.cmake"
   "/opt/Qt/5.15.0/gcc_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake"
   "/opt/Qt/5.15.0/gcc_64/lib/cmake/Qt5/Qt5ModuleLocation.cmake"
@@ -190,12 +189,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/3.22.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeCXXCompiler.cmake"
-  "CMakeFiles/CANSender_autogen.dir/AutogenInfo.json"
-  "CMakeFiles/PiracerSender_autogen.dir/AutogenInfo.json"
-  "CMakeFiles/PiracerOperator_autogen.dir/AutogenInfo.json"
-  "CMakeFiles/IPCManager_autogen.dir/AutogenInfo.json"
-  "CMakeFiles/InstrumentCluster_autogen.dir/AutogenInfo.json"
-  "CMakeFiles/InstrumentCluster_autogen.dir/AutoRcc_qml_34HRDSO23Q_Info.json"
   "CMakeFiles/HeadUnit_autogen.dir/AutogenInfo.json"
   "CMakeFiles/HeadUnit_autogen.dir/AutoRcc_qml_MIGZHXQZTS_Info.json"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
@@ -203,16 +196,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/CANSender.dir/DependInfo.cmake"
-  "CMakeFiles/PiracerSender.dir/DependInfo.cmake"
-  "CMakeFiles/PiracerOperator.dir/DependInfo.cmake"
-  "CMakeFiles/IPCManager.dir/DependInfo.cmake"
-  "CMakeFiles/InstrumentCluster.dir/DependInfo.cmake"
   "CMakeFiles/HeadUnit.dir/DependInfo.cmake"
-  "CMakeFiles/CANSender_autogen.dir/DependInfo.cmake"
-  "CMakeFiles/PiracerSender_autogen.dir/DependInfo.cmake"
-  "CMakeFiles/PiracerOperator_autogen.dir/DependInfo.cmake"
-  "CMakeFiles/IPCManager_autogen.dir/DependInfo.cmake"
-  "CMakeFiles/InstrumentCluster_autogen.dir/DependInfo.cmake"
   "CMakeFiles/HeadUnit_autogen.dir/DependInfo.cmake"
   )

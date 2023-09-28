@@ -20,7 +20,6 @@ int main(int argc, char *argv[])
     IPCManagerTargetProxy = runtime->buildProxy<IPCManagerProxy>("local", "IPCManager");
     
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-
     QGuiApplication app(argc, argv);
     
     qmlRegisterType<QtFunction>("DataModule", 1, 0, "QtFunction");
@@ -28,7 +27,8 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-                     &app, [url](QObject *obj, const QUrl &objUrl) {
+                     &app, [url](QObject *obj, const QUrl &objUrl)
+    {
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);

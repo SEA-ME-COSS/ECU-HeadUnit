@@ -36,8 +36,8 @@ Window {
 
         Rectangle {
             id: background
-            width: 1024
-            height: 600
+            width: 600
+            height: 1024
             anchors.centerIn: parent
             rotation: 90
             gradient: Gradient {
@@ -48,55 +48,165 @@ Window {
             }
         }
 
-        Image {
-            source: "image/logo.png"
-            width: 300
-            height: 300
-            fillMode: Image.PreserveAspectFit
-            anchors.horizontalCenter: parent.horizontalCenter
-            y: 20
+        Rectangle {
+            width: 130
+            height: 130
+            x: 20
+            y: parent.height / 2 - height / 2 - 210
+            color: (valueSource.sensorRpm === 0) ? "black" : "#555555"
+            radius: 30
+
+            Rectangle {
+                width: 115
+                height: 115
+                anchors.centerIn: parent
+                color: (valueSource.gear === 0) ? ((valueSource.sensorRpm === 0) ? "#555555" : "#B0B0B0") : "white"
+                radius: 22
+
+                Text {
+                    text: "P"
+                    font.family: font.name
+                    font.pixelSize: 130
+                    color: (valueSource.gear === 0) ? "white" : ((valueSource.sensorRpm === 0) ? "#555555" : "#B0B0B0")
+                    x: 13
+                    y: -20
+                }
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    if (valueSource.sensorRpm === 0) {
+                        valueSource.gear = 0
+                        carinfo.setGear(0)
+                    }
+                }
+            }
+        }
+
+        Rectangle {
+            width: 130
+            height: 130
+            x: 20
+            y: parent.height / 2 - height / 2 - 70
+            color: (valueSource.sensorRpm === 0) ? "black" : "#555555"
+            radius: 30
+
+            Rectangle {
+                width: 115
+                height: 115
+                anchors.centerIn: parent
+                color: (valueSource.gear === 1) ? ((valueSource.sensorRpm === 0) ? "#555555" : "#B0B0B0") : "white"
+                radius: 22
+
+                Text {
+                    text: "R"
+                    font.family: font.name
+                    font.pixelSize: 130
+                    color: (valueSource.gear === 1) ? "white" : ((valueSource.sensorRpm === 0) ? "#555555" : "#B0B0B0")
+                    x: 13
+                    y: -20
+                }
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    if (valueSource.sensorRpm === 0) {
+                        valueSource.gear = 1
+                        carinfo.setGear(1)
+                    }
+                }
+            }
+        }
+
+        Rectangle {
+            width: 130
+            height: 130
+            x: 20
+            y: parent.height / 2 - height / 2 + 70
+            color: (valueSource.sensorRpm === 0) ? "black" : "#555555"
+            radius: 30
+
+            Rectangle {
+                width: 115
+                height: 115
+                anchors.centerIn: parent
+                color: (valueSource.gear === 2) ? ((valueSource.sensorRpm === 0) ? "#555555" : "#B0B0B0") : "white"
+                radius: 22
+
+                Text {
+                    text: "N"
+                    font.family: font.name
+                    font.pixelSize: 130
+                    color: (valueSource.gear === 2) ? "white" : ((valueSource.sensorRpm === 0) ? "#555555" : "#B0B0B0")
+                    x: 13
+                    y: -20
+                }
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    if (valueSource.sensorRpm === 0) {
+                        valueSource.gear = 2
+                        carinfo.setGear(2)
+                    }
+                }
+            }
+        }
+
+        Rectangle {
+            width: 130
+            height: 130
+            x: 20
+            y: parent.height / 2 - height / 2 + 210
+            color: (valueSource.sensorRpm === 0) ? "black" : "#555555"
+            radius: 30
+
+            Rectangle {
+                width: 115
+                height: 115
+                anchors.centerIn: parent
+                color: (valueSource.gear === 3) ? ((valueSource.sensorRpm === 0) ? "#555555" : "#B0B0B0") : "white"
+                radius: 22
+
+                Text {
+                    text: "D"
+                    font.family: font.name
+                    font.pixelSize: 130
+                    color: (valueSource.gear === 3) ? "white" : ((valueSource.sensorRpm === 0) ? "#555555" : "#B0B0B0")
+                    x: 13
+                    y: -20
+                }
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    if (valueSource.sensorRpm === 0) {
+                        valueSource.gear = 3
+                        carinfo.setGear(3)
+                    }
+                }
+            }
+        }
+
+        Rectangle {
+            width: 5
+            height: parent.height
+            anchors.verticalCenter: parent.verticalCenter
+            x: 170
+            color: (valueSource.sensorRpm === 0) ? "black" : "#555555"
         }
 
         Text {
             text: valueSource.sensorRpm
             font.family: font.name
             font.pixelSize: 70
-            color: "black"
-            anchors.horizontalCenter: parent.horizontalCenter
-            y: 400
-        }
-
-        Button {
-            text: "P"
-            anchors.verticalCenter: parent.verticalCenter
-            x: parent.verticalCenter - 60
-            onClicked: {
-                carinfo.setGear(0)
-            }
-        }
-        Button {
-            text: "R"
-            anchors.verticalCenter: parent.verticalCenter
-            x: parent.verticalCenter - 20
-            onClicked: {
-                carinfo.setGear(1)
-            }
-        }
-        Button {
-            text: "N"
-            anchors.verticalCenter: parent.verticalCenter
-            x: parent.verticalCenter + 20
-            onClicked: {
-                carinfo.setGear(2)
-            }
-        }
-        Button {
-            text: "D"
-            anchors.verticalCenter: parent.verticalCenter
-            x: parent.verticalCenter + 60
-            onClicked: {
-                carinfo.setGear(3)
-            }
+            color: (valueSource.sensorRpm === 0) ? "black" : "#555555"
+            x: 200
+            y: 5
         }
     }
 }

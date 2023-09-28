@@ -19,9 +19,6 @@ public Q_SLOTS:
     Q_INVOKABLE void setDirection(quint16 _direction);
     
     Q_INVOKABLE quint16 getSensorRpm();    
-    
-private:
-    uint16_t temp;
 };
 
 
