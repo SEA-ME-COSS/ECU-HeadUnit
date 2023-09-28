@@ -4,12 +4,16 @@
 
 #include <QObject>
 
+#include "HeadUnitSenderClass.hpp"
 #include "HeadUnitData.hpp"
 
 
 class QtFunction : public QObject
 {
     Q_OBJECT
+    
+private:
+    HeadUnitSenderClass sender;
 
 public:
     explicit QtFunction(QObject *parent = nullptr);

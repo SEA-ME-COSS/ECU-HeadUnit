@@ -1,4 +1,0 @@
-/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles/HeadUnit.dir
-/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles/edit_cache.dir
-/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles/rebuild_cache.dir
-/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles/HeadUnit_autogen.dir

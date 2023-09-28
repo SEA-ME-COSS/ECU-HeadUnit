@@ -6,8 +6,6 @@
 
 
 extern uint16_t sensorRpm;
-extern uint16_t gear;
-extern uint16_t direction;
 
 
 #endif
