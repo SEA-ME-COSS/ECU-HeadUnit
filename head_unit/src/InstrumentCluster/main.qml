@@ -141,7 +141,7 @@ Window {
             fillMode: Image.PreserveAspectFit
             x: parent.width / 2 - width / 2 - 180
             y: 30
-            opacity: (valueSource.left_direction === 1) ? 1.0 : 0.2
+            opacity: (valueSource.left_on_off) ? 1.0 : 0.2
         }
 
         Image {
@@ -149,9 +149,10 @@ Window {
             width: 60
             height: 60
             rotation: 90
+            fillMode: Image.PreserveAspectFit
             x: parent.width / 2 - width / 2 + 180
             y: 30
-            opacity: (valueSource.right_direction === 1) ? 1.0 : 0.2
+            opacity: (valueSource.right_on_off) ? 1.0 : 0.2
         }
     }
 }

@@ -196,7 +196,7 @@ Window {
             width: 5
             height: parent.height
             anchors.verticalCenter: parent.verticalCenter
-            x: 170
+            x: parent.width / 2 - width / 2 - 340
             color: (valueSource.sensorRpm === 0) ? "black" : "#555555"
         }
 
@@ -207,6 +207,156 @@ Window {
             color: (valueSource.sensorRpm === 0) ? "black" : "#555555"
             x: 200
             y: 5
+        }
+
+        Image {
+            source: "image/turn-icon.png"
+            width: 100
+            height: 100
+            rotation: -90
+            fillMode: Image.PreserveAspectFit
+            opacity: (valueSource.left_on_off) ? 0.2 : 1.0
+            x: parent.width / 2 - width / 2 - 170
+            y: 470
+
+            Image {
+                source: "image/turn-icon.png"
+                width: 80
+                height: 80
+                fillMode: Image.PreserveAspectFit
+                anchors.horizontalCenter: parent.horizontalCenter
+                y: 12
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    if (valueSource.direction === 1) {
+                        carinfo.setDirection(0)
+                        valueSource.direction = 0
+
+                        valueSource.blink = false
+                        valueSource.left_direction = false
+                        valueSource.right_direction = false
+                        valueSource.left_on_off = false
+                        valueSource.right_on_off = false
+                    } else {
+                        carinfo.setDirection(1)
+                        valueSource.direction = 1
+
+                        valueSource.blink = true
+                        valueSource.left_direction = true
+                        valueSource.right_direction = false
+                        valueSource.left_on_off = true
+                        valueSource.right_on_off = false
+                    }
+                }
+            }
+        }
+
+        Image {
+            source: "image/turn-icon.png"
+            width: 100
+            height: 100
+            rotation: 90
+            fillMode: Image.PreserveAspectFit
+            opacity: (valueSource.right_on_off) ? 0.2 : 1.0
+            x: parent.width / 2 - width / 2 + 170
+            y: 470
+
+            Image {
+                source: "image/turn-icon.png"
+                width: 80
+                height: 80
+                fillMode: Image.PreserveAspectFit
+                anchors.horizontalCenter: parent.horizontalCenter
+                y: 12
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    if (valueSource.direction === 2) {
+                        carinfo.setDirection(0)
+                        valueSource.direction = 0
+
+                        valueSource.blink = false
+                        valueSource.left_direction = false
+                        valueSource.right_direction = false
+                        valueSource.left_on_off = false
+                        valueSource.right_on_off = false
+                    } else {
+                        carinfo.setDirection(2)
+                        valueSource.direction = 2
+
+                        valueSource.blink = true
+                        valueSource.left_direction = false
+                        valueSource.right_direction = true
+                        valueSource.left_on_off = false
+                        valueSource.right_on_off = true
+                    }
+                }
+            }
+        }
+
+        Image {
+            source: "image/warning-icon.png"
+            width: 120
+            height: 120
+            fillMode: Image.PreserveAspectFit
+            anchors.horizontalCenter: parent.horizontalCenter
+            y: 460
+
+            Image {
+                source: "image/warning-icon.png"
+                width: 90
+                height: 90
+                fillMode: Image.PreserveAspectFit
+                anchors.horizontalCenter: parent.horizontalCenter
+                y: 20
+
+                Image {
+                    source: "image/warning-icon.png"
+                    width: 65
+                    height: 65
+                    fillMode: Image.PreserveAspectFit
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    y: 17
+                }
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    if (valueSource.direction === 3) {
+                        carinfo.setDirection(0)
+                        valueSource.direction = 0
+
+                        valueSource.blink = false
+                        valueSource.left_direction = false
+                        valueSource.right_direction = false
+                        valueSource.left_on_off = false
+                        valueSource.right_on_off = false
+                    } else {
+                        carinfo.setDirection(3)
+                        valueSource.direction = 3
+
+                        valueSource.blink = true
+                        valueSource.left_direction = true
+                        valueSource.right_direction = true
+                        valueSource.left_on_off = true
+                        valueSource.right_on_off = true
+                    }
+                }
+            }
+        }
+
+        Rectangle {
+            width: 5
+            height: parent.height
+            anchors.verticalCenter: parent.verticalCenter
+            x: parent.width / 2 - width / 2 + 340
+            color: (valueSource.sensorRpm === 0) ? "black" : "#555555"
         }
     }
 }

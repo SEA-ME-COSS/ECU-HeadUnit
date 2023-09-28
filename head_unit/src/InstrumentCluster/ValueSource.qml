@@ -14,8 +14,11 @@ Item {
     property int gear: 0
     property int direction: 0
 
-    property int left_direction: 0
-    property int right_direction: 0
+    property bool blink: false
+    property bool left_direction: false
+    property bool right_direction: false
+    property bool left_on_off: false
+    property bool right_on_off: false
 
     Behavior on speed {
         NumberAnimation {
@@ -42,13 +45,6 @@ Item {
         }
     }
 
-    function blink_left() {
-        valueSource.left_direction = (valueSource.left_direction === 0) ? 1 : 0
-    }
-    function blink_right() {
-        valueSource.right_direction = (valueSource.right_direction === 0) ? 1 : 0
-    }
-
     function run_ui() {
         valueSource.speed = carinfo.getSpeed()
         valueSource.rpm = carinfo.getRPM()
@@ -57,17 +53,40 @@ Item {
         valueSource.direction = carinfo.getDirection()
 
         if (valueSource.direction === 1) {
-            valueSource.blink_left()
+            valueSource.left_direction = true
+            valueSource.right_direction = false
+            valueSource.blink = true
         } else if (valueSource.direction === 2) {
-            valueSource.blink_right()
+            valueSource.left_direction = false
+            valueSource.right_direction = true
+            valueSource.blink = true
+        } else if (valueSource.direction === 3) {
+            valueSource.left_direction = true
+            valueSource.right_direction = true
+            valueSource.blink = true
         } else {
-            valueSource.left_direction = 0
-            valueSource.right_direction = 0
+            valueSource.left_direction = false
+            valueSource.right_direction = false
+            valueSource.blink = false
+        }
+    }
+
+    function blinking() {
+        if (valueSource.left_direction) {
+            valueSource.left_on_off = (valueSource.left_on_off) ? false : true
+        }
+        if (valueSource.right_direction) {
+            valueSource.right_on_off = (valueSource.right_on_off) ? false : true
         }
     }
 
     Timer {
         interval: 100; running: true; repeat: true
         onTriggered: valueSource.run_ui()
+    }
+
+    Timer {
+        interval: 500; running: valueSource.blink; repeat: true
+        onTriggered: valueSource.blinking()
     }
 }
