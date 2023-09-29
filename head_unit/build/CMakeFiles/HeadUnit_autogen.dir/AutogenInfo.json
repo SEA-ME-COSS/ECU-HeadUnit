@@ -259,12 +259,6 @@
 			null
 		],
 		[
-			"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/src/HeadUnit/HeadUnitData.hpp",
-			"MU",
-			"MIGZHXQZTS/moc_HeadUnitData.cpp",
-			null
-		],
-		[
 			"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/src/HeadUnit/HeadUnitSenderClass.hpp",
 			"MU",
 			"MIGZHXQZTS/moc_HeadUnitSenderClass.cpp",
@@ -277,9 +271,9 @@
 			null
 		],
 		[
-			"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/src/HeadUnit/QtFunction.hpp",
+			"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/src/HeadUnit/QtManagerClass.hpp",
 			"MU",
-			"MIGZHXQZTS/moc_QtFunction.cpp",
+			"MIGZHXQZTS/moc_QtManagerClass.cpp",
 			null
 		]
 	],
@@ -386,11 +380,6 @@
 			null
 		],
 		[
-			"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/src/HeadUnit/HeadUnitData.cpp",
-			"MU",
-			null
-		],
-		[
 			"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/src/HeadUnit/HeadUnitSenderClass.cpp",
 			"MU",
 			null
@@ -401,7 +390,7 @@
 			null
 		],
 		[
-			"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/src/HeadUnit/QtFunction.cpp",
+			"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/head_unit/src/HeadUnit/QtManagerClass.cpp",
 			"MU",
 			null
 		]

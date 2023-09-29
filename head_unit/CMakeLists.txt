@@ -92,8 +92,7 @@ target_link_libraries(InstrumentCluster
 add_executable(HeadUnit
         src/HeadUnit/HeadUnit.cpp
         src/HeadUnit/HeadUnitStubImpl.cpp
-        src/HeadUnit/HeadUnitData.cpp
-        src/HeadUnit/QtFunction.cpp
+        src/HeadUnit/QtManagerClass.cpp
         src/HeadUnit/HeadUnitSenderClass.cpp
         src/HeadUnit/qml.qrc
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp

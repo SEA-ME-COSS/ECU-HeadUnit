@@ -920,30 +920,6 @@ src/HeadUnit/HeadUnit.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HeadUnit.dir/build.make CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnit.cpp.s
 .PHONY : src/HeadUnit/HeadUnit.cpp.s
 
-src/HeadUnit/HeadUnitData.o: src/HeadUnit/HeadUnitData.cpp.o
-.PHONY : src/HeadUnit/HeadUnitData.o
-
-# target to build an object file
-src/HeadUnit/HeadUnitData.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HeadUnit.dir/build.make CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitData.cpp.o
-.PHONY : src/HeadUnit/HeadUnitData.cpp.o
-
-src/HeadUnit/HeadUnitData.i: src/HeadUnit/HeadUnitData.cpp.i
-.PHONY : src/HeadUnit/HeadUnitData.i
-
-# target to preprocess a source file
-src/HeadUnit/HeadUnitData.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HeadUnit.dir/build.make CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitData.cpp.i
-.PHONY : src/HeadUnit/HeadUnitData.cpp.i
-
-src/HeadUnit/HeadUnitData.s: src/HeadUnit/HeadUnitData.cpp.s
-.PHONY : src/HeadUnit/HeadUnitData.s
-
-# target to generate assembly for a file
-src/HeadUnit/HeadUnitData.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HeadUnit.dir/build.make CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitData.cpp.s
-.PHONY : src/HeadUnit/HeadUnitData.cpp.s
-
 src/HeadUnit/HeadUnitSenderClass.o: src/HeadUnit/HeadUnitSenderClass.cpp.o
 .PHONY : src/HeadUnit/HeadUnitSenderClass.o
 
@@ -992,29 +968,29 @@ src/HeadUnit/HeadUnitStubImpl.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HeadUnit.dir/build.make CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitStubImpl.cpp.s
 .PHONY : src/HeadUnit/HeadUnitStubImpl.cpp.s
 
-src/HeadUnit/QtFunction.o: src/HeadUnit/QtFunction.cpp.o
-.PHONY : src/HeadUnit/QtFunction.o
+src/HeadUnit/QtManagerClass.o: src/HeadUnit/QtManagerClass.cpp.o
+.PHONY : src/HeadUnit/QtManagerClass.o
 
 # target to build an object file
-src/HeadUnit/QtFunction.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HeadUnit.dir/build.make CMakeFiles/HeadUnit.dir/src/HeadUnit/QtFunction.cpp.o
-.PHONY : src/HeadUnit/QtFunction.cpp.o
+src/HeadUnit/QtManagerClass.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HeadUnit.dir/build.make CMakeFiles/HeadUnit.dir/src/HeadUnit/QtManagerClass.cpp.o
+.PHONY : src/HeadUnit/QtManagerClass.cpp.o
 
-src/HeadUnit/QtFunction.i: src/HeadUnit/QtFunction.cpp.i
-.PHONY : src/HeadUnit/QtFunction.i
+src/HeadUnit/QtManagerClass.i: src/HeadUnit/QtManagerClass.cpp.i
+.PHONY : src/HeadUnit/QtManagerClass.i
 
 # target to preprocess a source file
-src/HeadUnit/QtFunction.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HeadUnit.dir/build.make CMakeFiles/HeadUnit.dir/src/HeadUnit/QtFunction.cpp.i
-.PHONY : src/HeadUnit/QtFunction.cpp.i
+src/HeadUnit/QtManagerClass.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HeadUnit.dir/build.make CMakeFiles/HeadUnit.dir/src/HeadUnit/QtManagerClass.cpp.i
+.PHONY : src/HeadUnit/QtManagerClass.cpp.i
 
-src/HeadUnit/QtFunction.s: src/HeadUnit/QtFunction.cpp.s
-.PHONY : src/HeadUnit/QtFunction.s
+src/HeadUnit/QtManagerClass.s: src/HeadUnit/QtManagerClass.cpp.s
+.PHONY : src/HeadUnit/QtManagerClass.s
 
 # target to generate assembly for a file
-src/HeadUnit/QtFunction.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HeadUnit.dir/build.make CMakeFiles/HeadUnit.dir/src/HeadUnit/QtFunction.cpp.s
-.PHONY : src/HeadUnit/QtFunction.cpp.s
+src/HeadUnit/QtManagerClass.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HeadUnit.dir/build.make CMakeFiles/HeadUnit.dir/src/HeadUnit/QtManagerClass.cpp.s
+.PHONY : src/HeadUnit/QtManagerClass.cpp.s
 
 src/IPCManager/IPCManager.o: src/IPCManager/IPCManager.cpp.o
 .PHONY : src/IPCManager/IPCManager.o
@@ -1426,18 +1402,15 @@ help:
 	@echo "... src/HeadUnit/HeadUnit.o"
 	@echo "... src/HeadUnit/HeadUnit.i"
 	@echo "... src/HeadUnit/HeadUnit.s"
-	@echo "... src/HeadUnit/HeadUnitData.o"
-	@echo "... src/HeadUnit/HeadUnitData.i"
-	@echo "... src/HeadUnit/HeadUnitData.s"
 	@echo "... src/HeadUnit/HeadUnitSenderClass.o"
 	@echo "... src/HeadUnit/HeadUnitSenderClass.i"
 	@echo "... src/HeadUnit/HeadUnitSenderClass.s"
 	@echo "... src/HeadUnit/HeadUnitStubImpl.o"
 	@echo "... src/HeadUnit/HeadUnitStubImpl.i"
 	@echo "... src/HeadUnit/HeadUnitStubImpl.s"
-	@echo "... src/HeadUnit/QtFunction.o"
-	@echo "... src/HeadUnit/QtFunction.i"
-	@echo "... src/HeadUnit/QtFunction.s"
+	@echo "... src/HeadUnit/QtManagerClass.o"
+	@echo "... src/HeadUnit/QtManagerClass.i"
+	@echo "... src/HeadUnit/QtManagerClass.s"
 	@echo "... src/IPCManager/IPCManager.o"
 	@echo "... src/IPCManager/IPCManager.i"
 	@echo "... src/IPCManager/IPCManager.s"

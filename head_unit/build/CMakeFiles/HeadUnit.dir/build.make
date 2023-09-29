@@ -123,38 +123,24 @@ CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitStubImpl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitStubImpl.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/HeadUnitStubImpl.cpp -o CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitStubImpl.cpp.s
 
-CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitData.cpp.o: CMakeFiles/HeadUnit.dir/flags.make
-CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitData.cpp.o: ../src/HeadUnit/HeadUnitData.cpp
-CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitData.cpp.o: CMakeFiles/HeadUnit.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitData.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitData.cpp.o -MF CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitData.cpp.o.d -o CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitData.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/HeadUnitData.cpp
+CMakeFiles/HeadUnit.dir/src/HeadUnit/QtManagerClass.cpp.o: CMakeFiles/HeadUnit.dir/flags.make
+CMakeFiles/HeadUnit.dir/src/HeadUnit/QtManagerClass.cpp.o: ../src/HeadUnit/QtManagerClass.cpp
+CMakeFiles/HeadUnit.dir/src/HeadUnit/QtManagerClass.cpp.o: CMakeFiles/HeadUnit.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/HeadUnit.dir/src/HeadUnit/QtManagerClass.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HeadUnit.dir/src/HeadUnit/QtManagerClass.cpp.o -MF CMakeFiles/HeadUnit.dir/src/HeadUnit/QtManagerClass.cpp.o.d -o CMakeFiles/HeadUnit.dir/src/HeadUnit/QtManagerClass.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/QtManagerClass.cpp
 
-CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitData.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitData.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/HeadUnitData.cpp > CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitData.cpp.i
+CMakeFiles/HeadUnit.dir/src/HeadUnit/QtManagerClass.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HeadUnit.dir/src/HeadUnit/QtManagerClass.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/QtManagerClass.cpp > CMakeFiles/HeadUnit.dir/src/HeadUnit/QtManagerClass.cpp.i
 
-CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitData.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitData.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/HeadUnitData.cpp -o CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitData.cpp.s
-
-CMakeFiles/HeadUnit.dir/src/HeadUnit/QtFunction.cpp.o: CMakeFiles/HeadUnit.dir/flags.make
-CMakeFiles/HeadUnit.dir/src/HeadUnit/QtFunction.cpp.o: ../src/HeadUnit/QtFunction.cpp
-CMakeFiles/HeadUnit.dir/src/HeadUnit/QtFunction.cpp.o: CMakeFiles/HeadUnit.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/HeadUnit.dir/src/HeadUnit/QtFunction.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HeadUnit.dir/src/HeadUnit/QtFunction.cpp.o -MF CMakeFiles/HeadUnit.dir/src/HeadUnit/QtFunction.cpp.o.d -o CMakeFiles/HeadUnit.dir/src/HeadUnit/QtFunction.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/QtFunction.cpp
-
-CMakeFiles/HeadUnit.dir/src/HeadUnit/QtFunction.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HeadUnit.dir/src/HeadUnit/QtFunction.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/QtFunction.cpp > CMakeFiles/HeadUnit.dir/src/HeadUnit/QtFunction.cpp.i
-
-CMakeFiles/HeadUnit.dir/src/HeadUnit/QtFunction.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HeadUnit.dir/src/HeadUnit/QtFunction.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/QtFunction.cpp -o CMakeFiles/HeadUnit.dir/src/HeadUnit/QtFunction.cpp.s
+CMakeFiles/HeadUnit.dir/src/HeadUnit/QtManagerClass.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HeadUnit.dir/src/HeadUnit/QtManagerClass.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/QtManagerClass.cpp -o CMakeFiles/HeadUnit.dir/src/HeadUnit/QtManagerClass.cpp.s
 
 CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitSenderClass.cpp.o: CMakeFiles/HeadUnit.dir/flags.make
 CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitSenderClass.cpp.o: ../src/HeadUnit/HeadUnitSenderClass.cpp
 CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitSenderClass.cpp.o: CMakeFiles/HeadUnit.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitSenderClass.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitSenderClass.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitSenderClass.cpp.o -MF CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitSenderClass.cpp.o.d -o CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitSenderClass.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/HeadUnitSenderClass.cpp
 
 CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitSenderClass.cpp.i: cmake_force
@@ -168,7 +154,7 @@ CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitSenderClass.cpp.s: cmake_force
 CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o: CMakeFiles/HeadUnit.dir/flags.make
 CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o: ../src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
 CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o: CMakeFiles/HeadUnit.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o -MF CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o.d -o CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/head_unit/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
 
 CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.i: cmake_force
@@ -182,7 +168,7 @@ CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cp
 CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o: CMakeFiles/HeadUnit.dir/flags.make
 CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o: ../src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
 CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o: CMakeFiles/HeadUnit.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o -MF CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o.d -o CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/head_unit/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
 
 CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.i: cmake_force
@@ -196,7 +182,7 @@ CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployme
 CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/HeadUnitSomeIPStubAdapter.cpp.o: CMakeFiles/HeadUnit.dir/flags.make
 CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/HeadUnitSomeIPStubAdapter.cpp.o: ../src-gen-desproject/v1/commonapi/HeadUnitSomeIPStubAdapter.cpp
 CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/HeadUnitSomeIPStubAdapter.cpp.o: CMakeFiles/HeadUnit.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/HeadUnitSomeIPStubAdapter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/HeadUnitSomeIPStubAdapter.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/HeadUnitSomeIPStubAdapter.cpp.o -MF CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/HeadUnitSomeIPStubAdapter.cpp.o.d -o CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/HeadUnitSomeIPStubAdapter.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/head_unit/src-gen-desproject/v1/commonapi/HeadUnitSomeIPStubAdapter.cpp
 
 CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/HeadUnitSomeIPStubAdapter.cpp.i: cmake_force
@@ -210,7 +196,7 @@ CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/HeadUnitSomeIPStubAdapte
 CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp.o: CMakeFiles/HeadUnit.dir/flags.make
 CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp.o: ../src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp
 CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp.o: CMakeFiles/HeadUnit.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp.o -MF CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp.o.d -o CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/head_unit/src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp
 
 CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp.i: cmake_force
@@ -224,7 +210,7 @@ CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment
 CMakeFiles/HeadUnit.dir/HeadUnit_autogen/MIGZHXQZTS/qrc_qml.cpp.o: CMakeFiles/HeadUnit.dir/flags.make
 CMakeFiles/HeadUnit.dir/HeadUnit_autogen/MIGZHXQZTS/qrc_qml.cpp.o: HeadUnit_autogen/MIGZHXQZTS/qrc_qml.cpp
 CMakeFiles/HeadUnit.dir/HeadUnit_autogen/MIGZHXQZTS/qrc_qml.cpp.o: CMakeFiles/HeadUnit.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/HeadUnit.dir/HeadUnit_autogen/MIGZHXQZTS/qrc_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/HeadUnit.dir/HeadUnit_autogen/MIGZHXQZTS/qrc_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HeadUnit.dir/HeadUnit_autogen/MIGZHXQZTS/qrc_qml.cpp.o -MF CMakeFiles/HeadUnit.dir/HeadUnit_autogen/MIGZHXQZTS/qrc_qml.cpp.o.d -o CMakeFiles/HeadUnit.dir/HeadUnit_autogen/MIGZHXQZTS/qrc_qml.cpp.o -c /home/ha/바탕화면/DES-Head-Unit/head_unit/build/HeadUnit_autogen/MIGZHXQZTS/qrc_qml.cpp
 
 CMakeFiles/HeadUnit.dir/HeadUnit_autogen/MIGZHXQZTS/qrc_qml.cpp.i: cmake_force
@@ -240,8 +226,7 @@ HeadUnit_OBJECTS = \
 "CMakeFiles/HeadUnit.dir/HeadUnit_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnit.cpp.o" \
 "CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitStubImpl.cpp.o" \
-"CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitData.cpp.o" \
-"CMakeFiles/HeadUnit.dir/src/HeadUnit/QtFunction.cpp.o" \
+"CMakeFiles/HeadUnit.dir/src/HeadUnit/QtManagerClass.cpp.o" \
 "CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitSenderClass.cpp.o" \
 "CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o" \
 "CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o" \
@@ -255,8 +240,7 @@ HeadUnit_EXTERNAL_OBJECTS =
 HeadUnit: CMakeFiles/HeadUnit.dir/HeadUnit_autogen/mocs_compilation.cpp.o
 HeadUnit: CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnit.cpp.o
 HeadUnit: CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitStubImpl.cpp.o
-HeadUnit: CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitData.cpp.o
-HeadUnit: CMakeFiles/HeadUnit.dir/src/HeadUnit/QtFunction.cpp.o
+HeadUnit: CMakeFiles/HeadUnit.dir/src/HeadUnit/QtManagerClass.cpp.o
 HeadUnit: CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitSenderClass.cpp.o
 HeadUnit: CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp.o
 HeadUnit: CMakeFiles/HeadUnit.dir/src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp.o
@@ -271,7 +255,7 @@ HeadUnit: /opt/Qt/5.15.0/gcc_64/lib/libQt5Qml.so.5.15.0
 HeadUnit: /opt/Qt/5.15.0/gcc_64/lib/libQt5Network.so.5.15.0
 HeadUnit: /opt/Qt/5.15.0/gcc_64/lib/libQt5Core.so.5.15.0
 HeadUnit: CMakeFiles/HeadUnit.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable HeadUnit"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ha/바탕화면/DES-Head-Unit/head_unit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable HeadUnit"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/HeadUnit.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

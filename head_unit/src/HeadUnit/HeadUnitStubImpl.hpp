@@ -5,7 +5,7 @@
 #include <CommonAPI/CommonAPI.hpp>
 #include <v1/commonapi/HeadUnitStubDefault.hpp>
 
-#include "HeadUnitData.hpp"
+#include "QtManagerClass.hpp"
 
 
 class HeadUnitStubImpl : public v1_0::commonapi::HeadUnitStubDefault

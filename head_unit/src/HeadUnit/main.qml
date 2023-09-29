@@ -23,8 +23,8 @@ Window {
         id: valueSource
     }
 
-    QtFunction {
-        id: carinfo
+    QtManagerClass {
+        id: manager
     }
 
     Item {
@@ -53,21 +53,21 @@ Window {
             height: 130
             x: 20
             y: parent.height / 2 - height / 2 - 210
-            color: (valueSource.sensorRpm === 0) ? "black" : "#555555"
+            color: (carinfo.sensorRpm === 0) ? "black" : "#555555"
             radius: 30
 
             Rectangle {
                 width: 115
                 height: 115
                 anchors.centerIn: parent
-                color: (valueSource.gear === 0) ? ((valueSource.sensorRpm === 0) ? "#555555" : "#B0B0B0") : "white"
+                color: (valueSource.gear === 0) ? ((carinfo.sensorRpm === 0) ? "#555555" : "#B0B0B0") : "white"
                 radius: 22
 
                 Text {
                     text: "P"
                     font.family: font.name
                     font.pixelSize: 130
-                    color: (valueSource.gear === 0) ? "white" : ((valueSource.sensorRpm === 0) ? "#555555" : "#B0B0B0")
+                    color: (valueSource.gear === 0) ? "white" : ((carinfo.sensorRpm === 0) ? "#555555" : "#B0B0B0")
                     x: 13
                     y: -20
                 }
@@ -76,9 +76,9 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    if (valueSource.sensorRpm === 0) {
+                    if (carinfo.sensorRpm === 0) {
                         valueSource.gear = 0
-                        carinfo.setGear(0)
+                        manager.setGear(0)
                     }
                 }
             }
@@ -89,21 +89,21 @@ Window {
             height: 130
             x: 20
             y: parent.height / 2 - height / 2 - 70
-            color: (valueSource.sensorRpm === 0) ? "black" : "#555555"
+            color: (carinfo.sensorRpm === 0) ? "black" : "#555555"
             radius: 30
 
             Rectangle {
                 width: 115
                 height: 115
                 anchors.centerIn: parent
-                color: (valueSource.gear === 1) ? ((valueSource.sensorRpm === 0) ? "#555555" : "#B0B0B0") : "white"
+                color: (valueSource.gear === 1) ? ((carinfo.sensorRpm === 0) ? "#555555" : "#B0B0B0") : "white"
                 radius: 22
 
                 Text {
                     text: "R"
                     font.family: font.name
                     font.pixelSize: 130
-                    color: (valueSource.gear === 1) ? "white" : ((valueSource.sensorRpm === 0) ? "#555555" : "#B0B0B0")
+                    color: (valueSource.gear === 1) ? "white" : ((carinfo.sensorRpm === 0) ? "#555555" : "#B0B0B0")
                     x: 13
                     y: -20
                 }
@@ -112,9 +112,9 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    if (valueSource.sensorRpm === 0) {
+                    if (carinfo.sensorRpm === 0) {
                         valueSource.gear = 1
-                        carinfo.setGear(1)
+                        manager.setGear(1)
                     }
                 }
             }
@@ -125,21 +125,21 @@ Window {
             height: 130
             x: 20
             y: parent.height / 2 - height / 2 + 70
-            color: (valueSource.sensorRpm === 0) ? "black" : "#555555"
+            color: (carinfo.sensorRpm === 0) ? "black" : "#555555"
             radius: 30
 
             Rectangle {
                 width: 115
                 height: 115
                 anchors.centerIn: parent
-                color: (valueSource.gear === 2) ? ((valueSource.sensorRpm === 0) ? "#555555" : "#B0B0B0") : "white"
+                color: (valueSource.gear === 2) ? ((carinfo.sensorRpm === 0) ? "#555555" : "#B0B0B0") : "white"
                 radius: 22
 
                 Text {
                     text: "N"
                     font.family: font.name
                     font.pixelSize: 130
-                    color: (valueSource.gear === 2) ? "white" : ((valueSource.sensorRpm === 0) ? "#555555" : "#B0B0B0")
+                    color: (valueSource.gear === 2) ? "white" : ((carinfo.sensorRpm === 0) ? "#555555" : "#B0B0B0")
                     x: 13
                     y: -20
                 }
@@ -148,9 +148,9 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    if (valueSource.sensorRpm === 0) {
+                    if (carinfo.sensorRpm === 0) {
                         valueSource.gear = 2
-                        carinfo.setGear(2)
+                        manager.setGear(2)
                     }
                 }
             }
@@ -161,21 +161,21 @@ Window {
             height: 130
             x: 20
             y: parent.height / 2 - height / 2 + 210
-            color: (valueSource.sensorRpm === 0) ? "black" : "#555555"
+            color: (carinfo.sensorRpm === 0) ? "black" : "#555555"
             radius: 30
 
             Rectangle {
                 width: 115
                 height: 115
                 anchors.centerIn: parent
-                color: (valueSource.gear === 3) ? ((valueSource.sensorRpm === 0) ? "#555555" : "#B0B0B0") : "white"
+                color: (valueSource.gear === 3) ? ((carinfo.sensorRpm === 0) ? "#555555" : "#B0B0B0") : "white"
                 radius: 22
 
                 Text {
                     text: "D"
                     font.family: font.name
                     font.pixelSize: 130
-                    color: (valueSource.gear === 3) ? "white" : ((valueSource.sensorRpm === 0) ? "#555555" : "#B0B0B0")
+                    color: (valueSource.gear === 3) ? "white" : ((carinfo.sensorRpm === 0) ? "#555555" : "#B0B0B0")
                     x: 13
                     y: -20
                 }
@@ -184,9 +184,9 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    if (valueSource.sensorRpm === 0) {
+                    if (carinfo.sensorRpm === 0) {
                         valueSource.gear = 3
-                        carinfo.setGear(3)
+                        manager.setGear(3)
                     }
                 }
             }
@@ -197,14 +197,14 @@ Window {
             height: parent.height
             anchors.verticalCenter: parent.verticalCenter
             x: parent.width / 2 - width / 2 - 340
-            color: (valueSource.sensorRpm === 0) ? "black" : "#555555"
+            color: (carinfo.sensorRpm === 0) ? "black" : "#555555"
         }
 
         Text {
-            text: valueSource.sensorRpm
+            text: carinfo.sensorRpm
             font.family: font.name
             font.pixelSize: 70
-            color: (valueSource.sensorRpm === 0) ? "black" : "#555555"
+            color: (carinfo.sensorRpm === 0) ? "black" : "#555555"
             x: 200
             y: 5
         }
@@ -232,7 +232,7 @@ Window {
                 anchors.fill: parent
                 onClicked: {
                     if (valueSource.direction === 1) {
-                        carinfo.setDirection(0)
+                        manager.setDirection(0)
                         valueSource.direction = 0
 
                         valueSource.blink = false
@@ -241,7 +241,7 @@ Window {
                         valueSource.left_on_off = false
                         valueSource.right_on_off = false
                     } else {
-                        carinfo.setDirection(1)
+                        manager.setDirection(1)
                         valueSource.direction = 1
 
                         valueSource.blink = true
@@ -277,7 +277,7 @@ Window {
                 anchors.fill: parent
                 onClicked: {
                     if (valueSource.direction === 2) {
-                        carinfo.setDirection(0)
+                        manager.setDirection(0)
                         valueSource.direction = 0
 
                         valueSource.blink = false
@@ -286,7 +286,7 @@ Window {
                         valueSource.left_on_off = false
                         valueSource.right_on_off = false
                     } else {
-                        carinfo.setDirection(2)
+                        manager.setDirection(2)
                         valueSource.direction = 2
 
                         valueSource.blink = true
@@ -329,7 +329,7 @@ Window {
                 anchors.fill: parent
                 onClicked: {
                     if (valueSource.direction === 3) {
-                        carinfo.setDirection(0)
+                        manager.setDirection(0)
                         valueSource.direction = 0
 
                         valueSource.blink = false
@@ -338,7 +338,7 @@ Window {
                         valueSource.left_on_off = false
                         valueSource.right_on_off = false
                     } else {
-                        carinfo.setDirection(3)
+                        manager.setDirection(3)
                         valueSource.direction = 3
 
                         valueSource.blink = true
@@ -356,7 +356,7 @@ Window {
             height: parent.height
             anchors.verticalCenter: parent.verticalCenter
             x: parent.width / 2 - width / 2 + 340
-            color: (valueSource.sensorRpm === 0) ? "black" : "#555555"
+            color: (carinfo.sensorRpm === 0) ? "black" : "#555555"
         }
     }
 }

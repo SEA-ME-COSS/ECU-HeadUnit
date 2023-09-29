@@ -271,28 +271,10 @@ CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnit.cpp.o: \
  /opt/Qt/5.15.0/gcc_64/include/QtCore/qset.h \
  /opt/Qt/5.15.0/gcc_64/include/QtCore/qcontiguouscache.h \
  /opt/Qt/5.15.0/gcc_64/include/QtQml/qqmlerror.h \
- /home/ha/바탕화면/DES-Head-Unit/head_unit/src-gen-desproject/v1/commonapi/IPCManagerProxy.hpp \
- /home/ha/바탕화면/DES-Head-Unit/head_unit/src-gen-desproject/v1/commonapi/IPCManagerProxyBase.hpp \
- /home/ha/바탕화면/DES-Head-Unit/head_unit/src-gen-desproject/v1/commonapi/IPCManager.hpp \
- /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Types.hpp \
- /usr/include/c++/11/unordered_set /usr/include/c++/11/bits/hashtable.h \
- /usr/include/c++/11/bits/hashtable_policy.h \
- /usr/include/c++/11/bits/enable_special_members.h \
- /usr/include/c++/11/bits/unordered_set.h \
- /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/ByteBuffer.hpp \
- /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/ContainerUtils.hpp \
- /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Export.hpp \
- /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Event.hpp \
- /usr/include/c++/11/mutex /usr/include/c++/11/bits/std_mutex.h \
- /usr/include/c++/11/bits/unique_lock.h /usr/include/c++/11/set \
- /usr/include/c++/11/bits/stl_set.h \
- /usr/include/c++/11/bits/stl_multiset.h \
- /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/RangedInteger.hpp \
- /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Version.hpp \
- /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Proxy.hpp \
- /usr/include/c++/11/future /usr/include/c++/11/condition_variable \
- /usr/include/c++/11/bits/atomic_futex.h \
- /usr/include/c++/11/bits/std_thread.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtQml/QQmlContext \
+ /opt/Qt/5.15.0/gcc_64/include/QtQml/qqmlcontext.h \
+ /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/HeadUnitStubImpl.hpp \
+ /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/CommonAPI.hpp \
  /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Address.hpp \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
  /usr/include/c++/11/ios /usr/include/c++/11/bits/basic_ios.h \
@@ -304,13 +286,28 @@ CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnit.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
+ /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Export.hpp \
  /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Attribute.hpp \
+ /usr/include/c++/11/future /usr/include/c++/11/mutex \
+ /usr/include/c++/11/bits/std_mutex.h \
+ /usr/include/c++/11/bits/unique_lock.h \
+ /usr/include/c++/11/condition_variable \
+ /usr/include/c++/11/bits/atomic_futex.h \
+ /usr/include/c++/11/bits/std_thread.h \
  /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/CallInfo.hpp \
  /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Config.hpp \
- /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/HeadUnitStubImpl.hpp \
- /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/CommonAPI.hpp \
- /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Address.hpp \
- /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Attribute.hpp \
+ /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Types.hpp \
+ /usr/include/c++/11/unordered_set /usr/include/c++/11/bits/hashtable.h \
+ /usr/include/c++/11/bits/hashtable_policy.h \
+ /usr/include/c++/11/bits/enable_special_members.h \
+ /usr/include/c++/11/bits/unordered_set.h \
+ /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/ByteBuffer.hpp \
+ /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/ContainerUtils.hpp \
+ /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Event.hpp \
+ /usr/include/c++/11/set /usr/include/c++/11/bits/stl_set.h \
+ /usr/include/c++/11/bits/stl_multiset.h \
+ /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/RangedInteger.hpp \
+ /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Version.hpp \
  /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/AttributeExtension.hpp \
  /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/ByteBuffer.hpp \
  /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/MainLoopContext.hpp \
@@ -325,9 +322,14 @@ CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnit.cpp.o: \
  /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
  /home/ha/바탕화면/DES-Head-Unit/head_unit/src-gen-desproject/v1/commonapi/HeadUnit.hpp \
  /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Stub.hpp \
+ /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Address.hpp \
  /usr/include/c++/11/cassert \
- /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/HeadUnitData.hpp \
- /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/QtFunction.hpp \
+ /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/QtManagerClass.hpp \
  /opt/Qt/5.15.0/gcc_64/include/QtCore/QObject \
  /opt/Qt/5.15.0/gcc_64/include/QtCore/qobject.h \
- /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/HeadUnitSenderClass.hpp
+ /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/HeadUnitSenderClass.hpp \
+ /home/ha/바탕화면/DES-Head-Unit/head_unit/src-gen-desproject/v1/commonapi/IPCManagerProxy.hpp \
+ /home/ha/바탕화면/DES-Head-Unit/head_unit/src-gen-desproject/v1/commonapi/IPCManagerProxyBase.hpp \
+ /home/ha/바탕화면/DES-Head-Unit/head_unit/src-gen-desproject/v1/commonapi/IPCManager.hpp \
+ /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Proxy.hpp \
+ /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Attribute.hpp

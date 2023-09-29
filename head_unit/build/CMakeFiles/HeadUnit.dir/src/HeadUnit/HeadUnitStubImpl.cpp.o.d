@@ -215,4 +215,72 @@ CMakeFiles/HeadUnit.dir/src/HeadUnit/HeadUnitStubImpl.cpp.o: \
  /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Stub.hpp \
  /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Address.hpp \
  /usr/include/c++/11/cassert /usr/include/assert.h \
- /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/HeadUnitData.hpp
+ /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/QtManagerClass.hpp \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/QObject \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qobject.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qobjectdefs.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qnamespace.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qglobal.h \
+ /usr/include/c++/11/cstddef \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qconfig.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qtcore-config.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qsystemdetection.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qprocessordetection.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qcompilerdetection.h \
+ /usr/include/c++/11/algorithm /usr/include/c++/11/bits/stl_algo.h \
+ /usr/include/c++/11/bits/algorithmfwd.h \
+ /usr/include/c++/11/bits/stl_heap.h \
+ /usr/include/c++/11/bits/uniform_int_dist.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qtypeinfo.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qsysinfo.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qlogging.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qflags.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qatomic.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qbasicatomic.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qatomic_cxx11.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qgenericatomic.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qglobalstatic.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qnumeric.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qversiontagging.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qstring.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qchar.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qbytearray.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qrefcount.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qarraydata.h /usr/include/string.h \
+ /usr/include/strings.h /usr/include/c++/11/stdlib.h \
+ /usr/include/c++/11/iterator /usr/include/c++/11/bits/stream_iterator.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qstringliteral.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qstringalgorithms.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qstringview.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qlist.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qalgorithms.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qiterator.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qhashfunctions.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qpair.h /usr/include/c++/11/numeric \
+ /usr/include/c++/11/bits/stl_numeric.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qvector.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qcontainertools_impl.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qbytearraylist.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qstringlist.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qregexp.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qstringmatcher.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qscopedpointer.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qmetatype.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qvarlengtharray.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qcontainerfwd.h \
+ /opt/Qt/5.15.0/gcc_64/include/QtCore/qobject_impl.h \
+ /home/ha/바탕화면/DES-Head-Unit/head_unit/src/HeadUnit/HeadUnitSenderClass.hpp \
+ /home/ha/바탕화면/DES-Head-Unit/head_unit/src-gen-desproject/v1/commonapi/IPCManagerProxy.hpp \
+ /home/ha/바탕화면/DES-Head-Unit/head_unit/src-gen-desproject/v1/commonapi/IPCManagerProxyBase.hpp \
+ /home/ha/바탕화면/DES-Head-Unit/head_unit/src-gen-desproject/v1/commonapi/IPCManager.hpp \
+ /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Proxy.hpp \
+ /home/ha/build-commonapi/capicxx-core-runtime/include/CommonAPI/Attribute.hpp
