@@ -1,5 +1,5 @@
-#ifndef QTMANAGERCLASS_HPP
-#define QTMANAGERCLASS_HPP
+#ifndef HEADUNITQTCLASS_HPP
+#define HEADUNITQTCLASS_HPP
 
 
 #include <QObject>
@@ -7,7 +7,7 @@
 #include "HeadUnitSenderClass.hpp"
 
 
-class QtManagerClass : public QObject
+class HeadUnitQtClass : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(quint16 sensorRpm READ sensorRpm WRITE setSensorRpm NOTIFY sensorRpmChanged)
@@ -18,7 +18,7 @@ private:
     quint16 QsensorRpm;
 
 public:
-    explicit QtManagerClass(QObject *parent = nullptr);
+    explicit HeadUnitQtClass(QObject *parent = nullptr);
     
     quint16 sensorRpm() const;
     void setSensorRpm(uint16_t _sensorRpm);
@@ -32,7 +32,7 @@ signals:
 };
 
 
-extern QtManagerClass carinfo;
+extern HeadUnitQtClass carinfo;
 
 
 #endif

@@ -26,73 +26,73 @@ link_directories(
 )
 
 
-add_executable(CANSender
-        src/CANSender/CANSender.cpp
-        src/CANSender/ReadCANThread.c
-        src/CANSender/CANBuffer.c
-        src/CANSender/SendSomeipThread.cpp
-        src/CANSender/KalmanFilter.c
-        src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
-        src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
-)
-target_link_libraries(CANSender CommonAPI CommonAPI-SomeIP vsomeip3)
+# add_executable(CANSender
+#         src/CANSender/CANSender.cpp
+#         src/CANSender/ReadCANThread.c
+#         src/CANSender/CANBuffer.c
+#         src/CANSender/SendSomeipThread.cpp
+#         src/CANSender/KalmanFilter.c
+#         src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
+#         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
+# )
+# target_link_libraries(CANSender CommonAPI CommonAPI-SomeIP vsomeip3)
 
 
-add_executable(PiracerSender
-        src/PiracerSender/PiracerSender.cpp
-        src/PiracerSender/PiracerClass.cpp
-        src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
-        src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
-)
-target_link_libraries(PiracerSender ${PYTHON_LIBRARIES} CommonAPI CommonAPI-SomeIP vsomeip3)
+# add_executable(PiracerSender
+#         src/PiracerSender/PiracerSender.cpp
+#         src/PiracerSender/PiracerClass.cpp
+#         src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
+#         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
+# )
+# target_link_libraries(PiracerSender ${PYTHON_LIBRARIES} CommonAPI CommonAPI-SomeIP vsomeip3)
 
 
-add_executable(PiracerOperator
-        src/PiracerOperator/PiracerOperator.cpp
-        src/PiracerOperator/ControllerClass.cpp
-        src/PiracerOperator/PiracerOperatorStubImpl.cpp
-        src/PiracerOperator/PiracerClass.cpp
-        src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPStubAdapter.cpp
-        src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp
-)
-target_link_libraries(PiracerOperator ${PYTHON_LIBRARIES} CommonAPI CommonAPI-SomeIP vsomeip3)
+# add_executable(PiracerOperator
+#         src/PiracerOperator/PiracerOperator.cpp
+#         src/PiracerOperator/ControllerClass.cpp
+#         src/PiracerOperator/PiracerOperatorStubImpl.cpp
+#         src/PiracerOperator/PiracerClass.cpp
+#         src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPStubAdapter.cpp
+#         src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp
+# )
+# target_link_libraries(PiracerOperator ${PYTHON_LIBRARIES} CommonAPI CommonAPI-SomeIP vsomeip3)
 
 
-add_executable(IPCManager
-        src/IPCManager/IPCManager.cpp
-        src/IPCManager/IPCManagerStubImpl.cpp
-        src/IPCManager/IPCManagerSenderClass.cpp
-        src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp
-        src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp
-        src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp
-        src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp
-        src-gen-desproject/v1/commonapi/HeadUnitSomeIPProxy.cpp
-        src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp
-        src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAdapter.cpp
-        src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
-)
-target_link_libraries(IPCManager CommonAPI CommonAPI-SomeIP vsomeip3)
+# add_executable(IPCManager
+#         src/IPCManager/IPCManager.cpp
+#         src/IPCManager/IPCManagerStubImpl.cpp
+#         src/IPCManager/IPCManagerSenderClass.cpp
+#         src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp
+#         src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp
+#         src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp
+#         src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp
+#         src-gen-desproject/v1/commonapi/HeadUnitSomeIPProxy.cpp
+#         src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp
+#         src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAdapter.cpp
+#         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
+# )
+# target_link_libraries(IPCManager CommonAPI CommonAPI-SomeIP vsomeip3)
 
 
-add_executable(InstrumentCluster
-	src/InstrumentCluster/InstrumentCluster.cpp
-	src/InstrumentCluster/InstrumentClusterStubImpl.cpp
-        src/InstrumentCluster/InstrumentClusterData.cpp
-        src/InstrumentCluster/QtFunction.cpp
-	src/InstrumentCluster/qml.qrc
-	src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPStubAdapter.cpp
-        src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp
-)
-target_compile_definitions(InstrumentCluster
-  PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
-target_link_libraries(InstrumentCluster
-  PRIVATE Qt5::Core Qt5::Quick Qt5::Gui CommonAPI CommonAPI-SomeIP vsomeip3)
+# add_executable(InstrumentCluster
+# 	src/InstrumentCluster/InstrumentCluster.cpp
+# 	src/InstrumentCluster/InstrumentClusterStubImpl.cpp
+#         src/InstrumentCluster/InstrumentClusterData.cpp
+#         src/InstrumentCluster/QtFunction.cpp
+# 	src/InstrumentCluster/qml.qrc
+# 	src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPStubAdapter.cpp
+#         src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp
+# )
+# target_compile_definitions(InstrumentCluster
+#   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
+# target_link_libraries(InstrumentCluster
+#   PRIVATE Qt5::Core Qt5::Quick Qt5::Gui CommonAPI CommonAPI-SomeIP vsomeip3)
 
 
 add_executable(HeadUnit
         src/HeadUnit/HeadUnit.cpp
         src/HeadUnit/HeadUnitStubImpl.cpp
-        src/HeadUnit/QtManagerClass.cpp
+        src/HeadUnit/HeadUnitQtClass.cpp
         src/HeadUnit/HeadUnitSenderClass.cpp
         src/HeadUnit/qml.qrc
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp

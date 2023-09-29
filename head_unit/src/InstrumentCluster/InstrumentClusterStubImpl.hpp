@@ -5,11 +5,14 @@
 #include <CommonAPI/CommonAPI.hpp>
 #include <v1/commonapi/InstrumentClusterStubDefault.hpp>
 
-#include "InstrumentClusterData.hpp"
+#include "InstrumentClusterQtClass.hpp"
 
 
 class InstrumentClusterStubImpl : public v1_0::commonapi::InstrumentClusterStubDefault
 {
+private:
+    uint16_t temp;
+
 public:
     InstrumentClusterStubImpl();
     virtual ~InstrumentClusterStubImpl();

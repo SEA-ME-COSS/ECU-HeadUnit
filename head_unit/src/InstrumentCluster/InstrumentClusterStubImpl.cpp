@@ -6,8 +6,10 @@ InstrumentClusterStubImpl::~InstrumentClusterStubImpl() { }
 
 void InstrumentClusterStubImpl::setSpeedRpm(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _sensorRpm, setSpeedRpmReply_t _reply)
 {
-    rpm = (uint16_t)((float)_sensorRpm / 2.6);
-    speed = (uint16_t)((float)rpm * 3.4);
+    temp = (uint16_t)((float)_sensorRpm / 2.6);
+    carinfo.setRpm(temp);
+    temp = (uint16_t)((float)temp * 3.4);
+    carinfo.setSpeed(temp);
 
     _reply("");
     
@@ -16,7 +18,7 @@ void InstrumentClusterStubImpl::setSpeedRpm(const std::shared_ptr<CommonAPI::Cli
 
 void InstrumentClusterStubImpl::setBattery(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _battery, setBatteryReply_t _reply)
 {
-    battery = _battery;
+    carinfo.setBattery(_battery);
 
     _reply("");
     
@@ -25,7 +27,7 @@ void InstrumentClusterStubImpl::setBattery(const std::shared_ptr<CommonAPI::Clie
     
 void InstrumentClusterStubImpl::setGear(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _gear, setGearReply_t _reply)
 {
-    gear = _gear;
+    carinfo.setGear(_gear);
     
     _reply("");
     
@@ -34,7 +36,7 @@ void InstrumentClusterStubImpl::setGear(const std::shared_ptr<CommonAPI::ClientI
     
 void InstrumentClusterStubImpl::setDirection(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _direction, setDirectionReply_t _reply)
 {
-    direction = _direction;
+    carinfo.setDirection(_direction);
 
     _reply("");
     

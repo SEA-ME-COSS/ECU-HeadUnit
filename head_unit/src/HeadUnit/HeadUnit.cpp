@@ -3,7 +3,7 @@
 #include <QQmlContext>
 
 #include "HeadUnitStubImpl.hpp"
-#include "QtManagerClass.hpp"
+#include "HeadUnitQtClass.hpp"
 
 
 using namespace v1_0::commonapi;
@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
     
-    qmlRegisterType<QtManagerClass>("DataModule", 1, 0, "QtManagerClass");
+    qmlRegisterType<HeadUnitQtClass>("DataModule", 1, 0, "HeadUnitQtClass");
 
     QQmlApplicationEngine engine;
     

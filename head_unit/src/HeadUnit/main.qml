@@ -23,7 +23,7 @@ Window {
         id: valueSource
     }
 
-    QtManagerClass {
+    HeadUnitQtClass {
         id: manager
     }
 
