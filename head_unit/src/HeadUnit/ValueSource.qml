@@ -14,10 +14,10 @@ Item {
 
     function blinking() {
         if (valueSource.left_direction) {
-            valueSource.left_on_off = (valueSource.left_on_off) ? false : true
+            valueSource.left_on_off = !valueSource.left_on_off
         }
         if (valueSource.right_direction) {
-            valueSource.right_on_off = (valueSource.right_on_off) ? false : true
+            valueSource.right_on_off = !valueSource.right_on_off
         }
     }
 
