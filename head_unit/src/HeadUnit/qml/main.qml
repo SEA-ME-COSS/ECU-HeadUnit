@@ -490,5 +490,48 @@ Window {
                 manager.setLight(valueSource.light)
             }
         }
+
+        Rectangle {
+            width: 140
+            height: 60
+            x: 870
+            y: 240
+            color: "black"
+            radius: 20
+
+            Rectangle {
+                width: 130
+                height: 50
+                anchors.centerIn: parent
+                color: (valueSource.gps) ? "#555555" : "white"
+                radius: 15
+
+                Text {
+                    text: "GPS"
+                    font.family: font.name
+                    font.pixelSize: 40
+                    color: (valueSource.gps) ? "white" : "555555"
+                    x: 17
+                    y: 1
+                }
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    valueSource.gps = !valueSource.gps
+                }
+            }
+        }
+
+        Image {
+            source: "../image/gps.png"
+            visible: valueSource.gps
+            width: 640
+            height: 640
+            fillMode: Image.PreserveAspectFit
+            anchors.horizontalCenter: parent.horizontalCenter
+            y: -50
+        }
     }
 }

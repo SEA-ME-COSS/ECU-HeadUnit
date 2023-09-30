@@ -7,6 +7,7 @@
         <file>image/seame.png</file>
         <file>image/turn-icon.png</file>
         <file>image/warning-icon.png</file>
+        <file>image/gps.png</file>
         <file>qml/ValueSource.qml</file>
     </qresource>
 </RCC>

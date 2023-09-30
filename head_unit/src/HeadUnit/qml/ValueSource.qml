@@ -30,4 +30,11 @@ Item {
     property string green: "80"
     property string blue: "80"
     property string light: "#" + valueSource.red + valueSource.green + valueSource.blue
+
+    property bool gps: false
+
+    // onSensorRpmChanged: {
+    //     if (carinfo.sensorRpm === 0)
+    //     valueSource.gps = false
+    // }
 }
