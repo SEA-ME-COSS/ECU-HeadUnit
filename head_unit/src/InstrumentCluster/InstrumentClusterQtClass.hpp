@@ -2,7 +2,9 @@
 #define INSTRUMENTCLUSTERQTCLASS_HPP
 
 
+#include <string>
 #include <QObject>
+#include <QString>
 
 
 class InstrumentClusterQtClass : public QObject
@@ -13,6 +15,7 @@ class InstrumentClusterQtClass : public QObject
     Q_PROPERTY(quint16 battery READ battery WRITE setBattery NOTIFY batteryChanged)
     Q_PROPERTY(quint16 gear READ gear WRITE setGear NOTIFY gearChanged)
     Q_PROPERTY(quint16 direction READ direction WRITE setDirection NOTIFY directionChanged)
+    Q_PROPERTY(QString light READ light WRITE setLight NOTIFY lightChanged)
 
 private:
     quint16 Qspeed;
@@ -20,6 +23,7 @@ private:
     quint16 Qbattery;
     quint16 Qgear;
     quint16 Qdirection;
+    QString Qlight;
 
 public:
     explicit InstrumentClusterQtClass(QObject *parent = nullptr);
@@ -29,11 +33,13 @@ public:
     quint16 battery() const;
     quint16 gear() const;
     quint16 direction() const;
+    QString light() const;
     void setSpeed(uint16_t _speed);
     void setRpm(uint16_t _rpm);
     void setBattery(uint16_t _battery);
     void setGear(uint16_t _gear);
     void setDirection(uint16_t _direction);
+    void setLight(QString _light);
 
 signals:
     void speedChanged();
@@ -41,6 +47,7 @@ signals:
     void batteryChanged();
     void gearChanged();
     void directionChanged();
+    void lightChanged();
 };
 
 

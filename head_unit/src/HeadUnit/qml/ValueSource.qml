@@ -25,4 +25,9 @@ Item {
         interval: 500; running: valueSource.blink; repeat: true
         onTriggered: valueSource.blinking()
     }
+
+    property string red: "80"
+    property string green: "80"
+    property string blue: "80"
+    property string light: "#" + valueSource.red + valueSource.green + valueSource.blue
 }

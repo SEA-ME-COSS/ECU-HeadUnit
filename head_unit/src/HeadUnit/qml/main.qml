@@ -41,10 +41,10 @@ Window {
             anchors.centerIn: parent
             rotation: 90
             gradient: Gradient {
-                GradientStop { position: 0.0; color: "gray" }
+                GradientStop { position: 0.0; color: valueSource.light }
                 GradientStop { position: 0.4; color: "white" }
                 GradientStop { position: 0.6; color: "white" }
-                GradientStop { position: 1.0; color: "gray" }
+                GradientStop { position: 1.0; color: valueSource.light }
             }
         }
 
@@ -384,6 +384,111 @@ Window {
             fillMode: Image.PreserveAspectFit
             x: 830
             y: -40
+        }
+
+        Slider {
+            id: redSlider
+            width: 140
+            x: 870
+            y: 130
+            minimumValue: 0
+            maximumValue: 128
+            stepSize: 16
+            value: 128
+
+            style: SliderStyle {
+                groove: Rectangle {
+                    implicitWidth: 140
+                    implicitHeight: 8
+                    color: "#FFCECE"
+                    radius: 30
+                }
+
+                handle: Rectangle {
+                    implicitWidth: 23
+                    implicitHeight: 23
+                    color: "#FF6868"
+                    radius: 30
+                }
+            }
+
+            onValueChanged: {
+                valueSource.red = redSlider.value.toString(16)
+                if (valueSource.red.length === 1) {
+                    valueSource.red = "0" + valueSource.red
+                }
+                manager.setLight(valueSource.light)
+            }
+        }
+
+        Slider {
+            id: greenSlider
+            width: 140
+            x: 870
+            y: 160
+            minimumValue: 0
+            maximumValue: 128
+            stepSize: 16
+            value: 128
+
+            style: SliderStyle {
+                groove: Rectangle {
+                    implicitWidth: 140
+                    implicitHeight: 8
+                    color: "#AEFFAE"
+                    radius: 30
+                }
+
+                handle: Rectangle {
+                    implicitWidth: 23
+                    implicitHeight: 23
+                    color: "#35CA3D"
+                    radius: 30
+                }
+            }
+
+            onValueChanged: {
+                valueSource.green = greenSlider.value.toString(16)
+                if (valueSource.green.length === 1) {
+                    valueSource.green = "0" + valueSource.green
+                }
+                manager.setLight(valueSource.light)
+            }
+        }
+
+        Slider {
+            id: blueSlider
+            width: 140
+            x: 870
+            y: 190
+            minimumValue: 0
+            maximumValue: 128
+            stepSize: 16
+            value: 128
+
+            style: SliderStyle {
+                groove: Rectangle {
+                    implicitWidth: 140
+                    implicitHeight: 8
+                    color: "#B1CAFF"
+                    radius: 30
+                }
+
+                handle: Rectangle {
+                    implicitWidth: 23
+                    implicitHeight: 23
+                    color: "#4D86FF"
+                    radius: 30
+                }
+            }
+
+            onValueChanged: {
+                valueSource.blue = blueSlider.value.toString(16)
+                if (valueSource.blue.length === 1) {
+                    valueSource.blue = "0" + valueSource.blue
+                }
+                manager.setLight(valueSource.light)
+            }
         }
     }
 }

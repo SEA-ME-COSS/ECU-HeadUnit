@@ -8,6 +8,7 @@ InstrumentClusterQtClass::InstrumentClusterQtClass(QObject *parent) : QObject(pa
     Qbattery = 0;
     Qgear = 0;
     Qdirection = 0;
+    Qlight = QString::fromStdString("#808080");
 }
 
 quint16 InstrumentClusterQtClass::speed() const
@@ -33,6 +34,11 @@ quint16 InstrumentClusterQtClass::gear() const
 quint16 InstrumentClusterQtClass::direction() const
 {
     return Qdirection;
+}
+
+QString InstrumentClusterQtClass::light() const
+{
+    return Qlight;
 }
 
 void InstrumentClusterQtClass::setSpeed(uint16_t _speed)
@@ -71,6 +77,14 @@ void InstrumentClusterQtClass::setDirection(uint16_t _direction)
 {
     Qdirection = _direction;
     emit directionChanged();
+    
+    return;
+}
+
+void InstrumentClusterQtClass::setLight(QString _light)
+{
+    Qlight = _light;
+    emit lightChanged();
     
     return;
 }

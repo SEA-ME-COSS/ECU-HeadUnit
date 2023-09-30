@@ -2,6 +2,7 @@
 #define IPCMANAGERSTUBIMPL_HPP
 
 
+#include <string>
 #include <CommonAPI/CommonAPI.hpp>
 #include <v1/commonapi/IPCManagerStubDefault.hpp>
 
@@ -20,6 +21,7 @@ public:
     virtual void setBatteryLevel(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _batteryLevel, setBatteryLevelReply_t _return);
     virtual void setGearMode(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _gearMode, setGearModeReply_t _return);
     virtual void setDirection(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _direction, setDirectionReply_t _return);
+    virtual void setLight(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _light, setLightReply_t _return);
 };
 
 

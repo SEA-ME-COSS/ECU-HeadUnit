@@ -36,10 +36,10 @@ Window {
             anchors.centerIn: parent
             rotation: 90
             gradient: Gradient {
-                GradientStop { position: 0.0; color: "gray" }
+                GradientStop { position: 0.0; color: valueSource.light }
                 GradientStop { position: 0.4; color: "white" }
                 GradientStop { position: 0.6; color: "white" }
-                GradientStop { position: 1.0; color: "gray" }
+                GradientStop { position: 1.0; color: valueSource.light }
             }
         }
 

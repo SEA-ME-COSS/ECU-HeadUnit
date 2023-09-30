@@ -42,3 +42,12 @@ void IPCManagerStubImpl::setDirection(const std::shared_ptr<CommonAPI::ClientId>
     return;
 }
 
+void IPCManagerStubImpl::setLight(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _light, setLightReply_t _reply)
+{
+    sender.InstrumentClusterTargetProxy->setLight(_light, sender.callStatus, sender.returnMessage);
+
+    _reply("");
+
+    return;
+}
+

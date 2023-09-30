@@ -2,7 +2,9 @@
 #define HEADUNITQTCLASS_HPP
 
 
+#include <string>
 #include <QObject>
+#include <QString>
 
 #include "HeadUnitSenderClass.hpp"
 
@@ -26,6 +28,7 @@ public:
 public Q_SLOTS:
     Q_INVOKABLE void setGear(quint16 _gear);
     Q_INVOKABLE void setDirection(quint16 _direction);
+    Q_INVOKABLE void setLight(QString _light);
 
 signals:
     void sensorRpmChanged();

@@ -17,6 +17,9 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.IPCManager
         method setDirection {
                 SomeIpMethodID = 103
         }
+        method setLight {
+                SomeIpMethodID = 104
+        }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.IPCManager {
@@ -30,7 +33,7 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.PiracerOpe
         SomeIpServiceID = 1001
 
         method setGearMode {
-                SomeIpMethodID = 104
+                SomeIpMethodID = 105
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
@@ -45,16 +48,19 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.Instrument
         SomeIpServiceID = 1002
 
         method setSpeedRpm {
-                SomeIpMethodID = 105
-        }
-        method setBattery {
                 SomeIpMethodID = 106
         }
-        method setGear {
+        method setBattery {
                 SomeIpMethodID = 107
         }
-        method setDirection {
+        method setGear {
                 SomeIpMethodID = 108
+        }
+        method setDirection {
+                SomeIpMethodID = 109
+        }
+        method setLight {
+                SomeIpMethodID = 110
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
@@ -69,7 +75,7 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.HeadUnit {
         SomeIpServiceID = 1003
 
         method setSensorRpm {
-                SomeIpMethodID = 109
+                SomeIpMethodID = 111
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {

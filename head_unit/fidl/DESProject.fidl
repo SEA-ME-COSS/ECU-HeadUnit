@@ -35,6 +35,14 @@ interface IPCManager {
       String message
     }
   }
+  method setLight {
+    in {
+      String light
+    }
+    out {
+      String message
+    }
+  }
 }
 
 
@@ -80,6 +88,14 @@ interface InstrumentCluster {
   method setDirection {
     in {
       UInt16 Direction
+    }
+    out {
+      String message
+    }
+  }
+  method setLight {
+    in {
+      String light
     }
     out {
       String message

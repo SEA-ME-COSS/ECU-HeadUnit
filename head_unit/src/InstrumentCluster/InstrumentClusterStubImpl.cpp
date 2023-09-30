@@ -43,3 +43,12 @@ void InstrumentClusterStubImpl::setDirection(const std::shared_ptr<CommonAPI::Cl
     return;
 }
 
+void InstrumentClusterStubImpl::setLight(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _light, setLightReply_t _reply)
+{
+    carinfo.setLight(QString::fromStdString(_light));
+
+    _reply("");
+    
+    return;
+}
+

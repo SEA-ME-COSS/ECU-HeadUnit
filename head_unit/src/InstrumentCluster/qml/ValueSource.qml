@@ -8,6 +8,7 @@ Item {
     property int battery: carinfo.battery
     property int gear: carinfo.gear
     property int direction: carinfo.direction
+    property string light: carinfo.light
 
     property bool blink: !(valueSource.direction === 0)
     property bool left_direction: (valueSource.direction === 1 || valueSource.direction === 3)

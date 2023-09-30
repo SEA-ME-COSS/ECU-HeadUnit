@@ -33,6 +33,13 @@ Q_INVOKABLE void HeadUnitQtClass::setDirection(quint16 _direction)
     return;
 }
 
+Q_INVOKABLE void HeadUnitQtClass::setLight(QString _light)
+{    
+    sender.IPCManagerTargetProxy->setLight(_light.toStdString(), sender.callStatus, sender.returnMessage);
+    
+    return;
+}
+
 
 HeadUnitQtClass carinfo;
 
