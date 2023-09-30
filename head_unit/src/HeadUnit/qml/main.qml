@@ -96,14 +96,14 @@ Window {
                 width: 115
                 height: 115
                 anchors.centerIn: parent
-                color: (valueSource.gear === 1) ? ((carinfo.sensorRpm === 0) ? "#555555" : "#B0B0B0") : "white"
+                color: (valueSource.gear === 1) ? ((carinfo.sensorRpm === 0) ? "#FF6868" : "#FFCECE") : "white"
                 radius: 22
 
                 Text {
                     text: "R"
                     font.family: font.name
                     font.pixelSize: 130
-                    color: (valueSource.gear === 1) ? "white" : ((carinfo.sensorRpm === 0) ? "#555555" : "#B0B0B0")
+                    color: (valueSource.gear === 1) ? "white" : ((carinfo.sensorRpm === 0) ? "#FF6868" : "#FFCECE")
                     x: 13
                     y: -20
                 }
@@ -132,14 +132,14 @@ Window {
                 width: 115
                 height: 115
                 anchors.centerIn: parent
-                color: (valueSource.gear === 2) ? ((carinfo.sensorRpm === 0) ? "#555555" : "#B0B0B0") : "white"
+                color: (valueSource.gear === 2) ? ((carinfo.sensorRpm === 0) ? "#35CA3D" : "#AEFFAE") : "white"
                 radius: 22
 
                 Text {
                     text: "N"
                     font.family: font.name
                     font.pixelSize: 130
-                    color: (valueSource.gear === 2) ? "white" : ((carinfo.sensorRpm === 0) ? "#555555" : "#B0B0B0")
+                    color: (valueSource.gear === 2) ? "white" : ((carinfo.sensorRpm === 0) ? "#35CA3D" : "#AEFFAE")
                     x: 13
                     y: -20
                 }
@@ -357,6 +357,33 @@ Window {
             anchors.verticalCenter: parent.verticalCenter
             x: parent.width / 2 - width / 2 + 340
             color: (carinfo.sensorRpm === 0) ? "black" : "#555555"
+        }
+
+        Image {
+            source: "../image/logo.png"
+            width: 330
+            height: 330
+            fillMode: Image.PreserveAspectFit
+            anchors.horizontalCenter: parent.horizontalCenter
+            y: 100
+        }
+
+        Image {
+            source: "../image/seame.png"
+            width: 180
+            height: 180
+            fillMode: Image.PreserveAspectFit
+            x: 645
+            y: -40
+        }
+
+        Image {
+            source: "../image/wolfsberg.png"
+            width: 220
+            height: 220
+            fillMode: Image.PreserveAspectFit
+            x: 830
+            y: -40
         }
     }
 }
