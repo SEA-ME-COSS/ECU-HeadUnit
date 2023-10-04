@@ -217,7 +217,7 @@ Window {
             fillMode: Image.PreserveAspectFit
             opacity: (valueSource.left_on_off) ? 0.2 : 1.0
             x: parent.width / 2 - width / 2 - 170
-            y: 470
+            y: 485
 
             Image {
                 source: "../image/turn-icon.png"
@@ -262,7 +262,7 @@ Window {
             fillMode: Image.PreserveAspectFit
             opacity: (valueSource.right_on_off) ? 0.2 : 1.0
             x: parent.width / 2 - width / 2 + 170
-            y: 470
+            y: 485
 
             Image {
                 source: "../image/turn-icon.png"
@@ -305,7 +305,7 @@ Window {
             height: 120
             fillMode: Image.PreserveAspectFit
             anchors.horizontalCenter: parent.horizontalCenter
-            y: 460
+            y: 475
 
             Image {
                 source: "../image/warning-icon.png"
@@ -361,20 +361,20 @@ Window {
 
         Image {
             source: "../image/logo.png"
-            width: 330
-            height: 330
+            width: 320
+            height: 320
             fillMode: Image.PreserveAspectFit
             anchors.horizontalCenter: parent.horizontalCenter
-            y: 100
+            y: 80
         }
 
         Image {
             source: "../image/seame.png"
-            width: 180
-            height: 180
+            width: 240
+            height: 240
             fillMode: Image.PreserveAspectFit
-            x: 645
-            y: -40
+            anchors.horizontalCenter: parent.horizontalCenter
+            y: 315
         }
 
         Image {
@@ -384,6 +384,22 @@ Window {
             fillMode: Image.PreserveAspectFit
             x: 830
             y: -40
+        }
+
+        Item {
+            width: 230
+            height: 70
+            x: 605
+            y: 5
+
+            Text {
+                text: valueSource.clock
+                font.family: font.name
+                font.pixelSize: 70
+                color: (carinfo.sensorRpm === 0) ? "black" : "#555555"
+                anchors.right: parent.right
+                y: 0
+            }
         }
 
         Slider {
@@ -503,14 +519,14 @@ Window {
                 width: 130
                 height: 50
                 anchors.centerIn: parent
-                color: (valueSource.gps) ? "#555555" : "white"
+                color: (valueSource.mode === 1) ? "#555555" : "white"
                 radius: 15
 
                 Text {
                     text: "GPS"
                     font.family: font.name
                     font.pixelSize: 40
-                    color: (valueSource.gps) ? "white" : "555555"
+                    color: (valueSource.mode === 1) ? "white" : "555555"
                     x: 17
                     y: 1
                 }
@@ -519,19 +535,30 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    valueSource.gps = !valueSource.gps
+                    if (valueSource.mode === 1) {
+                        valueSource.mode = 0
+                    } else {
+                        valueSource.mode = 1
+                    }
                 }
             }
         }
 
-        Image {
-            source: "../image/gps.png"
-            visible: valueSource.gps
-            width: 640
-            height: 640
-            fillMode: Image.PreserveAspectFit
+        Rectangle {
+            visible: (valueSource.mode === 1)
+            width: 675
+            height: 395
+            color: "#555555"
             anchors.horizontalCenter: parent.horizontalCenter
-            y: -50
+            y: 75
+
+            Image {
+                source: "../image/gps.png"
+                width: 645
+                height: 650
+                fillMode: Image.PreserveAspectFit
+                anchors.centerIn: parent
+            }
         }
     }
 }

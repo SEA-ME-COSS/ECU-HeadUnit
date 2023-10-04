@@ -31,10 +31,24 @@ Item {
     property string blue: "80"
     property string light: "#" + valueSource.red + valueSource.green + valueSource.blue
 
-    property bool gps: false
+    property int mode: 0
 
-    // onSensorRpmChanged: {
-    //     if (carinfo.sensorRpm === 0)
-    //     valueSource.gps = false
-    // }
+    property var currentTime: 0
+    property int hours: 0
+    property int minutes: 0
+    property string formattedHours: ""
+    property string formattedMinutes: ""
+    property string clock: ""
+
+    Timer {
+        interval: 1000; running: true; repeat: true
+        onTriggered: {
+            valueSource.currentTime = new Date();
+            valueSource.hours = valueSource.currentTime.getHours();
+            valueSource.minutes = valueSource.currentTime.getMinutes();
+            valueSource.formattedHours = (valueSource.hours < 10 ? ((valueSource.hours < 1) ? "00" : "0") : "") + valueSource.hours;
+            valueSource.formattedMinutes = (valueSource.minutes < 10 ? ((valueSource.minutes < 1) ? "00" : "0") : "") + valueSource.minutes;
+            valueSource.clock = valueSource.formattedHours + ":" + valueSource.formattedMinutes;
+        }
+    }               
 }
