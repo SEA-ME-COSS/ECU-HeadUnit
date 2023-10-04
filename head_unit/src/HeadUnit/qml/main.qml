@@ -668,5 +668,104 @@ Window {
                 }
             }
         }
+
+        Rectangle {
+            width: 140
+            height: 60
+            x: 870
+            y: 380
+            color: "black"
+            radius: 20
+
+            Rectangle {
+                width: 130
+                height: 50
+                anchors.centerIn: parent
+                color: (valueSource.mode === 3) ? "#555555" : "white"
+                radius: 15
+
+                Text {
+                    text: "MP4"
+                    font.family: font.name
+                    font.pixelSize: 40
+                    color: (valueSource.mode === 3) ? "white" : "555555"
+                    x: 17
+                    y: 1
+                }
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    if (valueSource.mode === 3) {
+                        valueSource.mode = 0
+                    } else {
+                        valueSource.mode = 3
+                    }
+                }
+            }
+        }
+
+        Rectangle {
+            visible: (valueSource.mode === 3)
+            width: 675
+            height: 395
+            color: "black"
+            anchors.horizontalCenter: parent.horizontalCenter
+            y: 75
+
+            Video {
+                id: mp4Player
+                source: "../media/movie.mp4"
+                anchors.fill: parent
+            }
+
+            Image {
+                source: "../image/play.png"
+                width: 40
+                height: 30
+                rotation: 90
+                x: parent.width / 2 - width / 2 - 80
+                y: 350
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        mp4Player.play()
+                    }
+                }
+            }
+
+            Image {
+                source: "../image/pause.png"
+                width: 40
+                height: 40
+                fillMode: Image.PreserveAspectFit
+                x: parent.width / 2 - width / 2
+                y: 345
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        mp4Player.pause()
+                    }
+                }
+            }
+
+            Rectangle {
+                width: 40
+                height: 40
+                color: "white"
+                x: parent.width / 2 - width / 2 + 90
+                y: 345
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        mp4Player.stop()
+                    }
+                }
+            }
+        }
     }
 }

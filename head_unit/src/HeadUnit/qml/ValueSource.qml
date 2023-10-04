@@ -46,8 +46,8 @@ Item {
             valueSource.currentTime = new Date();
             valueSource.hours = valueSource.currentTime.getHours();
             valueSource.minutes = valueSource.currentTime.getMinutes();
-            valueSource.formattedHours = (valueSource.hours < 10 ? ((valueSource.hours < 1) ? "00" : "0") : "") + valueSource.hours;
-            valueSource.formattedMinutes = (valueSource.minutes < 10 ? ((valueSource.minutes < 1) ? "00" : "0") : "") + valueSource.minutes;
+            valueSource.formattedHours = (valueSource.hours < 10 ? "0" : "") + valueSource.hours;
+            valueSource.formattedMinutes = (valueSource.minutes < 10 ? "0" : "") + valueSource.minutes;
             valueSource.clock = valueSource.formattedHours + ":" + valueSource.formattedMinutes;
         }
     }               
