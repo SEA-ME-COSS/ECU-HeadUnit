@@ -3,6 +3,7 @@ import QtQuick.Window 2.1
 import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Extras 1.4
+import QtMultimedia 5.15
 import DataModule 1.0
 
 Window {
@@ -25,6 +26,11 @@ Window {
 
     HeadUnitQtClass {
         id: manager
+    }
+
+    MediaPlayer {
+        id: mp3Player
+        source: "../media/music.mp3"
     }
 
     Item {
@@ -558,6 +564,108 @@ Window {
                 height: 650
                 fillMode: Image.PreserveAspectFit
                 anchors.centerIn: parent
+            }
+        }
+
+        Rectangle {
+            width: 140
+            height: 60
+            x: 870
+            y: 310
+            color: "black"
+            radius: 20
+
+            Rectangle {
+                width: 130
+                height: 50
+                anchors.centerIn: parent
+                color: (valueSource.mode === 2) ? "#555555" : "white"
+                radius: 15
+
+                Text {
+                    text: "MP3"
+                    font.family: font.name
+                    font.pixelSize: 40
+                    color: (valueSource.mode === 2) ? "white" : "555555"
+                    x: 17
+                    y: 1
+                }
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    if (valueSource.mode === 2) {
+                        valueSource.mode = 0
+                    } else {
+                        valueSource.mode = 2
+                    }
+                }
+            }
+        }
+
+        Rectangle {
+            visible: (valueSource.mode === 2)
+            width: 675
+            height: 395
+            color: "#555555"
+            anchors.horizontalCenter: parent.horizontalCenter
+            y: 75
+
+            Image {
+                source: "../image/album.jpg"
+                width: 300
+                height: 300
+                fillMode: Image.PreserveAspectFit
+                anchors.verticalCenter: parent.verticalCenter
+                x: 50
+            }
+
+            Image {
+                source: "../image/play.png"
+                width: 60
+                height: 50
+                rotation: 90
+                anchors.verticalCenter: parent.verticalCenter
+                x: 400
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        mp3Player.play()
+                    }
+                }
+            }
+
+            Image {
+                source: "../image/pause.png"
+                width: 60
+                height: 60
+                fillMode: Image.PreserveAspectFit
+                anchors.verticalCenter: parent.verticalCenter
+                x: 480
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        mp3Player.pause()
+                    }
+                }
+            }
+
+            Rectangle {
+                width: 60
+                height: 60
+                color: "white"
+                anchors.verticalCenter: parent.verticalCenter
+                x: 570
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        mp3Player.stop()
+                    }
+                }
             }
         }
     }

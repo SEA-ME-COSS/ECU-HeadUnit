@@ -8,6 +8,10 @@
         <file>image/turn-icon.png</file>
         <file>image/warning-icon.png</file>
         <file>image/gps.png</file>
+        <file>image/album.jpg</file>
+        <file>image/play.png</file>
+        <file>image/pause.png</file>
+        <file>media/music.mp3</file>
         <file>qml/ValueSource.qml</file>
     </qresource>
 </RCC>

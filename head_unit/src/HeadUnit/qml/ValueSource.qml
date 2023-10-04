@@ -38,7 +38,7 @@ Item {
     property int minutes: 0
     property string formattedHours: ""
     property string formattedMinutes: ""
-    property string clock: ""
+    property string clock: "00:00"
 
     Timer {
         interval: 1000; running: true; repeat: true
