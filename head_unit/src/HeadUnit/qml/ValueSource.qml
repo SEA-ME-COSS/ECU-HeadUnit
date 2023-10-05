@@ -50,5 +50,5 @@ Item {
             valueSource.formattedMinutes = (valueSource.minutes < 10 ? "0" : "") + valueSource.minutes;
             valueSource.clock = valueSource.formattedHours + ":" + valueSource.formattedMinutes;
         }
-    }               
+    }
 }

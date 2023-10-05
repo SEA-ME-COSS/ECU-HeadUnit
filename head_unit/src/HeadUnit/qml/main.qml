@@ -28,11 +28,6 @@ Window {
         id: manager
     }
 
-    MediaPlayer {
-        id: mp3Player
-        source: "../media/music.mp3"
-    }
-
     Item {
         id: container
         width: 1024
@@ -545,6 +540,7 @@ Window {
                         valueSource.mode = 0
                     } else {
                         valueSource.mode = 1
+                        mp4Player.pause()
                     }
                 }
             }
@@ -599,6 +595,7 @@ Window {
                         valueSource.mode = 0
                     } else {
                         valueSource.mode = 2
+                        mp4Player.pause()
                     }
                 }
             }
@@ -621,6 +618,10 @@ Window {
                 x: 50
             }
 
+            MediaPlayer {
+                id: mp3Player
+            }
+
             Image {
                 source: "../image/play.png"
                 width: 60
@@ -632,6 +633,7 @@ Window {
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
+                        mp3Player.source = "../media/music.mp3"
                         mp3Player.play()
                     }
                 }
@@ -699,6 +701,7 @@ Window {
                 onClicked: {
                     if (valueSource.mode === 3) {
                         valueSource.mode = 0
+                        mp4Player.pause()
                     } else {
                         valueSource.mode = 3
                     }
@@ -716,8 +719,16 @@ Window {
 
             Video {
                 id: mp4Player
-                source: "../media/movie.mp4"
                 anchors.fill: parent
+            }
+
+            Text {
+                text: "Ford v Ferrari (2019)"
+                font.family: font.name
+                font.pixelSize: 30
+                color: "white"
+                anchors.horizontalCenter: parent.horizontalCenter
+                y: 10
             }
 
             Image {
@@ -731,7 +742,10 @@ Window {
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
-                        mp4Player.play()
+                        if (carinfo.sensorRpm === 0) {
+                            mp4Player.source = "../media/movie.mp4"
+                            mp4Player.play()
+                        }
                     }
                 }
             }
@@ -764,6 +778,14 @@ Window {
                     onClicked: {
                         mp4Player.stop()
                     }
+                }
+            }
+
+            property int sensorRpm: carinfo.sensorRpm
+
+            onSensorRpmChanged: {
+                if ((valueSource.mode === 3) && (sensorRpm !== 0)) {
+                        mp4Player.pause()
                 }
             }
         }
