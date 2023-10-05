@@ -789,5 +789,24 @@ Window {
                 }
             }
         }
+
+        Image {
+            source: "../image/off.png"
+            width: 100
+            height: 100
+            fillMode: Image.PreserveAspectFit
+            opacity: ((carinfo.sensorRpm === 0) && (valueSource.gear === 0)) ? 1.0 : 0.5
+            x: 888
+            y: 470
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    if ((carinfo.sensorRpm === 0) && (valueSource.gear === 0)) {
+                        Qt.quit()
+                    }
+                }
+            }
+        }
     }
 }
