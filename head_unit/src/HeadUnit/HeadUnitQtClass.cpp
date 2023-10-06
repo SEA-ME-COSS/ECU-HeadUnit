@@ -40,6 +40,13 @@ Q_INVOKABLE void HeadUnitQtClass::setLight(QString _light)
     return;
 }
 
+Q_INVOKABLE void HeadUnitQtClass::poweroff()
+{
+    int exitCode = system("poweroff");
+    
+    return;
+}
+
 
 HeadUnitQtClass carinfo;
 

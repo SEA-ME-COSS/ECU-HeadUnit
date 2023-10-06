@@ -5,6 +5,7 @@
 #include <string>
 #include <QObject>
 #include <QString>
+#include <cstdlib>
 
 #include "HeadUnitSenderClass.hpp"
 
@@ -29,6 +30,7 @@ public Q_SLOTS:
     Q_INVOKABLE void setGear(quint16 _gear);
     Q_INVOKABLE void setDirection(quint16 _direction);
     Q_INVOKABLE void setLight(QString _light);
+    Q_INVOKABLE void poweroff();
 
 signals:
     void sensorRpmChanged();

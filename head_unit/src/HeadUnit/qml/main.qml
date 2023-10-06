@@ -803,8 +803,8 @@ Window {
                 anchors.fill: parent
                 onClicked: {
                     if ((carinfo.sensorRpm === 0) && (valueSource.gear === 0)) {
-                        // Qt.quit()
-                        console.log("Hello, Qt QML!")
+                        Qt.quit()
+                        manager.poweroff()
                     }
                 }
             }
