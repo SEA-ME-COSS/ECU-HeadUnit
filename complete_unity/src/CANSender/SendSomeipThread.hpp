@@ -7,6 +7,7 @@
 #include <CommonAPI/CommonAPI.hpp>
 #include <v1/commonapi/IPCManagerProxy.hpp>
 
+#include "CANSenderStubImpl.hpp"
 #include "CANBuffer.h"
 #include "KalmanFilter.h"
 

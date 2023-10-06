@@ -22,6 +22,8 @@ int main()
     
     while (1)
     {
+        if (!sender.CANSenderTargetProxy->isAvailable())
+	    exitCode = system("sh ../reboot_script/reboot_can_sender.sh");
         if (!sender.InstrumentClusterTargetProxy->isAvailable())
 	    exitCode = system("sh ../reboot_script/reboot_instrument_cluster.sh");
         if (!sender.HeadUnitTargetProxy->isAvailable())

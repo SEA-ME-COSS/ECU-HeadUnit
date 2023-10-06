@@ -31,9 +31,12 @@ add_executable(CANSender
         src/CANSender/ReadCANThread.c
         src/CANSender/CANBuffer.c
         src/CANSender/SendSomeipThread.cpp
+        src/CANSender/CANSenderStubImpl.cpp
         src/CANSender/KalmanFilter.c
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
+        src-gen-desproject/v1/commonapi/CANSenderSomeIPStubAdapter.cpp
+        src-gen-desproject/v1/commonapi/CANSenderSomeIPDeployment.cpp
 )
 target_link_libraries(CANSender CommonAPI CommonAPI-SomeIP vsomeip3)
 
@@ -62,6 +65,8 @@ add_executable(IPCManager
         src/IPCManager/IPCManager.cpp
         src/IPCManager/IPCManagerStubImpl.cpp
         src/IPCManager/IPCManagerSenderClass.cpp
+        src-gen-desproject/v1/commonapi/CANSenderSomeIPProxy.cpp
+        src-gen-desproject/v1/commonapi/CANSenderSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp

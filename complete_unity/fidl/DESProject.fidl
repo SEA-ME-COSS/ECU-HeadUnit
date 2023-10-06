@@ -1,6 +1,11 @@
 package commonapi
 
 
+interface CANSender {
+  version {major 1 minor 0}
+}
+
+
 interface IPCManager {
   version {major 1 minor 0}
   method setSensorRpm {

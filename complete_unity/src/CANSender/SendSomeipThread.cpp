@@ -6,9 +6,12 @@ using namespace v1_0::commonapi;
 void *SendSomeipThread(void *arg)
 {
     std::shared_ptr<CommonAPI::Runtime> runtime;
+    std::shared_ptr<CANSenderStubImpl> CANSenderService;
     std::shared_ptr<IPCManagerProxy<>> IPCManagertargetProxy;
     
     runtime = CommonAPI::Runtime::get();
+    CANSenderService = std::make_shared<CANSenderStubImpl>();
+    runtime->registerService("local", "CANSender", CANSenderService);
     IPCManagertargetProxy = runtime->buildProxy<IPCManagerProxy>("local", "IPCManager");
     
     CommonAPI::CallStatus callStatus;
