@@ -51,6 +51,11 @@ interface IPCManager {
 }
 
 
+interface PiracerSender {
+  version {major 1 minor 0}
+}
+
+
 interface PiracerOperator {
   version {major 1 minor 0}
   method setGearMode {

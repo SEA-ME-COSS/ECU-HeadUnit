@@ -17,8 +17,6 @@ void *SendSomeipThread(void *arg)
     CommonAPI::CallStatus callStatus;
     std::string returnMessage;
     
-    uint16_t temp = 0;
-    
     while (1)
     {
         pthread_mutex_lock(&CANBufferMutex);
@@ -31,11 +29,7 @@ void *SendSomeipThread(void *arg)
         pthread_mutex_unlock(&CANBufferMutex);
         
         uint16_t kf_speed_sensor_rpm = filter(speed_sensor_rpm);
-	//IPCManagertargetProxy->setSensorRpm(kf_speed_sensor_rpm, callStatus, returnMessage);
-	IPCManagertargetProxy->setSensorRpm(temp, callStatus, returnMessage);
-	temp += 100;
-	if (temp == 200)
-	    temp = 0;
+	IPCManagertargetProxy->setSensorRpm(kf_speed_sensor_rpm, callStatus, returnMessage);
         usleep(5000000);
     }
     

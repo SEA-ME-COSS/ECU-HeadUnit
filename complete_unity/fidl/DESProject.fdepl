@@ -40,8 +40,19 @@ define org.genivi.commonapi.someip.deployment for provider as Service {
 }
 
 
-define org.genivi.commonapi.someip.deployment for interface commonapi.PiracerOperator {
+define org.genivi.commonapi.someip.deployment for interface commonapi.PiracerSender {
         SomeIpServiceID = 1002
+}
+define org.genivi.commonapi.someip.deployment for provider as Service {
+        instance commonapi.PiracerSender {
+                InstanceId = "PiracerSender"
+                SomeIpInstanceID = 10002
+        }
+}
+
+
+define org.genivi.commonapi.someip.deployment for interface commonapi.PiracerOperator {
+        SomeIpServiceID = 1003
 
         method setGearMode {
                 SomeIpMethodID = 105
@@ -50,13 +61,13 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.PiracerOpe
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.PiracerOperator {
                 InstanceId = "PiracerOperator"
-                SomeIpInstanceID = 10002
+                SomeIpInstanceID = 10003
         }
 }
 
 
 define org.genivi.commonapi.someip.deployment for interface commonapi.InstrumentCluster {
-        SomeIpServiceID = 1003
+        SomeIpServiceID = 1004
 
         method setSpeedRpm {
                 SomeIpMethodID = 106
@@ -77,13 +88,13 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.Instrument
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.InstrumentCluster {
                 InstanceId = "InstrumentCluster"
-                SomeIpInstanceID = 10003
+                SomeIpInstanceID = 10004
         }
 }
 
 
 define org.genivi.commonapi.someip.deployment for interface commonapi.HeadUnit {
-        SomeIpServiceID = 1004
+        SomeIpServiceID = 1005
 
         method setSensorRpm {
                 SomeIpMethodID = 111
@@ -92,7 +103,7 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.HeadUnit {
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.HeadUnit {
                 InstanceId = "HeadUnit"
-                SomeIpInstanceID = 10004
+                SomeIpInstanceID = 10005
         }
 }
 

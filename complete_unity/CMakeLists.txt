@@ -44,8 +44,11 @@ target_link_libraries(CANSender CommonAPI CommonAPI-SomeIP vsomeip3)
 add_executable(PiracerSender
         src/PiracerSender/PiracerSender.cpp
         src/PiracerSender/PiracerClass.cpp
+        src/PiracerSender/PiracerSenderStubImpl.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
+        src-gen-desproject/v1/commonapi/PiracerSenderSomeIPStubAdapter.cpp
+        src-gen-desproject/v1/commonapi/PiracerSenderSomeIPDeployment.cpp
 )
 target_link_libraries(PiracerSender ${PYTHON_LIBRARIES} CommonAPI CommonAPI-SomeIP vsomeip3)
 
@@ -67,6 +70,8 @@ add_executable(IPCManager
         src/IPCManager/IPCManagerSenderClass.cpp
         src-gen-desproject/v1/commonapi/CANSenderSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/CANSenderSomeIPDeployment.cpp
+        src-gen-desproject/v1/commonapi/PiracerSenderSomeIPProxy.cpp
+        src-gen-desproject/v1/commonapi/PiracerSenderSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp
