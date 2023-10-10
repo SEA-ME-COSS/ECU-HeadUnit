@@ -30,7 +30,7 @@ void *SendSomeipThread(void *arg)
         
         uint16_t kf_speed_sensor_rpm = filter(speed_sensor_rpm);
 	IPCManagertargetProxy->setSensorRpm(kf_speed_sensor_rpm, callStatus, returnMessage);
-        usleep(5000000);
+        usleep(500000);
     }
     
     return NULL;
