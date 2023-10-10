@@ -10,7 +10,7 @@ Window {
     id: root
     title: "Head Unit"
     width: 1024
-    height: 1280
+    height: 600
     //width: 600
     //height: 1024
     visible: true
@@ -28,19 +28,13 @@ Window {
         id: manager
     }
 
-    Rectangle {
-        width: 1024
-        height: 1280
-        anchors.centerIn: parent
-        color: "white"
-    }
-
     Item {
         id: container
         width: 1024
         height: 600
         anchors.centerIn: parent
         rotation: 0
+        scale: 0.47
 
         Rectangle {
             id: background
