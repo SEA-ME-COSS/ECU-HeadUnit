@@ -1,0 +1,36 @@
+{
+	"BUILD_DIR" : "/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/build/HeadUnit_autogen",
+	"CMAKE_BINARY_DIR" : "/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test",
+	"CMAKE_SOURCE_DIR" : "/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test",
+	"INCLUDE_DIR" : "/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/build/HeadUnit_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/src/HeadUnit/qml/ValueSource.qml",
+		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/src/HeadUnit/qml/main.qml",
+		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/src/HeadUnit/image/warning-icon.png",
+		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/src/HeadUnit/image/wolfsberg.png",
+		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/src/HeadUnit/image/turn-icon.png",
+		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/src/HeadUnit/image/album.jpg",
+		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/src/HeadUnit/image/play.png",
+		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/src/HeadUnit/image/logo.png",
+		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/src/HeadUnit/image/gps.png",
+		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/src/HeadUnit/image/off.png",
+		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/src/HeadUnit/image/pause.png",
+		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/src/HeadUnit/image/seame.png",
+		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/src/HeadUnit/font/Nebula-Regular.otf",
+		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/src/HeadUnit/media/music.mp3",
+		"/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/src/HeadUnit/media/movie.mp4"
+	],
+	"LOCK_FILE" : "/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/build/CMakeFiles/HeadUnit_autogen.dir/AutoRcc_qml_MIGZHXQZTS_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "qml" ],
+	"OUTPUT_CHECKSUM" : "MIGZHXQZTS",
+	"OUTPUT_NAME" : "qrc_qml.cpp",
+	"RCC_EXECUTABLE" : "/opt/Qt/5.15.0/gcc_64/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/build/CMakeFiles/HeadUnit_autogen.dir/AutoRcc_qml_MIGZHXQZTS_Used.txt",
+	"SOURCE" : "/home/ha/\ubc14\ud0d5\ud654\uba74/DES-Head-Unit/screen_test/src/HeadUnit/qml.qrc",
+	"VERBOSITY" : 0
+}
