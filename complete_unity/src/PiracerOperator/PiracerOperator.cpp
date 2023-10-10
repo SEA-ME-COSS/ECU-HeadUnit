@@ -21,6 +21,9 @@ int main ()
     
     ControllerClass controller;
     
+    CommonAPI::CallStatus callStatus;
+    std::string returnMessage;
+    
     double throttle, steering;
     
     while (1)
