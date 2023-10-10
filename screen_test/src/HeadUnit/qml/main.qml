@@ -4,6 +4,7 @@ import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Extras 1.4
 import QtMultimedia 5.15
+import DataModule 1.0
 
 Window {
     id: root
@@ -21,6 +22,10 @@ Window {
 
     ValueSource {
         id: valueSource
+    }
+
+    HeadUnitQtClass {
+        id: manager
     }
 
     Item {
