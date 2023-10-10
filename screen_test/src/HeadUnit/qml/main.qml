@@ -10,7 +10,7 @@ Window {
     id: root
     title: "Head Unit"
     width: 1024
-    height: 600
+    height: 1280
     //width: 600
     //height: 1024
     visible: true
@@ -26,6 +26,13 @@ Window {
 
     HeadUnitQtClass {
         id: manager
+    }
+
+    Rectangle {
+        width: 1024
+        height: 1280
+        anchors.centerIn: parent
+        color: "white"
     }
 
     Item {
