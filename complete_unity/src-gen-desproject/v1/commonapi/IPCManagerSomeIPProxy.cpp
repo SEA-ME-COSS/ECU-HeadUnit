@@ -33,7 +33,7 @@ std::shared_ptr<CommonAPI::SomeIP::Proxy> createIPCManagerSomeIPProxy(
 void initializeIPCManagerSomeIPProxy() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
         "local:commonapi.IPCManager:v1_0:IPCManager",
-        0x3e9, 0x2711, 1, 0);
+        0x3eb, 0x2713, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerProxyCreateMethod(
         "commonapi.IPCManager:v1_0",
         &createIPCManagerSomeIPProxy);
@@ -74,7 +74,7 @@ void IPCManagerSomeIPProxy::setSensorRpm(uint16_t _SensorRpm, CommonAPI::CallSta
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x64),
+        CommonAPI::SomeIP::method_id_t(0x65),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -102,7 +102,7 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setSensorRpmAsync(cons
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x64),
+        CommonAPI::SomeIP::method_id_t(0x65),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -132,7 +132,7 @@ void IPCManagerSomeIPProxy::setBatteryLevel(uint16_t _BatteryLevel, CommonAPI::C
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x65),
+        CommonAPI::SomeIP::method_id_t(0x66),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -160,7 +160,7 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setBatteryLevelAsync(c
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x65),
+        CommonAPI::SomeIP::method_id_t(0x66),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -190,7 +190,7 @@ void IPCManagerSomeIPProxy::setGearMode(uint16_t _GearMode, CommonAPI::CallStatu
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x66),
+        CommonAPI::SomeIP::method_id_t(0x67),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -218,7 +218,7 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setGearModeAsync(const
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x66),
+        CommonAPI::SomeIP::method_id_t(0x67),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -248,7 +248,7 @@ void IPCManagerSomeIPProxy::setDirection(uint16_t _Direction, CommonAPI::CallSta
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x67),
+        CommonAPI::SomeIP::method_id_t(0x68),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -276,7 +276,7 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setDirectionAsync(cons
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x67),
+        CommonAPI::SomeIP::method_id_t(0x68),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -306,7 +306,7 @@ void IPCManagerSomeIPProxy::setLight(std::string _light, CommonAPI::CallStatus &
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x68),
+        CommonAPI::SomeIP::method_id_t(0x69),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -334,11 +334,69 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setLightAsync(const st
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x68),
+        CommonAPI::SomeIP::method_id_t(0x69),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
         deploy_light,
+        [_callback] (CommonAPI::CallStatus _internalCallStatus, CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment > _message) {
+            if (_callback)
+                _callback(_internalCallStatus, _message.getValue());
+        },
+        std::make_tuple(deploy_message));
+}
+
+void IPCManagerSomeIPProxy::setSteering(uint16_t _Steering, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
+    CommonAPI::Deployable< uint16_t, CommonAPI::SomeIP::IntegerDeployment<uint16_t>> deploy_Steering(_Steering, static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr));
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+    CommonAPI::SomeIP::ProxyHelper<
+        CommonAPI::SomeIP::SerializableArguments<
+            CommonAPI::Deployable<
+                uint16_t,
+                CommonAPI::SomeIP::IntegerDeployment<uint16_t>
+            >
+        >,
+        CommonAPI::SomeIP::SerializableArguments<
+            CommonAPI::Deployable<
+                std::string,
+                CommonAPI::SomeIP::StringDeployment
+            >
+        >
+    >::callMethodWithReply(
+        *this,
+        CommonAPI::SomeIP::method_id_t(0x6a),
+        false,
+        false,
+        (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
+        deploy_Steering,
+        _internalCallStatus,
+        deploy_message);
+    _message = deploy_message.getValue();
+}
+
+std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setSteeringAsync(const uint16_t &_Steering, SetSteeringAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+    CommonAPI::Deployable< uint16_t, CommonAPI::SomeIP::IntegerDeployment<uint16_t>> deploy_Steering(_Steering, static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr));
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+    return CommonAPI::SomeIP::ProxyHelper<
+        CommonAPI::SomeIP::SerializableArguments<
+            CommonAPI::Deployable<
+                uint16_t,
+                CommonAPI::SomeIP::IntegerDeployment<uint16_t>
+            >
+        >,
+        CommonAPI::SomeIP::SerializableArguments<
+            CommonAPI::Deployable<
+                std::string,
+                CommonAPI::SomeIP::StringDeployment
+            >
+        >
+    >::callMethodAsync(
+        *this,
+        CommonAPI::SomeIP::method_id_t(0x6a),
+        false,
+        false,
+        (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
+        deploy_Steering,
         [_callback] (CommonAPI::CallStatus _internalCallStatus, CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment > _message) {
             if (_callback)
                 _callback(_internalCallStatus, _message.getValue());

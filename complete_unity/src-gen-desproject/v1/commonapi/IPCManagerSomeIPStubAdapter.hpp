@@ -93,6 +93,14 @@ public:
         std::tuple< CommonAPI::SomeIP::StringDeployment>
     > setLightStubDispatcher;
     
+    CommonAPI::SomeIP::MethodWithReplyStubDispatcher<
+        ::v1::commonapi::IPCManagerStub,
+        std::tuple< uint16_t>,
+        std::tuple< std::string>,
+        std::tuple< CommonAPI::SomeIP::IntegerDeployment<uint16_t>>,
+        std::tuple< CommonAPI::SomeIP::StringDeployment>
+    > setSteeringStubDispatcher;
+    
     IPCManagerSomeIPStubAdapterInternal(
         const CommonAPI::SomeIP::Address &_address,
         const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection,
@@ -142,12 +150,21 @@ public:
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)),
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
         
+        ,
+        setSteeringStubDispatcher(
+            &IPCManagerStub::setSteering,
+            false,
+            _stub->hasElement(5),
+            std::make_tuple(static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr)),
+            std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
+        
     {
-        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x64) }, &setSensorRpmStubDispatcher );
-        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x65) }, &setBatteryLevelStubDispatcher );
-        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x66) }, &setGearModeStubDispatcher );
-        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x67) }, &setDirectionStubDispatcher );
-        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x68) }, &setLightStubDispatcher );
+        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x65) }, &setSensorRpmStubDispatcher );
+        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x66) }, &setBatteryLevelStubDispatcher );
+        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x67) }, &setGearModeStubDispatcher );
+        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x68) }, &setDirectionStubDispatcher );
+        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x69) }, &setLightStubDispatcher );
+        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x6a) }, &setSteeringStubDispatcher );
         // Provided events/fields
     }
 

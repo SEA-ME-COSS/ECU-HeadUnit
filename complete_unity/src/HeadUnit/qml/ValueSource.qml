@@ -1,7 +1,12 @@
 import QtQuick 2.2
+import DataModule 1.0
 
 Item {
     id: valueSource
+
+    HeadUnitQtClass {
+        id: manager
+    }
 
     property int gear: 0
     property int direction: 0
@@ -49,6 +54,39 @@ Item {
             valueSource.formattedHours = (valueSource.hours < 10 ? "0" : "") + valueSource.hours;
             valueSource.formattedMinutes = (valueSource.minutes < 10 ? "0" : "") + valueSource.minutes;
             valueSource.clock = valueSource.formattedHours + ":" + valueSource.formattedMinutes;
+        }
+    }
+
+    property int steering: carinfo.steering
+    property bool freeDirection: false
+
+    onSteeringChanged: {
+        if ((valueSource.direction === 1) && (valueSource.freeDirection === false) && (valueSource.steering === 1)) {
+            valueSource.freeDirection = true
+        } else if ((valueSource.direction === 2) && (valueSource.freeDirection === false) && (valueSource.steering === 2)) {
+            valueSource.freeDirection = true
+        } else if ((valueSource.direction === 1) && (valueSource.freeDirection === true) && (valueSource.steering !== 1)) {
+            manager.setDirection(0)
+            valueSource.direction = 0
+
+            valueSource.blink = false
+            valueSource.left_direction = false
+            valueSource.right_direction = false
+            valueSource.left_on_off = false
+            valueSource.right_on_off = false
+
+            valueSource.freeDirection = false
+        } else if ((valueSource.direction === 2) && (valueSource.freeDirection === true) && (valueSource.steering !== 2)) {
+            manager.setDirection(0)
+            valueSource.direction = 0
+
+            valueSource.blink = false
+            valueSource.left_direction = false
+            valueSource.right_direction = false
+            valueSource.left_on_off = false
+            valueSource.right_on_off = false
+
+            valueSource.freeDirection = false
         }
     }
 }

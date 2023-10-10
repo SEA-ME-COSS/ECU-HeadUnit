@@ -61,6 +61,14 @@ public:
         std::tuple< CommonAPI::SomeIP::StringDeployment>
     > setSensorRpmStubDispatcher;
     
+    CommonAPI::SomeIP::MethodWithReplyStubDispatcher<
+        ::v1::commonapi::HeadUnitStub,
+        std::tuple< uint16_t>,
+        std::tuple< std::string>,
+        std::tuple< CommonAPI::SomeIP::IntegerDeployment<uint16_t>>,
+        std::tuple< CommonAPI::SomeIP::StringDeployment>
+    > setSteeringStubDispatcher;
+    
     HeadUnitSomeIPStubAdapterInternal(
         const CommonAPI::SomeIP::Address &_address,
         const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection,
@@ -78,8 +86,17 @@ public:
             std::make_tuple(static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr)),
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
         
+        ,
+        setSteeringStubDispatcher(
+            &HeadUnitStub::setSteering,
+            false,
+            _stub->hasElement(1),
+            std::make_tuple(static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr)),
+            std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
+        
     {
-        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x6f) }, &setSensorRpmStubDispatcher );
+        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x70) }, &setSensorRpmStubDispatcher );
+        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x71) }, &setSteeringStubDispatcher );
         // Provided events/fields
     }
 

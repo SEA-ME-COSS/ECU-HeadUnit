@@ -4,6 +4,7 @@
 HeadUnitQtClass::HeadUnitQtClass(QObject *parent) : QObject(parent)
 {
     QsensorRpm = 0;
+    Qsteering = 0;
 }
 
 quint16 HeadUnitQtClass::sensorRpm() const
@@ -11,10 +12,23 @@ quint16 HeadUnitQtClass::sensorRpm() const
     return QsensorRpm;
 }
 
+quint16 HeadUnitQtClass::steering() const
+{
+    return Qsteering;
+}
+
 void HeadUnitQtClass::setSensorRpm(uint16_t _sensorRpm)
 {
     QsensorRpm = _sensorRpm;
     emit sensorRpmChanged();
+    
+    return;
+}
+
+void HeadUnitQtClass::setSteering(uint16_t _steering)
+{
+    Qsteering = _steering;
+    emit steeringChanged();
     
     return;
 }

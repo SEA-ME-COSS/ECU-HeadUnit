@@ -8,6 +8,12 @@ then
   sleep 1
 fi
 
+sudo ip link set can0 up type can bitrate 500000
+sudo ip link set can1 up type can bitrate 500000
+
+sudo ifconfig can0 txqueuelen 65536
+sudo ifconfig can1 txqueuelen 65536
+
 cd ../build
 ./"$process_name" &
 

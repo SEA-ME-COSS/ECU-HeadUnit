@@ -242,6 +242,8 @@ Window {
                         valueSource.right_direction = false
                         valueSource.left_on_off = false
                         valueSource.right_on_off = false
+
+                        valueSource.freeDirection = false
                     } else {
                         manager.setDirection(1)
                         valueSource.direction = 1
@@ -251,6 +253,8 @@ Window {
                         valueSource.right_direction = false
                         valueSource.left_on_off = true
                         valueSource.right_on_off = false
+
+                        valueSource.freeDirection = false
                     }
                 }
             }
@@ -287,6 +291,8 @@ Window {
                         valueSource.right_direction = false
                         valueSource.left_on_off = false
                         valueSource.right_on_off = false
+
+                        valueSource.freeDirection = false
                     } else {
                         manager.setDirection(2)
                         valueSource.direction = 2
@@ -296,6 +302,8 @@ Window {
                         valueSource.right_direction = true
                         valueSource.left_on_off = false
                         valueSource.right_on_off = true
+
+                        valueSource.freeDirection = false
                     }
                 }
             }
@@ -339,6 +347,8 @@ Window {
                         valueSource.right_direction = false
                         valueSource.left_on_off = false
                         valueSource.right_on_off = false
+
+                        valueSource.freeDirection = false
                     } else {
                         manager.setDirection(3)
                         valueSource.direction = 3
@@ -348,6 +358,8 @@ Window {
                         valueSource.right_direction = true
                         valueSource.left_on_off = true
                         valueSource.right_on_off = true
+
+                        valueSource.freeDirection = false
                     }
                 }
             }

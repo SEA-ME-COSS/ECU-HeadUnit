@@ -51,3 +51,12 @@ void IPCManagerStubImpl::setLight(const std::shared_ptr<CommonAPI::ClientId> _cl
     return;
 }
 
+void IPCManagerStubImpl::setSteering(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _steering, setSteeringReply_t _reply)
+{
+    sender.HeadUnitTargetProxy->setSteering(_steering, sender.callStatus, sender.returnMessage);
+
+    _reply("");
+
+    return;
+}
+

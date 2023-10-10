@@ -27,7 +27,7 @@ Window {
         width: 1280
         height: 400
         anchors.centerIn: parent
-        rotation: 90
+        rotation: -90
 
         Rectangle {
             id: background

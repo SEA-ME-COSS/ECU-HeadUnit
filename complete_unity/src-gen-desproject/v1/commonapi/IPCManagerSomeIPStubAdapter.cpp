@@ -35,7 +35,7 @@ std::shared_ptr<CommonAPI::SomeIP::StubAdapter> createIPCManagerSomeIPStubAdapte
 void initializeIPCManagerSomeIPStubAdapter() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
         "local:commonapi.IPCManager:v1_0:IPCManager",
-         0x3e9, 0x2711, 1, 0);
+         0x3eb, 0x2713, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerStubAdapterCreateMethod(
         "commonapi.IPCManager:v1_0",
         &createIPCManagerSomeIPStubAdapter);

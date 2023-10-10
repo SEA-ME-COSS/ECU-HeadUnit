@@ -74,7 +74,7 @@ void HeadUnitSomeIPProxy::setSensorRpm(uint16_t _SensorRpm, CommonAPI::CallStatu
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x6f),
+        CommonAPI::SomeIP::method_id_t(0x70),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -102,11 +102,69 @@ std::future<CommonAPI::CallStatus> HeadUnitSomeIPProxy::setSensorRpmAsync(const 
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x6f),
+        CommonAPI::SomeIP::method_id_t(0x70),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
         deploy_SensorRpm,
+        [_callback] (CommonAPI::CallStatus _internalCallStatus, CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment > _message) {
+            if (_callback)
+                _callback(_internalCallStatus, _message.getValue());
+        },
+        std::make_tuple(deploy_message));
+}
+
+void HeadUnitSomeIPProxy::setSteering(uint16_t _Steering, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
+    CommonAPI::Deployable< uint16_t, CommonAPI::SomeIP::IntegerDeployment<uint16_t>> deploy_Steering(_Steering, static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr));
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+    CommonAPI::SomeIP::ProxyHelper<
+        CommonAPI::SomeIP::SerializableArguments<
+            CommonAPI::Deployable<
+                uint16_t,
+                CommonAPI::SomeIP::IntegerDeployment<uint16_t>
+            >
+        >,
+        CommonAPI::SomeIP::SerializableArguments<
+            CommonAPI::Deployable<
+                std::string,
+                CommonAPI::SomeIP::StringDeployment
+            >
+        >
+    >::callMethodWithReply(
+        *this,
+        CommonAPI::SomeIP::method_id_t(0x71),
+        false,
+        false,
+        (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
+        deploy_Steering,
+        _internalCallStatus,
+        deploy_message);
+    _message = deploy_message.getValue();
+}
+
+std::future<CommonAPI::CallStatus> HeadUnitSomeIPProxy::setSteeringAsync(const uint16_t &_Steering, SetSteeringAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+    CommonAPI::Deployable< uint16_t, CommonAPI::SomeIP::IntegerDeployment<uint16_t>> deploy_Steering(_Steering, static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr));
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+    return CommonAPI::SomeIP::ProxyHelper<
+        CommonAPI::SomeIP::SerializableArguments<
+            CommonAPI::Deployable<
+                uint16_t,
+                CommonAPI::SomeIP::IntegerDeployment<uint16_t>
+            >
+        >,
+        CommonAPI::SomeIP::SerializableArguments<
+            CommonAPI::Deployable<
+                std::string,
+                CommonAPI::SomeIP::StringDeployment
+            >
+        >
+    >::callMethodAsync(
+        *this,
+        CommonAPI::SomeIP::method_id_t(0x71),
+        false,
+        false,
+        (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
+        deploy_Steering,
         [_callback] (CommonAPI::CallStatus _internalCallStatus, CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment > _message) {
             if (_callback)
                 _callback(_internalCallStatus, _message.getValue());

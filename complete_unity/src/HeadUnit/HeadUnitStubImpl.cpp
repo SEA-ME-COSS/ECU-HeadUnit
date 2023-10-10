@@ -13,3 +13,12 @@ void HeadUnitStubImpl::setSensorRpm(const std::shared_ptr<CommonAPI::ClientId> _
     return;
 }
 
+void HeadUnitStubImpl::setSteering(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _steering, setSteeringReply_t _reply)
+{
+    carinfo.setSteering(_steering);
+
+    _reply("");
+    
+    return;
+}
+
