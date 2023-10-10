@@ -7,10 +7,10 @@ import QtQuick.Extras 1.4
 Window {
     id: root
     title: "Instrument Cluster"
-    width: 1280
-    height: 400
-    //width: 400
-    //height: 1280
+    // width: 1280
+    // height: 400
+    width: 400
+    height: 1280
     visible: true
 
     FontLoader {
@@ -27,7 +27,7 @@ Window {
         width: 1280
         height: 400
         anchors.centerIn: parent
-        rotation: 0
+        rotation: 90
 
         Rectangle {
             id: background
