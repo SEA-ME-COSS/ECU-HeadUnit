@@ -30,7 +30,7 @@ Window {
 
     MouseArea {
         anchors.fill: parent
-        cursorShape = Qt.BlankCursor
+        cursorShape = Qt.CrossCursor
     }
 
     Item {
