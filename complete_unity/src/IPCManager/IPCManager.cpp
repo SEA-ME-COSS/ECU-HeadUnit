@@ -33,7 +33,7 @@ int main()
         if (!sender.HeadUnitTargetProxy->isAvailable())
 	    exitCode = system("sh ../reboot_script/reboot_head_unit.sh");
 	
-	usleep(100000);
+	usleep(1000000);
     }
     
     return 0;
