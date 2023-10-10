@@ -34,7 +34,7 @@ Window {
         height: 600
         anchors.centerIn: parent
         rotation: 0
-        scale: 0.47
+        scale: 0.55
 
         Rectangle {
             id: background
