@@ -28,6 +28,14 @@ Window {
         id: manager
     }
 
+    MouseArea {
+        anchors.fill: parent
+
+        onEntered: {
+            cursorShape = Qt.BlankCursor
+        }
+    }
+
     Item {
         id: container
         width: 1024
