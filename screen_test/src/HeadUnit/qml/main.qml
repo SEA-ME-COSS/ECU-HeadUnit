@@ -28,11 +28,6 @@ Window {
         id: manager
     }
 
-    MouseArea {
-        anchors.fill: parent
-        cursorShape = Qt.CrossCursor
-    }
-
     Item {
         id: container
         width: 1024
