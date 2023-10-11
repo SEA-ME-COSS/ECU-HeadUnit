@@ -1,9 +1,4 @@
 #include "SendSomeipThread.hpp"
-#include <iostream>
-
-
-void kalmanFilter_(double measuredstate, double estimation[SIZE], double letterP[SIZE][SIZE], double dt, double renewed_e[SIZE], double renewed_P[SIZE][SIZE]);
-void matrix_multiply(double A[SIZE][SIZE], double B[SIZE][SIZE], double result[SIZE][SIZE]);
 
 
 using namespace v1_0::commonapi;
@@ -56,7 +51,6 @@ void *SendSomeipThread(void *arg)
 
         uint16_t kf_speed_sensor_rpm = (uint16_t) round(speed_sensor_renewed_e[0]);
         
-        std::cout<<kf_speed_sensor_rpm<<std::endl;
 	IPCManagertargetProxy->setSensorRpm(kf_speed_sensor_rpm, callStatus, returnMessage);
         usleep(500000);
     }
