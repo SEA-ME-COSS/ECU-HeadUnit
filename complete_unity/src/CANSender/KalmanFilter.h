@@ -10,16 +10,11 @@ extern "C" {
 #include <stdint.h>
 #include <math.h>
 
+#include "KalmanFactor.h"
+
 
 #define SIZE 2
 #define MEASURE_SIZE 1
-
-
-extern double speed_sensor_estimation[SIZE];
-extern double speed_sensor_letterP[SIZE][SIZE];
-extern double speed_sensor_dt;
-extern double speed_sensor_renewed_e[SIZE], speed_sensor_renewed_P[SIZE][SIZE];
-extern double speed_sensor_measuredstate;
 
 
 void matrix_multiply(double A[SIZE][SIZE], double B[SIZE][SIZE], double result[SIZE][SIZE]);
