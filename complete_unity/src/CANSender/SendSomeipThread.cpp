@@ -63,8 +63,8 @@ void kalmanFilter_(double measuredstate, double estimation[SIZE], double letterP
 {
     double letterA[SIZE][SIZE] = {{1, dt},
                                   {0, 1}};
-    double letterQ[SIZE][SIZE] = {{0.5, 0},
-                                  {0, 0.5}};
+    double letterQ[SIZE][SIZE] = {{1, 0},
+                                  {0, 1}};
     double letterH[MEASURE_SIZE][SIZE] = {{1, 0}};
     double letterR[MEASURE_SIZE] = {25};
 
