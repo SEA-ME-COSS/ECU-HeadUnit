@@ -32,8 +32,6 @@ add_executable(CANSender
         src/CANSender/CANBuffer.c
         src/CANSender/SendSomeipThread.cpp
         src/CANSender/CANSenderStubImpl.cpp
-        src/CANSender/KalmanFilter.c
-        src/CANSender/KalmanFactor.c
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/CANSenderSomeIPStubAdapter.cpp
