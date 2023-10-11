@@ -1,21 +1,65 @@
 #include "SendSomeipThread.hpp"
 
 
-void matrix_multiply(double A[SIZE][SIZE], double B[SIZE][SIZE], double result[SIZE][SIZE]) 
+void kalmanFilter_(double measuredstate, double estimation[SIZE], double letterP[SIZE][SIZE], double dt, double renewed_e[SIZE], double renewed_P[SIZE][SIZE]);
+void matrix_multiply(double A[SIZE][SIZE], double B[SIZE][SIZE], double result[SIZE][SIZE]);
+
+
+using namespace v1_0::commonapi;
+
+void *SendSomeipThread(void *arg)
 {
-    for (int i = 0; i < SIZE; i++) 
+    std::shared_ptr<CommonAPI::Runtime> runtime;
+    std::shared_ptr<CANSenderStubImpl> CANSenderService;
+    std::shared_ptr<IPCManagerProxy<>> IPCManagertargetProxy;
+    
+    runtime = CommonAPI::Runtime::get();
+    CANSenderService = std::make_shared<CANSenderStubImpl>();
+    runtime->registerService("local", "CANSender", CANSenderService);
+    IPCManagertargetProxy = runtime->buildProxy<IPCManagerProxy>("local", "IPCManager");
+    
+    CommonAPI::CallStatus callStatus;
+    std::string returnMessage;
+    
+    double speed_sensor_estimation[SIZE] = {0, 0};
+    double speed_sensor_letterP[SIZE][SIZE] = {{100, 0},
+                                               {0, 100}};
+    double speed_sensor_dt = 1;
+    double speed_sensor_renewed_e[SIZE], speed_sensor_renewed_P[SIZE][SIZE];
+    double speed_sensor_measuredstate;
+    
+    while (1)
     {
-        for (int j = 0; j < SIZE; j++) 
+        pthread_mutex_lock(&CANBufferMutex);
+        int currentIndex = CANBufferIndex - 1;
+        if (currentIndex < 0)
         {
-            result[i][j] = 0;
-            for (int k = 0; k < SIZE; k++) 
+            currentIndex = CANBuffer_SIZE - 1;
+        }
+        uint16_t speed_sensor_rpm = CANBuffer[currentIndex];
+        pthread_mutex_unlock(&CANBufferMutex);
+        
+        speed_sensor_measuredstate = (double) speed_sensor_rpm;
+        
+        kalmanFilter_(speed_sensor_measuredstate, speed_sensor_estimation, speed_sensor_letterP, speed_sensor_dt, speed_sensor_renewed_e, speed_sensor_renewed_P);
+        
+        // Update the estimation and covariance for the next iteration
+        for (int i = 0; i < SIZE; i++)
+        {
+            speed_sensor_estimation[i] = speed_sensor_renewed_e[i];
+            for (int j = 0; j < SIZE; j++)
             {
-                result[i][j] += A[i][k] * B[k][j];
+                speed_sensor_letterP[i][j] = speed_sensor_renewed_P[i][j];
             }
         }
+
+        uint16_t kf_speed_sensor_rpm = (uint16_t) round(speed_sensor_renewed_e[0]);
+        
+	IPCManagertargetProxy->setSensorRpm(kf_speed_sensor_rpm, callStatus, returnMessage);
+        usleep(500000);
     }
     
-    return;
+    return NULL;
 }
 
 
@@ -85,64 +129,20 @@ void kalmanFilter_(double measuredstate, double estimation[SIZE], double letterP
 }
 
 
-uint16_t filter(uint16_t speed_sensor_rpm)
+void matrix_multiply(double A[SIZE][SIZE], double B[SIZE][SIZE], double result[SIZE][SIZE]) 
 {
-    speed_sensor_measuredstate = (double) speed_sensor_rpm;
-    kalmanFilter_(speed_sensor_measuredstate, speed_sensor_estimation, speed_sensor_letterP, speed_sensor_dt, speed_sensor_renewed_e, speed_sensor_renewed_P);
-        
-    // Update the estimation and covariance for the next iteration
-    for (int i = 0; i < SIZE; i++)
+    for (int i = 0; i < SIZE; i++) 
     {
-        speed_sensor_estimation[i] = speed_sensor_renewed_e[i];
-        for (int j = 0; j < SIZE; j++)
+        for (int j = 0; j < SIZE; j++) 
         {
-            speed_sensor_letterP[i][j] = speed_sensor_renewed_P[i][j];
+            result[i][j] = 0;
+            for (int k = 0; k < SIZE; k++) 
+            {
+                result[i][j] += A[i][k] * B[k][j];
+            }
         }
     }
-
-    return (uint16_t) round(speed_sensor_renewed_e[0]);
-}
-
-
-using namespace v1_0::commonapi;
-
-void *SendSomeipThread(void *arg)
-{
-    std::shared_ptr<CommonAPI::Runtime> runtime;
-    std::shared_ptr<CANSenderStubImpl> CANSenderService;
-    std::shared_ptr<IPCManagerProxy<>> IPCManagertargetProxy;
     
-    runtime = CommonAPI::Runtime::get();
-    CANSenderService = std::make_shared<CANSenderStubImpl>();
-    runtime->registerService("local", "CANSender", CANSenderService);
-    IPCManagertargetProxy = runtime->buildProxy<IPCManagerProxy>("local", "IPCManager");
-    
-    CommonAPI::CallStatus callStatus;
-    std::string returnMessage;
-    
-    double speed_sensor_estimation[SIZE] = {0, 0};
-    double speed_sensor_letterP[SIZE][SIZE] = {{100, 0},
-                                               {0, 100}};
-    double speed_sensor_dt = 1;
-    double speed_sensor_renewed_e[SIZE], speed_sensor_renewed_P[SIZE][SIZE];
-    double speed_sensor_measuredstate;
-    
-    while (1)
-    {
-        pthread_mutex_lock(&CANBufferMutex);
-        int currentIndex = CANBufferIndex - 1;
-        if (currentIndex < 0)
-        {
-            currentIndex = CANBuffer_SIZE - 1;
-        }
-        uint16_t speed_sensor_rpm = CANBuffer[currentIndex];
-        pthread_mutex_unlock(&CANBufferMutex);
-        
-        uint16_t kf_speed_sensor_rpm = filter(speed_sensor_rpm);
-	IPCManagertargetProxy->setSensorRpm(kf_speed_sensor_rpm, callStatus, returnMessage);
-        usleep(500000);
-    }
-    
-    return NULL;
+    return;
 }
 
