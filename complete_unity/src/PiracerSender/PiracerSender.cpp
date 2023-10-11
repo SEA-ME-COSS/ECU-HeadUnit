@@ -28,7 +28,7 @@ int main ()
     while (1)
     {
 	IPCManagerTargetProxy->setBatteryLevel(piracer.getBatteryLevel(), callStatus, returnMessage);
-        usleep(1000000);
+        usleep(500000);
     }
 
     return 0;

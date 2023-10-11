@@ -52,7 +52,7 @@ void *SendSomeipThread(void *arg)
         uint16_t kf_speed_sensor_rpm = (uint16_t) round(speed_sensor_renewed_e[0]);
         
 	IPCManagertargetProxy->setSensorRpm(kf_speed_sensor_rpm, callStatus, returnMessage);
-        usleep(100000);
+        usleep(500000);
     }
     
     return NULL;
@@ -63,8 +63,8 @@ void kalmanFilter_(double measuredstate, double estimation[SIZE], double letterP
 {
     double letterA[SIZE][SIZE] = {{1, dt},
                                   {0, 1}};
-    double letterQ[SIZE][SIZE] = {{50, 0},
-                                  {0, 50}};
+    double letterQ[SIZE][SIZE] = {{100, 0},
+                                  {0, 100}};
     double letterH[MEASURE_SIZE][SIZE] = {{1, 0}};
     double letterR[MEASURE_SIZE] = {25};
 
