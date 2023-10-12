@@ -8,7 +8,15 @@ IMAGE_BASE = " \
     can-utils \
     libsocketcan \
     bcm2835-dev \
-    can-test \
+    common-api-c++-dev \
+    common-api-c++ \
+    vsomeip-dev \
+    vsomeip \
+    common-api-c++-someip-dev \
+    common-api-c++-someip \
+    cmake \
+    vsomeip-test \
+    headunit-test \
     "
 # bcm2835-dev
 
@@ -43,7 +51,12 @@ QT_PKGS = " \
     qtdeclarative-mkspecs \
     qtgraphicaleffects \
     qtgraphicaleffects-dev \
-"
+    qtquickcontrols \
+    qtquickcontrols-dev \
+    qtquickcontrols-mkspecs \
+    qtquickcontrols2 \
+    qtmultimedia \
+    "
 
 PIRACER_PKGS = " \
     python3-adafruit-blinka \
