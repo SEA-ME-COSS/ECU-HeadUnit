@@ -4,7 +4,14 @@ IMAGE_BASE = " \
     bash \
     openssh \
     wpa-supplicant \
-"
+    git \
+    can-utils \
+    libsocketcan \
+    bcm2835-dev \
+    can-test \
+    "
+# bcm2835-dev
+
 
 HU_CODE = " \
     helloworld \
