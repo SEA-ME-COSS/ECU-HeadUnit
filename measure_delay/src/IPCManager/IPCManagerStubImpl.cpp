@@ -1,4 +1,5 @@
 #include "IPCManagerStubImpl.hpp"
+#include <iostream>
 
 
 IPCManagerStubImpl::IPCManagerStubImpl() { }
@@ -6,6 +7,8 @@ IPCManagerStubImpl::~IPCManagerStubImpl() { }
 
 void IPCManagerStubImpl::setSensorRpm(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _sensorRpm, setSensorRpmReply_t _reply)
 {
+    std::cout<<_sensorRpm<<std::endl;
+
     sender.InstrumentClusterTargetProxy->setSpeedRpm(_sensorRpm, sender.callStatus, sender.returnMessage);
     sender.HeadUnitTargetProxy->setSensorRpm(_sensorRpm, sender.callStatus, sender.returnMessage);
 
