@@ -9,5 +9,5 @@ then
 fi
 
 cd ../build
-./"$process_name" -platform linuxfb &
+./"$process_name" -platform eglfs &
 

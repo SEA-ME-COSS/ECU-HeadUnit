@@ -30,8 +30,8 @@ int main()
 	    exitCode = system("sh ../reboot_script/reboot_piracer_operator.sh");
         if (!sender.InstrumentClusterTargetProxy->isAvailable())
 	    exitCode = system("sh ../reboot_script/reboot_instrument_cluster.sh");
-        if (!sender.HeadUnitTargetProxy->isAvailable())
-	    exitCode = system("sh ../reboot_script/reboot_head_unit.sh");
+        //if (!sender.HeadUnitTargetProxy->isAvailable())
+	//    exitCode = system("sh ../reboot_script/reboot_head_unit.sh");
 	
 	usleep(1000000);
     }
