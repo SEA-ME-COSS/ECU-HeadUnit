@@ -1,4 +1,5 @@
 #include "SendSomeipThread.hpp"
+#include <iostream>
 
 
 using namespace v1_0::commonapi;
@@ -51,7 +52,8 @@ void *SendSomeipThread(void *arg)
 
         uint16_t kf_speed_sensor_rpm = (uint16_t) round(speed_sensor_renewed_e[0]);
 
-	IPCManagertargetProxy->setSensorRpm(kf_speed_sensor_rpm, callStatus, returnMessage);
+	std::cout<<kf_speed_sensor_rpm<<std::endl;
+	//IPCManagertargetProxy->setSensorRpm(kf_speed_sensor_rpm, callStatus, returnMessage);
         usleep(500000);
     }
     
