@@ -10,4 +10,5 @@ fi
 
 cd ../build
 ./"$process_name" -platform eglfs &
+sleep 1
 
