@@ -15,9 +15,9 @@ inherit setuptools3
 
 DEPENDS += "python3-setuptools-scm-native"
 RDEPENDS:${PN} = " \
-    python3-adafruit-blinka \
+    python-adafruit-blinka \
     python3-adafruit-circuitpython-register \
-    python3-adafruit-circuitpython-busdevice \
+    python-adafruit-circuitpython-busdevice \
     python3-core \
 "
 

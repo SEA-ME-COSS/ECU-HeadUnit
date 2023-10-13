@@ -8,23 +8,26 @@ IMAGE_BASE = " \
     can-utils \
     libsocketcan \
     bcm2835-dev \
-    common-api-c++-dev \
-    common-api-c++ \
-    vsomeip-dev \
-    vsomeip \
-    common-api-c++-someip-dev \
-    common-api-c++-someip \
-    cmake \
-    vsomeip-test \
-    headunit-test \
-    "
-# bcm2835-dev
+"
 
-
-HU_CODE = " \
+EX_CODE = " \
     helloworld \
     simple \
-    "
+    vsomeip-test \
+"
+
+VSOMEIP_PKGS = " \
+    common-api-c++ \
+    common-api-c++-dev \
+    vsomeip \
+    vsomeip-dev \
+    common-api-c++-someip \
+    common-api-c++-someip-dev \
+"
+
+HU_CODE = " \
+    headunit-test \
+"
 
 QT_BASE = " \
     qtbase \
@@ -56,11 +59,11 @@ QT_PKGS = " \
     qtquickcontrols-mkspecs \
     qtquickcontrols2 \
     qtmultimedia \
-    "
+"
 
 PIRACER_PKGS = " \
-    python3-adafruit-blinka \
-    python3-adafruit-circuitpython-busdevice \
+    python-adafruit-blinka \
+    python-adafruit-circuitpython-busdevice \
     python3-adafruit-circuitpython-pca9685 \
     python3-adafruit-circuitpython-register \
     python3-adafruit-platformdetect \
@@ -85,5 +88,7 @@ IMAGE_INSTALL += " \
     ${QT_PKGS} \
     ${PIRACER_PKGS} \
     ${HU_CODE} \
+    ${EX_CODE} \
+    ${VSOMEIP_PKGS} \
 "
 

@@ -2,8 +2,6 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 SRC_URI += "file://wpa_supplicant-nl80211-wlan0.conf"
 
-### SYSTEMD_SERVICE:${PN}:append = " wpa_supplicant-nl80211@wlan0.service"
-
 do_install:append () {
     install -d ${D}${sysconfdir}/wpa_supplicant/
     

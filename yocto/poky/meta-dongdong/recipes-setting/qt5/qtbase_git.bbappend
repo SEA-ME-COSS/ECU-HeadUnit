@@ -1,7 +1,5 @@
-SUMMARY = "bitbake-layers recipe"
-DESCRIPTION = "Recipe created by bitbake-layers"
-LICENSE = "CLOSED"
- 
-PACKAGECONFIG:append = " eglfs fontconfig gles2"
+SUMMARY = "Add Qt pkgs needed"
+
+PACKAGECONFIG:append = " eglfs fontconfig gles2 linuxfb tslib accessibility"
 DEPENDS += "userland"
 
