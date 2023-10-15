@@ -61,9 +61,8 @@ Q_INVOKABLE void HeadUnitQtClass::poweroff()
     return;
 }
 
-Q_INVOKABLE void HeadUnitQtClass::printTime(int _sensorRpm)
+Q_INVOKABLE void HeadUnitQtClass::printTime()
 {
-    exitCode = system("echo " + std::to_string(_sensorRpm));
     exitCode = system("date +\"%S.%N\"");
     
     return;

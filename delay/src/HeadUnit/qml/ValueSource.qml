@@ -93,6 +93,6 @@ Item {
     property int sensorRpm: carinfo.sensorRpm
 
     onSensorRpmChanged: {
-        manager.printTime(sensorRpm)
+        manager.printTime()
     }
 }
