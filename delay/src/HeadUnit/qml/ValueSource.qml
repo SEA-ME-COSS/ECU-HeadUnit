@@ -89,4 +89,10 @@ Item {
             valueSource.freeDirection = false
         }
     }
+
+    property int sensorRpm: carinfo.sensorRpm
+
+    onSensorRpmChanged: {
+        manager.printTime(sensorRpm)
+    }
 }

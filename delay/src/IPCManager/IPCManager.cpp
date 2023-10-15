@@ -24,14 +24,14 @@ int main()
     {
         if (!sender.CANSenderTargetProxy->isAvailable())
 	    exitCode = system("sh ../reboot_script/reboot_can_sender.sh");
-        //if (!sender.PiracerSenderTargetProxy->isAvailable())
-	//   exitCode = system("sh ../reboot_script/reboot_piracer_sender.sh");
-        //if (!sender.PiracerOperatorTargetProxy->isAvailable())
-	//    exitCode = system("sh ../reboot_script/reboot_piracer_operator.sh");
-        //if (!sender.InstrumentClusterTargetProxy->isAvailable())
-	//    exitCode = system("sh ../reboot_script/reboot_instrument_cluster.sh");
-        //if (!sender.HeadUnitTargetProxy->isAvailable())
-	//    exitCode = system("sh ../reboot_script/reboot_head_unit.sh");
+        if (!sender.PiracerSenderTargetProxy->isAvailable())
+	    exitCode = system("sh ../reboot_script/reboot_piracer_sender.sh");
+        if (!sender.PiracerOperatorTargetProxy->isAvailable())
+	    exitCode = system("sh ../reboot_script/reboot_piracer_operator.sh");
+        if (!sender.InstrumentClusterTargetProxy->isAvailable())
+	    exitCode = system("sh ../reboot_script/reboot_instrument_cluster.sh");
+        if (!sender.HeadUnitTargetProxy->isAvailable())
+	    exitCode = system("sh ../reboot_script/reboot_head_unit.sh");
 	
 	usleep(1000000);
     }

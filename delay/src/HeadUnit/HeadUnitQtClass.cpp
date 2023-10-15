@@ -1,4 +1,5 @@
 #include "HeadUnitQtClass.hpp"
+#include <iostream>
 
 
 HeadUnitQtClass::HeadUnitQtClass(QObject *parent) : QObject(parent)
@@ -56,7 +57,15 @@ Q_INVOKABLE void HeadUnitQtClass::setLight(QString _light)
 
 Q_INVOKABLE void HeadUnitQtClass::poweroff()
 {
-    int exitCode = system("poweroff");
+    exitCode = system("poweroff");
+    
+    return;
+}
+
+Q_INVOKABLE void HeadUnitQtClass::printTime(quint16 _sensorRpm)
+{
+    std::cout << _sensorRpm << "\t";
+    exitCode = system("date +\"%S.%N\"");
     
     return;
 }

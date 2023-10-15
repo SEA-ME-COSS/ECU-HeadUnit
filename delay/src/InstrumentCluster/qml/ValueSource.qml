@@ -62,12 +62,4 @@ Item {
         interval: 500; running: valueSource.blink; repeat: true
         onTriggered: valueSource.blinking()
     }
-
-    /////     /////     /////    
-
-    property var now: new Date()
-
-    onSpeedChanged: {
-        console.log("Current UTC Time: " + now.toISOString())
-    }
 }

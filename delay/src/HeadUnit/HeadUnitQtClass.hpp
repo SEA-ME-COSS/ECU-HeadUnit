@@ -21,6 +21,8 @@ private:
     
     quint16 QsensorRpm;
     quint16 Qsteering;
+    
+    int exitCode;
 
 public:
     explicit HeadUnitQtClass(QObject *parent = nullptr);
@@ -35,6 +37,8 @@ public Q_SLOTS:
     Q_INVOKABLE void setDirection(quint16 _direction);
     Q_INVOKABLE void setLight(QString _light);
     Q_INVOKABLE void poweroff();
+    
+    Q_INVOKABLE void printTime(quint16 _sensorRpm);
 
 signals:
     void sensorRpmChanged();
