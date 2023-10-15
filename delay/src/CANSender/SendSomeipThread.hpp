@@ -5,6 +5,7 @@
 #include <string>
 #include <unistd.h>
 #include <math.h>
+#include <cstdlib>
 #include <CommonAPI/CommonAPI.hpp>
 #include <v1/commonapi/IPCManagerProxy.hpp>
 
