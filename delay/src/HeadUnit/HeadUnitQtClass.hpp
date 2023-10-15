@@ -38,7 +38,7 @@ public Q_SLOTS:
     Q_INVOKABLE void setLight(QString _light);
     Q_INVOKABLE void poweroff();
     
-    Q_INVOKABLE void printTime(quint16 _sensorRpm);
+    Q_INVOKABLE void printTime(int _sensorRpm);
 
 signals:
     void sensorRpmChanged();
