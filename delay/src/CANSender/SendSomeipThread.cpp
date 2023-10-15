@@ -53,7 +53,7 @@ void *SendSomeipThread(void *arg)
         uint16_t kf_speed_sensor_rpm = (uint16_t) round(speed_sensor_renewed_e[0]);
         
 	IPCManagertargetProxy->setSensorRpm(kf_speed_sensor_rpm, callStatus, returnMessage);
-        exitCode = system("echo CANSender && date +\"%S.%N\"");
+        exitCode = system("echo -n CANSender: && date +\"%S.%N\"");
         usleep(500000);
     }
     
