@@ -63,8 +63,7 @@ Q_INVOKABLE void HeadUnitQtClass::poweroff()
 
 Q_INVOKABLE void HeadUnitQtClass::printTime()
 {
-    exitCode = system("echo HeadUnit");
-    exitCode = system("date +\"%S.%N\"");
+    exitCode = system("echo HeadUnit && date +\"%S.%N\"");
     
     return;
 }
