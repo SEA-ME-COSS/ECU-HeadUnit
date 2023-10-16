@@ -16,5 +16,8 @@ do_compile() {
 do_install() {
     install -d ${D}${bindir}/example
     install -m 0755 c_example ${D}${bindir}/example
-    install 0m 0755 cpp_example ${D}${binddir}/example
+    install -m 0755 cpp_example ${D}${binddir}/example
 }
+
+FILES:${PN} += "/example"
+

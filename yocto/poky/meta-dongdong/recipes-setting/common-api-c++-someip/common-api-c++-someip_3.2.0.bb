@@ -15,6 +15,6 @@ inherit cmake lib_package gitpkgv
 EXTRA_OECMAKE += "-DUSE_INSTALLED_COMMONAPI=ON"
 
 FILES:${PN}-dev += "${libdir}/cmake"
-RDEPENDS_${PN}-dev = "vsomeip-dev"
+RDEPENDS:${PN}-dev = "vsomeip-dev"
 
 BBCLASSEXTEND = "nativesdk"

@@ -6,11 +6,11 @@ SRC_URI = "file://can-example.cpp"
 S = "${WORKDIR}"
 
 do_compile() {
-    ${CXX} ${LDFLAGS} can-test.cpp -o can-test
+    ${CXX} ${LDFLAGS} can-example.cpp -o can-example
 }
 
 do_install() {
     install -d ${D}${bindir}/example
-    install -m 0755 can-test ${D}${bindir}/example/
+    install -m 0755 can-example ${D}${bindir}/example/
 }
 

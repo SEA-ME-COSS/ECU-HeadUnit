@@ -16,15 +16,12 @@ find_package(PythonLibs REQUIRED)
 include_directories(${PYTHON_INCLUDE_DIRS})
 include_directories(
     src-gen-desproject
-    ~/build-commonapi/capicxx-core-runtime/include
-    ~/build-commonapi/capicxx-someip-runtime/include
-    ~/build-commonapi/vsomeip/interface
+    ${CMAKE_INCLUDE_PATH}/CommonAPI-3.2
+    ${CMAKE_INCLUDE_PATH}
     )
 link_directories(
-    ~/build-commonapi/capicxx-core-runtime/build
-    ~/build-commonapi/capixx-someip-runtime/build
-    ~/build-commonapi/vsomeip/build
-    )
+    ${CMAKE_LIBRARY_PATH}
+        )
 
 
 
@@ -117,9 +114,9 @@ PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(HeadUnit
 PRIVATE Qt5::Core Qt5::Quick Qt5::Gui Qt5::Multimedia CommonAPI CommonAPI-SomeIP vsomeip3)
 
-install(TARGETS HeadUnit DESTINATION /usr/bin)
-install(TARGETS CANSender DESTINATION /usr/bin) 
-install(TARGETS IPCManager DESTINATION /usr/bin)
-install(TARGETS InstrumentCluster DESTINATION /usr/bin)
-install(TARGETS PiracerOperator DESTINATION /usr/bin)
-install(TARGETS PiracerSender DESTINATION /usr/bin)
+install(TARGETS HeadUnit DESTINATION /usr/bin/headunit/execute-files)
+install(TARGETS CANSender DESTINATION /usr/bin/headunit/execute-files) 
+install(TARGETS IPCManager DESTINATION /usr/bin/headunit/execute-files)
+install(TARGETS InstrumentCluster DESTINATION /usr/bin/headunit/execute-files)
+install(TARGETS PiracerOperator DESTINATION /usr/bin/headunit/execute-files)
+install(TARGETS PiracerSender DESTINATION /usr/bin/headunit/execute-files)

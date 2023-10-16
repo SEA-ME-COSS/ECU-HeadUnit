@@ -11,10 +11,11 @@ IMAGE_BASE = " \
 "
 
 EX_CODE = " \
-    helloworld \
-    simple \
-    vsomeip-test \
-"
+    can-example \
+    helloworld-example \
+    qt5-simple-example \
+    vsomeip-example \
+    "
 
 VSOMEIP_PKGS = " \
     common-api-c++ \
@@ -27,7 +28,7 @@ VSOMEIP_PKGS = " \
 
 HU_CODE = " \
     headunit-test \
-"
+    "
 
 QT_BASE = " \
     qtbase \
@@ -62,8 +63,8 @@ QT_PKGS = " \
 "
 
 PIRACER_PKGS = " \
-    python-adafruit-blinka \
-    python-adafruit-circuitpython-busdevice \
+    python3-adafruit-blinka \
+    python3-adafruit-circuitpython-busdevice \
     python3-adafruit-circuitpython-pca9685 \
     python3-adafruit-circuitpython-register \
     python3-adafruit-platformdetect \
@@ -73,13 +74,13 @@ PIRACER_PKGS = " \
     rpi-gpio \
     python3-typing-extensions \
     python3-wheel \
-    python-adafruit-circuitpython-framebuf \
-    python-adafruit-circuitpython-ina219 \
-    python-adafruit-circuitpython-ssd1306 \
-    python-adafruit-circuitpython-typing \
-    python-adafruit-circuitpython-requests \
-    python-pyftdi \
-    python-piracer-py \
+    python3-adafruit-circuitpython-framebuf \
+    python3-adafruit-circuitpython-ina219 \
+    python3-adafruit-circuitpython-ssd1306 \
+    python3-adafruit-circuitpython-typing \
+    python3-adafruit-circuitpython-requests \
+    python3-pyftdi \
+    python3-piracer-py \
 "
 
 IMAGE_INSTALL += " \
