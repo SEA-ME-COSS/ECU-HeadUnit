@@ -1,4 +1,3 @@
-#include <SPI.h>
 #include <mcp2515.h>
 
 // Data structure for CAN frame
@@ -35,8 +34,6 @@ unsigned long average;
 
 void setup() 
 {
-  // Initialize serial communication at 115200 bps
-  Serial.begin(115200);
   
   // Attach interrupt to pin 3 (speed sensor) for rising edge detection
   attachInterrupt(digitalPinToInterrupt(3), Pulse_Event, RISING);
@@ -92,10 +89,6 @@ void loop()
   }
   // Calculate average RPM
   average = total / numReadings;
-
-  // Print RPM to serial monitor
-  Serial.print("RPM: ");
-  Serial.println(RPM);
 
   // Prepare CAN message with RPM data
   canMsg1.can_id  = 0x0F6;
