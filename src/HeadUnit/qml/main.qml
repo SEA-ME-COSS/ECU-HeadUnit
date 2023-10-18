@@ -34,7 +34,7 @@ Window {
         height: 600
         anchors.centerIn: parent
         rotation: 0
-        scale: 0.5
+        //scale: 0.5
 
         Rectangle {
             id: background
@@ -624,11 +624,18 @@ Window {
 
             Image {
                 source: "../image/album.jpg"
-                width: 300
-                height: 300
+                width: 580
+                height: 580
                 fillMode: Image.PreserveAspectFit
-                anchors.verticalCenter: parent.verticalCenter
-                x: 50
+                anchors.centerIn: parent
+
+                Text {
+                    text: "Solo Cello Suite No.1"
+                    font.pixelSize: 40
+                    color: "white"
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    y: 120
+                }
             }
 
             MediaPlayer {
@@ -640,8 +647,8 @@ Window {
                 width: 60
                 height: 50
                 rotation: 90
-                anchors.verticalCenter: parent.verticalCenter
-                x: 400
+                x: 360
+                y: 305
 
                 MouseArea {
                     anchors.fill: parent
@@ -657,8 +664,8 @@ Window {
                 width: 60
                 height: 60
                 fillMode: Image.PreserveAspectFit
-                anchors.verticalCenter: parent.verticalCenter
-                x: 480
+                x: 440
+                y: 300
 
                 MouseArea {
                     anchors.fill: parent
@@ -672,8 +679,8 @@ Window {
                 width: 60
                 height: 60
                 color: "white"
-                anchors.verticalCenter: parent.verticalCenter
-                x: 570
+                x: 530
+                y: 300
 
                 MouseArea {
                     anchors.fill: parent
@@ -733,15 +740,6 @@ Window {
             Video {
                 id: mp4Player
                 anchors.fill: parent
-            }
-
-            Text {
-                text: "Ford v Ferrari (2019)"
-                font.family: font.name
-                font.pixelSize: 30
-                color: "white"
-                anchors.horizontalCenter: parent.horizontalCenter
-                y: 10
             }
 
             Image {
