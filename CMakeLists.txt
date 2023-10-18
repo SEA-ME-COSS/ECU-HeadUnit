@@ -13,17 +13,35 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -std=c++0x")
 find_package(Qt5 COMPONENTS Core Quick Gui Multimedia REQUIRED)
 find_package(PythonLibs REQUIRED)
 include_directories(${PYTHON_INCLUDE_DIRS})
-include_directories(
-    src-gen-desproject
-    ~/build-commonapi/capicxx-core-runtime/include
-    ~/build-commonapi/capicxx-someip-runtime/include
-    ~/build-commonapi/vsomeip/interface
-)
-link_directories(
-    ~/build-commonapi/capicxx-core-runtime/build
-    ~/build-commonapi/capicxx-someip-runtime/build
-    ~/build-commonapi/vsomeip/build
-)
+
+
+
+if(MACHINE STREQUAL "raspbian")
+    # set(CMAKE_PREFIX_PATH "/opt/Qt/5.15.0/gcc_64")
+    include_directories(
+        src-gen-desproject
+        ~/build-commonapi/capicxx-core-runtime/include
+        ~/build-commonapi/capicxx-someip-runtime/include
+        ~/build-commonapi/vsomeip/interface
+    )
+    link_directories(
+        ~/build-commonapi/capicxx-core-runtime/build
+        ~/build-commonapi/capicxx-someip-runtime/build
+        ~/build-commonapi/vsomeip/build
+    )
+elseif(MACHINE STREQUAL "yocto")
+    # set(CMAKE_PREFIX_PATH "/opt/Qt/5.15.2/gcc_64")
+    include_directories(
+        src-gen-desproject
+        ${CMAKE_INCLUDE_PATH}/CommonAPI-3.2
+        ${CMAKE_INCLUDE_PATH}
+    )
+    link_directories(
+        ${CMAKE_LIBRARY_PATH}
+    )
+else()
+    message(FATAL_ERROR "Invalid MACHINE value")
+endif()
 
 
 add_executable(CANSender
@@ -114,3 +132,13 @@ target_compile_definitions(HeadUnit
 PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(HeadUnit
 PRIVATE Qt5::Core Qt5::Quick Qt5::Gui Qt5::Multimedia CommonAPI CommonAPI-SomeIP vsomeip3)
+
+# Depending on MACHINE, add install commands for yocto
+if(MACHINE STREQUAL "yocto")
+    install(TARGETS HeadUnit DESTINATION /usr/bin/headunit/execute-files)
+    install(TARGETS CANSender DESTINATION /usr/bin/headunit/execute-files)
+    install(TARGETS IPCManager DESTINATION /usr/bin/headunit/execute-files)
+    install(TARGETS InstrumentCluster DESTINATION /usr/bin/headunit/execute-files)
+    install(TARGETS PiracerOperator DESTINATION /usr/bin/headunit/execute-files)
+    install(TARGETS PiracerSender DESTINATION /usr/bin/headunit/execute-files)
+endif()
