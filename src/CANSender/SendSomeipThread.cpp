@@ -1,10 +1,10 @@
 #include "SendSomeipThread.hpp"
 
-
 using namespace v1_0::commonapi;
 
 void *SendSomeipThread(void *arg)
 {
+    // Initialize runtime and related components
     std::shared_ptr<CommonAPI::Runtime> runtime;
     std::shared_ptr<CANSenderStubImpl> CANSenderService;
     std::shared_ptr<IPCManagerProxy<>> IPCManagertargetProxy;
@@ -17,15 +17,16 @@ void *SendSomeipThread(void *arg)
     CommonAPI::CallStatus callStatus;
     std::string returnMessage;
     
+    // Kalman filter variables and initialization
     double speed_sensor_estimation[SIZE] = {0, 0};
-    double speed_sensor_letterP[SIZE][SIZE] = {{100, 0},
-                                               {0, 100}};
+    double speed_sensor_letterP[SIZE][SIZE] = {{100, 0}, {0, 100}};
     double speed_sensor_dt = 1;
     double speed_sensor_renewed_e[SIZE], speed_sensor_renewed_P[SIZE][SIZE];
     double speed_sensor_measuredstate;
     
     while (1)
     {
+        // Read speed data from CAN buffer
         pthread_mutex_lock(&CANBufferMutex);
         int currentIndex = CANBufferIndex - 1;
         if (currentIndex < 0)
@@ -35,8 +36,9 @@ void *SendSomeipThread(void *arg)
         uint16_t speed_sensor_rpm = CANBuffer[currentIndex];
         pthread_mutex_unlock(&CANBufferMutex);
         
-        speed_sensor_measuredstate = (double) speed_sensor_rpm;
+        speed_sensor_measuredstate = (double)speed_sensor_rpm;
         
+        // Apply Kalman filter
         kalmanFilter_(speed_sensor_measuredstate, speed_sensor_estimation, speed_sensor_letterP, speed_sensor_dt, speed_sensor_renewed_e, speed_sensor_renewed_P);
         
         // Update the estimation and covariance for the next iteration
@@ -49,22 +51,21 @@ void *SendSomeipThread(void *arg)
             }
         }
 
-        uint16_t kf_speed_sensor_rpm = (uint16_t) round(speed_sensor_renewed_e[0]);
-        
-	IPCManagertargetProxy->setSensorRpm(kf_speed_sensor_rpm, callStatus, returnMessage);
-        usleep(500000);
+        // Round the filtered speed value and send it to IPCManager
+        uint16_t kf_speed_sensor_rpm = (uint16_t)round(speed_sensor_renewed_e[0]);
+        IPCManagertargetProxy->setSensorRpm(kf_speed_sensor_rpm, callStatus, returnMessage);
+        usleep(500000);  // Sleep for 500 ms
     }
     
     return NULL;
 }
 
-
+// Kalman filter implementation
 void kalmanFilter_(double measuredstate, double estimation[SIZE], double letterP[SIZE][SIZE], double dt, double renewed_e[SIZE], double renewed_P[SIZE][SIZE]) 
 {
-    double letterA[SIZE][SIZE] = {{1, dt},
-                                  {0, 1}};
-    double letterQ[SIZE][SIZE] = {{100, 0},
-                                  {0, 100}};
+    // Kalman filter constants and parameters
+    double letterA[SIZE][SIZE] = {{1, dt}, {0, 1}};
+    double letterQ[SIZE][SIZE] = {{100, 0}, {0, 100}};
     double letterH[MEASURE_SIZE][SIZE] = {{1, 0}};
     double letterR[MEASURE_SIZE] = {25};
 
@@ -103,8 +104,7 @@ void kalmanFilter_(double measuredstate, double estimation[SIZE], double letterP
     }
 
     // 4. Update the error covariance
-    double I[SIZE][SIZE] = {{1, 0},
-                            {0, 1}};
+    double I[SIZE][SIZE] = {{1, 0}, {0, 1}};
     double KH[SIZE][SIZE];
     for (int i = 0; i < SIZE; i++) 
     {
@@ -120,11 +120,9 @@ void kalmanFilter_(double measuredstate, double estimation[SIZE], double letterP
             renewed_P[i][j] = (I[i][j] - KH[i][j]) * predicted_P[i][j];
         }
     }
-    
-    return;
 }
 
-
+// Matrix multiplication function
 void matrix_multiply(double A[SIZE][SIZE], double B[SIZE][SIZE], double result[SIZE][SIZE]) 
 {
     for (int i = 0; i < SIZE; i++) 
@@ -138,7 +136,5 @@ void matrix_multiply(double A[SIZE][SIZE], double B[SIZE][SIZE], double result[S
             }
         }
     }
-    
-    return;
 }
 
