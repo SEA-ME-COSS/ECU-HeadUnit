@@ -4,11 +4,10 @@ import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Extras 1.4
 
+// Create a window named 'root'
 Window {
     id: root
     title: "Instrument Cluster"
-    // width: 1280
-    // height: 400
     width: 400
     height: 1280
     visible: true
@@ -18,10 +17,12 @@ Window {
         source: "../font/Nebula-Regular.otf"
     }
 
+    // Create a value source object
     ValueSource {
         id: valueSource
     }
 
+    // Create an item named 'container' to hold the instrument cluster elements
     Item {
         id: container
         width: 1280
@@ -29,6 +30,7 @@ Window {
         anchors.centerIn: parent
         rotation: -90
 
+        // Create a background rectangle with a gradient
         Rectangle {
             id: background
             width: 400
@@ -43,6 +45,7 @@ Window {
             }
         }
 
+        // Display a logo image
         Image {
             source: "../image/logo.png"
             width: 300
@@ -52,6 +55,7 @@ Window {
             y: 10
         }
 
+        // Create a circular gauge for speed
         CircularGauge {
             value: valueSource.speed
             maximumValue: 450
@@ -63,6 +67,7 @@ Window {
             style: SpeedGaugeStyle {}
         }
 
+        // Create a circular gauge for RPM
         CircularGauge {
             value: valueSource.rpm
             maximumValue: 450
@@ -74,6 +79,7 @@ Window {
             style: RPMGaugeStyle {}
         }
 
+        // Create a circular gauge for battery
         CircularGauge {
             value: valueSource.battery
             maximumValue: 100
@@ -88,6 +94,7 @@ Window {
             }
         }
 
+        // Display gear-related text labels
         Text {
             text: "E                   F"
             font.family: font.name
@@ -97,6 +104,7 @@ Window {
             y: 340
         }
 
+        // Display gear labels
         Text {
             text: "P"
             font.family: font.name
@@ -133,6 +141,7 @@ Window {
             y: 250
         }
 
+        // Display left and right turn signal indicators
         Image {
             source: "../image/turn-icon.png"
             width: 60
