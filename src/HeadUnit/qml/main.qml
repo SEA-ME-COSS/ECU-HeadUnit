@@ -11,8 +11,6 @@ Window {
     title: "Head Unit"
     width: 1024
     height: 600
-    //width: 600
-    //height: 1024
     visible: true
 
     FontLoader {
@@ -50,6 +48,7 @@ Window {
             }
         }
 
+        // Rectangle and functionality for the "P" gear
         Rectangle {
             width: 130
             height: 130
@@ -75,6 +74,7 @@ Window {
                 }
             }
 
+            // Mouse area to handle clicks on "P" gear
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
@@ -86,6 +86,7 @@ Window {
             }
         }
 
+        // Rectangle and functionality for the "R" gear
         Rectangle {
             width: 130
             height: 130
@@ -111,6 +112,7 @@ Window {
                 }
             }
 
+            // Mouse area to handle clicks on "R" gear
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
@@ -122,6 +124,7 @@ Window {
             }
         }
 
+        // Rectangle and functionality for the "N" gear
         Rectangle {
             width: 130
             height: 130
@@ -147,6 +150,7 @@ Window {
                 }
             }
 
+            // Mouse area to handle clicks on "N" gear
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
@@ -158,6 +162,7 @@ Window {
             }
         }
 
+        // Rectangle and functionality for the "D" gear
         Rectangle {
             width: 130
             height: 130
@@ -183,6 +188,7 @@ Window {
                 }
             }
 
+            // Mouse area to handle clicks on "D" gear
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
@@ -194,6 +200,7 @@ Window {
             }
         }
 
+        // Vertical line to separate
         Rectangle {
             width: 5
             height: parent.height
@@ -202,6 +209,7 @@ Window {
             color: (carinfo.sensorRpm === 0) ? "black" : "#555555"
         }
 
+        // Display the current sensor RPM
         Text {
             text: carinfo.sensorRpm
             font.family: font.name
@@ -211,6 +219,7 @@ Window {
             y: 5
         }
 
+        // Left turn indicator
         Image {
             source: "../image/turn-icon.png"
             width: 100
@@ -230,6 +239,7 @@ Window {
                 y: 12
             }
 
+            // Mouse area for handling left turn indicator interaction
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
@@ -260,6 +270,7 @@ Window {
             }
         }
 
+        // Right turn indicator
         Image {
             source: "../image/turn-icon.png"
             width: 100
@@ -279,6 +290,7 @@ Window {
                 y: 12
             }
 
+            // Mouse area for handling right turn indicator interaction
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
@@ -309,6 +321,7 @@ Window {
             }
         }
 
+        // Warning icon with multiple layers
         Image {
             source: "../image/warning-icon.png"
             width: 120
@@ -335,6 +348,7 @@ Window {
                 }
             }
 
+            // Mouse area for handling warning icon interaction
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
@@ -365,6 +379,7 @@ Window {
             }
         }
 
+        // Vertical line to separate
         Rectangle {
             width: 5
             height: parent.height
@@ -373,6 +388,7 @@ Window {
             color: (carinfo.sensorRpm === 0) ? "black" : "#555555"
         }
 
+        // Logo image
         Image {
             source: "../image/logo.png"
             width: 320
@@ -382,6 +398,7 @@ Window {
             y: 80
         }
 
+        // Seame image
         Image {
             source: "../image/seame.png"
             width: 240
@@ -391,6 +408,7 @@ Window {
             y: 315
         }
 
+        // Wolfsberg image
         Image {
             source: "../image/wolfsberg.png"
             width: 220
@@ -400,6 +418,7 @@ Window {
             y: -40
         }
 
+        // Clock text display
         Item {
             width: 230
             height: 70
@@ -416,6 +435,7 @@ Window {
             }
         }
 
+        // Red color slider
         Slider {
             id: redSlider
             width: 140
@@ -442,6 +462,7 @@ Window {
                 }
             }
 
+            // Update red value and set light color
             onValueChanged: {
                 valueSource.red = redSlider.value.toString(16)
                 if (valueSource.red.length === 1) {
@@ -451,6 +472,7 @@ Window {
             }
         }
 
+        // Green color slider
         Slider {
             id: greenSlider
             width: 140
@@ -477,6 +499,7 @@ Window {
                 }
             }
 
+            // Update green value and set light color
             onValueChanged: {
                 valueSource.green = greenSlider.value.toString(16)
                 if (valueSource.green.length === 1) {
@@ -486,6 +509,7 @@ Window {
             }
         }
 
+        // Blue color slider
         Slider {
             id: blueSlider
             width: 140
@@ -512,6 +536,7 @@ Window {
                 }
             }
 
+            // Update blue value and set light color
             onValueChanged: {
                 valueSource.blue = blueSlider.value.toString(16)
                 if (valueSource.blue.length === 1) {
@@ -521,6 +546,7 @@ Window {
             }
         }
 
+        // GPS mode button
         Rectangle {
             width: 140
             height: 60
@@ -546,6 +572,7 @@ Window {
                 }
             }
 
+            // Toggle GPS mode
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
@@ -559,6 +586,7 @@ Window {
             }
         }
 
+        // GPS content display (visible when in GPS mode)
         Rectangle {
             visible: (valueSource.mode === 1)
             width: 675
@@ -576,6 +604,7 @@ Window {
             }
         }
 
+        // MP3 mode button
         Rectangle {
             width: 140
             height: 60
@@ -601,6 +630,7 @@ Window {
                 }
             }
 
+            // Toggle MP3 mode
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
@@ -614,6 +644,7 @@ Window {
             }
         }
 
+        // MP3 content display (visible when in MP3 mode)
         Rectangle {
             visible: (valueSource.mode === 2)
             width: 675
@@ -691,6 +722,7 @@ Window {
             }
         }
 
+        // MP4 mode button
         Rectangle {
             width: 140
             height: 60
@@ -716,6 +748,7 @@ Window {
                 }
             }
 
+            // Toggle MP4 mode
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
@@ -729,6 +762,7 @@ Window {
             }
         }
 
+        // MP4 content display (visible when in MP4 mode)
         Rectangle {
             visible: (valueSource.mode === 3)
             width: 675
@@ -801,6 +835,7 @@ Window {
             }
         }
 
+        // Poweroff button
         Image {
             source: "../image/off.png"
             width: 100
