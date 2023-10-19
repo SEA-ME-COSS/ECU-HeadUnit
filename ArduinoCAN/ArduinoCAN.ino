@@ -1,5 +1,6 @@
 #include <mcp2515.h>
 
+
 struct can_frame canMsg1;
 MCP2515 mcp2515(9);
 
@@ -25,6 +26,7 @@ unsigned long readIndex;                                // Index for reading buf
 unsigned long total;                                    // Sum of RPM readings for averaging
 unsigned long average;                                  // Average RPM value
 
+
 void setup() 
 {
   // Attach an interrupt to digital pin 3 that triggers when a rising pulse is detected
@@ -35,6 +37,7 @@ void setup()
   mcp2515.setBitrate(CAN_500KBPS, MCP_16MHZ);
   mcp2515.setNormalMode();
 }
+
 
 void loop() 
 {
@@ -89,6 +92,7 @@ void loop()
   // Send the CAN message
   mcp2515.sendMessage(&canMsg1);
 }
+
 
 void Pulse_Event() 
 {
