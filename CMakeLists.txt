@@ -27,31 +27,15 @@ find_package(PythonLibs REQUIRED)
 # Include Python include directories
 include_directories(${PYTHON_INCLUDE_DIRS})
 
-# Check the value of the MACHINE variable and configure include and link directories accordingly
-if(MACHINE STREQUAL "raspbian")
-    include_directories(
-        src-gen-desproject
-        ~/build-commonapi/capicxx-core-runtime/include
-        ~/build-commonapi/capicxx-someip-runtime/include
-        ~/build-commonapi/vsomeip/interface
-    )
-    link_directories(
-        ~/build-commonapi/capicxx-core-runtime/build
-        ~/build-commonapi/capicxx-someip-runtime/build
-        ~/build-commonapi/vsomeip/build
-    )
-elseif(MACHINE STREQUAL "yocto")
-    include_directories(
-        src-gen-desproject
-        ${CMAKE_INCLUDE_PATH}/CommonAPI-3.2
-        ${CMAKE_INCLUDE_PATH}
-    )
-    link_directories(
-        ${CMAKE_LIBRARY_PATH}
-    )
-else()
-    message(FATAL_ERROR "Invalid MACHINE value")
-endif()
+# Configure include and link directories
+include_directories(
+    src-gen-desproject
+    ${CMAKE_INCLUDE_PATH}/CommonAPI-3.2
+    ${CMAKE_INCLUDE_PATH}
+)
+link_directories(
+    ${CMAKE_LIBRARY_PATH}
+)
 
 
 # Create executables and link libraries for the CANSender, PiracerSender, PiracerOperator, IPCManager, InstrumentCluster, and HeadUnit targets
@@ -140,12 +124,10 @@ target_link_libraries(HeadUnit
 PRIVATE Qt5::Core Qt5::Quick Qt5::Gui Qt5::Multimedia CommonAPI CommonAPI-SomeIP vsomeip3)
 
 
-# Depending on MACHINE, add install commands for yocto
-if(MACHINE STREQUAL "yocto")
-    install(TARGETS HeadUnit DESTINATION /usr/bin/headunit/execute-files)
-    install(TARGETS CANSender DESTINATION /usr/bin/headunit/execute-files)
-    install(TARGETS IPCManager DESTINATION /usr/bin/headunit/execute-files)
-    install(TARGETS InstrumentCluster DESTINATION /usr/bin/headunit/execute-files)
-    install(TARGETS PiracerOperator DESTINATION /usr/bin/headunit/execute-files)
-    install(TARGETS PiracerSender DESTINATION /usr/bin/headunit/execute-files)
-endif()
+# Add install commands for yocto
+install(TARGETS HeadUnit DESTINATION /usr/bin/headunit/execute-files)
+install(TARGETS CANSender DESTINATION /usr/bin/headunit/execute-files)
+install(TARGETS IPCManager DESTINATION /usr/bin/headunit/execute-files)
+install(TARGETS InstrumentCluster DESTINATION /usr/bin/headunit/execute-files)
+install(TARGETS PiracerOperator DESTINATION /usr/bin/headunit/execute-files)
+install(TARGETS PiracerSender DESTINATION /usr/bin/headunit/execute-files)

@@ -10,8 +10,8 @@ then
   pkill -x "$process_name"
 fi
 
-# Change the working directory to '../build' where the target binary is located
-cd ../build
+# Change the working directory
+cd ../execute_files
 
 # Run the specified process in the background
 ./"$process_name" &
