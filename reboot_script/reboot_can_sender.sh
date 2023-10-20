@@ -17,8 +17,8 @@ sudo ip link set can0 up type can bitrate 500000
 # Set the transmit queue length of 'can0' to 65,536 (maximum value)
 sudo ifconfig can0 txqueuelen 65536
 
-# Change the working directory
-cd ../execute_files
+# Change the working directory to '../build'
+cd ../build
 
 # Run the specified process with '&' to execute it in the background
 ./"$process_name" &
