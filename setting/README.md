@@ -155,4 +155,4 @@ hdmi_cvt 1024 1280 60 6 0 0 0
 
 Note that the 7inch display's specifications are recognized as larger than the actual hardware, so you may need to adjust the source files to align the application with the visible area. Typically, for applications developed for a 1024 x 600 screen size in Qt, reducing the scale by x0.5 will display the content correctly.
 
-<img src=/Images/diagram/display_configuration alt="display_configuration" width="100%" height="100%"/>
+<img src=../Images/diagram/display_configuration.png alt="display_configuration" width="100%" height="100%"/>
