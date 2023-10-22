@@ -63,7 +63,78 @@ Before starting this guide, you will need the following components:
 
 # Software Setting
 
-…
+Follow the instructions below on your Raspberry Pi.
+
+## CommonAPI and vsomeip
+
+Step 1: Install Boost Library
+
+```bash
+sudo apt-get install libboost-all-dev
+```
+
+Step 2: Build the CommonAPI Runtime Library
+
+```bash
+cd ~
+mkdir build-commonapi
+cd build-commonapi
+git clone https://github.com/GENIVI/capicxx-core-runtime.git
+cd capicxx-core-runtime/
+git checkout 3.2.0
+mkdir build
+cd build
+cmake ..
+make -j4
+```
+
+Step 3: Build the vsomeip Library
+
+```bash
+cd ~
+git clone https://github.com/COVESA/vsomeip.git
+cd vsomeip
+git checkout 3.1.20.3
+mkdir build
+cd build
+cmake -DENABLE_SIGNAL_HANDLING=1 -DDIAGNOSIS_ADDRESS=0x10 ..
+make -j4
+sudo make install
+```
+
+Step 4: Build the CommonAPI SOME/IP Runtime Library
+
+```bash
+cd ~/build-commonapi
+git clone https://github.com/GENIVI/capicxx-someip-runtime.git
+cd capicxx-someip-runtime/
+git checkout 3.2.0
+mkdir build
+cd build
+cmake -DUSE_INSTALLED_COMMONAPI=OFF ..
+make -j4
+```
+
+Step 4: Install code generator for Franca files (The architecture of the Raspberry Pi does not support the code generator, so this step must be executed on a laptop.)
+
+```bash
+cd ~
+mkdir generator
+cd generator
+
+wget https://github.com/COVESA/capicxx-core-tools/releases/download/3.2.0.1/commonapi_core_generator.zip
+unzip commonapi_core_generator.zip -d core-generator
+cd core-generator
+chmod +x commonapi-core-generator-linux-x86_64
+
+cd ~/generator
+wget https://github.com/COVESA/capicxx-someip-tools/releases/download/3.2.0.1/commonapi_someip_generator.zip
+unzip commonapi_someip_generator.zip -d someip-generator
+cd someip-generator
+chmod +x commonapi-someip-generator-linux-x86_64
+```
+
+##For the remaining software installation and configuration code, please consult the following link
 
 
 
@@ -72,32 +143,6 @@ Before starting this guide, you will need the following components:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Commands to generate code
 
 (fidl file)
 ~/generator/core-generator/commonapi-core-generator-linux-x86_64 -sk ./fidl/DESProject.fidl -d ./src-gen-desproject
