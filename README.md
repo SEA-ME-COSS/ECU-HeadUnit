@@ -8,6 +8,8 @@ This project is developed for a Yocto-based OS, and it is also testable on the R
 
 <img src=/Images/picture/overall_hardware_3.jpg alt="overall_hardware" width="100%" height="100%"/>
 
+<img src=/Images/demonstration/ambient_lighting.gif alt="ambient_lighting" width="100%" height="100%"/>
+
 # Introduction
 
 This repository presents the final version of developing the Instrument Cluster and Head Unit for the PiRacer vehicle. Through the design of IPC mechanisms, it enables the implementation of functionalities on a Raspberry Pi that closely resemble those found in a real vehicle.
