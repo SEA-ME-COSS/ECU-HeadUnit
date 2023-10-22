@@ -22,4 +22,3 @@ cd ../build
 
 # Run the specified process with '&' to execute it in the background
 ./"$process_name" &
-
