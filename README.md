@@ -14,7 +14,7 @@ This repository presents the final version of developing the Instrument Cluster 
 
 The 'DES Project' stands for Distributed Embedded Systems. The primary focus of this Head Unit project is to implement communication algorithms within the vehicle and facilitate Inter-Process Communication (IPC) among various processes. An essential challenge in this endeavor is to ensure that all of these interactions occur within an operating system developed based on Yocto.
 
-A key communication protocol emphasized in this project is 'vsomeip.' It is integrated using 'commonapi.' Within the system, several processes have distinct roles:
+A key communication protocol emphasized in this project is 'vsomeip' It is integrated using 'CommonAPI' Within the system, several processes have distinct roles:
 
 1. One process receives real-time vehicle speed data from external Electronic Control Units (ECUs) via CAN communication.
 2. Another process calculates real-time remaining battery levels.
