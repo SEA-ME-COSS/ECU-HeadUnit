@@ -6,7 +6,7 @@
 
 This project is developed for a Yocto-based OS, and it is also testable on the Raspbian OS.
 
-(사진)
+<img src=/Images/picture/overall_hardware_3.jpg alt="overall_hardware" width="100%" height="100%"/>
 
 # Introduction
 
