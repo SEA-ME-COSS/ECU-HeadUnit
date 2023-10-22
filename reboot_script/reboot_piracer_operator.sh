@@ -18,4 +18,3 @@ cd ../build
 
 # Sleep for 3 seconds to allow the process to start and run in the background
 sleep 3
-
