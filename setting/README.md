@@ -138,5 +138,9 @@ For more detail about CommonAPI and vsomeip, visit [here](https://github.com/COV
 
 ## For the remaining software installation and configuration code, please consult the following link
 
-
-
+- [2-Channel CAN-BUS(FD) Shield (MCP2518FD)](https://www.waveshare.com/wiki/2-CH_CAN_FD_HAT)
+- [7.9inch DSI LCD (400 x 1280)](https://www.waveshare.com/wiki/7.9inch_DSI_LCD)
+- [7inch HDMI LCD (H) (1028 x 600)](https://www.waveshare.com/wiki/7inch_HDMI_LCD_(H)_(with_case))
+- [CAN-BUS Shield V2.0 (MCP2515)](https://github.com/autowp/arduino-mcp2515)
+- [Qt5](https://qengineering.eu/install-qt5-with-opencv-on-raspberry-pi-4.html)
+- [GStreamer plug-in](https://qengineering.eu/install-gstreamer-1.18-on-raspberry-pi-4.html)
