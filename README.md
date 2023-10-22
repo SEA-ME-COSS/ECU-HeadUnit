@@ -26,7 +26,7 @@ Through this project, practical insights into IPC methods are gained, and an und
 
 # Architecture
 
-(사진)
+<img src=/Images/diagram/software_architecture.png alt="software_architecture" width="100%" height="100%"/>
 
 # Setting
 
@@ -48,6 +48,8 @@ Below are the specifications of the hardware used in the project.
 
 - CAN-BUS Shield V2.0 (MCP2515)
 - IR infrared Speed Sensor (LM393)
+
+<img src=/Images/diagram/hardware_architecture.png alt="hardware_architecture" width="100%" height="100%"/>
 
 # Usage
 
@@ -71,9 +73,9 @@ make
 - CAN specification documents: These documents provide detailed information on the CAN (Controller Area Network) protocol and its implementation.
 - VsomIp/Autosar documents: These documents provide information on the Inter-Process Communication (IPC) frameworks VsomIp and Autosar and their implementation in the automotive industry.
 
-Shield: (사진)
+Shield: <img src=/Images/shield.svg alt="shield" width="100%" height="100%"/>
 
 This work is licensed under a
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-(사진)
+<img src=/Images/image.png alt="image" width="100%" height="100%"/>
