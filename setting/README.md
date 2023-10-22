@@ -134,19 +134,9 @@ cd someip-generator
 chmod +x commonapi-someip-generator-linux-x86_64
 ```
 
-##For the remaining software installation and configuration code, please consult the following link
+For more detail about CommonAPI and vsomeip, visit [here](https://github.com/COVESA/vsomeip/wiki/vsomeip-in-10-minutes)
+
+## For the remaining software installation and configuration code, please consult the following link
 
 
-
-
-
-
-
-
-
-(fidl file)
-~/generator/core-generator/commonapi-core-generator-linux-x86_64 -sk ./fidl/DESProject.fidl -d ./src-gen-desproject
-
-(fdepl file)
-~/generator/someip-generator/commonapi-someip-generator-linux-x86_64 ./fidl/DESProject.fdepl -d ./src-gen-desproject
 
