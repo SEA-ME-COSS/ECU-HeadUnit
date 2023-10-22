@@ -144,3 +144,15 @@ For more detail about CommonAPI and vsomeip, visit [here](https://github.com/COV
 - [CAN-BUS Shield V2.0 (MCP2515)](https://github.com/autowp/arduino-mcp2515)
 - [Qt5](https://qengineering.eu/install-qt5-with-opencv-on-raspberry-pi-4.html)
 - [GStreamer plug-in](https://qengineering.eu/install-gstreamer-1.18-on-raspberry-pi-4.html)
+
+## Display configuration
+
+In this project, we will be using two platforms, eglfs and linuxfb, to simultaneously interface a DSI display and an HDMI display. After completing the installation as per the above procedure, you may notice that part of the 7.9inch display is not visible. This issue arises because the 7inch display's specifications restrict the screen area. To resolve this, you can modify the code written in /boot/config.txt as follows.
+
+```bash
+hdmi_cvt 1024 1280 60 6 0 0 0
+```
+
+Note that the 7inch display's specifications are recognized as larger than the actual hardware, so you may need to adjust the source files to align the application with the visible area. Typically, for applications developed for a 1024 x 600 screen size in Qt, reducing the scale by x0.5 will display the content correctly.
+
+<img src=/Images/diagram/display_configuration alt="display_configuration" width="100%" height="100%"/>
