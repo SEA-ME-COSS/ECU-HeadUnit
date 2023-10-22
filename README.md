@@ -41,7 +41,7 @@ Below are the specifications of the hardware used in the project.
 - 2-Channel CAN-BUS(FD) Shield (MCP2518FD)
 - PiRacer AI Kit (PiRacer Standard)
 - 7.9inch DSI LCD (400 x 1280)
-- 4inch HDMI LCD (H) (1028 x 600)
+- 7inch HDMI LCD (H) (1028 x 600)
 - Gamepad controller
 
 ### Arduino UNO
