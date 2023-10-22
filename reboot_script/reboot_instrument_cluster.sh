@@ -15,4 +15,3 @@ cd ../build
 
 # Run the specified process with '-platform linuxfb' and '&' to execute it in the background
 ./"$process_name" -platform linuxfb &
-
