@@ -4,7 +4,7 @@ Each directory represents an independent process, and these processes exchange d
 
 ---
 
-## CANSender
+## [CANSender](https://github.com/SEA-ME-COSS/DES-Head-Unit/tree/making_main/src/CANSender)
 
 This process is implemented with two threads. One thread is responsible for storing vehicle speed data received from the external source via the CAN shield into a circular queue buffer. The other thread periodically retrieves the most recent data from the buffer, filters it through a Kalman filter, and then forwards the value to the IPCManager. The reason for the existence of the buffer is to eliminate delays in the synchronization of communication speeds and during the filtering process. Both threads are synchronized through the use of mutexes to access the shared resource.
 
