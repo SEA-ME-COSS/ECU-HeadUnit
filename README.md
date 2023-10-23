@@ -6,11 +6,7 @@
 
 This project is developed for a Yocto-based OS, and it is also testable on the Raspbian OS.
 
-<img src=/Images/picture/overall_hardware_3.jpg alt="overall_hardware" width="100%" height="100%"/>
-
 <img src=/Images/demonstration/ambient_lighting.gif alt="ambient_lighting" width="100%" height="100%"/>
-
-<img src=/Images/demonstration/turn_indicator.gif alt="turn_indicator" width="100%" height="100%"/>
 
 # Introduction
 
@@ -68,6 +64,10 @@ cmake ..
 make
 ./IPCManager
 ```
+
+# Detail
+
+To learn more about the specific implementation of the project, please refer to the README.md file inside each respective file.
 
 # References
 
