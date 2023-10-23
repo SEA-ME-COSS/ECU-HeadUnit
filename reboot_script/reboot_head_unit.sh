@@ -10,9 +10,8 @@ then
   pkill -x "$process_name"
 fi
 
-# Change the working directory
-cd ../execute_files
+# Change the working directory to '../build'
+cd ../build
 
 # Run the specified process with '-platform eglfs' and '&' to execute it in the background
 ./"$process_name" -platform eglfs &
-

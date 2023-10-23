@@ -30,11 +30,14 @@ include_directories(${PYTHON_INCLUDE_DIRS})
 # Configure include and link directories
 include_directories(
     src-gen-desproject
-    ${CMAKE_INCLUDE_PATH}/CommonAPI-3.2
-    ${CMAKE_INCLUDE_PATH}
+    ~/build-commonapi/capicxx-core-runtime/include
+    ~/build-commonapi/capicxx-someip-runtime/include
+    ~/build-commonapi/vsomeip/interface
 )
 link_directories(
-    ${CMAKE_LIBRARY_PATH}
+    ~/build-commonapi/capicxx-core-runtime/build
+    ~/build-commonapi/capicxx-someip-runtime/build
+    ~/build-commonapi/vsomeip/build
 )
 
 
@@ -123,11 +126,3 @@ PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(HeadUnit
 PRIVATE Qt5::Core Qt5::Quick Qt5::Gui Qt5::Multimedia CommonAPI CommonAPI-SomeIP vsomeip3)
 
-
-# Add install commands for yocto
-install(TARGETS HeadUnit DESTINATION /usr/bin/headunit/execute-files)
-install(TARGETS CANSender DESTINATION /usr/bin/headunit/execute-files)
-install(TARGETS IPCManager DESTINATION /usr/bin/headunit/execute-files)
-install(TARGETS InstrumentCluster DESTINATION /usr/bin/headunit/execute-files)
-install(TARGETS PiracerOperator DESTINATION /usr/bin/headunit/execute-files)
-install(TARGETS PiracerSender DESTINATION /usr/bin/headunit/execute-files)

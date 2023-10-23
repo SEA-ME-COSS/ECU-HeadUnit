@@ -10,12 +10,11 @@ then
   pkill -x "$process_name"
 fi
 
-# Change the working directory
-cd ../execute_files
+# Change the working directory to '../build' where the target binary is located
+cd ../build
 
 # Run the specified process in the background
 ./"$process_name" &
 
 # Sleep for 3 seconds to allow the process to start and run in the background
 sleep 3
-
