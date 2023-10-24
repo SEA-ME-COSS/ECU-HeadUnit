@@ -33,16 +33,14 @@ uint16_t PiracerClass::getGearMode()
 
 void PiracerClass::applyThrottle(double throttle)
 {
-    pArgs = PyTuple_Pack(1, PyFloat_FromDouble(throttle)); // Pack the throttle value as a Python tuple
-    PyObject_CallMethod(pInstance, "set_throttle_percent", "O", pArgs); // Call the Python method "set_throttle_percent" with the throttle value
+    PyObject_CallMethod(pInstance, "set_throttle_percent", "(f)", throttle); // Call the Python method "set_throttle_percent" with the throttle value
 
     return;
 }
 
 void PiracerClass::applySteering(double steering)
 {
-    pArgs = PyTuple_Pack(1, PyFloat_FromDouble(steering * -1.0)); // Pack the reversed steering value as a Python tuple
-    PyObject_CallMethod(pInstance, "set_steering_percent", "O", pArgs); // Call the Python method "set_steering_percent" with the reversed steering value
+    PyObject_CallMethod(pInstance, "set_steering_percent", "(f)", steering); // Call the Python method "set_steering_percent" with the reversed steering value
 
     return;
 }
