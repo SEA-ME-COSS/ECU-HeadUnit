@@ -72,7 +72,8 @@ void IPCManagerStubImpl::setLight(const std::shared_ptr<CommonAPI::ClientId> _cl
 void IPCManagerStubImpl::setThrottle(const std::shared_ptr<CommonAPI::ClientId> _client, double _throttle, setThrottleReply_t _reply)
 {
     // Relay throttle to the PiracerOperator service
-    sender.PiracerOperatorTargetProxy->setThrottle(_throttle, sender.callStatus, sender.returnMessage);
+    //sender.PiracerOperatorTargetProxy->setThrottle(_throttle, sender.callStatus, sender.returnMessage);
+    piracer.applyThrottle(_throttle);
 
     // Reply to the caller
     _reply("");
@@ -84,7 +85,9 @@ void IPCManagerStubImpl::setThrottle(const std::shared_ptr<CommonAPI::ClientId> 
 void IPCManagerStubImpl::setSteering(const std::shared_ptr<CommonAPI::ClientId> _client, double _steering, setSteeringReply_t _reply)
 {
     // Relay steering to the PiracerOperator and HeadUnit service
-    sender.PiracerOperatorTargetProxy->setSteering(_steering, sender.callStatus, sender.returnMessage);
+    //sender.PiracerOperatorTargetProxy->setSteering(_steering, sender.callStatus, sender.returnMessage);
+    piracer.applySteering(_steering);
+    
     sender.HeadUnitTargetProxy->setSteering(_steering, sender.callStatus, sender.returnMessage);
     
     // Reply to the caller

@@ -5,11 +5,13 @@
 #include <CommonAPI/CommonAPI.hpp>    // Include the CommonAPI library.
 #include <v1/commonapi/IPCManagerStubDefault.hpp>    // Include the IPCManagerStubDefault interface.
 #include "IPCManagerSenderClass.hpp"    // Include the IPCManagerSenderClass, which provides communication with other services.
+#include "PiracerClass.hpp"
 
 // Define a class IPCManagerStubImpl that inherits from IPCManagerStubDefault.
 class IPCManagerStubImpl : public v1_0::commonapi::IPCManagerStubDefault {
 private:
     IPCManagerSenderClass sender;    // Create an instance of IPCManagerSenderClass for communication.
+    PiracerClass piracer;    // Create an instance of PiracerClass for operation
 
 public:
     // Constructor for IPCManagerStubImpl.

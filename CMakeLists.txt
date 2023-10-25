@@ -92,6 +92,7 @@ add_executable(IPCManager
         src/IPCManager/IPCManager.cpp
         src/IPCManager/IPCManagerStubImpl.cpp
         src/IPCManager/IPCManagerSenderClass.cpp
+        src/IPCManager/PiracerClass.cpp
         src-gen-desproject/v1/commonapi/CANSenderSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/CANSenderSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/PiracerSenderSomeIPProxy.cpp
