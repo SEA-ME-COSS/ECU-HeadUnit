@@ -1,4 +1,5 @@
 #include "IPCManagerStubImpl.hpp"
+#include <iostream>
 
 // Constructor for IPCManagerStubImpl
 IPCManagerStubImpl::IPCManagerStubImpl() { }
@@ -73,6 +74,7 @@ void IPCManagerStubImpl::setThrottle(const std::shared_ptr<CommonAPI::ClientId> 
 {
     // Relay throttle to the PiracerOperator service
     sender.PiracerOperatorTargetProxy->setThrottle(_throttle, sender.callStatus, sender.returnMessage);
+    std::cout<<_throttle<<std::endl;
 
     // Reply to the caller
     _reply("");
@@ -86,6 +88,7 @@ void IPCManagerStubImpl::setSteering(const std::shared_ptr<CommonAPI::ClientId> 
     // Relay steering to the PiracerOperator and HeadUnit service
     sender.PiracerOperatorTargetProxy->setSteering(_steering, sender.callStatus, sender.returnMessage);
     sender.HeadUnitTargetProxy->setSteering(_steering, sender.callStatus, sender.returnMessage);
+    std::cout<<_steering<<std::endl;
 
     // Reply to the caller
     _reply("");

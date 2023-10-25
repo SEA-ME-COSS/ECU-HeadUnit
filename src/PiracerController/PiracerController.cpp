@@ -4,8 +4,6 @@
 #include "ControllerClass.hpp"
 #include "PiracerControllerStubImpl.hpp"
 
-#include <iostream>
-
 using namespace v1_0::commonapi;
 
 int main()
@@ -39,8 +37,6 @@ int main()
 	// Send control data to IPCManager
         IPCManagertargetProxy->setThrottle(throttle, callStatus, returnMessage);
 	IPCManagertargetProxy->setSteering(steering, callStatus, returnMessage);
-	
-	std::cout<<throttle<<' '<<steering<<std::endl;
     }
 
     return 0;
