@@ -288,8 +288,8 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setDirectionAsync(cons
         std::make_tuple(deploy_message));
 }
 
-void IPCManagerSomeIPProxy::setLight(std::string _light, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
-    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_light(_light, static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+void IPCManagerSomeIPProxy::setLight(std::string _Light, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_Light(_Light, static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
     CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
     CommonAPI::SomeIP::ProxyHelper<
         CommonAPI::SomeIP::SerializableArguments<
@@ -310,14 +310,14 @@ void IPCManagerSomeIPProxy::setLight(std::string _light, CommonAPI::CallStatus &
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
-        deploy_light,
+        deploy_Light,
         _internalCallStatus,
         deploy_message);
     _message = deploy_message.getValue();
 }
 
-std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setLightAsync(const std::string &_light, SetLightAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
-    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_light(_light, static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setLightAsync(const std::string &_Light, SetLightAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_Light(_Light, static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
     CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
     return CommonAPI::SomeIP::ProxyHelper<
         CommonAPI::SomeIP::SerializableArguments<
@@ -338,7 +338,7 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setLightAsync(const st
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
-        deploy_light,
+        deploy_Light,
         [_callback] (CommonAPI::CallStatus _internalCallStatus, CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment > _message) {
             if (_callback)
                 _callback(_internalCallStatus, _message.getValue());

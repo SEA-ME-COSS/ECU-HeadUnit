@@ -72,8 +72,6 @@ add_executable(PiracerController
         src/PiracerController/ControllerClass.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
-        src-gen-desproject/v1/commonapi/HeadUnitSomeIPProxy.cpp
-        src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/PiracerControllerSomeIPStubAdapter.cpp
         src-gen-desproject/v1/commonapi/PiracerControllerSomeIPDeployment.cpp
 )

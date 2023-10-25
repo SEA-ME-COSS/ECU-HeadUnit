@@ -59,7 +59,7 @@ interface IPCManager {
   }
   method setLight {
     in {
-      String light // Input parameter: light of type String.
+      String Light // Input parameter: light of type String.
     }
     out {
       String message // Output parameter: message of type String.
@@ -123,7 +123,7 @@ interface InstrumentCluster {
   }
   method setLight {
     in {
-      String light // Input parameter: light of type String.
+      String Light // Input parameter: light of type String.
     }
     out {
       String message // Output parameter: message of type String.

@@ -1,6 +1,5 @@
 #include <CommonAPI/CommonAPI.hpp>
 #include <v1/commonapi/IPCManagerProxy.hpp>
-#include <v1/commonapi/HeadUnitProxy.hpp>
 
 #include "ControllerClass.hpp"
 #include "PiracerControllerStubImpl.hpp"
@@ -13,7 +12,6 @@ int main()
     std::shared_ptr<CommonAPI::Runtime> runtime;
     std::shared_ptr<PiracerControllerStubImpl> PiracerControllerService;
     std::shared_ptr<IPCManagerProxy<>> IPCManagertargetProxy;
-    std::shared_ptr<HeadUnitProxy<>> HeadUnittargetProxy;
 
     runtime = CommonAPI::Runtime::get();
 
@@ -21,7 +19,6 @@ int main()
     PiracerControllerService = std::make_shared<PiracerControllerStubImpl>();
     runtime->registerService("local", "PiracerController", PiracerControllerService);
     IPCManagertargetProxy = runtime->buildProxy<IPCManagerProxy>("local", "IPCManager");
-    HeadUnittargetProxy = runtime->buildProxy<HeadUnitProxy>("local", "HeadUnit");
 
     // Initialize the controller class for interacting with the game controller
     ControllerClass controller;
@@ -37,9 +34,6 @@ int main()
 	// Send control data to IPCManager
         IPCManagertargetProxy->setThrottle(controller.getThrottle(), callStatus, returnMessage);
 	IPCManagertargetProxy->setSteering(controller.getSteering(), callStatus, returnMessage);
-	
-	// Send control data to HeadUnit
-	//HeadUnittargetProxy->setSteering(controller.getSteering(), callStatus, returnMessage);
     }
 
     return 0;
