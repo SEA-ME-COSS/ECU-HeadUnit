@@ -2,7 +2,7 @@
 #include <v1/commonapi/IPCManagerProxy.hpp>
 
 #include "ControllerClass.hpp"
-#include "PiracerControllerStubImpl.hpp"
+#include "PiracerSignalStubImpl.hpp"
 
 using namespace v1_0::commonapi;
 
@@ -10,14 +10,14 @@ int main()
 {
     // Initialize the CommonAPI runtime
     std::shared_ptr<CommonAPI::Runtime> runtime;
-    std::shared_ptr<PiracerControllerStubImpl> PiracerControllerService;
+    std::shared_ptr<PiracerSignalStubImpl> PiracerSignalService;
     std::shared_ptr<IPCManagerProxy<>> IPCManagertargetProxy;
 
     runtime = CommonAPI::Runtime::get();
 
     // Create the Piracer Controller service
-    PiracerControllerService = std::make_shared<PiracerControllerStubImpl>();
-    runtime->registerService("local", "PiracerController", PiracerControllerService);
+    PiracerSignalService = std::make_shared<PiracerSignalStubImpl>();
+    runtime->registerService("local", "PiracerSignal", PiracerSignalService);
     IPCManagertargetProxy = runtime->buildProxy<IPCManagerProxy>("local", "IPCManager");
 
     // Initialize the controller class for interacting with the game controller
