@@ -82,14 +82,11 @@ void IPCManagerStubImpl::setThrottle(const std::shared_ptr<CommonAPI::ClientId> 
     return;
 }
 
-// Set steering and relay it to the HeadUnit service
+// Set steering
 void IPCManagerStubImpl::setSteering(const std::shared_ptr<CommonAPI::ClientId> _client, double _steering, setSteeringReply_t _reply)
 {
     // Apply steering to piracer
     piracer.applySteering(_steering);
-    
-    // Relay steering to the HeadUnit service
-    //sender.HeadUnitTargetProxy->setSteering(_steering, sender.callStatus, sender.returnMessage);
     
     // Reply to the caller
     _reply("");
