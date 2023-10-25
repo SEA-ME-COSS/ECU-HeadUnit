@@ -23,7 +23,7 @@ void PiracerOperatorStubImpl::setGearMode(const std::shared_ptr<CommonAPI::Clien
 void PiracerOperatorStubImpl::setThrottle(const std::shared_ptr<CommonAPI::ClientId> _client, double _throttle, setThrottleReply_t _reply)
 {
     // Apply the throttle in the Piracer
-    piracer.applyThrottle(_throttle);
+    //piracer.applyThrottle(_throttle);
     std::cout<<_throttle<<std::endl;
 
     // Respond to the client request with an empty message
@@ -36,7 +36,7 @@ void PiracerOperatorStubImpl::setThrottle(const std::shared_ptr<CommonAPI::Clien
 void PiracerOperatorStubImpl::setSteering(const std::shared_ptr<CommonAPI::ClientId> _client, double _steering, setSteeringReply_t _reply)
 {
     // Apply the steering in the Piracer
-    piracer.applySteering(_steering);
+    //piracer.applySteering(_steering);
     std::cout<<_steering<<std::endl;
 
     // Respond to the client request with an empty message
