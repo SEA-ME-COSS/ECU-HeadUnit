@@ -33,7 +33,7 @@ std::shared_ptr<CommonAPI::SomeIP::Proxy> createIPCManagerSomeIPProxy(
 void initializeIPCManagerSomeIPProxy() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
         "local:commonapi.IPCManager:v1_0:IPCManager",
-        0x3ec, 0x2714, 1, 0);
+        0x3eb, 0x2713, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerProxyCreateMethod(
         "commonapi.IPCManager:v1_0",
         &createIPCManagerSomeIPProxy);
@@ -74,7 +74,7 @@ void IPCManagerSomeIPProxy::setSensorRpm(uint16_t _SensorRpm, CommonAPI::CallSta
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x67),
+        CommonAPI::SomeIP::method_id_t(0x64),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -102,7 +102,7 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setSensorRpmAsync(cons
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x67),
+        CommonAPI::SomeIP::method_id_t(0x64),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -132,7 +132,7 @@ void IPCManagerSomeIPProxy::setBatteryLevel(uint16_t _BatteryLevel, CommonAPI::C
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x68),
+        CommonAPI::SomeIP::method_id_t(0x65),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -160,7 +160,7 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setBatteryLevelAsync(c
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x68),
+        CommonAPI::SomeIP::method_id_t(0x65),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -190,7 +190,7 @@ void IPCManagerSomeIPProxy::setGearMode(uint16_t _GearMode, CommonAPI::CallStatu
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x69),
+        CommonAPI::SomeIP::method_id_t(0x66),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -218,7 +218,7 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setGearModeAsync(const
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x69),
+        CommonAPI::SomeIP::method_id_t(0x66),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -248,7 +248,7 @@ void IPCManagerSomeIPProxy::setDirection(uint16_t _Direction, CommonAPI::CallSta
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x6a),
+        CommonAPI::SomeIP::method_id_t(0x67),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -276,7 +276,7 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setDirectionAsync(cons
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x6a),
+        CommonAPI::SomeIP::method_id_t(0x67),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -306,7 +306,7 @@ void IPCManagerSomeIPProxy::setLight(std::string _light, CommonAPI::CallStatus &
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x6b),
+        CommonAPI::SomeIP::method_id_t(0x68),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -334,7 +334,7 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setLightAsync(const st
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x6b),
+        CommonAPI::SomeIP::method_id_t(0x68),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -364,7 +364,7 @@ void IPCManagerSomeIPProxy::setThrottle(double _Throttle, CommonAPI::CallStatus 
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x6c),
+        CommonAPI::SomeIP::method_id_t(0x69),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -392,7 +392,7 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setThrottleAsync(const
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x6c),
+        CommonAPI::SomeIP::method_id_t(0x69),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -422,7 +422,7 @@ void IPCManagerSomeIPProxy::setSteering(double _Steering, CommonAPI::CallStatus 
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x6d),
+        CommonAPI::SomeIP::method_id_t(0x6a),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -450,7 +450,7 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setSteeringAsync(const
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x6d),
+        CommonAPI::SomeIP::method_id_t(0x6a),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),

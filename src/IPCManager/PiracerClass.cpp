@@ -7,7 +7,7 @@ PiracerClass::PiracerClass()
     pClass = PyObject_GetAttrString(pModule, "PiRacerStandard"); // Get the Python class "PiRacerStandard" from the module
     pInstance = PyObject_CallObject(pClass, NULL); // Create an instance of the Python class
 
-    gearMode = 3; // Initialize the gear mode to 0 (default)
+    gearMode = 0; // Initialize the gear mode to 0 (default)
 }
 
 PiracerClass::~PiracerClass()
@@ -36,7 +36,7 @@ void PiracerClass::applyThrottle(double throttle)
         case 1: // R (Reverse)
 	    if (throttle <= 0)
 	    {
-	        PyObject_CallMethod(pInstance, "set_throttle_percent", "(f)", throttle); // Call the Python method "set_throttle_percent" with the throttle value
+	        PyObject_CallMethod(pInstance, "set_throttle_percent", "(f)", throttle * 0.5); // Call the Python method "set_throttle_percent" with the throttle value
 	    }
 	    else
 	    {
@@ -72,15 +72,15 @@ void PiracerClass::applySteering(double steering)
 	    break;
 	    
         case 1: // R (Reverse)
-            PyObject_CallMethod(pInstance, "set_steering_percent", "(f)", steering); // Call the Python method "set_steering_percent" with the steering value
+            PyObject_CallMethod(pInstance, "set_steering_percent", "(f)", steering * -1.0); // Call the Python method "set_steering_percent" with the steering value
 	    break;
 	    
         case 2: // N (Neutral)
-            PyObject_CallMethod(pInstance, "set_steering_percent", "(f)", steering); // Call the Python method "set_steering_percent" with the steering value
+            PyObject_CallMethod(pInstance, "set_steering_percent", "(f)", steering * -1.0); // Call the Python method "set_steering_percent" with the steering value
 	    break;
 	    
         case 3: // D (Drive)
-            PyObject_CallMethod(pInstance, "set_steering_percent", "(f)", steering); // Call the Python method "set_steering_percent" with the steering value
+            PyObject_CallMethod(pInstance, "set_steering_percent", "(f)", steering * -1.0); // Call the Python method "set_steering_percent" with the steering value
 	    break;
     }
 

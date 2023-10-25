@@ -24,112 +24,91 @@ define org.genivi.commonapi.someip.deployment for provider as Service {
 }
 
 
-define org.genivi.commonapi.someip.deployment for interface commonapi.PiracerOperator {
+define org.genivi.commonapi.someip.deployment for interface commonapi.PiracerController {
         SomeIpServiceID = 1002
-
-        method setGearMode {
-                SomeIpMethodID = 100
-        }
-        method setThrottle {
-                SomeIpMethodID = 101
-        }
-        method setSteering {
-                SomeIpMethodID = 102
-        }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
-        instance commonapi.PiracerOperator {
-                InstanceId = "PiracerOperator"
+        instance commonapi.PiracerController {
+                InstanceId = "PiracerController"
                 SomeIpInstanceID = 10002
         }
 }
 
 
-define org.genivi.commonapi.someip.deployment for interface commonapi.PiracerController {
-        SomeIpServiceID = 1003
-}
-define org.genivi.commonapi.someip.deployment for provider as Service {
-        instance commonapi.PiracerController {
-                InstanceId = "PiracerController"
-                SomeIpInstanceID = 10003
-        }
-}
-
-
 define org.genivi.commonapi.someip.deployment for interface commonapi.IPCManager {
-        SomeIpServiceID = 1004
+        SomeIpServiceID = 1003
 
         method setSensorRpm {
-                SomeIpMethodID = 103
+                SomeIpMethodID = 100
         }
         method setBatteryLevel {
-                SomeIpMethodID = 104
+                SomeIpMethodID = 101
         }
         method setGearMode {
-                SomeIpMethodID = 105
+                SomeIpMethodID = 102
         }
         method setDirection {
-                SomeIpMethodID = 106
+                SomeIpMethodID = 103
         }
         method setLight {
-                SomeIpMethodID = 107
+                SomeIpMethodID = 104
         }
         method setThrottle {
-                SomeIpMethodID = 108
+                SomeIpMethodID = 105
         }
         method setSteering {
-                SomeIpMethodID = 109
+                SomeIpMethodID = 106
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.IPCManager {
                 InstanceId = "IPCManager"
-                SomeIpInstanceID = 10004
+                SomeIpInstanceID = 10003
         }
 }
 
 
 define org.genivi.commonapi.someip.deployment for interface commonapi.InstrumentCluster {
-        SomeIpServiceID = 1005
+        SomeIpServiceID = 1004
 
         method setSpeedRpm {
-                SomeIpMethodID = 110
+                SomeIpMethodID = 107
         }
         method setBattery {
-                SomeIpMethodID = 111
+                SomeIpMethodID = 108
         }
         method setGear {
-                SomeIpMethodID = 112
+                SomeIpMethodID = 109
         }
         method setDirection {
-                SomeIpMethodID = 113
+                SomeIpMethodID = 110
         }
         method setLight {
-                SomeIpMethodID = 114
+                SomeIpMethodID = 111
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.InstrumentCluster {
                 InstanceId = "InstrumentCluster"
-                SomeIpInstanceID = 10005
+                SomeIpInstanceID = 10004
         }
 }
 
 
 define org.genivi.commonapi.someip.deployment for interface commonapi.HeadUnit {
-        SomeIpServiceID = 1006
+        SomeIpServiceID = 1005
 
         method setSensorRpm {
-                SomeIpMethodID = 115
+                SomeIpMethodID = 112
         }
         method setSteering {
-                SomeIpMethodID = 116
+                SomeIpMethodID = 113
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.HeadUnit {
                 InstanceId = "HeadUnit"
-                SomeIpInstanceID = 10006
+                SomeIpInstanceID = 10005
         }
 }
 

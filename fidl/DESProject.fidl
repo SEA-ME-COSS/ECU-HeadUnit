@@ -14,42 +14,6 @@ interface PiracerSender {
 }
 
 
-// Define the 'PiracerOperator' interface.
-interface PiracerOperator {
-  version {major 1 minor 0} // Interface version information.
-
-  // Define a method with input and output parameters.
-  method setGearMode {
-    in {
-      UInt16 GearMode // Input parameter: GearMode of type UInt16.
-    }
-    out {
-      String message // Output parameter: message of type String.
-    }
-  }
-  
-  // Define a method with input and output parameters.
-  method setThrottle {
-    in {
-      Double Throttle // Input parameter: Throttle of type Double.
-    }
-    out {
-      String message // Output parameter: message of type String.
-    }
-  }
-  
-  // Define a method with input and output parameters.
-  method setSteering {
-    in {
-      Double Steering // Input parameter: Steering of type Double.
-    }
-    out {
-      String message // Output parameter: message of type String.
-    }
-  }
-}
-
-
 // Define the 'PiracerController' interface.
 interface PiracerController {
   version {major 1 minor 0} // Interface version information.

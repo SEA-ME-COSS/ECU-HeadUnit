@@ -22,7 +22,6 @@ int main()
 
     while (1)
     {
-    /*
         if (!sender.CANSenderTargetProxy->isAvailable()) {
             exitCode = system("sh ../reboot_script/reboot_can_sender.sh");
             // Check if CANSenderTargetProxy is not available and execute a reboot script
@@ -30,10 +29,6 @@ int main()
         if (!sender.PiracerSenderTargetProxy->isAvailable()) {
             exitCode = system("sh ../reboot_script/reboot_piracer_sender.sh");
             // Check if PiracerSenderTargetProxy is not available and execute a reboot script
-        }
-        if (!sender.PiracerOperatorTargetProxy->isAvailable()) {
-            exitCode = system("sh ../reboot_script/reboot_piracer_operator.sh");
-            // Check if PiracerOperatorTargetProxy is not available and execute a reboot script
         }
         if (!sender.PiracerControllerTargetProxy->isAvailable()) {
             exitCode = system("sh ../reboot_script/reboot_piracer_controller.sh");
@@ -49,7 +44,6 @@ int main()
         }
 
         usleep(1000000); // Sleep for one second (in microseconds)
-    */
     }
 
     return 0;

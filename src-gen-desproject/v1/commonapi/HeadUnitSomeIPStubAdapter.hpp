@@ -95,8 +95,8 @@ public:
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
         
     {
-        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x73) }, &setSensorRpmStubDispatcher );
-        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x74) }, &setSteeringStubDispatcher );
+        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x70) }, &setSensorRpmStubDispatcher );
+        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x71) }, &setSteeringStubDispatcher );
         // Provided events/fields
     }
 

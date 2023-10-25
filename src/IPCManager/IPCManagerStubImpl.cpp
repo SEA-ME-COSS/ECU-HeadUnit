@@ -31,11 +31,13 @@ void IPCManagerStubImpl::setBatteryLevel(const std::shared_ptr<CommonAPI::Client
     return;
 }
 
-// Set gear mode and relay it to the PiracerOperator and InstrumentCluster services
+// Set gear mode and relay it to the InstrumentCluster service
 void IPCManagerStubImpl::setGearMode(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _gearMode, setGearModeReply_t _reply)
 {
-    // Relay gear mode to the PiracerOperator and InstrumentCluster services
-    sender.PiracerOperatorTargetProxy->setGearMode(_gearMode, sender.callStatus, sender.returnMessage);
+    // Set gear mode to piracer
+    piracer.setGearMode(_gearMode);
+
+    // Relay gear mode to the InstrumentCluster service
     sender.InstrumentClusterTargetProxy->setGear(_gearMode, sender.callStatus, sender.returnMessage);
 
     // Reply to the caller
@@ -68,11 +70,10 @@ void IPCManagerStubImpl::setLight(const std::shared_ptr<CommonAPI::ClientId> _cl
     return;
 }
 
-// Set throttle and relay it to the PiracerOperator and HeadUnit service
+// Set throttle
 void IPCManagerStubImpl::setThrottle(const std::shared_ptr<CommonAPI::ClientId> _client, double _throttle, setThrottleReply_t _reply)
 {
-    // Relay throttle to the PiracerOperator service
-    //sender.PiracerOperatorTargetProxy->setThrottle(_throttle, sender.callStatus, sender.returnMessage);
+    // Apply throttle to piracer
     piracer.applyThrottle(_throttle);
 
     // Reply to the caller
@@ -81,13 +82,13 @@ void IPCManagerStubImpl::setThrottle(const std::shared_ptr<CommonAPI::ClientId> 
     return;
 }
 
-// Set steering and relay it to the PiracerOperator and HeadUnit service
+// Set steering and relay it to the HeadUnit service
 void IPCManagerStubImpl::setSteering(const std::shared_ptr<CommonAPI::ClientId> _client, double _steering, setSteeringReply_t _reply)
 {
-    // Relay steering to the PiracerOperator and HeadUnit service
-    //sender.PiracerOperatorTargetProxy->setSteering(_steering, sender.callStatus, sender.returnMessage);
+    // Apply steering to piracer
     piracer.applySteering(_steering);
     
+    // Relay steering to the HeadUnit service
     sender.HeadUnitTargetProxy->setSteering(_steering, sender.callStatus, sender.returnMessage);
     
     // Reply to the caller

@@ -175,13 +175,13 @@ public:
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
         
     {
-        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x67) }, &setSensorRpmStubDispatcher );
-        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x68) }, &setBatteryLevelStubDispatcher );
-        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x69) }, &setGearModeStubDispatcher );
-        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x6a) }, &setDirectionStubDispatcher );
-        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x6b) }, &setLightStubDispatcher );
-        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x6c) }, &setThrottleStubDispatcher );
-        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x6d) }, &setSteeringStubDispatcher );
+        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x64) }, &setSensorRpmStubDispatcher );
+        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x65) }, &setBatteryLevelStubDispatcher );
+        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x66) }, &setGearModeStubDispatcher );
+        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x67) }, &setDirectionStubDispatcher );
+        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x68) }, &setLightStubDispatcher );
+        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x69) }, &setThrottleStubDispatcher );
+        IPCManagerSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x6a) }, &setSteeringStubDispatcher );
         // Provided events/fields
     }
 

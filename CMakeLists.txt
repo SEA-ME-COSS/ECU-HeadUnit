@@ -14,8 +14,6 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-#set(CMAKE_PREFIX_PATH "/opt/Qt/5.15.0/gcc_64")
-
 # Append C++ compiler flags, including -pthread and -std=c++0x
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -std=c++0x")
 
@@ -43,7 +41,7 @@ link_directories(
 )
 
 
-# Create executables and link libraries for the CANSender, PiracerSender, PiracerOperator, PiracerController, IPCManager, InstrumentCluster, and HeadUnit targets
+# Create executables and link libraries for the CANSender, PiracerSender, PiracerController, IPCManager, InstrumentCluster, and HeadUnit targets
 add_executable(CANSender
         src/CANSender/CANSender.cpp
         src/CANSender/ReadCANThread.c
@@ -68,15 +66,6 @@ add_executable(PiracerSender
 )
 target_link_libraries(PiracerSender ${PYTHON_LIBRARIES} CommonAPI CommonAPI-SomeIP vsomeip3)
 
-add_executable(PiracerOperator
-        src/PiracerOperator/PiracerOperator.cpp
-        src/PiracerOperator/PiracerOperatorStubImpl.cpp
-        src/PiracerOperator/PiracerClass.cpp
-        src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPStubAdapter.cpp
-        src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp
-)
-target_link_libraries(PiracerOperator ${PYTHON_LIBRARIES} CommonAPI CommonAPI-SomeIP vsomeip3)
-
 add_executable(PiracerController
         src/PiracerController/PiracerController.cpp
         src/PiracerController/PiracerControllerStubImpl.cpp
@@ -97,8 +86,8 @@ add_executable(IPCManager
         src-gen-desproject/v1/commonapi/CANSenderSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/PiracerSenderSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/PiracerSenderSomeIPDeployment.cpp
-        src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPProxy.cpp
-        src-gen-desproject/v1/commonapi/PiracerOperatorSomeIPDeployment.cpp
+        src-gen-desproject/v1/commonapi/PiracerControllerSomeIPProxy.cpp
+        src-gen-desproject/v1/commonapi/PiracerControllerSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/HeadUnitSomeIPProxy.cpp
