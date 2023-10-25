@@ -39,7 +39,7 @@ int main()
 	IPCManagertargetProxy->setSteering(controller.getSteering(), callStatus, returnMessage);
 	
 	// Send control data to HeadUnit
-	HeadUnittargetProxy->setSteering(controller.getSteering(), callStatus, returnMessage);
+	//HeadUnittargetProxy->setSteering(controller.getSteering(), callStatus, returnMessage);
     }
 
     return 0;
