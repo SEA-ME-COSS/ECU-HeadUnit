@@ -24,7 +24,7 @@ void PiracerOperatorStubImpl::setThrottle(const std::shared_ptr<CommonAPI::Clien
 {
     // Apply the throttle in the Piracer
     //piracer.applyThrottle(_throttle);
-    std::cout<<_throttle<<std::endl;
+    std::cout<<_throttle<<"#######################"<<std::endl;
 
     // Respond to the client request with an empty message
     _reply("");
@@ -37,7 +37,7 @@ void PiracerOperatorStubImpl::setSteering(const std::shared_ptr<CommonAPI::Clien
 {
     // Apply the steering in the Piracer
     //piracer.applySteering(_steering);
-    std::cout<<_steering<<std::endl;
+    std::cout<<_steering<<"########################"<<std::endl;
 
     // Respond to the client request with an empty message
     _reply("");
