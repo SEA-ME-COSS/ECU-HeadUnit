@@ -89,7 +89,7 @@ void IPCManagerStubImpl::setSteering(const std::shared_ptr<CommonAPI::ClientId> 
     piracer.applySteering(_steering);
     
     // Relay steering to the HeadUnit service
-    sender.HeadUnitTargetProxy->setSteering(_steering, sender.callStatus, sender.returnMessage);
+    //sender.HeadUnitTargetProxy->setSteering(_steering, sender.callStatus, sender.returnMessage);
     
     // Reply to the caller
     _reply("");
