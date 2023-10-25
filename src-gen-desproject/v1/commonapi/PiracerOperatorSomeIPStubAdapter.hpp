@@ -61,6 +61,22 @@ public:
         std::tuple< CommonAPI::SomeIP::StringDeployment>
     > setGearModeStubDispatcher;
     
+    CommonAPI::SomeIP::MethodWithReplyStubDispatcher<
+        ::v1::commonapi::PiracerOperatorStub,
+        std::tuple< double>,
+        std::tuple< std::string>,
+        std::tuple< CommonAPI::EmptyDeployment>,
+        std::tuple< CommonAPI::SomeIP::StringDeployment>
+    > setThrottleStubDispatcher;
+    
+    CommonAPI::SomeIP::MethodWithReplyStubDispatcher<
+        ::v1::commonapi::PiracerOperatorStub,
+        std::tuple< double>,
+        std::tuple< std::string>,
+        std::tuple< CommonAPI::EmptyDeployment>,
+        std::tuple< CommonAPI::SomeIP::StringDeployment>
+    > setSteeringStubDispatcher;
+    
     PiracerOperatorSomeIPStubAdapterInternal(
         const CommonAPI::SomeIP::Address &_address,
         const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection,
@@ -78,8 +94,26 @@ public:
             std::make_tuple(static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr)),
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
         
+        ,
+        setThrottleStubDispatcher(
+            &PiracerOperatorStub::setThrottle,
+            false,
+            _stub->hasElement(1),
+            std::make_tuple(static_cast< CommonAPI::EmptyDeployment* >(nullptr)),
+            std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
+        
+        ,
+        setSteeringStubDispatcher(
+            &PiracerOperatorStub::setSteering,
+            false,
+            _stub->hasElement(2),
+            std::make_tuple(static_cast< CommonAPI::EmptyDeployment* >(nullptr)),
+            std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
+        
     {
         PiracerOperatorSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x64) }, &setGearModeStubDispatcher );
+        PiracerOperatorSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x65) }, &setThrottleStubDispatcher );
+        PiracerOperatorSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x66) }, &setSteeringStubDispatcher );
         // Provided events/fields
     }
 

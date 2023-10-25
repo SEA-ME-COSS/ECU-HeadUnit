@@ -38,9 +38,15 @@ class PiracerOperatorProxyBase
 public:
 
     typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> SetGearModeAsyncCallback;
+    typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> SetThrottleAsyncCallback;
+    typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> SetSteeringAsyncCallback;
 
     virtual void setGearMode(uint16_t _GearMode, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr) = 0;
     virtual std::future<CommonAPI::CallStatus> setGearModeAsync(const uint16_t &_GearMode, SetGearModeAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr) = 0;
+    virtual void setThrottle(double _Throttle, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr) = 0;
+    virtual std::future<CommonAPI::CallStatus> setThrottleAsync(const double &_Throttle, SetThrottleAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr) = 0;
+    virtual void setSteering(double _Steering, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr) = 0;
+    virtual std::future<CommonAPI::CallStatus> setSteeringAsync(const double &_Steering, SetSteeringAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr) = 0;
 
     virtual std::future<void> getCompletionFuture() = 0;
 };

@@ -34,6 +34,10 @@ int main()
             exitCode = system("sh ../reboot_script/reboot_piracer_operator.sh");
             // Check if PiracerOperatorTargetProxy is not available and execute a reboot script
         }
+        if (!sender.PiracerControllerTargetProxy->isAvailable()) {
+            exitCode = system("sh ../reboot_script/reboot_piracer_controller.sh");
+            // Check if PiracerControllerTargetProxy is not available and execute a reboot script
+        }
         if (!sender.InstrumentClusterTargetProxy->isAvailable()) {
             exitCode = system("sh ../reboot_script/reboot_instrument_cluster.sh");
             // Check if InstrumentClusterTargetProxy is not available and execute a reboot script

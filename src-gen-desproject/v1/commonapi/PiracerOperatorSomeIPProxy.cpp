@@ -114,6 +114,122 @@ std::future<CommonAPI::CallStatus> PiracerOperatorSomeIPProxy::setGearModeAsync(
         std::make_tuple(deploy_message));
 }
 
+void PiracerOperatorSomeIPProxy::setThrottle(double _Throttle, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
+    CommonAPI::Deployable< double, CommonAPI::EmptyDeployment> deploy_Throttle(_Throttle, static_cast< CommonAPI::EmptyDeployment* >(nullptr));
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+    CommonAPI::SomeIP::ProxyHelper<
+        CommonAPI::SomeIP::SerializableArguments<
+            CommonAPI::Deployable<
+                double,
+                CommonAPI::EmptyDeployment
+            >
+        >,
+        CommonAPI::SomeIP::SerializableArguments<
+            CommonAPI::Deployable<
+                std::string,
+                CommonAPI::SomeIP::StringDeployment
+            >
+        >
+    >::callMethodWithReply(
+        *this,
+        CommonAPI::SomeIP::method_id_t(0x65),
+        false,
+        false,
+        (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
+        deploy_Throttle,
+        _internalCallStatus,
+        deploy_message);
+    _message = deploy_message.getValue();
+}
+
+std::future<CommonAPI::CallStatus> PiracerOperatorSomeIPProxy::setThrottleAsync(const double &_Throttle, SetThrottleAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+    CommonAPI::Deployable< double, CommonAPI::EmptyDeployment> deploy_Throttle(_Throttle, static_cast< CommonAPI::EmptyDeployment* >(nullptr));
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+    return CommonAPI::SomeIP::ProxyHelper<
+        CommonAPI::SomeIP::SerializableArguments<
+            CommonAPI::Deployable<
+                double,
+                CommonAPI::EmptyDeployment
+            >
+        >,
+        CommonAPI::SomeIP::SerializableArguments<
+            CommonAPI::Deployable<
+                std::string,
+                CommonAPI::SomeIP::StringDeployment
+            >
+        >
+    >::callMethodAsync(
+        *this,
+        CommonAPI::SomeIP::method_id_t(0x65),
+        false,
+        false,
+        (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
+        deploy_Throttle,
+        [_callback] (CommonAPI::CallStatus _internalCallStatus, CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment > _message) {
+            if (_callback)
+                _callback(_internalCallStatus, _message.getValue());
+        },
+        std::make_tuple(deploy_message));
+}
+
+void PiracerOperatorSomeIPProxy::setSteering(double _Steering, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
+    CommonAPI::Deployable< double, CommonAPI::EmptyDeployment> deploy_Steering(_Steering, static_cast< CommonAPI::EmptyDeployment* >(nullptr));
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+    CommonAPI::SomeIP::ProxyHelper<
+        CommonAPI::SomeIP::SerializableArguments<
+            CommonAPI::Deployable<
+                double,
+                CommonAPI::EmptyDeployment
+            >
+        >,
+        CommonAPI::SomeIP::SerializableArguments<
+            CommonAPI::Deployable<
+                std::string,
+                CommonAPI::SomeIP::StringDeployment
+            >
+        >
+    >::callMethodWithReply(
+        *this,
+        CommonAPI::SomeIP::method_id_t(0x66),
+        false,
+        false,
+        (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
+        deploy_Steering,
+        _internalCallStatus,
+        deploy_message);
+    _message = deploy_message.getValue();
+}
+
+std::future<CommonAPI::CallStatus> PiracerOperatorSomeIPProxy::setSteeringAsync(const double &_Steering, SetSteeringAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+    CommonAPI::Deployable< double, CommonAPI::EmptyDeployment> deploy_Steering(_Steering, static_cast< CommonAPI::EmptyDeployment* >(nullptr));
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+    return CommonAPI::SomeIP::ProxyHelper<
+        CommonAPI::SomeIP::SerializableArguments<
+            CommonAPI::Deployable<
+                double,
+                CommonAPI::EmptyDeployment
+            >
+        >,
+        CommonAPI::SomeIP::SerializableArguments<
+            CommonAPI::Deployable<
+                std::string,
+                CommonAPI::SomeIP::StringDeployment
+            >
+        >
+    >::callMethodAsync(
+        *this,
+        CommonAPI::SomeIP::method_id_t(0x66),
+        false,
+        false,
+        (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
+        deploy_Steering,
+        [_callback] (CommonAPI::CallStatus _internalCallStatus, CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment > _message) {
+            if (_callback)
+                _callback(_internalCallStatus, _message.getValue());
+        },
+        std::make_tuple(deploy_message));
+}
+
 void PiracerOperatorSomeIPProxy::getOwnVersion(uint16_t& ownVersionMajor, uint16_t& ownVersionMinor) const {
     ownVersionMajor = 1;
     ownVersionMinor = 0;

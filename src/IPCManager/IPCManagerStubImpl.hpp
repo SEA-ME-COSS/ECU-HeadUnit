@@ -33,8 +33,11 @@ public:
     // Define a function to set light status and relay it to other services, then reply to the caller.
     virtual void setLight(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _light, setLightReply_t _return);
 
+    // Define a function to set throttle and relay it to other services, then reply to the caller.
+    virtual void setThrottle(const std::shared_ptr<CommonAPI::ClientId> _client, double _throttle, setThrottleReply_t _return);
+
     // Define a function to set steering and relay it to other services, then reply to the caller.
-    virtual void setSteering(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _steering, setSteeringReply_t _return);
+    virtual void setSteering(const std::shared_ptr<CommonAPI::ClientId> _client, double _steering, setSteeringReply_t _return);
 };
 
 #endif

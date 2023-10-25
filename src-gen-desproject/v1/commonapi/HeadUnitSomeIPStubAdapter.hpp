@@ -63,9 +63,9 @@ public:
     
     CommonAPI::SomeIP::MethodWithReplyStubDispatcher<
         ::v1::commonapi::HeadUnitStub,
-        std::tuple< uint16_t>,
+        std::tuple< double>,
         std::tuple< std::string>,
-        std::tuple< CommonAPI::SomeIP::IntegerDeployment<uint16_t>>,
+        std::tuple< CommonAPI::EmptyDeployment>,
         std::tuple< CommonAPI::SomeIP::StringDeployment>
     > setSteeringStubDispatcher;
     
@@ -91,12 +91,12 @@ public:
             &HeadUnitStub::setSteering,
             false,
             _stub->hasElement(1),
-            std::make_tuple(static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr)),
+            std::make_tuple(static_cast< CommonAPI::EmptyDeployment* >(nullptr)),
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
         
     {
-        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x70) }, &setSensorRpmStubDispatcher );
-        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x71) }, &setSteeringStubDispatcher );
+        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x73) }, &setSensorRpmStubDispatcher );
+        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x74) }, &setSteeringStubDispatcher );
         // Provided events/fields
     }
 

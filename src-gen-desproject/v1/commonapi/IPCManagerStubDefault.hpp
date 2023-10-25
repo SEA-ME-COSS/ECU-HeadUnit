@@ -90,7 +90,13 @@ public:
         std::string message = "";
         _reply(message);
     }
-    COMMONAPI_EXPORT virtual void setSteering(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _Steering, setSteeringReply_t _reply) {
+    COMMONAPI_EXPORT virtual void setThrottle(const std::shared_ptr<CommonAPI::ClientId> _client, double _Throttle, setThrottleReply_t _reply) {
+        (void)_client;
+        (void)_Throttle;
+        std::string message = "";
+        _reply(message);
+    }
+    COMMONAPI_EXPORT virtual void setSteering(const std::shared_ptr<CommonAPI::ClientId> _client, double _Steering, setSteeringReply_t _reply) {
         (void)_client;
         (void)_Steering;
         std::string message = "";

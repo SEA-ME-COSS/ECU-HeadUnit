@@ -8,7 +8,7 @@
 class PiracerClass
 {
     private:
-        PyObject *pModule, *pClass, *pInstance, *pArgs; // Private Python objects and gearMode variable
+        PyObject *pModule, *pClass, *pInstance; // Private Python objects and gearMode variable
 
         uint16_t gearMode; // Private member variable to store gear mode
         
@@ -19,18 +19,12 @@ class PiracerClass
         // Method to set the gear mode
         void setGearMode(uint16_t _gearMode);
         
-        // Method to get the current gear mode
-        uint16_t getGearMode();
-        
         // Method to apply throttle to the PiRacer vehicle
         void applyThrottle(double throttle);
         
         // Method to apply steering to the PiRacer vehicle
         void applySteering(double steering);
 };
-
-// Declaration of the global PiracerClass object named "piracer"
-extern PiracerClass piracer;
 
 #endif
 

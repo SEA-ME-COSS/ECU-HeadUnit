@@ -89,6 +89,48 @@ public:
      * It will provide the same value for CallStatus as will be handed to the callback.
      */
     virtual std::future<CommonAPI::CallStatus> setGearModeAsync(const uint16_t &_GearMode, SetGearModeAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr);
+    /**
+     * Calls setThrottle with synchronous semantics.
+     *
+     * All const parameters are input parameters to this method.
+     * All non-const parameters will be filled with the returned values.
+     * The CallStatus will be filled when the method returns and indicate either
+     * "SUCCESS" or which type of error has occurred. In case of an error, ONLY the CallStatus
+     * will be set.
+     */
+    virtual void setThrottle(double _Throttle, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr);
+    /**
+     * Calls setThrottle with asynchronous semantics.
+     *
+     * The provided callback will be called when the reply to this call arrives or
+     * an error occurs during the call. The CallStatus will indicate either "SUCCESS"
+     * or which type of error has occurred. In case of any error, ONLY the CallStatus
+     * will have a defined value.
+     * The std::future returned by this method will be fulfilled at arrival of the reply.
+     * It will provide the same value for CallStatus as will be handed to the callback.
+     */
+    virtual std::future<CommonAPI::CallStatus> setThrottleAsync(const double &_Throttle, SetThrottleAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr);
+    /**
+     * Calls setSteering with synchronous semantics.
+     *
+     * All const parameters are input parameters to this method.
+     * All non-const parameters will be filled with the returned values.
+     * The CallStatus will be filled when the method returns and indicate either
+     * "SUCCESS" or which type of error has occurred. In case of an error, ONLY the CallStatus
+     * will be set.
+     */
+    virtual void setSteering(double _Steering, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr);
+    /**
+     * Calls setSteering with asynchronous semantics.
+     *
+     * The provided callback will be called when the reply to this call arrives or
+     * an error occurs during the call. The CallStatus will indicate either "SUCCESS"
+     * or which type of error has occurred. In case of any error, ONLY the CallStatus
+     * will have a defined value.
+     * The std::future returned by this method will be fulfilled at arrival of the reply.
+     * It will provide the same value for CallStatus as will be handed to the callback.
+     */
+    virtual std::future<CommonAPI::CallStatus> setSteeringAsync(const double &_Steering, SetSteeringAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr);
 
 
 
@@ -120,6 +162,24 @@ void PiracerOperatorProxy<_AttributeExtensions...>::setGearMode(uint16_t _GearMo
 template <typename ... _AttributeExtensions>
 std::future<CommonAPI::CallStatus> PiracerOperatorProxy<_AttributeExtensions...>::setGearModeAsync(const uint16_t &_GearMode, SetGearModeAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
     return delegate_->setGearModeAsync(_GearMode, _callback, _info);
+}
+template <typename ... _AttributeExtensions>
+void PiracerOperatorProxy<_AttributeExtensions...>::setThrottle(double _Throttle, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
+    delegate_->setThrottle(_Throttle, _internalCallStatus, _message, _info);
+}
+
+template <typename ... _AttributeExtensions>
+std::future<CommonAPI::CallStatus> PiracerOperatorProxy<_AttributeExtensions...>::setThrottleAsync(const double &_Throttle, SetThrottleAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+    return delegate_->setThrottleAsync(_Throttle, _callback, _info);
+}
+template <typename ... _AttributeExtensions>
+void PiracerOperatorProxy<_AttributeExtensions...>::setSteering(double _Steering, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
+    delegate_->setSteering(_Steering, _internalCallStatus, _message, _info);
+}
+
+template <typename ... _AttributeExtensions>
+std::future<CommonAPI::CallStatus> PiracerOperatorProxy<_AttributeExtensions...>::setSteeringAsync(const double &_Steering, SetSteeringAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+    return delegate_->setSteeringAsync(_Steering, _callback, _info);
 }
 
 template <typename ... _AttributeExtensions>

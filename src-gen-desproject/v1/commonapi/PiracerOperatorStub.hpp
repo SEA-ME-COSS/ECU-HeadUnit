@@ -89,16 +89,22 @@ class PiracerOperatorStub
 {
 public:
     typedef std::function<void (std::string _message)> setGearModeReply_t;
+    typedef std::function<void (std::string _message)> setThrottleReply_t;
+    typedef std::function<void (std::string _message)> setSteeringReply_t;
 
     virtual ~PiracerOperatorStub() {}
     void lockInterfaceVersionAttribute(bool _lockAccess) { static_cast<void>(_lockAccess); }
     bool hasElement(const uint32_t _id) const {
-        return (_id < 1);
+        return (_id < 3);
     }
     virtual const CommonAPI::Version& getInterfaceVersion(std::shared_ptr<CommonAPI::ClientId> _client) = 0;
 
     /// This is the method that will be called on remote calls on the method setGearMode.
     virtual void setGearMode(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _GearMode, setGearModeReply_t _reply) = 0;
+    /// This is the method that will be called on remote calls on the method setThrottle.
+    virtual void setThrottle(const std::shared_ptr<CommonAPI::ClientId> _client, double _Throttle, setThrottleReply_t _reply) = 0;
+    /// This is the method that will be called on remote calls on the method setSteering.
+    virtual void setSteering(const std::shared_ptr<CommonAPI::ClientId> _client, double _Steering, setSteeringReply_t _reply) = 0;
 
 
     using CommonAPI::Stub<PiracerOperatorStubAdapter, PiracerOperatorStubRemoteEvent>::initStubAdapter;

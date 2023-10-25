@@ -42,8 +42,8 @@ public:
 
     virtual void setSensorRpm(uint16_t _SensorRpm, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr) = 0;
     virtual std::future<CommonAPI::CallStatus> setSensorRpmAsync(const uint16_t &_SensorRpm, SetSensorRpmAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr) = 0;
-    virtual void setSteering(uint16_t _Steering, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr) = 0;
-    virtual std::future<CommonAPI::CallStatus> setSteeringAsync(const uint16_t &_Steering, SetSteeringAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr) = 0;
+    virtual void setSteering(double _Steering, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr) = 0;
+    virtual std::future<CommonAPI::CallStatus> setSteeringAsync(const double &_Steering, SetSteeringAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr) = 0;
 
     virtual std::future<void> getCompletionFuture() = 0;
 };

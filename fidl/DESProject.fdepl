@@ -30,6 +30,12 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.PiracerOpe
         method setGearMode {
                 SomeIpMethodID = 100
         }
+        method setThrottle {
+                SomeIpMethodID = 101
+        }
+        method setSteering {
+                SomeIpMethodID = 102
+        }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.PiracerOperator {
@@ -39,77 +45,91 @@ define org.genivi.commonapi.someip.deployment for provider as Service {
 }
 
 
-define org.genivi.commonapi.someip.deployment for interface commonapi.IPCManager {
+define org.genivi.commonapi.someip.deployment for interface commonapi.PiracerController {
         SomeIpServiceID = 1003
-
-        method setSensorRpm {
-                SomeIpMethodID = 101
-        }
-        method setBatteryLevel {
-                SomeIpMethodID = 102
-        }
-        method setGearMode {
-                SomeIpMethodID = 103
-        }
-        method setDirection {
-                SomeIpMethodID = 104
-        }
-        method setLight {
-                SomeIpMethodID = 105
-        }
-        method setSteering {
-                SomeIpMethodID = 106
-        }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
-        instance commonapi.IPCManager {
-                InstanceId = "IPCManager"
+        instance commonapi.PiracerController {
+                InstanceId = "PiracerController"
                 SomeIpInstanceID = 10003
         }
 }
 
 
-define org.genivi.commonapi.someip.deployment for interface commonapi.InstrumentCluster {
+define org.genivi.commonapi.someip.deployment for interface commonapi.IPCManager {
         SomeIpServiceID = 1004
 
-        method setSpeedRpm {
-                SomeIpMethodID = 107
+        method setSensorRpm {
+                SomeIpMethodID = 103
         }
-        method setBattery {
-                SomeIpMethodID = 108
+        method setBatteryLevel {
+                SomeIpMethodID = 104
         }
-        method setGear {
-                SomeIpMethodID = 109
+        method setGearMode {
+                SomeIpMethodID = 105
         }
         method setDirection {
-                SomeIpMethodID = 110
+                SomeIpMethodID = 106
         }
         method setLight {
-                SomeIpMethodID = 111
+                SomeIpMethodID = 107
+        }
+        method setThrottle {
+                SomeIpMethodID = 108
+        }
+        method setSteering {
+                SomeIpMethodID = 109
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
-        instance commonapi.InstrumentCluster {
-                InstanceId = "InstrumentCluster"
+        instance commonapi.IPCManager {
+                InstanceId = "IPCManager"
                 SomeIpInstanceID = 10004
         }
 }
 
 
-define org.genivi.commonapi.someip.deployment for interface commonapi.HeadUnit {
+define org.genivi.commonapi.someip.deployment for interface commonapi.InstrumentCluster {
         SomeIpServiceID = 1005
 
-        method setSensorRpm {
+        method setSpeedRpm {
+                SomeIpMethodID = 110
+        }
+        method setBattery {
+                SomeIpMethodID = 111
+        }
+        method setGear {
                 SomeIpMethodID = 112
         }
-        method setSteering {
+        method setDirection {
                 SomeIpMethodID = 113
+        }
+        method setLight {
+                SomeIpMethodID = 114
+        }
+}
+define org.genivi.commonapi.someip.deployment for provider as Service {
+        instance commonapi.InstrumentCluster {
+                InstanceId = "InstrumentCluster"
+                SomeIpInstanceID = 10005
+        }
+}
+
+
+define org.genivi.commonapi.someip.deployment for interface commonapi.HeadUnit {
+        SomeIpServiceID = 1006
+
+        method setSensorRpm {
+                SomeIpMethodID = 115
+        }
+        method setSteering {
+                SomeIpMethodID = 116
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.HeadUnit {
                 InstanceId = "HeadUnit"
-                SomeIpInstanceID = 10005
+                SomeIpInstanceID = 10006
         }
 }
 
