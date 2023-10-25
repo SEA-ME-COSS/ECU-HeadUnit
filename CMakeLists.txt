@@ -83,8 +83,8 @@ add_executable(PiracerSignal
         src/PiracerSignal/PiracerSignal.cpp
         src/PiracerSignal/PiracerSignalStubImpl.cpp
         src/PiracerSignal/ControllerClass.cpp
-        src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
-        src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
+        src-gen-desproject/v1/commonapi/HeadUnitSomeIPProxy.cpp
+        src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/PiracerSignalSomeIPStubAdapter.cpp
         src-gen-desproject/v1/commonapi/PiracerSignalSomeIPDeployment.cpp
 )
