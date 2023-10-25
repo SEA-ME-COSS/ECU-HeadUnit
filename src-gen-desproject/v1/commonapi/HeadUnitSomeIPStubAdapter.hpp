@@ -67,7 +67,7 @@ public:
         std::tuple< std::string>,
         std::tuple< CommonAPI::EmptyDeployment>,
         std::tuple< CommonAPI::SomeIP::StringDeployment>
-    > setSteeringStubDispatcher;
+    > setTurnSignalStubDispatcher;
     
     HeadUnitSomeIPStubAdapterInternal(
         const CommonAPI::SomeIP::Address &_address,
@@ -87,16 +87,16 @@ public:
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
         
         ,
-        setSteeringStubDispatcher(
-            &HeadUnitStub::setSteering,
+        setTurnSignalStubDispatcher(
+            &HeadUnitStub::setTurnSignal,
             false,
             _stub->hasElement(1),
             std::make_tuple(static_cast< CommonAPI::EmptyDeployment* >(nullptr)),
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
         
     {
-        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x70) }, &setSensorRpmStubDispatcher );
-        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x71) }, &setSteeringStubDispatcher );
+        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x71) }, &setSensorRpmStubDispatcher );
+        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x72) }, &setTurnSignalStubDispatcher );
         // Provided events/fields
     }
 

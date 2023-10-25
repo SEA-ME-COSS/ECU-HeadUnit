@@ -21,19 +21,19 @@ void HeadUnitStubImpl::setSensorRpm(const std::shared_ptr<CommonAPI::ClientId> _
     return;
 }
 
-// Set steering value
-void HeadUnitStubImpl::setSteering(const std::shared_ptr<CommonAPI::ClientId> _client, double _steering, setSteeringReply_t _reply)
+// Set turn signal value
+void HeadUnitStubImpl::setTurnSignal(const std::shared_ptr<CommonAPI::ClientId> _client, double _turnSignal, setTurnSignalReply_t _reply)
 {
     // Update the steering value in the 'carinfo' instance
-    if (_steering == 0.0) // straight
+    if (_turnSignal == 0.0) // straight
     {
         carinfo.setSteering((uint16_t)0);
     }
-    else if (_steering == -1.0) // left
+    else if (_turnSignal == -1.0) // left
     {
         carinfo.setSteering((uint16_t)1);
     }
-    else if (_steering == 1.0) // right
+    else if (_turnSignal == 1.0) // right
     {
         carinfo.setSteering((uint16_t)2);
     }

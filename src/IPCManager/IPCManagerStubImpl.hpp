@@ -40,6 +40,9 @@ public:
 
     // Define a function to set steering and relay it to other services, then reply to the caller.
     virtual void setSteering(const std::shared_ptr<CommonAPI::ClientId> _client, double _steering, setSteeringReply_t _return);
+    
+    // Define a function to set turn signal and relay it to other services, then reply to the caller.
+    virtual void setTurnSignal(const std::shared_ptr<CommonAPI::ClientId> _client, double _turnSignal, setTurnSignalReply_t _return);
 };
 
 #endif

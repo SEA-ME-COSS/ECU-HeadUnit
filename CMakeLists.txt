@@ -77,6 +77,17 @@ add_executable(PiracerController
 )
 target_link_libraries(PiracerController ${PYTHON_LIBRARIES} CommonAPI CommonAPI-SomeIP vsomeip3)
 
+add_executable(PiracerSignal
+        src/PiracerSignal/PiracerSignal.cpp
+        src/PiracerSignal/PiracerSignalStubImpl.cpp
+        src/PiracerSignal/ControllerClass.cpp
+        src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
+        src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
+        src-gen-desproject/v1/commonapi/PiracerSignalSomeIPStubAdapter.cpp
+        src-gen-desproject/v1/commonapi/PiracerSignalSomeIPDeployment.cpp
+)
+target_link_libraries(PiracerSignal ${PYTHON_LIBRARIES} CommonAPI CommonAPI-SomeIP vsomeip3)
+
 add_executable(IPCManager
         src/IPCManager/IPCManager.cpp
         src/IPCManager/IPCManagerStubImpl.cpp
@@ -88,6 +99,8 @@ add_executable(IPCManager
         src-gen-desproject/v1/commonapi/PiracerSenderSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/PiracerControllerSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/PiracerControllerSomeIPDeployment.cpp
+        src-gen-desproject/v1/commonapi/PiracerSignalSomeIPProxy.cpp
+        src-gen-desproject/v1/commonapi/PiracerSignalSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/HeadUnitSomeIPProxy.cpp

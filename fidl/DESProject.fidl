@@ -20,6 +20,12 @@ interface PiracerController {
 }
 
 
+// Define the 'PiracerSignal' interface.
+interface PiracerSignal {
+  version {major 1 minor 0} // Interface version information.
+}
+
+
 // Define the 'IPCManager' interface.
 interface IPCManager {
   version {major 1 minor 0} // Interface version information.
@@ -76,6 +82,14 @@ interface IPCManager {
   method setSteering {
     in {
       Double Steering // Input parameter: Steering of type Double.
+    }
+    out {
+      String message // Output parameter: message of type String.
+    }
+  }
+  method setTurnSignal {
+    in {
+      Double TurnSignal // Input parameter: Turn signal of type Double.
     }
     out {
       String message // Output parameter: message of type String.
@@ -145,9 +159,9 @@ interface HeadUnit {
       String message // Output parameter: message of type String.
     }
   }
-  method setSteering {
+  method setTurnSignal {
     in {
-      Double Steering // Input parameter: Steering of type Double.
+      Double TurnSignal // Input parameter: Turn signal of type Double.
     }
     out {
       String message // Output parameter: message of type String.

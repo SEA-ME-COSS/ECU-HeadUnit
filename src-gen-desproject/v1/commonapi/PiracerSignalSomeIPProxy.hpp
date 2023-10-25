@@ -7,10 +7,10 @@
  * If a copy of the MPL was not distributed with this file, You can obtain one at
  * http://mozilla.org/MPL/2.0/.
  */
-#ifndef V1_COMMONAPI_HEAD_UNIT_SOMEIP_PROXY_HPP_
-#define V1_COMMONAPI_HEAD_UNIT_SOMEIP_PROXY_HPP_
+#ifndef V1_COMMONAPI_PIRACER_SIGNAL_SOMEIP_PROXY_HPP_
+#define V1_COMMONAPI_PIRACER_SIGNAL_SOMEIP_PROXY_HPP_
 
-#include <v1/commonapi/HeadUnitProxyBase.hpp>
+#include <v1/commonapi/PiracerSignalProxyBase.hpp>
 
 #if !defined (COMMONAPI_INTERNAL_COMPILATION)
 #define COMMONAPI_INTERNAL_COMPILATION
@@ -43,23 +43,15 @@
 namespace v1 {
 namespace commonapi {
 
-class HeadUnitSomeIPProxy
-    : virtual public HeadUnitProxyBase,
+class PiracerSignalSomeIPProxy
+    : virtual public PiracerSignalProxyBase,
       virtual public CommonAPI::SomeIP::Proxy {
 public:
-    HeadUnitSomeIPProxy(
+    PiracerSignalSomeIPProxy(
         const CommonAPI::SomeIP::Address &_address,
         const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection);
 
-    virtual ~HeadUnitSomeIPProxy();
-
-    virtual void setSensorRpm(uint16_t _SensorRpm, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info);
-
-    virtual std::future<CommonAPI::CallStatus> setSensorRpmAsync(const uint16_t &_SensorRpm, SetSensorRpmAsyncCallback _callback, const CommonAPI::CallInfo *_info);
-
-    virtual void setTurnSignal(double _TurnSignal, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info);
-
-    virtual std::future<CommonAPI::CallStatus> setTurnSignalAsync(const double &_TurnSignal, SetTurnSignalAsyncCallback _callback, const CommonAPI::CallInfo *_info);
+    virtual ~PiracerSignalSomeIPProxy();
 
     virtual void getOwnVersion(uint16_t &_major, uint16_t &_minor) const;
 
@@ -73,4 +65,4 @@ private:
 } // namespace commonapi
 } // namespace v1
 
-#endif // V1_COMMONAPI_Head_Unit_SOMEIP_PROXY_HPP_
+#endif // V1_COMMONAPI_Piracer_Signal_SOMEIP_PROXY_HPP_

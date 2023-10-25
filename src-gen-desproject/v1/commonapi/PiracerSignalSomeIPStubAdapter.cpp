@@ -7,8 +7,8 @@
  * If a copy of the MPL was not distributed with this file, You can obtain one at
  * http://mozilla.org/MPL/2.0/.
  */
-#include <v1/commonapi/HeadUnitSomeIPStubAdapter.hpp>
-#include <v1/commonapi/HeadUnit.hpp>
+#include <v1/commonapi/PiracerSignalSomeIPStubAdapter.hpp>
+#include <v1/commonapi/PiracerSignal.hpp>
 
 #if !defined (COMMONAPI_INTERNAL_COMPILATION)
 #define COMMONAPI_INTERNAL_COMPILATION
@@ -25,24 +25,24 @@
 namespace v1 {
 namespace commonapi {
 
-std::shared_ptr<CommonAPI::SomeIP::StubAdapter> createHeadUnitSomeIPStubAdapter(
+std::shared_ptr<CommonAPI::SomeIP::StubAdapter> createPiracerSignalSomeIPStubAdapter(
                    const CommonAPI::SomeIP::Address &_address,
                    const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection,
                    const std::shared_ptr<CommonAPI::StubBase> &_stub) {
-    return std::make_shared< HeadUnitSomeIPStubAdapter<::v1::commonapi::HeadUnitStub>>(_address, _connection, _stub);
+    return std::make_shared< PiracerSignalSomeIPStubAdapter<::v1::commonapi::PiracerSignalStub>>(_address, _connection, _stub);
 }
 
-void initializeHeadUnitSomeIPStubAdapter() {
+void initializePiracerSignalSomeIPStubAdapter() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
-        "local:commonapi.HeadUnit:v1_0:HeadUnit",
-         0x3ee, 0x2716, 1, 0);
+        "local:commonapi.PiracerSignal:v1_0:PiracerSignal",
+         0x3eb, 0x2713, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerStubAdapterCreateMethod(
-        "commonapi.HeadUnit:v1_0",
-        &createHeadUnitSomeIPStubAdapter);
+        "commonapi.PiracerSignal:v1_0",
+        &createPiracerSignalSomeIPStubAdapter);
 }
 
-INITIALIZER(registerHeadUnitSomeIPStubAdapter) {
-    CommonAPI::SomeIP::Factory::get()->registerInterface(initializeHeadUnitSomeIPStubAdapter);
+INITIALIZER(registerPiracerSignalSomeIPStubAdapter) {
+    CommonAPI::SomeIP::Factory::get()->registerInterface(initializePiracerSignalSomeIPStubAdapter);
 }
 
 } // namespace commonapi

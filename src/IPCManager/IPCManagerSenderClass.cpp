@@ -16,6 +16,9 @@ IPCManagerSenderClass::IPCManagerSenderClass()
 
     PiracerControllerTargetProxy = runtime->buildProxy<PiracerControllerProxy>("local", "PiracerController");
     // Create a proxy for the PiracerController service
+    
+    PiracerSignalTargetProxy = runtime->buildProxy<PiracerSignalProxy>("local", "PiracerSignal");
+    // Create a proxy for the PiracerSignal service
 
     InstrumentClusterTargetProxy = runtime->buildProxy<InstrumentClusterProxy>("local", "InstrumentCluster");
     // Create a proxy for the InstrumentCluster service

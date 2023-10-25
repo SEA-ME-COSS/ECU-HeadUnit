@@ -7,13 +7,13 @@
 * If a copy of the MPL was not distributed with this file, You can obtain one at
 * http://mozilla.org/MPL/2.0/.
 */
-#ifndef V1_COMMONAPI_Head_Unit_STUB_DEFAULT_HPP_
-#define V1_COMMONAPI_Head_Unit_STUB_DEFAULT_HPP_
+#ifndef V1_COMMONAPI_Piracer_Signal_STUB_DEFAULT_HPP_
+#define V1_COMMONAPI_Piracer_Signal_STUB_DEFAULT_HPP_
 
 
 #include <CommonAPI/Export.hpp>
 
-#include <v1/commonapi/HeadUnitStub.hpp>
+#include <v1/commonapi/PiracerSignalStub.hpp>
 #include <cassert>
 #include <sstream>
 
@@ -33,8 +33,8 @@ namespace v1 {
 namespace commonapi {
 
 /**
- * Provides a default implementation for HeadUnitStubRemoteEvent and
- * HeadUnitStub. Method callbacks have an empty implementation,
+ * Provides a default implementation for PiracerSignalStubRemoteEvent and
+ * PiracerSignalStub. Method callbacks have an empty implementation,
  * remote set calls on attributes will always change the value of the attribute
  * to the one received.
  *
@@ -42,12 +42,12 @@ namespace commonapi {
  * that would be defined for this service, and/or if you do not need any non-default
  * behaviour.
  */
-class COMMONAPI_EXPORT_CLASS_EXPLICIT HeadUnitStubDefault
-    : public virtual HeadUnitStub {
+class COMMONAPI_EXPORT_CLASS_EXPLICIT PiracerSignalStubDefault
+    : public virtual PiracerSignalStub {
 public:
-    COMMONAPI_EXPORT HeadUnitStubDefault()
+    COMMONAPI_EXPORT PiracerSignalStubDefault()
         : remoteEventHandler_(this),
-          interfaceVersion_(HeadUnit::getInterfaceVersion()) {
+          interfaceVersion_(PiracerSignal::getInterfaceVersion()) {
     }
 
     COMMONAPI_EXPORT const CommonAPI::Version& getInterfaceVersion(std::shared_ptr<CommonAPI::ClientId> _client) {
@@ -55,39 +55,27 @@ public:
         return interfaceVersion_;
     }
 
-    COMMONAPI_EXPORT HeadUnitStubRemoteEvent* initStubAdapter(const std::shared_ptr< HeadUnitStubAdapter> &_adapter) {
-        CommonAPI::Stub<HeadUnitStubAdapter, HeadUnitStubRemoteEvent>::stubAdapter_ = _adapter;
+    COMMONAPI_EXPORT PiracerSignalStubRemoteEvent* initStubAdapter(const std::shared_ptr< PiracerSignalStubAdapter> &_adapter) {
+        CommonAPI::Stub<PiracerSignalStubAdapter, PiracerSignalStubRemoteEvent>::stubAdapter_ = _adapter;
         return &remoteEventHandler_;
     }
 
-    COMMONAPI_EXPORT virtual void setSensorRpm(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _SensorRpm, setSensorRpmReply_t _reply) {
-        (void)_client;
-        (void)_SensorRpm;
-        std::string message = "";
-        _reply(message);
-    }
-    COMMONAPI_EXPORT virtual void setTurnSignal(const std::shared_ptr<CommonAPI::ClientId> _client, double _TurnSignal, setTurnSignalReply_t _reply) {
-        (void)_client;
-        (void)_TurnSignal;
-        std::string message = "";
-        _reply(message);
-    }
 
 
 protected:
-    class COMMONAPI_EXPORT_CLASS_EXPLICIT RemoteEventHandler: public virtual HeadUnitStubRemoteEvent {
+    class COMMONAPI_EXPORT_CLASS_EXPLICIT RemoteEventHandler: public virtual PiracerSignalStubRemoteEvent {
     public:
-        COMMONAPI_EXPORT RemoteEventHandler(HeadUnitStubDefault *_defaultStub)
+        COMMONAPI_EXPORT RemoteEventHandler(PiracerSignalStubDefault *_defaultStub)
             : 
               defaultStub_(_defaultStub) {
         }
 
 
     private:
-        HeadUnitStubDefault *defaultStub_;
+        PiracerSignalStubDefault *defaultStub_;
     };
 protected:
-    HeadUnitStubDefault::RemoteEventHandler remoteEventHandler_;
+    PiracerSignalStubDefault::RemoteEventHandler remoteEventHandler_;
 
 private:
 
@@ -102,4 +90,4 @@ private:
 // Compatibility
 namespace v1_0 = v1;
 
-#endif // V1_COMMONAPI_Head_Unit_STUB_DEFAULT
+#endif // V1_COMMONAPI_Piracer_Signal_STUB_DEFAULT

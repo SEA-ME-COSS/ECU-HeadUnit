@@ -33,7 +33,7 @@ std::shared_ptr<CommonAPI::SomeIP::Proxy> createHeadUnitSomeIPProxy(
 void initializeHeadUnitSomeIPProxy() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
         "local:commonapi.HeadUnit:v1_0:HeadUnit",
-        0x3ed, 0x2715, 1, 0);
+        0x3ee, 0x2716, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerProxyCreateMethod(
         "commonapi.HeadUnit:v1_0",
         &createHeadUnitSomeIPProxy);
@@ -74,7 +74,7 @@ void HeadUnitSomeIPProxy::setSensorRpm(uint16_t _SensorRpm, CommonAPI::CallStatu
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x70),
+        CommonAPI::SomeIP::method_id_t(0x71),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -102,7 +102,7 @@ std::future<CommonAPI::CallStatus> HeadUnitSomeIPProxy::setSensorRpmAsync(const 
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x70),
+        CommonAPI::SomeIP::method_id_t(0x71),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -114,8 +114,8 @@ std::future<CommonAPI::CallStatus> HeadUnitSomeIPProxy::setSensorRpmAsync(const 
         std::make_tuple(deploy_message));
 }
 
-void HeadUnitSomeIPProxy::setSteering(double _Steering, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
-    CommonAPI::Deployable< double, CommonAPI::EmptyDeployment> deploy_Steering(_Steering, static_cast< CommonAPI::EmptyDeployment* >(nullptr));
+void HeadUnitSomeIPProxy::setTurnSignal(double _TurnSignal, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
+    CommonAPI::Deployable< double, CommonAPI::EmptyDeployment> deploy_TurnSignal(_TurnSignal, static_cast< CommonAPI::EmptyDeployment* >(nullptr));
     CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
     CommonAPI::SomeIP::ProxyHelper<
         CommonAPI::SomeIP::SerializableArguments<
@@ -132,18 +132,18 @@ void HeadUnitSomeIPProxy::setSteering(double _Steering, CommonAPI::CallStatus &_
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x71),
+        CommonAPI::SomeIP::method_id_t(0x72),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
-        deploy_Steering,
+        deploy_TurnSignal,
         _internalCallStatus,
         deploy_message);
     _message = deploy_message.getValue();
 }
 
-std::future<CommonAPI::CallStatus> HeadUnitSomeIPProxy::setSteeringAsync(const double &_Steering, SetSteeringAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
-    CommonAPI::Deployable< double, CommonAPI::EmptyDeployment> deploy_Steering(_Steering, static_cast< CommonAPI::EmptyDeployment* >(nullptr));
+std::future<CommonAPI::CallStatus> HeadUnitSomeIPProxy::setTurnSignalAsync(const double &_TurnSignal, SetTurnSignalAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+    CommonAPI::Deployable< double, CommonAPI::EmptyDeployment> deploy_TurnSignal(_TurnSignal, static_cast< CommonAPI::EmptyDeployment* >(nullptr));
     CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
     return CommonAPI::SomeIP::ProxyHelper<
         CommonAPI::SomeIP::SerializableArguments<
@@ -160,11 +160,11 @@ std::future<CommonAPI::CallStatus> HeadUnitSomeIPProxy::setSteeringAsync(const d
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x71),
+        CommonAPI::SomeIP::method_id_t(0x72),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
-        deploy_Steering,
+        deploy_TurnSignal,
         [_callback] (CommonAPI::CallStatus _internalCallStatus, CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment > _message) {
             if (_callback)
                 _callback(_internalCallStatus, _message.getValue());
