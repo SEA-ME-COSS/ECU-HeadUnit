@@ -75,6 +75,8 @@ void IPCManagerStubImpl::setThrottle(const std::shared_ptr<CommonAPI::ClientId> 
 {
     // Apply throttle to piracer
     piracer.applyThrottle(_throttle);
+    
+    
 
     // Reply to the caller
     _reply("");
@@ -87,6 +89,8 @@ void IPCManagerStubImpl::setSteering(const std::shared_ptr<CommonAPI::ClientId> 
 {
     // Apply steering to piracer
     piracer.applySteering(_steering);
+    
+    sender.HeadUnitTargetProxy->setSteering(_steering, sender.callStatus, sender.returnMessage);
     
     // Reply to the caller
     _reply("");
