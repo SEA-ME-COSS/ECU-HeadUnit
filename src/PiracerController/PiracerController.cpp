@@ -25,18 +25,15 @@ int main()
 
     CommonAPI::CallStatus callStatus;
     std::string returnMessage;
-    double throttle, steering;
 
     while (1)
     {
         // Read control input from the game controller
         controller.readControl();
-        throttle = controller.getThrottle();
-        steering = controller.getSteering();
 
 	// Send control data to IPCManager
-        IPCManagertargetProxy->setThrottle(throttle, callStatus, returnMessage);
-	IPCManagertargetProxy->setSteering(steering, callStatus, returnMessage);
+        IPCManagertargetProxy->setThrottle(controller.getThrottle(), callStatus, returnMessage);
+	IPCManagertargetProxy->setSteering(controller.getSteering(), callStatus, returnMessage);
     }
 
     return 0;
