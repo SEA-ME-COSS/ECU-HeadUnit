@@ -1,5 +1,4 @@
 #include "HeadUnitQtClass.hpp"
-#include <unistd.h>
 
 // Constructor for HeadUnitQtClass
 HeadUnitQtClass::HeadUnitQtClass(QObject *parent) : QObject(parent)
@@ -7,6 +6,9 @@ HeadUnitQtClass::HeadUnitQtClass(QObject *parent) : QObject(parent)
     // Initialize sensorRpm and steering to 0
     QsensorRpm = 0;
     Qsteering = 0;
+    Qgear = 0;
+    Qdirection = 0;
+    Qlight = QString::fromStdString("#808080")
 }
 
 // Getter for sensorRpm
@@ -19,6 +21,24 @@ quint16 HeadUnitQtClass::sensorRpm() const
 quint16 HeadUnitQtClass::steering() const
 {
     return Qsteering;
+}
+
+// Getter for gear
+quint16 HeadUnitQtClass::gear() const
+{
+    return Qgear;
+}
+
+// Getter for direction
+quint16 HeadUnitQtClass::direction() const
+{
+    return Qdirection;
+}
+
+// Getter for light
+QString HeadUnitQtClass::light() const
+{
+    return Qlight;
 }
 
 // Setter for sensorRpm
@@ -35,6 +55,30 @@ void HeadUnitQtClass::setSteering(uint16_t _steering)
     Qsteering = _steering;
     // Emit the signal to notify changes to QML
     emit steeringChanged();
+}
+
+// Setter for gear
+void HeadUnitQtClass::setGear(uint16_t _gear)
+{
+    Qgear = _gear;
+    // Emit the signal to notify changes to QML
+    emit gearChanged();
+}
+
+// Setter for direction
+void HeadUnitQtClass::setDirection(uint16_t _direction)
+{
+    Qdirection = _direction;
+    // Emit the signal to notify changes to QML
+    emit directionChanged();
+}
+
+// Setter for steering
+void HeadUnitQtClass::setLight(QString _light)
+{
+    Qlight = _light;
+    // Emit the signal to notify changes to QML
+    emit lightChanged();
 }
 
 // QML-invokable method to set the gear using IPCManagerTargetProxy

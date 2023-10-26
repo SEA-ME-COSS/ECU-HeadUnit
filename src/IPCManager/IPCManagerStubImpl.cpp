@@ -105,6 +105,7 @@ void IPCManagerStubImpl::getGearMode(const std::shared_ptr<CommonAPI::ClientId> 
 {    
     // Reply to the caller
     sender.InstrumentClusterTargetProxy->setGear(piracer.getGearMode(), sender.callStatus, sender.returnMessage);
+    sender.HeadUnitTargetProxy->setGear(piracer.getGearMode(), sender.callStatus, sender.returnMessage);
 
     // Reply to the caller
     _reply("");
@@ -117,6 +118,7 @@ void IPCManagerStubImpl::getDirection(const std::shared_ptr<CommonAPI::ClientId>
 {    
     // Reply to the caller
     sender.InstrumentClusterTargetProxy->setDirection(piracer.getDirection(), sender.callStatus, sender.returnMessage);
+    sender.HeadUnitTargetProxy->setDirection(piracer.getDirection(), sender.callStatus, sender.returnMessage);
 
     // Reply to the caller
     _reply("");
@@ -129,6 +131,7 @@ void IPCManagerStubImpl::getLight(const std::shared_ptr<CommonAPI::ClientId> _cl
 {    
     // Reply to the caller
     sender.InstrumentClusterTargetProxy->setLight(piracer.getLight(), sender.callStatus, sender.returnMessage);
+    sender.HeadUnitTargetProxy->setLight(piracer.getLight(), sender.callStatus, sender.returnMessage);
 
     // Reply to the caller
     _reply("");

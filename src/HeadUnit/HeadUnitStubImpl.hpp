@@ -21,6 +21,15 @@ public:
 
     // Override the setTurnSignal function to handle turn signal value updates
     virtual void setTurnSignal(const std::shared_ptr<CommonAPI::ClientId> _client, double _turnSignal, setTurnSignalReply_t _return);
+    
+    // Handle a request to update the gear mode of the Head Unit
+    virtual void setGear(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _gear, setGearReply_t _return);
+    
+    // Handle a request to update the direction indicator of the Head Unit
+    virtual void setDirection(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _direction, setDirectionReply_t _return);
+    
+    // Handle a request to update the light color of the Head Unit
+    virtual void setLight(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _light, setLightReply_t _return);
 };
 
 #endif

@@ -177,6 +177,30 @@ interface HeadUnit {
       String message // Output parameter: message of type String.
     }
   }
+  method setGear {
+    in {
+      UInt16 Gear // Input parameter: Gear of type UInt16.
+    }
+    out {
+      String message // Output parameter: message of type String.
+    }
+  }
+  method setDirection {
+    in {
+      UInt16 Direction // Input parameter: Direction of type UInt16.
+    }
+    out {
+      String message // Output parameter: message of type String.
+    }
+  }
+  method setLight {
+    in {
+      String Light // Input parameter: Light of type String.
+    }
+    out {
+      String message // Output parameter: message of type String.
+    }
+  }
 }
 
 

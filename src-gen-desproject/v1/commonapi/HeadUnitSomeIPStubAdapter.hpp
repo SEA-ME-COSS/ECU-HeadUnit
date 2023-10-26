@@ -69,6 +69,30 @@ public:
         std::tuple< CommonAPI::SomeIP::StringDeployment>
     > setTurnSignalStubDispatcher;
     
+    CommonAPI::SomeIP::MethodWithReplyStubDispatcher<
+        ::v1::commonapi::HeadUnitStub,
+        std::tuple< uint16_t>,
+        std::tuple< std::string>,
+        std::tuple< CommonAPI::SomeIP::IntegerDeployment<uint16_t>>,
+        std::tuple< CommonAPI::SomeIP::StringDeployment>
+    > setGearStubDispatcher;
+    
+    CommonAPI::SomeIP::MethodWithReplyStubDispatcher<
+        ::v1::commonapi::HeadUnitStub,
+        std::tuple< uint16_t>,
+        std::tuple< std::string>,
+        std::tuple< CommonAPI::SomeIP::IntegerDeployment<uint16_t>>,
+        std::tuple< CommonAPI::SomeIP::StringDeployment>
+    > setDirectionStubDispatcher;
+    
+    CommonAPI::SomeIP::MethodWithReplyStubDispatcher<
+        ::v1::commonapi::HeadUnitStub,
+        std::tuple< std::string>,
+        std::tuple< std::string>,
+        std::tuple< CommonAPI::SomeIP::StringDeployment>,
+        std::tuple< CommonAPI::SomeIP::StringDeployment>
+    > setLightStubDispatcher;
+    
     HeadUnitSomeIPStubAdapterInternal(
         const CommonAPI::SomeIP::Address &_address,
         const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection,
@@ -94,9 +118,36 @@ public:
             std::make_tuple(static_cast< CommonAPI::EmptyDeployment* >(nullptr)),
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
         
+        ,
+        setGearStubDispatcher(
+            &HeadUnitStub::setGear,
+            false,
+            _stub->hasElement(2),
+            std::make_tuple(static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr)),
+            std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
+        
+        ,
+        setDirectionStubDispatcher(
+            &HeadUnitStub::setDirection,
+            false,
+            _stub->hasElement(3),
+            std::make_tuple(static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr)),
+            std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
+        
+        ,
+        setLightStubDispatcher(
+            &HeadUnitStub::setLight,
+            false,
+            _stub->hasElement(4),
+            std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)),
+            std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
+        
     {
         HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x73) }, &setSensorRpmStubDispatcher );
         HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x74) }, &setTurnSignalStubDispatcher );
+        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x75) }, &setGearStubDispatcher );
+        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x76) }, &setDirectionStubDispatcher );
+        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x77) }, &setLightStubDispatcher );
         // Provided events/fields
     }
 

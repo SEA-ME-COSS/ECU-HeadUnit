@@ -113,6 +113,15 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.HeadUnit {
         method setTurnSignal {
                 SomeIpMethodID = 116
         }
+        method setGear {
+                SomeIpMethodID = 117
+        }
+        method setDirection {
+                SomeIpMethodID = 118
+        }
+        method setLight {
+                SomeIpMethodID = 119
+        }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.HeadUnit {
