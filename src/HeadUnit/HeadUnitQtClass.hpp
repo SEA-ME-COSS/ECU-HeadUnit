@@ -42,9 +42,9 @@ public:
     void setLight(QString _light);
 
 public Q_SLOTS:
-    Q_INVOKABLE void setGear(quint16 _gear);          // QML-invokable method to set gear
-    Q_INVOKABLE void setDirection(quint16 _direction);  // QML-invokable method to set direction
-    Q_INVOKABLE void setLight(QString _light);         // QML-invokable method to set light
+    Q_INVOKABLE void setIPCManagerGear(quint16 _gear);          // QML-invokable method to set gear
+    Q_INVOKABLE void setIPCManagerDirection(quint16 _direction);  // QML-invokable method to set direction
+    Q_INVOKABLE void setIPCManagerLight(QString _light);         // QML-invokable method to set light
     Q_INVOKABLE void poweroff();                       // QML-invokable method to power off the system
 
 signals:

@@ -82,19 +82,19 @@ void HeadUnitQtClass::setLight(QString _light)
 }
 
 // QML-invokable method to set the gear using IPCManagerTargetProxy
-Q_INVOKABLE void HeadUnitQtClass::setGear(quint16 _gear)
+Q_INVOKABLE void HeadUnitQtClass::setIPCManagerGear(quint16 _gear)
 {
     sender.IPCManagerTargetProxy->setGearMode(_gear, sender.callStatus, sender.returnMessage);
 }
 
 // QML-invokable method to set the direction using IPCManagerTargetProxy
-Q_INVOKABLE void HeadUnitQtClass::setDirection(quint16 _direction)
+Q_INVOKABLE void HeadUnitQtClass::setIPCManagerDirection(quint16 _direction)
 {
     sender.IPCManagerTargetProxy->setDirection(_direction, sender.callStatus, sender.returnMessage);
 }
 
 // QML-invokable method to set the light using IPCManagerTargetProxy
-Q_INVOKABLE void HeadUnitQtClass::setLight(QString _light)
+Q_INVOKABLE void HeadUnitQtClass::setIPCManagerLight(QString _light)
 {
     sender.IPCManagerTargetProxy->setLight(_light.toStdString(), sender.callStatus, sender.returnMessage);
 }
