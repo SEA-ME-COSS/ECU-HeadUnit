@@ -17,7 +17,7 @@ InstrumentClusterStubImpl::InstrumentClusterStubImpl()
     // Update the light color property in the carinfo object.
     carinfo.setLight(QString::fromStdString(sender.returnLight));
     
-    std:cout<<sender.returnGearMode<<' '<<sender.returnDirection<<' '<<sender.returnLight<<std::endl;
+    std::cout<<sender.returnGearMode<<' '<<sender.returnDirection<<' '<<sender.returnLight<<std::endl;
     
     std::cout<<"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo"<<std::endl;
 }
