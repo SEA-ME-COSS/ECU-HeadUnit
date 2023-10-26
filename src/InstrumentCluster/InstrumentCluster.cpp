@@ -4,6 +4,7 @@
 
 #include "InstrumentClusterStubImpl.hpp"    // Include the InstrumentClusterStubImpl class.
 #include "InstrumentClusterQtClass.hpp"     // Include the InstrumentClusterQtClass, which provides Qt integration.
+#include "InstrumentClusterSenderClass.hpp" // Include the InstrumentClusterSenderClass class.
 
 using namespace v1_0::commonapi; // Use the commonapi namespace.
 
@@ -35,6 +36,11 @@ int main(int argc, char *argv[])
     }, Qt::QueuedConnection);
 
     engine.load(url);  // Load the QML interface from the specified URL.
+    
+    InstrumentClusterSenderClass sender;
+    sender.IPCManagerTargetProxy->getGearMode("", sender.callStatus, sender.returnMessage);
+    sender.IPCManagerTargetProxy->getDirection("", sender.callStatus, sender.returnMessage);
+    sender.IPCManagerTargetProxy->getLight("", sender.callStatus, sender.returnMessage);
 
     return app.exec();  // Start the application event loop and return the exit code.
 }

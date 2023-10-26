@@ -1,11 +1,6 @@
 #include "InstrumentClusterStubImpl.hpp"
 
-InstrumentClusterStubImpl::InstrumentClusterStubImpl()
-{
-    sender.IPCManagerTargetProxy->getGearMode("", sender.callStatus, sender.returnMessage);
-    sender.IPCManagerTargetProxy->getDirection("", sender.callStatus, sender.returnMessage);
-    sender.IPCManagerTargetProxy->getLight("", sender.callStatus, sender.returnMessage);
-}
+InstrumentClusterStubImpl::InstrumentClusterStubImpl() { }
 
 InstrumentClusterStubImpl::~InstrumentClusterStubImpl() { }
 
