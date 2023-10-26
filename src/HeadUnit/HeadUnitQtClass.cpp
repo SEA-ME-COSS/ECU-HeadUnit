@@ -46,13 +46,7 @@ Q_INVOKABLE void HeadUnitQtClass::setGear(quint16 _gear)
 // QML-invokable method to set the direction using IPCManagerTargetProxy
 Q_INVOKABLE void HeadUnitQtClass::setDirection(quint16 _direction)
 {
-    uint16_t temp = 0;
-    while (1)
-    {
-        sender.IPCManagerTargetProxy->setDirection(temp, sender.callStatus, sender.returnMessage);
-        temp = (temp + 1) % 4;
-        usleep(2000000);
-    }
+    sender.IPCManagerTargetProxy->setDirection(_direction, sender.callStatus, sender.returnMessage);
 }
 
 // QML-invokable method to set the light using IPCManagerTargetProxy
