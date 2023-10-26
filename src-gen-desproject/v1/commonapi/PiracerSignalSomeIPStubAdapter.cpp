@@ -35,7 +35,7 @@ std::shared_ptr<CommonAPI::SomeIP::StubAdapter> createPiracerSignalSomeIPStubAda
 void initializePiracerSignalSomeIPStubAdapter() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
         "local:commonapi.PiracerSignal:v1_0:PiracerSignal",
-         0x3eb, 0x2713, 1, 0);
+         0x3ee, 0x2716, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerStubAdapterCreateMethod(
         "commonapi.PiracerSignal:v1_0",
         &createPiracerSignalSomeIPStubAdapter);

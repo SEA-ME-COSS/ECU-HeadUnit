@@ -14,7 +14,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-#set(CMAKE_PREFIX_PATH "/opt/Qt/5.15.0/gcc_64")
+set(CMAKE_PREFIX_PATH "/opt/Qt/5.15.0/gcc_64")
 
 # Append C++ compiler flags, including -pthread and -std=c++0x
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -std=c++0x")
@@ -43,7 +43,7 @@ link_directories(
 )
 
 
-# Create executables and link libraries for the CANSender, PiracerSender, PiracerController, IPCManager, InstrumentCluster, and HeadUnit targets
+# Create executables and link libraries for the CANSender, PiracerSender, PiracerController, IPCManager, InstrumentCluster, HeadUnit and PiracerSignal targets
 add_executable(CANSender
         src/CANSender/CANSender.cpp
         src/CANSender/ReadCANThread.c
@@ -79,17 +79,6 @@ add_executable(PiracerController
 )
 target_link_libraries(PiracerController ${PYTHON_LIBRARIES} CommonAPI CommonAPI-SomeIP vsomeip3)
 
-add_executable(PiracerSignal
-        src/PiracerSignal/PiracerSignal.cpp
-        src/PiracerSignal/PiracerSignalStubImpl.cpp
-        src/PiracerSignal/ControllerClass.cpp
-        src-gen-desproject/v1/commonapi/HeadUnitSomeIPProxy.cpp
-        src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp
-        src-gen-desproject/v1/commonapi/PiracerSignalSomeIPStubAdapter.cpp
-        src-gen-desproject/v1/commonapi/PiracerSignalSomeIPDeployment.cpp
-)
-target_link_libraries(PiracerSignal ${PYTHON_LIBRARIES} CommonAPI CommonAPI-SomeIP vsomeip3)
-
 add_executable(IPCManager
         src/IPCManager/IPCManager.cpp
         src/IPCManager/IPCManagerStubImpl.cpp
@@ -101,12 +90,12 @@ add_executable(IPCManager
         src-gen-desproject/v1/commonapi/PiracerSenderSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/PiracerControllerSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/PiracerControllerSomeIPDeployment.cpp
-        src-gen-desproject/v1/commonapi/PiracerSignalSomeIPProxy.cpp
-        src-gen-desproject/v1/commonapi/PiracerSignalSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/HeadUnitSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp
+        src-gen-desproject/v1/commonapi/PiracerSignalSomeIPProxy.cpp
+        src-gen-desproject/v1/commonapi/PiracerSignalSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAdapter.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
 )
@@ -141,3 +130,13 @@ PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(HeadUnit
 PRIVATE Qt5::Core Qt5::Quick Qt5::Gui Qt5::Multimedia CommonAPI CommonAPI-SomeIP vsomeip3)
 
+add_executable(PiracerSignal
+        src/PiracerSignal/PiracerSignal.cpp
+        src/PiracerSignal/PiracerSignalStubImpl.cpp
+        src/PiracerSignal/ControllerClass.cpp
+        src-gen-desproject/v1/commonapi/HeadUnitSomeIPProxy.cpp
+        src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp
+        src-gen-desproject/v1/commonapi/PiracerSignalSomeIPStubAdapter.cpp
+        src-gen-desproject/v1/commonapi/PiracerSignalSomeIPDeployment.cpp
+)
+target_link_libraries(PiracerSignal ${PYTHON_LIBRARIES} CommonAPI CommonAPI-SomeIP vsomeip3)

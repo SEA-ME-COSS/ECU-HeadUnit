@@ -36,7 +36,7 @@ void PiracerClass::applyThrottle(double throttle)
         case 1: // R (Reverse)
 	    if (throttle <= 0)
 	    {
-	        PyObject_CallMethod(pInstance, "set_throttle_percent", "(f)", throttle * 0.5); // Call the Python method "set_throttle_percent" with the throttle value
+	        PyObject_CallMethod(pInstance, "set_throttle_percent", "(f)", throttle * 0.7); // Call the Python method "set_throttle_percent" with the throttle value
 	    }
 	    else
 	    {

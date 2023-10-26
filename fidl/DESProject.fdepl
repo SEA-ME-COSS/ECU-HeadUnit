@@ -35,19 +35,8 @@ define org.genivi.commonapi.someip.deployment for provider as Service {
 }
 
 
-define org.genivi.commonapi.someip.deployment for interface commonapi.PiracerSignal {
-        SomeIpServiceID = 1003
-}
-define org.genivi.commonapi.someip.deployment for provider as Service {
-        instance commonapi.PiracerSignal {
-                InstanceId = "PiracerSignal"
-                SomeIpInstanceID = 10003
-        }
-}
-
-
 define org.genivi.commonapi.someip.deployment for interface commonapi.IPCManager {
-        SomeIpServiceID = 1004
+        SomeIpServiceID = 1003
 
         method setSensorRpm {
                 SomeIpMethodID = 100
@@ -70,58 +59,66 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.IPCManager
         method setSteering {
                 SomeIpMethodID = 106
         }
-        method setTurnSignal {
-                SomeIpMethodID = 107
-        }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.IPCManager {
                 InstanceId = "IPCManager"
-                SomeIpInstanceID = 10004
+                SomeIpInstanceID = 10003
         }
 }
 
 
 define org.genivi.commonapi.someip.deployment for interface commonapi.InstrumentCluster {
-        SomeIpServiceID = 1005
+        SomeIpServiceID = 1004
 
         method setSpeedRpm {
-                SomeIpMethodID = 108
+                SomeIpMethodID = 107
         }
         method setBattery {
-                SomeIpMethodID = 109
+                SomeIpMethodID = 108
         }
         method setGear {
-                SomeIpMethodID = 110
+                SomeIpMethodID = 109
         }
         method setDirection {
-                SomeIpMethodID = 111
+                SomeIpMethodID = 110
         }
         method setLight {
-                SomeIpMethodID = 112
+                SomeIpMethodID = 111
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.InstrumentCluster {
                 InstanceId = "InstrumentCluster"
-                SomeIpInstanceID = 10005
+                SomeIpInstanceID = 10004
         }
 }
 
 
 define org.genivi.commonapi.someip.deployment for interface commonapi.HeadUnit {
-        SomeIpServiceID = 1006
+        SomeIpServiceID = 1005
 
         method setSensorRpm {
-                SomeIpMethodID = 113
+                SomeIpMethodID = 112
         }
         method setTurnSignal {
-                SomeIpMethodID = 114
+                SomeIpMethodID = 113
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.HeadUnit {
                 InstanceId = "HeadUnit"
+                SomeIpInstanceID = 10005
+        }
+}
+
+
+define org.genivi.commonapi.someip.deployment for interface commonapi.PiracerSignal {
+        SomeIpServiceID = 1006
+}
+define org.genivi.commonapi.someip.deployment for provider as Service {
+        instance commonapi.PiracerSignal {
+                InstanceId = "PiracerSignal"
                 SomeIpInstanceID = 10006
         }
 }

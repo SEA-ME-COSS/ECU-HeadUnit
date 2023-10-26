@@ -6,9 +6,9 @@
 #include <v1/commonapi/CANSenderProxy.hpp>
 #include <v1/commonapi/PiracerSenderProxy.hpp>
 #include <v1/commonapi/PiracerControllerProxy.hpp>
-#include <v1/commonapi/PiracerSignalProxy.hpp>
 #include <v1/commonapi/InstrumentClusterProxy.hpp>
 #include <v1/commonapi/HeadUnitProxy.hpp>
+#include <v1/commonapi/PiracerSignalProxy.hpp>
 
 using namespace v1_0::commonapi;  // Use the v1_0::commonapi namespace
 
@@ -23,9 +23,9 @@ public:
     std::shared_ptr<CANSenderProxy<>> CANSenderTargetProxy;
     std::shared_ptr<PiracerSenderProxy<>> PiracerSenderTargetProxy;
     std::shared_ptr<PiracerControllerProxy<>> PiracerControllerTargetProxy;
-    std::shared_ptr<PiracerSignalProxy<>> PiracerSignalTargetProxy;
     std::shared_ptr<InstrumentClusterProxy<>> InstrumentClusterTargetProxy;
     std::shared_ptr<HeadUnitProxy<>> HeadUnitTargetProxy;
+    std::shared_ptr<PiracerSignalProxy<>> PiracerSignalTargetProxy;
 
     CommonAPI::CallStatus callStatus;
     std::string returnMessage;

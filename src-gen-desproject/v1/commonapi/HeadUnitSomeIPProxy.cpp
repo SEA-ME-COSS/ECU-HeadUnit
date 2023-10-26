@@ -33,7 +33,7 @@ std::shared_ptr<CommonAPI::SomeIP::Proxy> createHeadUnitSomeIPProxy(
 void initializeHeadUnitSomeIPProxy() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
         "local:commonapi.HeadUnit:v1_0:HeadUnit",
-        0x3ee, 0x2716, 1, 0);
+        0x3ed, 0x2715, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerProxyCreateMethod(
         "commonapi.HeadUnit:v1_0",
         &createHeadUnitSomeIPProxy);
@@ -74,7 +74,7 @@ void HeadUnitSomeIPProxy::setSensorRpm(uint16_t _SensorRpm, CommonAPI::CallStatu
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x71),
+        CommonAPI::SomeIP::method_id_t(0x70),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -102,7 +102,7 @@ std::future<CommonAPI::CallStatus> HeadUnitSomeIPProxy::setSensorRpmAsync(const 
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x71),
+        CommonAPI::SomeIP::method_id_t(0x70),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -132,7 +132,7 @@ void HeadUnitSomeIPProxy::setTurnSignal(double _TurnSignal, CommonAPI::CallStatu
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x72),
+        CommonAPI::SomeIP::method_id_t(0x71),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -160,7 +160,7 @@ std::future<CommonAPI::CallStatus> HeadUnitSomeIPProxy::setTurnSignalAsync(const
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x72),
+        CommonAPI::SomeIP::method_id_t(0x71),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),

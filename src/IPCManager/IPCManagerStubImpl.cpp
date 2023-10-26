@@ -94,15 +94,3 @@ void IPCManagerStubImpl::setSteering(const std::shared_ptr<CommonAPI::ClientId> 
     return;
 }
 
-// Set turn signal
-void IPCManagerStubImpl::setTurnSignal(const std::shared_ptr<CommonAPI::ClientId> _client, double _turnSignal, setTurnSignalReply_t _reply)
-{
-    // Relay turn signal to the HeadUnit service
-    sender.HeadUnitTargetProxy->setTurnSignal(_turnSignal, sender.callStatus, sender.returnMessage);
-    
-    // Reply to the caller
-    _reply("");
-
-    return;
-}
-

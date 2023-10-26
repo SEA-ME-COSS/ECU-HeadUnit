@@ -35,7 +35,7 @@ std::shared_ptr<CommonAPI::SomeIP::StubAdapter> createInstrumentClusterSomeIPStu
 void initializeInstrumentClusterSomeIPStubAdapter() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
         "local:commonapi.InstrumentCluster:v1_0:InstrumentCluster",
-         0x3ed, 0x2715, 1, 0);
+         0x3ec, 0x2714, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerStubAdapterCreateMethod(
         "commonapi.InstrumentCluster:v1_0",
         &createInstrumentClusterSomeIPStubAdapter);
