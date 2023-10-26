@@ -1,4 +1,5 @@
 #include "IPCManagerStubImpl.hpp"
+#include <iostream>
 
 // Constructor for IPCManagerStubImpl
 IPCManagerStubImpl::IPCManagerStubImpl() { }
@@ -104,6 +105,7 @@ void IPCManagerStubImpl::setSteering(const std::shared_ptr<CommonAPI::ClientId> 
 void IPCManagerStubImpl::getGearMode(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _input, getGearModeReply_t _reply)
 {    
     // Reply to the caller
+    std::cout<<piracer.getGearMode()<<std::endl;
     _reply(piracer.getGearMode());
 
     return;
@@ -113,6 +115,7 @@ void IPCManagerStubImpl::getGearMode(const std::shared_ptr<CommonAPI::ClientId> 
 void IPCManagerStubImpl::getDirection(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _input, getDirectionReply_t _reply)
 {    
     // Reply to the caller
+    std::cout<<piracer.getDirection()<<std::endl;
     _reply(piracer.getDirection());
 
     return;

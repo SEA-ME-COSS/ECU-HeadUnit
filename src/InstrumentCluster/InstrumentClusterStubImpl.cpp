@@ -7,17 +7,18 @@ InstrumentClusterStubImpl::InstrumentClusterStubImpl()
 
     sender.IPCManagerTargetProxy->getGearMode("", sender.callStatus, sender.returnGearMode);
     // Update the gear mode property in the carinfo object.
+    std::cout<<sender.returnGearMode<<std::endl;
     carinfo.setGear(sender.returnGearMode);
     
     sender.IPCManagerTargetProxy->getDirection("", sender.callStatus, sender.returnDirection);
     // Update the direction property in the carinfo object.
+    std::cout<<sender.returnDirection<<std::endl;
     carinfo.setDirection(sender.returnDirection);
     
     sender.IPCManagerTargetProxy->getLight("", sender.callStatus, sender.returnLight);
     // Update the light color property in the carinfo object.
+    std::cout<<sender.returnLight<<std::endl;
     carinfo.setLight(QString::fromStdString(sender.returnLight));
-    
-    std::cout<<sender.returnGearMode<<' '<<sender.returnDirection<<' '<<sender.returnLight<<std::endl;
     
     std::cout<<"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo"<<std::endl;
 }
