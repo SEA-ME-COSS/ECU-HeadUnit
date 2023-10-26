@@ -138,4 +138,3 @@ void IPCManagerStubImpl::getLight(const std::shared_ptr<CommonAPI::ClientId> _cl
 
     return;
 }
-
