@@ -14,7 +14,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(CMAKE_PREFIX_PATH "/opt/Qt/5.15.0/gcc_64")
+#set(CMAKE_PREFIX_PATH "/opt/Qt/5.15.0/gcc_64")
 
 # Append C++ compiler flags, including -pthread and -std=c++0x
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -std=c++0x")
@@ -104,8 +104,11 @@ target_link_libraries(IPCManager ${PYTHON_LIBRARIES} CommonAPI CommonAPI-SomeIP 
 add_executable(InstrumentCluster
         src/InstrumentCluster/InstrumentCluster.cpp
         src/InstrumentCluster/InstrumentClusterStubImpl.cpp
+        src/InstrumentCluster/InstrumentClusterSenderClass.cpp
         src/InstrumentCluster/InstrumentClusterQtClass.cpp
         src/InstrumentCluster/qml.qrc
+        src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
+        src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPStubAdapter.cpp
         src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp
 )

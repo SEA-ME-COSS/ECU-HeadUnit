@@ -81,6 +81,18 @@ public:
 
     virtual std::future<CommonAPI::CallStatus> setSteeringAsync(const double &_Steering, SetSteeringAsyncCallback _callback, const CommonAPI::CallInfo *_info);
 
+    virtual void getGearMode(std::string _message, CommonAPI::CallStatus &_internalCallStatus, uint16_t &_GearMode, const CommonAPI::CallInfo *_info);
+
+    virtual std::future<CommonAPI::CallStatus> getGearModeAsync(const std::string &_message, GetGearModeAsyncCallback _callback, const CommonAPI::CallInfo *_info);
+
+    virtual void getDirection(std::string _message, CommonAPI::CallStatus &_internalCallStatus, uint16_t &_Direction, const CommonAPI::CallInfo *_info);
+
+    virtual std::future<CommonAPI::CallStatus> getDirectionAsync(const std::string &_message, GetDirectionAsyncCallback _callback, const CommonAPI::CallInfo *_info);
+
+    virtual void getLight(std::string _message, CommonAPI::CallStatus &_internalCallStatus, std::string &_Light, const CommonAPI::CallInfo *_info);
+
+    virtual std::future<CommonAPI::CallStatus> getLightAsync(const std::string &_message, GetLightAsyncCallback _callback, const CommonAPI::CallInfo *_info);
+
     virtual void getOwnVersion(uint16_t &_major, uint16_t &_minor) const;
 
     virtual std::future<void> getCompletionFuture();

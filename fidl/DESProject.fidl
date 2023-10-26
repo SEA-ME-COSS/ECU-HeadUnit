@@ -59,7 +59,7 @@ interface IPCManager {
   }
   method setLight {
     in {
-      String Light // Input parameter: light of type String.
+      String Light // Input parameter: Light of type String.
     }
     out {
       String message // Output parameter: message of type String.
@@ -79,6 +79,30 @@ interface IPCManager {
     }
     out {
       String message // Output parameter: message of type String.
+    }
+  }
+  method getGearMode {
+    in {
+      String message // Input parameter: message of type String.
+    }
+    out {
+      UInt16 GearMode // Output parameter: Gear of type UInt16.
+    }
+  }
+  method getDirection {
+    in {
+      String message // Input parameter: message of type String.
+    }
+    out {
+      UInt16 Direction // Output parameter: Direction of type UInt16.
+    }
+  }
+  method getLight {
+    in {
+      String message // Input parameter: message of type String.
+    }
+    out {
+      String Light // Output parameter: Light of type String.
     }
   }
 }
@@ -123,7 +147,7 @@ interface InstrumentCluster {
   }
   method setLight {
     in {
-      String Light // Input parameter: light of type String.
+      String Light // Input parameter: Light of type String.
     }
     out {
       String message // Output parameter: message of type String.

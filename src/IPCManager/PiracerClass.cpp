@@ -8,6 +8,8 @@ PiracerClass::PiracerClass()
     pInstance = PyObject_CallObject(pClass, NULL); // Create an instance of the Python class
 
     gearMode = 0; // Initialize the gear mode to 0 (default)
+    direction = 0; // Initialize the direction to 0 (default)
+    light = "#808080"; // Initialize the light to #808080 (default)
 }
 
 PiracerClass::~PiracerClass()
@@ -23,6 +25,35 @@ void PiracerClass::setGearMode(uint16_t _gearMode)
     gearMode = _gearMode; // Update the gear mode
 
     return;
+}
+
+void PiracerClass::setDirection(uint16_t _direction)
+{
+    direction = _direction; // Update the direction
+
+    return;
+}
+
+void PiracerClass::setLight(std::string _light)
+{
+    light = _light; // Update the light
+
+    return;
+}
+
+uint16_t PiracerClass::getGearMode()
+{
+    return gearMode;
+}
+
+uint16_t PiracerClass::getDirection()
+{
+    return direction;
+}
+
+std::string PiracerClass::getLight()
+{
+    return light;
 }
 
 void PiracerClass::applyThrottle(double throttle)

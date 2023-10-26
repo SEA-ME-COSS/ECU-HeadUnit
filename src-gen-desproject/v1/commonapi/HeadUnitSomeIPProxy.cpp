@@ -74,7 +74,7 @@ void HeadUnitSomeIPProxy::setSensorRpm(uint16_t _SensorRpm, CommonAPI::CallStatu
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x70),
+        CommonAPI::SomeIP::method_id_t(0x73),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -102,7 +102,7 @@ std::future<CommonAPI::CallStatus> HeadUnitSomeIPProxy::setSensorRpmAsync(const 
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x70),
+        CommonAPI::SomeIP::method_id_t(0x73),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -132,7 +132,7 @@ void HeadUnitSomeIPProxy::setTurnSignal(double _TurnSignal, CommonAPI::CallStatu
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x71),
+        CommonAPI::SomeIP::method_id_t(0x74),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -160,7 +160,7 @@ std::future<CommonAPI::CallStatus> HeadUnitSomeIPProxy::setTurnSignalAsync(const
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x71),
+        CommonAPI::SomeIP::method_id_t(0x74),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),

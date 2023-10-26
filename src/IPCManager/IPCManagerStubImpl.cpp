@@ -49,6 +49,9 @@ void IPCManagerStubImpl::setGearMode(const std::shared_ptr<CommonAPI::ClientId> 
 // Set direction and relay it to the InstrumentCluster service
 void IPCManagerStubImpl::setDirection(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _direction, setDirectionReply_t _reply)
 {
+    // Set direction to piracer
+    piracer.setDirection(_direction);
+
     // Relay direction to the InstrumentCluster service
     sender.InstrumentClusterTargetProxy->setDirection(_direction, sender.callStatus, sender.returnMessage);
 
@@ -61,6 +64,9 @@ void IPCManagerStubImpl::setDirection(const std::shared_ptr<CommonAPI::ClientId>
 // Set light status and relay it to the InstrumentCluster service
 void IPCManagerStubImpl::setLight(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _light, setLightReply_t _reply)
 {
+    // Set light to piracer
+    piracer.setLight(_light);
+
     // Relay light status to the InstrumentCluster service
     sender.InstrumentClusterTargetProxy->setLight(_light, sender.callStatus, sender.returnMessage);
 
@@ -90,6 +96,33 @@ void IPCManagerStubImpl::setSteering(const std::shared_ptr<CommonAPI::ClientId> 
     
     // Reply to the caller
     _reply("");
+
+    return;
+}
+
+// Get gear mode
+void IPCManagerStubImpl::getGearMode(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _input, getGearModeReply_t _reply)
+{    
+    // Reply to the caller
+    _reply(piracer.getGearMode());
+
+    return;
+}
+
+// Get direction
+void IPCManagerStubImpl::getDirection(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _input, getDirectionReply_t _reply)
+{    
+    // Reply to the caller
+    _reply(piracer.getDirection());
+
+    return;
+}
+
+// Get light
+void IPCManagerStubImpl::getLight(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _input, getLightReply_t _reply)
+{    
+    // Reply to the caller
+    _reply(piracer.getLight());
 
     return;
 }

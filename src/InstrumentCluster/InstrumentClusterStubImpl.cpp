@@ -1,6 +1,20 @@
 #include "InstrumentClusterStubImpl.hpp"
 
-InstrumentClusterStubImpl::InstrumentClusterStubImpl() { }
+InstrumentClusterStubImpl::InstrumentClusterStubImpl()
+{
+    sender.IPCManagerTargetProxy->getGearMode("", sender.callStatus, sender.returnGearMode);
+    // Update the gear mode property in the carinfo object.
+    carinfo.setGear(sender.returnGearMode);
+    
+    sender.IPCManagerTargetProxy->getDirection("", sender.callStatus, sender.returnDirection);
+    // Update the direction property in the carinfo object.
+    carinfo.setDirection(sender.returnDirection);
+    
+    sender.IPCManagerTargetProxy->getLight("", sender.callStatus, sender.returnLight);
+    // Update the light color property in the carinfo object.
+    carinfo.setLight(QString::fromStdString(sender.returnLight));
+}
+
 InstrumentClusterStubImpl::~InstrumentClusterStubImpl() { }
 
 void InstrumentClusterStubImpl::setSpeedRpm(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _sensorRpm, setSpeedRpmReply_t _reply)

@@ -95,11 +95,14 @@ public:
     typedef std::function<void (std::string _message)> setLightReply_t;
     typedef std::function<void (std::string _message)> setThrottleReply_t;
     typedef std::function<void (std::string _message)> setSteeringReply_t;
+    typedef std::function<void (uint16_t _GearMode)> getGearModeReply_t;
+    typedef std::function<void (uint16_t _Direction)> getDirectionReply_t;
+    typedef std::function<void (std::string _Light)> getLightReply_t;
 
     virtual ~IPCManagerStub() {}
     void lockInterfaceVersionAttribute(bool _lockAccess) { static_cast<void>(_lockAccess); }
     bool hasElement(const uint32_t _id) const {
-        return (_id < 7);
+        return (_id < 10);
     }
     virtual const CommonAPI::Version& getInterfaceVersion(std::shared_ptr<CommonAPI::ClientId> _client) = 0;
 
@@ -117,6 +120,12 @@ public:
     virtual void setThrottle(const std::shared_ptr<CommonAPI::ClientId> _client, double _Throttle, setThrottleReply_t _reply) = 0;
     /// This is the method that will be called on remote calls on the method setSteering.
     virtual void setSteering(const std::shared_ptr<CommonAPI::ClientId> _client, double _Steering, setSteeringReply_t _reply) = 0;
+    /// This is the method that will be called on remote calls on the method getGearMode.
+    virtual void getGearMode(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _message, getGearModeReply_t _reply) = 0;
+    /// This is the method that will be called on remote calls on the method getDirection.
+    virtual void getDirection(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _message, getDirectionReply_t _reply) = 0;
+    /// This is the method that will be called on remote calls on the method getLight.
+    virtual void getLight(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _message, getLightReply_t _reply) = 0;
 
 
     using CommonAPI::Stub<IPCManagerStubAdapter, IPCManagerStubRemoteEvent>::initStubAdapter;
