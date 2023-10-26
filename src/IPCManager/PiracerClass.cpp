@@ -7,8 +7,8 @@ PiracerClass::PiracerClass()
     pClass = PyObject_GetAttrString(pModule, "PiRacerStandard"); // Get the Python class "PiRacerStandard" from the module
     pInstance = PyObject_CallObject(pClass, NULL); // Create an instance of the Python class
 
-    gearMode = 1; // Initialize the gear mode to 0 (default)
-    direction = 1; // Initialize the direction to 0 (default)
+    gearMode = 0; // Initialize the gear mode to 0 (default)
+    direction = 0; // Initialize the direction to 0 (default)
     light = "#808080"; // Initialize the light to #808080 (default)
 }
 
