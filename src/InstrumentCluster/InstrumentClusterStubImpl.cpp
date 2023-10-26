@@ -1,4 +1,5 @@
 #include "InstrumentClusterStubImpl.hpp"
+#include <iostream>
 
 InstrumentClusterStubImpl::InstrumentClusterStubImpl()
 {
@@ -13,6 +14,8 @@ InstrumentClusterStubImpl::InstrumentClusterStubImpl()
     sender.IPCManagerTargetProxy->getLight("", sender.callStatus, sender.returnLight);
     // Update the light color property in the carinfo object.
     carinfo.setLight(QString::fromStdString(sender.returnLight));
+    
+    std::cout<<"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo"<<std::endl;
 }
 
 InstrumentClusterStubImpl::~InstrumentClusterStubImpl() { }
