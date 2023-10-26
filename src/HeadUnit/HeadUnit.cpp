@@ -4,6 +4,7 @@
 
 #include "HeadUnitStubImpl.hpp"
 #include "HeadUnitQtClass.hpp"
+#include "HeadUnitSenderClass.hpp"
 
 using namespace v1_0::commonapi;
 
@@ -44,6 +45,11 @@ int main(int argc, char *argv[])
 
     // Load the QML file and start the application event loop
     engine.load(url);
+    
+    HeadUnitSenderClass sender;
+    sender.IPCManagerTargetProxy->getGearMode("", sender.callStatus, sender.returnMessage);
+    sender.IPCManagerTargetProxy->getDirection("", sender.callStatus, sender.returnMessage);
+    sender.IPCManagerTargetProxy->getLight("", sender.callStatus, sender.returnMessage);
 
     return app.exec();
 }

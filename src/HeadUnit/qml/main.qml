@@ -79,7 +79,6 @@ Window {
                 anchors.fill: parent
                 onClicked: {
                     if (carinfo.sensorRpm === 0) {
-                        valueSource.gear = 0
                         manager.setGear(0)
                     }
                 }
@@ -117,7 +116,6 @@ Window {
                 anchors.fill: parent
                 onClicked: {
                     if (carinfo.sensorRpm === 0) {
-                        valueSource.gear = 1
                         manager.setGear(1)
                     }
                 }
@@ -155,7 +153,6 @@ Window {
                 anchors.fill: parent
                 onClicked: {
                     if (carinfo.sensorRpm === 0) {
-                        valueSource.gear = 2
                         manager.setGear(2)
                     }
                 }
@@ -193,7 +190,6 @@ Window {
                 anchors.fill: parent
                 onClicked: {
                     if (carinfo.sensorRpm === 0) {
-                        valueSource.gear = 3
                         manager.setGear(3)
                     }
                 }
@@ -245,26 +241,8 @@ Window {
                 onClicked: {
                     if (valueSource.direction === 1) {
                         manager.setDirection(0)
-                        valueSource.direction = 0
-
-                        valueSource.blink = false
-                        valueSource.left_direction = false
-                        valueSource.right_direction = false
-                        valueSource.left_on_off = false
-                        valueSource.right_on_off = false
-
-                        valueSource.freeDirection = false
                     } else {
                         manager.setDirection(1)
-                        valueSource.direction = 1
-
-                        valueSource.blink = true
-                        valueSource.left_direction = true
-                        valueSource.right_direction = false
-                        valueSource.left_on_off = true
-                        valueSource.right_on_off = false
-
-                        valueSource.freeDirection = false
                     }
                 }
             }
@@ -296,26 +274,8 @@ Window {
                 onClicked: {
                     if (valueSource.direction === 2) {
                         manager.setDirection(0)
-                        valueSource.direction = 0
-
-                        valueSource.blink = false
-                        valueSource.left_direction = false
-                        valueSource.right_direction = false
-                        valueSource.left_on_off = false
-                        valueSource.right_on_off = false
-
-                        valueSource.freeDirection = false
                     } else {
                         manager.setDirection(2)
-                        valueSource.direction = 2
-
-                        valueSource.blink = true
-                        valueSource.left_direction = false
-                        valueSource.right_direction = true
-                        valueSource.left_on_off = false
-                        valueSource.right_on_off = true
-
-                        valueSource.freeDirection = false
                     }
                 }
             }
@@ -354,26 +314,8 @@ Window {
                 onClicked: {
                     if (valueSource.direction === 3) {
                         manager.setDirection(0)
-                        valueSource.direction = 0
-
-                        valueSource.blink = false
-                        valueSource.left_direction = false
-                        valueSource.right_direction = false
-                        valueSource.left_on_off = false
-                        valueSource.right_on_off = false
-
-                        valueSource.freeDirection = false
                     } else {
                         manager.setDirection(3)
-                        valueSource.direction = 3
-
-                        valueSource.blink = true
-                        valueSource.left_direction = true
-                        valueSource.right_direction = true
-                        valueSource.left_on_off = true
-                        valueSource.right_on_off = true
-
-                        valueSource.freeDirection = false
                     }
                 }
             }
