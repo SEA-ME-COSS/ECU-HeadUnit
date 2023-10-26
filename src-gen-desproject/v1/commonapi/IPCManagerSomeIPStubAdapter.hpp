@@ -112,17 +112,17 @@ public:
     CommonAPI::SomeIP::MethodWithReplyStubDispatcher<
         ::v1::commonapi::IPCManagerStub,
         std::tuple< std::string>,
-        std::tuple< uint16_t>,
+        std::tuple< std::string>,
         std::tuple< CommonAPI::SomeIP::StringDeployment>,
-        std::tuple< CommonAPI::SomeIP::IntegerDeployment<uint16_t>>
+        std::tuple< CommonAPI::SomeIP::StringDeployment>
     > getGearModeStubDispatcher;
     
     CommonAPI::SomeIP::MethodWithReplyStubDispatcher<
         ::v1::commonapi::IPCManagerStub,
         std::tuple< std::string>,
-        std::tuple< uint16_t>,
+        std::tuple< std::string>,
         std::tuple< CommonAPI::SomeIP::StringDeployment>,
-        std::tuple< CommonAPI::SomeIP::IntegerDeployment<uint16_t>>
+        std::tuple< CommonAPI::SomeIP::StringDeployment>
     > getDirectionStubDispatcher;
     
     CommonAPI::SomeIP::MethodWithReplyStubDispatcher<
@@ -204,7 +204,7 @@ public:
             false,
             _stub->hasElement(7),
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)),
-            std::make_tuple(static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr)))
+            std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
         
         ,
         getDirectionStubDispatcher(
@@ -212,7 +212,7 @@ public:
             false,
             _stub->hasElement(8),
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)),
-            std::make_tuple(static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr)))
+            std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
         
         ,
         getLightStubDispatcher(

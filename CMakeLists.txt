@@ -14,7 +14,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-#set(CMAKE_PREFIX_PATH "/opt/Qt/5.15.0/gcc_64")
+# set(CMAKE_PREFIX_PATH "/opt/Qt/5.15.0/gcc_64")
 
 # Append C++ compiler flags, including -pthread and -std=c++0x
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -std=c++0x")

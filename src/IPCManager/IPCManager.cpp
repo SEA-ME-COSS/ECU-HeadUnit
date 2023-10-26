@@ -22,7 +22,6 @@ int main()
 
     while (1)
     {
-    /*
         if (!sender.CANSenderTargetProxy->isAvailable()) {
             exitCode = system("sh ../reboot_script/reboot_can_sender.sh");
             // Check if CANSenderTargetProxy is not available and execute a reboot script
@@ -49,7 +48,6 @@ int main()
         }
 
         usleep(1000000); // Sleep for one second
-    */
     }
 
     return 0;

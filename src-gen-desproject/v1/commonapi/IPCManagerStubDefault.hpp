@@ -102,23 +102,23 @@ public:
         std::string message = "";
         _reply(message);
     }
-    COMMONAPI_EXPORT virtual void getGearMode(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _message, getGearModeReply_t _reply) {
+    COMMONAPI_EXPORT virtual void getGearMode(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _message1, getGearModeReply_t _reply) {
         (void)_client;
-        (void)_message;
-        uint16_t GearMode = 0u;
-        _reply(GearMode);
+        (void)_message1;
+        std::string message2 = "";
+        _reply(message2);
     }
-    COMMONAPI_EXPORT virtual void getDirection(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _message, getDirectionReply_t _reply) {
+    COMMONAPI_EXPORT virtual void getDirection(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _message1, getDirectionReply_t _reply) {
         (void)_client;
-        (void)_message;
-        uint16_t Direction = 0u;
-        _reply(Direction);
+        (void)_message1;
+        std::string message2 = "";
+        _reply(message2);
     }
-    COMMONAPI_EXPORT virtual void getLight(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _message, getLightReply_t _reply) {
+    COMMONAPI_EXPORT virtual void getLight(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _message1, getLightReply_t _reply) {
         (void)_client;
-        (void)_message;
-        std::string Light = "";
-        _reply(Light);
+        (void)_message1;
+        std::string message2 = "";
+        _reply(message2);
     }
 
 

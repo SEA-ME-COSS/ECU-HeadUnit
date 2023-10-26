@@ -462,9 +462,9 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::setSteeringAsync(const
         std::make_tuple(deploy_message));
 }
 
-void IPCManagerSomeIPProxy::getGearMode(std::string _message, CommonAPI::CallStatus &_internalCallStatus, uint16_t &_GearMode, const CommonAPI::CallInfo *_info) {
-    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(_message, static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
-    CommonAPI::Deployable< uint16_t, CommonAPI::SomeIP::IntegerDeployment<uint16_t>> deploy_GearMode(static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr));
+void IPCManagerSomeIPProxy::getGearMode(std::string _message1, CommonAPI::CallStatus &_internalCallStatus, std::string &_message2, const CommonAPI::CallInfo *_info) {
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message1(_message1, static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message2(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
     CommonAPI::SomeIP::ProxyHelper<
         CommonAPI::SomeIP::SerializableArguments<
             CommonAPI::Deployable<
@@ -474,8 +474,8 @@ void IPCManagerSomeIPProxy::getGearMode(std::string _message, CommonAPI::CallSta
         >,
         CommonAPI::SomeIP::SerializableArguments<
             CommonAPI::Deployable<
-                uint16_t,
-                CommonAPI::SomeIP::IntegerDeployment<uint16_t>
+                std::string,
+                CommonAPI::SomeIP::StringDeployment
             >
         >
     >::callMethodWithReply(
@@ -484,15 +484,15 @@ void IPCManagerSomeIPProxy::getGearMode(std::string _message, CommonAPI::CallSta
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
-        deploy_message,
+        deploy_message1,
         _internalCallStatus,
-        deploy_GearMode);
-    _GearMode = deploy_GearMode.getValue();
+        deploy_message2);
+    _message2 = deploy_message2.getValue();
 }
 
-std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::getGearModeAsync(const std::string &_message, GetGearModeAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
-    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(_message, static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
-    CommonAPI::Deployable< uint16_t, CommonAPI::SomeIP::IntegerDeployment<uint16_t>> deploy_GearMode(static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr));
+std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::getGearModeAsync(const std::string &_message1, GetGearModeAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message1(_message1, static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message2(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
     return CommonAPI::SomeIP::ProxyHelper<
         CommonAPI::SomeIP::SerializableArguments<
             CommonAPI::Deployable<
@@ -502,8 +502,8 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::getGearModeAsync(const
         >,
         CommonAPI::SomeIP::SerializableArguments<
             CommonAPI::Deployable<
-                uint16_t,
-                CommonAPI::SomeIP::IntegerDeployment<uint16_t>
+                std::string,
+                CommonAPI::SomeIP::StringDeployment
             >
         >
     >::callMethodAsync(
@@ -512,17 +512,17 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::getGearModeAsync(const
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
-        deploy_message,
-        [_callback] (CommonAPI::CallStatus _internalCallStatus, CommonAPI::Deployable< uint16_t, CommonAPI::SomeIP::IntegerDeployment<uint16_t> > _GearMode) {
+        deploy_message1,
+        [_callback] (CommonAPI::CallStatus _internalCallStatus, CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment > _message2) {
             if (_callback)
-                _callback(_internalCallStatus, _GearMode.getValue());
+                _callback(_internalCallStatus, _message2.getValue());
         },
-        std::make_tuple(deploy_GearMode));
+        std::make_tuple(deploy_message2));
 }
 
-void IPCManagerSomeIPProxy::getDirection(std::string _message, CommonAPI::CallStatus &_internalCallStatus, uint16_t &_Direction, const CommonAPI::CallInfo *_info) {
-    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(_message, static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
-    CommonAPI::Deployable< uint16_t, CommonAPI::SomeIP::IntegerDeployment<uint16_t>> deploy_Direction(static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr));
+void IPCManagerSomeIPProxy::getDirection(std::string _message1, CommonAPI::CallStatus &_internalCallStatus, std::string &_message2, const CommonAPI::CallInfo *_info) {
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message1(_message1, static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message2(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
     CommonAPI::SomeIP::ProxyHelper<
         CommonAPI::SomeIP::SerializableArguments<
             CommonAPI::Deployable<
@@ -532,8 +532,8 @@ void IPCManagerSomeIPProxy::getDirection(std::string _message, CommonAPI::CallSt
         >,
         CommonAPI::SomeIP::SerializableArguments<
             CommonAPI::Deployable<
-                uint16_t,
-                CommonAPI::SomeIP::IntegerDeployment<uint16_t>
+                std::string,
+                CommonAPI::SomeIP::StringDeployment
             >
         >
     >::callMethodWithReply(
@@ -542,15 +542,15 @@ void IPCManagerSomeIPProxy::getDirection(std::string _message, CommonAPI::CallSt
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
-        deploy_message,
+        deploy_message1,
         _internalCallStatus,
-        deploy_Direction);
-    _Direction = deploy_Direction.getValue();
+        deploy_message2);
+    _message2 = deploy_message2.getValue();
 }
 
-std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::getDirectionAsync(const std::string &_message, GetDirectionAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
-    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(_message, static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
-    CommonAPI::Deployable< uint16_t, CommonAPI::SomeIP::IntegerDeployment<uint16_t>> deploy_Direction(static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr));
+std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::getDirectionAsync(const std::string &_message1, GetDirectionAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message1(_message1, static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message2(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
     return CommonAPI::SomeIP::ProxyHelper<
         CommonAPI::SomeIP::SerializableArguments<
             CommonAPI::Deployable<
@@ -560,8 +560,8 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::getDirectionAsync(cons
         >,
         CommonAPI::SomeIP::SerializableArguments<
             CommonAPI::Deployable<
-                uint16_t,
-                CommonAPI::SomeIP::IntegerDeployment<uint16_t>
+                std::string,
+                CommonAPI::SomeIP::StringDeployment
             >
         >
     >::callMethodAsync(
@@ -570,17 +570,17 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::getDirectionAsync(cons
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
-        deploy_message,
-        [_callback] (CommonAPI::CallStatus _internalCallStatus, CommonAPI::Deployable< uint16_t, CommonAPI::SomeIP::IntegerDeployment<uint16_t> > _Direction) {
+        deploy_message1,
+        [_callback] (CommonAPI::CallStatus _internalCallStatus, CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment > _message2) {
             if (_callback)
-                _callback(_internalCallStatus, _Direction.getValue());
+                _callback(_internalCallStatus, _message2.getValue());
         },
-        std::make_tuple(deploy_Direction));
+        std::make_tuple(deploy_message2));
 }
 
-void IPCManagerSomeIPProxy::getLight(std::string _message, CommonAPI::CallStatus &_internalCallStatus, std::string &_Light, const CommonAPI::CallInfo *_info) {
-    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(_message, static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
-    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_Light(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+void IPCManagerSomeIPProxy::getLight(std::string _message1, CommonAPI::CallStatus &_internalCallStatus, std::string &_message2, const CommonAPI::CallInfo *_info) {
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message1(_message1, static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message2(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
     CommonAPI::SomeIP::ProxyHelper<
         CommonAPI::SomeIP::SerializableArguments<
             CommonAPI::Deployable<
@@ -600,15 +600,15 @@ void IPCManagerSomeIPProxy::getLight(std::string _message, CommonAPI::CallStatus
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
-        deploy_message,
+        deploy_message1,
         _internalCallStatus,
-        deploy_Light);
-    _Light = deploy_Light.getValue();
+        deploy_message2);
+    _message2 = deploy_message2.getValue();
 }
 
-std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::getLightAsync(const std::string &_message, GetLightAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
-    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(_message, static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
-    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_Light(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::getLightAsync(const std::string &_message1, GetLightAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message1(_message1, static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message2(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
     return CommonAPI::SomeIP::ProxyHelper<
         CommonAPI::SomeIP::SerializableArguments<
             CommonAPI::Deployable<
@@ -628,12 +628,12 @@ std::future<CommonAPI::CallStatus> IPCManagerSomeIPProxy::getLightAsync(const st
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
-        deploy_message,
-        [_callback] (CommonAPI::CallStatus _internalCallStatus, CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment > _Light) {
+        deploy_message1,
+        [_callback] (CommonAPI::CallStatus _internalCallStatus, CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment > _message2) {
             if (_callback)
-                _callback(_internalCallStatus, _Light.getValue());
+                _callback(_internalCallStatus, _message2.getValue());
         },
-        std::make_tuple(deploy_Light));
+        std::make_tuple(deploy_message2));
 }
 
 void IPCManagerSomeIPProxy::getOwnVersion(uint16_t& ownVersionMajor, uint16_t& ownVersionMinor) const {

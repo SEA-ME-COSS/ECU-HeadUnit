@@ -83,26 +83,26 @@ interface IPCManager {
   }
   method getGearMode {
     in {
-      String message // Input parameter: message of type String.
+      String message1 // Input parameter: message of type String.
     }
     out {
-      UInt16 GearMode // Output parameter: Gear of type UInt16.
+      String message2 // Output parameter: message of type String.
     }
   }
   method getDirection {
     in {
-      String message // Input parameter: message of type String.
+      String message1 // Input parameter: message of type String.
     }
     out {
-      UInt16 Direction // Output parameter: Direction of type UInt16.
+      String message2 // Output parameter: message of type String.
     }
   }
   method getLight {
     in {
-      String message // Input parameter: message of type String.
+      String message1 // Input parameter: message of type String.
     }
     out {
-      String Light // Output parameter: Light of type String.
+      String message2 // Output parameter: message of type String.
     }
   }
 }

@@ -36,7 +36,6 @@ int main(int argc, char *argv[])
 
     engine.load(url);  // Load the QML interface from the specified URL.
 
-    //return app.exec();  // Start the application event loop and return the exit code.
-    return 0;
+    return app.exec();  // Start the application event loop and return the exit code.
 }
 

@@ -26,15 +26,7 @@ public:
 
     // Call status for the last communication
     CommonAPI::CallStatus callStatus;
-
-    // Return value for gear mode
-    uint16_t returnGearMode;
-    
-    // Return value for direction
-    uint16_t returnDirection;
-    
-    // Return value for light
-    std::string returnLight;
+    std::string returnMessage;
 };
 
 #endif
