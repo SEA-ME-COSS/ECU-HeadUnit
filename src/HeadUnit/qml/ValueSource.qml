@@ -64,7 +64,7 @@ Item {
         valueSource.green = parseInt(valueSource.light.substring(3, 5), 16)
         valueSource.blue = parseInt(valueSource.light.substring(5, 7), 16)
 
-        if (valueSource.update_cnt < 10) {
+        if (valueSource.update_cnt < 1) {
             valueSource.update_cnt = valueSource.update_cnt + 1
         }
     }
