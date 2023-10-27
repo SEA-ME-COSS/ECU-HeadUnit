@@ -18,6 +18,7 @@ Item {
     property bool right_direction: (valueSource.direction === 2 || valueSource.direction === 3)
     property bool left_on_off: false
     property bool right_on_off: false
+    property bool initial_delay: !(valueSource.direction === 0)
 
     // Handler for direction changes
     onDirectionChanged: {
@@ -26,6 +27,7 @@ Item {
         valueSource.right_direction = (valueSource.direction === 2 || valueSource.direction === 3);
         valueSource.left_on_off = false;
         valueSource.right_on_off = false;
+        valueSource.initial_delay = !(valueSource.direction === 0)
     }
 
     // Function to control the blinking behavior
@@ -38,10 +40,17 @@ Item {
         }
     }
 
+    // Timer to delay the blinking function
+    Timer {
+        interval: 500; running: valueSource.initial_delay; repeat: false
+        onTriggered: {
+            valueSource.initial_delay = false
+        }
+    }
+
     // Timer to trigger the blinking function
     Timer {
         interval: 500; running: valueSource.blink; repeat: true
-        initialDelay: 500
         onTriggered: valueSource.blinking()
     }
 
