@@ -42,14 +42,19 @@ int main(int argc, char *argv[])
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
-
-    // Load the QML file and start the application event loop
-    engine.load(url);
     
     HeadUnitSenderClass sender;
     sender.IPCManagerTargetProxy->getGearMode("", sender.callStatus, sender.returnMessage);
     sender.IPCManagerTargetProxy->getDirection("", sender.callStatus, sender.returnMessage);
     sender.IPCManagerTargetProxy->getLight("", sender.callStatus, sender.returnMessage);
+
+    // Load the QML file and start the application event loop
+    engine.load(url);
+    
+    //HeadUnitSenderClass sender;
+    //sender.IPCManagerTargetProxy->getGearMode("", sender.callStatus, sender.returnMessage);
+    //sender.IPCManagerTargetProxy->getDirection("", sender.callStatus, sender.returnMessage);
+    //sender.IPCManagerTargetProxy->getLight("", sender.callStatus, sender.returnMessage);
 
     return app.exec();
 }
