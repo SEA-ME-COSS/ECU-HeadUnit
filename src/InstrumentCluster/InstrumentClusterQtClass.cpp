@@ -6,9 +6,6 @@ InstrumentClusterQtClass::InstrumentClusterQtClass(QObject *parent) : QObject(pa
     Qspeed = 0;                  // Initialize speed to 0.
     Qrpm = 0;                    // Initialize RPM to 0.
     Qbattery = 0;                // Initialize battery level to 0.
-    //Qgear = 0;                   // Initialize gear mode to 0.
-    //Qdirection = 0;              // Initialize direction to 0.
-    //Qlight = QString::fromStdString("#808080"); // Initialize light color to gray.
 }
 
 // Getter for speed
