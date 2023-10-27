@@ -371,7 +371,7 @@ Window {
             width: 140
             x: 870
             y: 130
-            minimumValue: -1
+            minimumValue: 0
             maximumValue: 128
             stepSize: 16
             value: valueSource.red
@@ -394,7 +394,7 @@ Window {
 
             // Update red value and set light color
             onValueChanged: {
-                if ((redSlider.value !== -1) && (greenSlider.value !== -1) && (blueSlider.value !== -1)) {
+                if ((redSlider.value !== 1) && (greenSlider.value !== 1) && (blueSlider.value !== 1)) {
                     valueSource.red_string = redSlider.value.toString(16)
                     if (valueSource.red_string.length === 1) {
                         valueSource.red_string = "0" + valueSource.red_string
@@ -421,7 +421,7 @@ Window {
             width: 140
             x: 870
             y: 160
-            minimumValue: -1
+            minimumValue: 0
             maximumValue: 128
             stepSize: 16
             value: valueSource.green
@@ -444,7 +444,7 @@ Window {
 
             // Update green value and set light color
             onValueChanged: {
-                if ((redSlider.value !== -1) && (greenSlider.value !== -1) && (blueSlider.value !== -1)) {
+                if ((redSlider.value !== 1) && (greenSlider.value !== 1) && (blueSlider.value !== 1)) {
                     valueSource.red_string = redSlider.value.toString(16)
                     if (valueSource.red_string.length === 1) {
                         valueSource.red_string = "0" + valueSource.red_string
@@ -471,7 +471,7 @@ Window {
             width: 140
             x: 870
             y: 190
-            minimumValue: -1
+            minimumValue: 0
             maximumValue: 128
             stepSize: 16
             value: valueSource.blue
@@ -494,7 +494,7 @@ Window {
 
             // Update blue value and set light color
             onValueChanged: {
-                if ((redSlider.value !== -1) && (greenSlider.value !== -1) && (blueSlider.value !== -1)) {
+                if ((redSlider.value !== 1) && (greenSlider.value !== 1) && (blueSlider.value !== 1)) {
                     valueSource.red_string = redSlider.value.toString(16)
                     if (valueSource.red_string.length === 1) {
                         valueSource.red_string = "0" + valueSource.red_string
