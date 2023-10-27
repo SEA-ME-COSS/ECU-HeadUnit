@@ -394,22 +394,24 @@ Window {
 
             // Update red value and set light color
             onValueChanged: {
-                valueSource.red_string = redSlider.value.toString(16)
-                if (valueSource.red_string.length === 1) {
-                    valueSource.red_string = "0" + valueSource.red_string
-                }
+                if ((redSlider.value !== -1) && (greenSlider.value !== -1) && (blueSlider.value !== -1)) {
+                    valueSource.red_string = redSlider.value.toString(16)
+                    if (valueSource.red_string.length === 1) {
+                        valueSource.red_string = "0" + valueSource.red_string
+                    }
 
-                valueSource.green_string = greenSlider.value.toString(16)
-                if (valueSource.green_string.length === 1) {
-                    valueSource.green_string = "0" + valueSource.green_string
-                }
+                    valueSource.green_string = greenSlider.value.toString(16)
+                    if (valueSource.green_string.length === 1) {
+                        valueSource.green_string = "0" + valueSource.green_string
+                    }
 
-                valueSource.blue_string = blueSlider.value.toString(16)
-                if (valueSource.blue_string.length === 1) {
-                    valueSource.blue_string = "0" + valueSource.blue_string
-                }
+                    valueSource.blue_string = blueSlider.value.toString(16)
+                    if (valueSource.blue_string.length === 1) {
+                        valueSource.blue_string = "0" + valueSource.blue_string
+                    }
 
-                manager.setIPCManagerLight("#" + valueSource.red_string + valueSource.green_string + valueSource.blue_string)
+                    manager.setIPCManagerLight("#" + valueSource.red_string + valueSource.green_string + valueSource.blue_string)
+                }
             }
         }
 
@@ -442,22 +444,24 @@ Window {
 
             // Update green value and set light color
             onValueChanged: {
-                valueSource.red_string = redSlider.value.toString(16)
-                if (valueSource.red_string.length === 1) {
-                    valueSource.red_string = "0" + valueSource.red_string
-                }
+                if ((redSlider.value !== -1) && (greenSlider.value !== -1) && (blueSlider.value !== -1)) {
+                    valueSource.red_string = redSlider.value.toString(16)
+                    if (valueSource.red_string.length === 1) {
+                        valueSource.red_string = "0" + valueSource.red_string
+                    }
 
-                valueSource.green_string = greenSlider.value.toString(16)
-                if (valueSource.green_string.length === 1) {
-                    valueSource.green_string = "0" + valueSource.green_string
-                }
+                    valueSource.green_string = greenSlider.value.toString(16)
+                    if (valueSource.green_string.length === 1) {
+                        valueSource.green_string = "0" + valueSource.green_string
+                    }
 
-                valueSource.blue_string = blueSlider.value.toString(16)
-                if (valueSource.blue_string.length === 1) {
-                    valueSource.blue_string = "0" + valueSource.blue_string
-                }
+                    valueSource.blue_string = blueSlider.value.toString(16)
+                    if (valueSource.blue_string.length === 1) {
+                        valueSource.blue_string = "0" + valueSource.blue_string
+                    }
 
-                manager.setIPCManagerLight("#" + valueSource.red_string + valueSource.green_string + valueSource.blue_string)
+                    manager.setIPCManagerLight("#" + valueSource.red_string + valueSource.green_string + valueSource.blue_string)
+                }
             }
         }
 
@@ -490,22 +494,24 @@ Window {
 
             // Update blue value and set light color
             onValueChanged: {
-                valueSource.red_string = redSlider.value.toString(16)
-                if (valueSource.red_string.length === 1) {
-                    valueSource.red_string = "0" + valueSource.red_string
-                }
+                if ((redSlider.value !== -1) && (greenSlider.value !== -1) && (blueSlider.value !== -1)) {
+                    valueSource.red_string = redSlider.value.toString(16)
+                    if (valueSource.red_string.length === 1) {
+                        valueSource.red_string = "0" + valueSource.red_string
+                    }
 
-                valueSource.green_string = greenSlider.value.toString(16)
-                if (valueSource.green_string.length === 1) {
-                    valueSource.green_string = "0" + valueSource.green_string
-                }
+                    valueSource.green_string = greenSlider.value.toString(16)
+                    if (valueSource.green_string.length === 1) {
+                        valueSource.green_string = "0" + valueSource.green_string
+                    }
 
-                valueSource.blue_string = blueSlider.value.toString(16)
-                if (valueSource.blue_string.length === 1) {
-                    valueSource.blue_string = "0" + valueSource.blue_string
-                }
+                    valueSource.blue_string = blueSlider.value.toString(16)
+                    if (valueSource.blue_string.length === 1) {
+                        valueSource.blue_string = "0" + valueSource.blue_string
+                    }
 
-                manager.setIPCManagerLight("#" + valueSource.red_string + valueSource.green_string + valueSource.blue_string)
+                    manager.setIPCManagerLight("#" + valueSource.red_string + valueSource.green_string + valueSource.blue_string)
+                }
             }
         }
 
