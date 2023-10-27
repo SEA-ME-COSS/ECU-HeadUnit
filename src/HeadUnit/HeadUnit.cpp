@@ -47,9 +47,9 @@ int main(int argc, char *argv[])
     engine.load(url);
     
     HeadUnitSenderClass sender;
-    sender.IPCManagerTargetProxy->getGearMode("", sender.callStatus, sender.returnMessage);
-    sender.IPCManagerTargetProxy->getDirection("", sender.callStatus, sender.returnMessage);
-    sender.IPCManagerTargetProxy->getLight("", sender.callStatus, sender.returnMessage);
+    sender.IPCManagerTargetProxy->getGearMode("HeadUnit", sender.callStatus, sender.returnMessage);
+    sender.IPCManagerTargetProxy->getDirection("HeadUnit", sender.callStatus, sender.returnMessage);
+    sender.IPCManagerTargetProxy->getLight("HeadUnit", sender.callStatus, sender.returnMessage);
 
     return app.exec();
 }

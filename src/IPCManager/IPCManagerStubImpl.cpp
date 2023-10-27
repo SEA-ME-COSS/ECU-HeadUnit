@@ -117,10 +117,15 @@ void IPCManagerStubImpl::setSteering(const std::shared_ptr<CommonAPI::ClientId> 
 
 // Get gear mode
 void IPCManagerStubImpl::getGearMode(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _input, getGearModeReply_t _reply)
-{    
-    // Reply to the caller
-    sender.InstrumentClusterTargetProxy->setGear(piracer.getGearMode(), sender.callStatus, sender.returnMessage);
-    sender.HeadUnitTargetProxy->setGear(piracer.getGearMode(), sender.callStatus, sender.returnMessage);
+{   
+    if (_input == "InstrumentCluster")
+    {
+        sender.InstrumentClusterTargetProxy->setGear(piracer.getGearMode(), sender.callStatus, sender.returnMessage);
+    }
+    else if (_input == "HeadUnit")
+    {
+        sender.HeadUnitTargetProxy->setGear(piracer.getGearMode(), sender.callStatus, sender.returnMessage);
+    }
 
     // Reply to the caller
     _reply("");
@@ -131,9 +136,14 @@ void IPCManagerStubImpl::getGearMode(const std::shared_ptr<CommonAPI::ClientId> 
 // Get direction
 void IPCManagerStubImpl::getDirection(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _input, getDirectionReply_t _reply)
 {    
-    // Reply to the caller
-    sender.InstrumentClusterTargetProxy->setDirection(piracer.getDirection(), sender.callStatus, sender.returnMessage);
-    sender.HeadUnitTargetProxy->setDirection(piracer.getDirection(), sender.callStatus, sender.returnMessage);
+    if (_input == "InstrumentCluster")
+    {
+        sender.InstrumentClusterTargetProxy->setDirection(piracer.getDirection(), sender.callStatus, sender.returnMessage);
+    }
+    else if (_input == "HeadUnit")
+    {
+        sender.HeadUnitTargetProxy->setDirection(piracer.getDirection(), sender.callStatus, sender.returnMessage);
+    }
 
     // Reply to the caller
     _reply("");
@@ -144,9 +154,14 @@ void IPCManagerStubImpl::getDirection(const std::shared_ptr<CommonAPI::ClientId>
 // Get light
 void IPCManagerStubImpl::getLight(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _input, getLightReply_t _reply)
 {    
-    // Reply to the caller
-    sender.InstrumentClusterTargetProxy->setLight(piracer.getLight(), sender.callStatus, sender.returnMessage);
-    sender.HeadUnitTargetProxy->setLight(piracer.getLight(), sender.callStatus, sender.returnMessage);
+    if (_input == "InstrumentCluster")
+    {
+        sender.InstrumentClusterTargetProxy->setLight(piracer.getLight(), sender.callStatus, sender.returnMessage);
+    }
+    else if (_input == "HeadUnit")
+    {
+        sender.HeadUnitTargetProxy->setLight(piracer.getLight(), sender.callStatus, sender.returnMessage);
+    }
 
     // Reply to the caller
     _reply("");
