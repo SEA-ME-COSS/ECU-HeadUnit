@@ -44,7 +44,7 @@ void HeadUnitStubImpl::setTurnSignal(const std::shared_ptr<CommonAPI::ClientId> 
     return;
 }
 
-void InstrumentClusterStubImpl::setGear(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _gear, setGearReply_t _reply)
+void HeadUnitStubImpl::setGear(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _gear, setGearReply_t _reply)
 {
     // Update the gear mode property in the carinfo object.
     carinfo.setGear(_gear);
@@ -55,7 +55,7 @@ void InstrumentClusterStubImpl::setGear(const std::shared_ptr<CommonAPI::ClientI
     return;
 }
 
-void InstrumentClusterStubImpl::setDirection(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _direction, setDirectionReply_t _reply)
+void HeadUnitStubImpl::setDirection(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _direction, setDirectionReply_t _reply)
 {
     // Update the direction property in the carinfo object.
     carinfo.setDirection(_direction);
@@ -66,7 +66,7 @@ void InstrumentClusterStubImpl::setDirection(const std::shared_ptr<CommonAPI::Cl
     return;
 }
 
-void InstrumentClusterStubImpl::setLight(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _light, setLightReply_t _reply)
+void HeadUnitStubImpl::setLight(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _light, setLightReply_t _reply)
 {
     // Update the light color property in the carinfo object.
     carinfo.setLight(QString::fromStdString(_light));

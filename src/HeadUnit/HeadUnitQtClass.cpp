@@ -8,7 +8,7 @@ HeadUnitQtClass::HeadUnitQtClass(QObject *parent) : QObject(parent)
     Qsteering = 0;
     Qgear = 0;
     Qdirection = 0;
-    Qlight = QString::fromStdString("#808080")
+    Qlight = QString::fromStdString("#808080");
 }
 
 // Getter for sensorRpm

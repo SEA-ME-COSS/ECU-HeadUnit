@@ -79,8 +79,7 @@ Window {
                 anchors.fill: parent
                 onClicked: {
                     if (carinfo.sensorRpm === 0) {
-                        valueSource.gear = 0
-                        manager.setGear(0)
+                        manager.setIPCManagerGear(0)
                     }
                 }
             }
@@ -117,8 +116,7 @@ Window {
                 anchors.fill: parent
                 onClicked: {
                     if (carinfo.sensorRpm === 0) {
-                        valueSource.gear = 1
-                        manager.setGear(1)
+                        manager.setIPCManagerGear(1)
                     }
                 }
             }
@@ -155,8 +153,7 @@ Window {
                 anchors.fill: parent
                 onClicked: {
                     if (carinfo.sensorRpm === 0) {
-                        valueSource.gear = 2
-                        manager.setGear(2)
+                        manager.setIPCManagerGear(2)
                     }
                 }
             }
@@ -193,8 +190,7 @@ Window {
                 anchors.fill: parent
                 onClicked: {
                     if (carinfo.sensorRpm === 0) {
-                        valueSource.gear = 3
-                        manager.setGear(3)
+                        manager.setIPCManagerGear(3)
                     }
                 }
             }

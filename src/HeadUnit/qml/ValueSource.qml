@@ -9,7 +9,7 @@ Item {
     }
 
     // Properties to manage gear and direction
-    property int gear: 0
+    property int gear: carinfo.gear
     property int direction: 0
 
     // Properties for controlling blinking and direction indicators
