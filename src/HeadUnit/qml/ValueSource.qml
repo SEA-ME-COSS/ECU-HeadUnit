@@ -95,38 +95,11 @@ Item {
         }
     }
 
-    // Property to manage steering and direction control
-    property int steering: carinfo.steering
-    property bool freeDirection: false
-
-    // Handle changes in steering and direction
-    onSteeringChanged: {
-        if ((valueSource.direction === 1) && (valueSource.freeDirection === false) && (valueSource.steering === 1)) {
-            valueSource.freeDirection = true
-        } else if ((valueSource.direction === 2) && (valueSource.freeDirection === false) && (valueSource.steering === 2)) {
-            valueSource.freeDirection = true
-        } else if ((valueSource.direction === 1) && (valueSource.freeDirection === true) && (valueSource.steering !== 1)) {
-            manager.setDirection(0)
-            valueSource.direction = 0
-
-            valueSource.blink = false
-            valueSource.left_direction = false
-            valueSource.right_direction = false
-            valueSource.left_on_off = false
-            valueSource.right_on_off = false
-
-            valueSource.freeDirection = false
-        } else if ((valueSource.direction === 2) && (valueSource.freeDirection === true) && (valueSource.steering !== 2)) {
-            manager.setDirection(0)
-            valueSource.direction = 0
-
-            valueSource.blink = false
-            valueSource.left_direction = false
-            valueSource.right_direction = false
-            valueSource.left_on_off = false
-            valueSource.right_on_off = false
-
-            valueSource.freeDirection = false
+    // Handle changes in direction
+    Timer {
+        interval: 500; running: true; repeat: true
+        onTriggered: {
+            manager.getIPCManagerDirection()
         }
     }
 }

@@ -42,10 +42,6 @@ int main()
             exitCode = system("sh ../reboot_script/reboot_head_unit.sh");
             // Check if HeadUnitTargetProxy is not available and execute a reboot script
         }
-        if (!sender.PiracerSignalTargetProxy->isAvailable()) {
-            exitCode = system("sh ../reboot_script/reboot_piracer_signal.sh");
-            // Check if PiracerSignalTargetProxy is not available and execute a reboot script
-        }
 
         usleep(1000000); // Sleep for one second
     }

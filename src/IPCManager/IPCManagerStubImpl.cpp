@@ -54,6 +54,7 @@ void IPCManagerStubImpl::setDirection(const std::shared_ptr<CommonAPI::ClientId>
     {
         // Set direction to piracer
         piracer.setDirection(0);
+        piracer.setFreeDirection(false);
         
         // Relay direction to the InstrumentCluster and HeadUnit services
         sender.InstrumentClusterTargetProxy->setDirection(0, sender.callStatus, sender.returnMessage);
@@ -63,6 +64,7 @@ void IPCManagerStubImpl::setDirection(const std::shared_ptr<CommonAPI::ClientId>
     {
         // Set direction to piracer
         piracer.setDirection(_direction);
+        piracer.setFreeDirection(false);
         
         // Relay direction to the InstrumentCluster and HeadUnit services
         sender.InstrumentClusterTargetProxy->setDirection(_direction, sender.callStatus, sender.returnMessage);
@@ -108,6 +110,25 @@ void IPCManagerStubImpl::setSteering(const std::shared_ptr<CommonAPI::ClientId> 
 {
     // Apply steering to piracer
     piracer.applySteering(_steering);
+    
+    if ((piracer.getDirection() == 1) && (piracer.getFreeDirection() == false) && (_steering == -0.5))
+    {
+        piracer.setFreeDirection(true);
+    }
+    else if ((piracer.getDirection() == 2) && (piracer.getFreeDirection() == false) && (_steering == 0.5))
+    {
+        piracer.setFreeDirection(true);
+    }
+    else if ((piracer.getDirection() == 1) && (piracer.getFreeDirection() == true) && (_steering >= 0.0))
+    {
+        piracer.setDirection(0);
+        piracer.setFreeDirection(false);
+    }
+    else if ((piracer.getDirection() == 2) && (piracer.getFreeDirection() == true) && (_steering <= 0.0))
+    {
+        piracer.setDirection(0);
+        piracer.setFreeDirection(false);
+    }
     
     // Reply to the caller
     _reply("");

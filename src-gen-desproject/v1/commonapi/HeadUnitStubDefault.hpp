@@ -66,12 +66,6 @@ public:
         std::string message = "";
         _reply(message);
     }
-    COMMONAPI_EXPORT virtual void setTurnSignal(const std::shared_ptr<CommonAPI::ClientId> _client, double _TurnSignal, setTurnSignalReply_t _reply) {
-        (void)_client;
-        (void)_TurnSignal;
-        std::string message = "";
-        _reply(message);
-    }
     COMMONAPI_EXPORT virtual void setGear(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _Gear, setGearReply_t _reply) {
         (void)_client;
         (void)_Gear;

@@ -114,64 +114,6 @@ std::future<CommonAPI::CallStatus> HeadUnitSomeIPProxy::setSensorRpmAsync(const 
         std::make_tuple(deploy_message));
 }
 
-void HeadUnitSomeIPProxy::setTurnSignal(double _TurnSignal, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
-    CommonAPI::Deployable< double, CommonAPI::EmptyDeployment> deploy_TurnSignal(_TurnSignal, static_cast< CommonAPI::EmptyDeployment* >(nullptr));
-    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
-    CommonAPI::SomeIP::ProxyHelper<
-        CommonAPI::SomeIP::SerializableArguments<
-            CommonAPI::Deployable<
-                double,
-                CommonAPI::EmptyDeployment
-            >
-        >,
-        CommonAPI::SomeIP::SerializableArguments<
-            CommonAPI::Deployable<
-                std::string,
-                CommonAPI::SomeIP::StringDeployment
-            >
-        >
-    >::callMethodWithReply(
-        *this,
-        CommonAPI::SomeIP::method_id_t(0x74),
-        false,
-        false,
-        (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
-        deploy_TurnSignal,
-        _internalCallStatus,
-        deploy_message);
-    _message = deploy_message.getValue();
-}
-
-std::future<CommonAPI::CallStatus> HeadUnitSomeIPProxy::setTurnSignalAsync(const double &_TurnSignal, SetTurnSignalAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
-    CommonAPI::Deployable< double, CommonAPI::EmptyDeployment> deploy_TurnSignal(_TurnSignal, static_cast< CommonAPI::EmptyDeployment* >(nullptr));
-    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
-    return CommonAPI::SomeIP::ProxyHelper<
-        CommonAPI::SomeIP::SerializableArguments<
-            CommonAPI::Deployable<
-                double,
-                CommonAPI::EmptyDeployment
-            >
-        >,
-        CommonAPI::SomeIP::SerializableArguments<
-            CommonAPI::Deployable<
-                std::string,
-                CommonAPI::SomeIP::StringDeployment
-            >
-        >
-    >::callMethodAsync(
-        *this,
-        CommonAPI::SomeIP::method_id_t(0x74),
-        false,
-        false,
-        (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
-        deploy_TurnSignal,
-        [_callback] (CommonAPI::CallStatus _internalCallStatus, CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment > _message) {
-            if (_callback)
-                _callback(_internalCallStatus, _message.getValue());
-        },
-        std::make_tuple(deploy_message));
-}
-
 void HeadUnitSomeIPProxy::setGear(uint16_t _Gear, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
     CommonAPI::Deployable< uint16_t, CommonAPI::SomeIP::IntegerDeployment<uint16_t>> deploy_Gear(_Gear, static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr));
     CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
@@ -190,7 +132,7 @@ void HeadUnitSomeIPProxy::setGear(uint16_t _Gear, CommonAPI::CallStatus &_intern
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x75),
+        CommonAPI::SomeIP::method_id_t(0x74),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -218,7 +160,7 @@ std::future<CommonAPI::CallStatus> HeadUnitSomeIPProxy::setGearAsync(const uint1
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x75),
+        CommonAPI::SomeIP::method_id_t(0x74),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -248,7 +190,7 @@ void HeadUnitSomeIPProxy::setDirection(uint16_t _Direction, CommonAPI::CallStatu
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x76),
+        CommonAPI::SomeIP::method_id_t(0x75),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -276,7 +218,7 @@ std::future<CommonAPI::CallStatus> HeadUnitSomeIPProxy::setDirectionAsync(const 
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x76),
+        CommonAPI::SomeIP::method_id_t(0x75),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -306,7 +248,7 @@ void HeadUnitSomeIPProxy::setLight(std::string _Light, CommonAPI::CallStatus &_i
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x77),
+        CommonAPI::SomeIP::method_id_t(0x76),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -334,7 +276,7 @@ std::future<CommonAPI::CallStatus> HeadUnitSomeIPProxy::setLightAsync(const std:
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x77),
+        CommonAPI::SomeIP::method_id_t(0x76),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),

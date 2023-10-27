@@ -57,10 +57,6 @@ public:
 
     virtual std::future<CommonAPI::CallStatus> setSensorRpmAsync(const uint16_t &_SensorRpm, SetSensorRpmAsyncCallback _callback, const CommonAPI::CallInfo *_info);
 
-    virtual void setTurnSignal(double _TurnSignal, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info);
-
-    virtual std::future<CommonAPI::CallStatus> setTurnSignalAsync(const double &_TurnSignal, SetTurnSignalAsyncCallback _callback, const CommonAPI::CallInfo *_info);
-
     virtual void setGear(uint16_t _Gear, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info);
 
     virtual std::future<CommonAPI::CallStatus> setGearAsync(const uint16_t &_Gear, SetGearAsyncCallback _callback, const CommonAPI::CallInfo *_info);

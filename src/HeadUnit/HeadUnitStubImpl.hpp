@@ -18,9 +18,6 @@ public:
 
     // Override the setSensorRpm function to handle RPM value updates
     virtual void setSensorRpm(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _sensorRpm, setSensorRpmReply_t _return);
-
-    // Override the setTurnSignal function to handle turn signal value updates
-    virtual void setTurnSignal(const std::shared_ptr<CommonAPI::ClientId> _client, double _turnSignal, setTurnSignalReply_t _return);
     
     // Handle a request to update the gear mode of the Head Unit
     virtual void setGear(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _gear, setGearReply_t _return);

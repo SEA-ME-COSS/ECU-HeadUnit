@@ -90,27 +90,6 @@ public:
      */
     virtual std::future<CommonAPI::CallStatus> setSensorRpmAsync(const uint16_t &_SensorRpm, SetSensorRpmAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr);
     /**
-     * Calls setTurnSignal with synchronous semantics.
-     *
-     * All const parameters are input parameters to this method.
-     * All non-const parameters will be filled with the returned values.
-     * The CallStatus will be filled when the method returns and indicate either
-     * "SUCCESS" or which type of error has occurred. In case of an error, ONLY the CallStatus
-     * will be set.
-     */
-    virtual void setTurnSignal(double _TurnSignal, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr);
-    /**
-     * Calls setTurnSignal with asynchronous semantics.
-     *
-     * The provided callback will be called when the reply to this call arrives or
-     * an error occurs during the call. The CallStatus will indicate either "SUCCESS"
-     * or which type of error has occurred. In case of any error, ONLY the CallStatus
-     * will have a defined value.
-     * The std::future returned by this method will be fulfilled at arrival of the reply.
-     * It will provide the same value for CallStatus as will be handed to the callback.
-     */
-    virtual std::future<CommonAPI::CallStatus> setTurnSignalAsync(const double &_TurnSignal, SetTurnSignalAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr);
-    /**
      * Calls setGear with synchronous semantics.
      *
      * All const parameters are input parameters to this method.
@@ -204,15 +183,6 @@ void HeadUnitProxy<_AttributeExtensions...>::setSensorRpm(uint16_t _SensorRpm, C
 template <typename ... _AttributeExtensions>
 std::future<CommonAPI::CallStatus> HeadUnitProxy<_AttributeExtensions...>::setSensorRpmAsync(const uint16_t &_SensorRpm, SetSensorRpmAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
     return delegate_->setSensorRpmAsync(_SensorRpm, _callback, _info);
-}
-template <typename ... _AttributeExtensions>
-void HeadUnitProxy<_AttributeExtensions...>::setTurnSignal(double _TurnSignal, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
-    delegate_->setTurnSignal(_TurnSignal, _internalCallStatus, _message, _info);
-}
-
-template <typename ... _AttributeExtensions>
-std::future<CommonAPI::CallStatus> HeadUnitProxy<_AttributeExtensions...>::setTurnSignalAsync(const double &_TurnSignal, SetTurnSignalAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
-    return delegate_->setTurnSignalAsync(_TurnSignal, _callback, _info);
 }
 template <typename ... _AttributeExtensions>
 void HeadUnitProxy<_AttributeExtensions...>::setGear(uint16_t _Gear, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {

@@ -14,7 +14,7 @@ class PiracerClass
         uint16_t gearMode; // Private member variable to store gear mode
         uint16_t direction; // Private member variable to store direction
         std::string light; // Private member variable to store light
-        
+        bool freeDirection; // Private member variable to store direction-freeing condition
         
     public:
         PiracerClass(); // Constructor for PiracerClass
@@ -29,6 +29,9 @@ class PiracerClass
         // Method to set the light
         void setLight(std::string _light);
         
+        // Method to set the direction-freeing condition
+        void setFreeDirection(bool _freeDirection);
+        
         // Method to get the gear mode
         uint16_t getGearMode();
         
@@ -37,6 +40,9 @@ class PiracerClass
         
         // Method to get the light
         std::string getLight();
+        
+        // Method to get the direction-freeing condition
+        bool getFreeDirection();
         
         // Method to apply throttle to the PiRacer vehicle
         void applyThrottle(double throttle);

@@ -110,34 +110,20 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.HeadUnit {
         method setSensorRpm {
                 SomeIpMethodID = 115
         }
-        method setTurnSignal {
+        method setGear {
                 SomeIpMethodID = 116
         }
-        method setGear {
+        method setDirection {
                 SomeIpMethodID = 117
         }
-        method setDirection {
-                SomeIpMethodID = 118
-        }
         method setLight {
-                SomeIpMethodID = 119
+                SomeIpMethodID = 118
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.HeadUnit {
                 InstanceId = "HeadUnit"
                 SomeIpInstanceID = 10005
-        }
-}
-
-
-define org.genivi.commonapi.someip.deployment for interface commonapi.PiracerSignal {
-        SomeIpServiceID = 1006
-}
-define org.genivi.commonapi.someip.deployment for provider as Service {
-        instance commonapi.PiracerSignal {
-                InstanceId = "PiracerSignal"
-                SomeIpInstanceID = 10006
         }
 }
 

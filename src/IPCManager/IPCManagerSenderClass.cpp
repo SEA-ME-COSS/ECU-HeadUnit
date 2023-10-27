@@ -22,9 +22,6 @@ IPCManagerSenderClass::IPCManagerSenderClass()
 
     HeadUnitTargetProxy = runtime->buildProxy<HeadUnitProxy>("local", "HeadUnit");
     // Create a proxy for the HeadUnit service
-        
-    PiracerSignalTargetProxy = runtime->buildProxy<PiracerSignalProxy>("local", "PiracerSignal");
-    // Create a proxy for the PiracerSignal service
 }
  
 IPCManagerSenderClass::~IPCManagerSenderClass()

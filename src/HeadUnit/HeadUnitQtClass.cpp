@@ -96,6 +96,11 @@ Q_INVOKABLE void HeadUnitQtClass::setIPCManagerLight(QString _light)
     sender.IPCManagerTargetProxy->setLight(_light.toStdString(), sender.callStatus, sender.returnMessage);
 }
 
+Q_INVOKABLE void HeadUnitQtClass::getIPCManagerDirection()
+{
+    sender.IPCManagerTargetProxy->getDirection("HeadUnit", sender.callStatus, sender.returnMessage);
+}
+
 // QML-invokable method to power off the system
 Q_INVOKABLE void HeadUnitQtClass::poweroff()
 {

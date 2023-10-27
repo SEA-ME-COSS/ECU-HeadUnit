@@ -69,4 +69,12 @@ Item {
         interval: 500; running: valueSource.blink; repeat: true
         onTriggered: valueSource.blinking()
     }
+
+    // Handle changes in direction
+    Timer {
+        interval: 500; running: true; repeat: true
+        onTriggered: {
+            manager.getIPCManagerDirection()
+        }
+    }
 }

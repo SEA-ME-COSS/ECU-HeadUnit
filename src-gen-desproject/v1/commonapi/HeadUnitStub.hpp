@@ -89,7 +89,6 @@ class HeadUnitStub
 {
 public:
     typedef std::function<void (std::string _message)> setSensorRpmReply_t;
-    typedef std::function<void (std::string _message)> setTurnSignalReply_t;
     typedef std::function<void (std::string _message)> setGearReply_t;
     typedef std::function<void (std::string _message)> setDirectionReply_t;
     typedef std::function<void (std::string _message)> setLightReply_t;
@@ -97,14 +96,12 @@ public:
     virtual ~HeadUnitStub() {}
     void lockInterfaceVersionAttribute(bool _lockAccess) { static_cast<void>(_lockAccess); }
     bool hasElement(const uint32_t _id) const {
-        return (_id < 5);
+        return (_id < 4);
     }
     virtual const CommonAPI::Version& getInterfaceVersion(std::shared_ptr<CommonAPI::ClientId> _client) = 0;
 
     /// This is the method that will be called on remote calls on the method setSensorRpm.
     virtual void setSensorRpm(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _SensorRpm, setSensorRpmReply_t _reply) = 0;
-    /// This is the method that will be called on remote calls on the method setTurnSignal.
-    virtual void setTurnSignal(const std::shared_ptr<CommonAPI::ClientId> _client, double _TurnSignal, setTurnSignalReply_t _reply) = 0;
     /// This is the method that will be called on remote calls on the method setGear.
     virtual void setGear(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _Gear, setGearReply_t _reply) = 0;
     /// This is the method that will be called on remote calls on the method setDirection.

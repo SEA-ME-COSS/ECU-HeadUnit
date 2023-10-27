@@ -38,15 +38,12 @@ class HeadUnitProxyBase
 public:
 
     typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> SetSensorRpmAsyncCallback;
-    typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> SetTurnSignalAsyncCallback;
     typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> SetGearAsyncCallback;
     typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> SetDirectionAsyncCallback;
     typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> SetLightAsyncCallback;
 
     virtual void setSensorRpm(uint16_t _SensorRpm, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr) = 0;
     virtual std::future<CommonAPI::CallStatus> setSensorRpmAsync(const uint16_t &_SensorRpm, SetSensorRpmAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr) = 0;
-    virtual void setTurnSignal(double _TurnSignal, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr) = 0;
-    virtual std::future<CommonAPI::CallStatus> setTurnSignalAsync(const double &_TurnSignal, SetTurnSignalAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr) = 0;
     virtual void setGear(uint16_t _Gear, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr) = 0;
     virtual std::future<CommonAPI::CallStatus> setGearAsync(const uint16_t &_Gear, SetGearAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr) = 0;
     virtual void setDirection(uint16_t _Direction, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr) = 0;
