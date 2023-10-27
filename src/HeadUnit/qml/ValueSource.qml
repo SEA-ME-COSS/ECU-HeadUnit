@@ -59,9 +59,9 @@ Item {
     property int blue: 0
 
     onLightChanged: {
-        valueSource.red: parseInt(valueSource.light.substring(1, 3), 16)
-        valueSource.green: parseInt(valueSource.light.substring(3, 5), 16)
-        valueSource.blue: parseInt(valueSource.light.substring(5, 7), 16)
+        valueSource.red = parseInt(valueSource.light.substring(1, 3), 16)
+        valueSource.green = parseInt(valueSource.light.substring(3, 5), 16)
+        valueSource.blue = parseInt(valueSource.light.substring(5, 7), 16)
     }
 
     property string red_string: ""
