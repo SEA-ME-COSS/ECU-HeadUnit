@@ -40,18 +40,16 @@ Item {
         }
     }
 
-    // Timer to delay the blinking function
-    Timer {
-        interval: 500; running: valueSource.initial_delay; repeat: false
-        onTriggered: {
-            valueSource.initial_delay = false
-        }
-    }
-
     // Timer to trigger the blinking function
     Timer {
         interval: 500; running: valueSource.blink; repeat: true
-        onTriggered: valueSource.blinking()
+        onTriggered: {
+            if (valueSource.initial_delay) {
+                valueSource.initial_delay = false
+            } else {
+                valueSource.blinking()
+            }
+        }
     }
 
     // RGB color properties to manage the instrument cluster's light
