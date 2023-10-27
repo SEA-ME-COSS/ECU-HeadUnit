@@ -52,16 +52,22 @@ void IPCManagerStubImpl::setDirection(const std::shared_ptr<CommonAPI::ClientId>
 {
     if (piracer.getDirection() == _direction)
     {
+        // Set direction to piracer
         piracer.setDirection(0);
+        
+        // Relay direction to the InstrumentCluster and HeadUnit services
+        sender.InstrumentClusterTargetProxy->setDirection(0, sender.callStatus, sender.returnMessage);
+        sender.HeadUnitTargetProxy->setDirection(0, sender.callStatus, sender.returnMessage);
     }
     else
     {
+        // Set direction to piracer
         piracer.setDirection(_direction);
+        
+        // Relay direction to the InstrumentCluster and HeadUnit services
+        sender.InstrumentClusterTargetProxy->setDirection(_direction, sender.callStatus, sender.returnMessage);
+        sender.HeadUnitTargetProxy->setDirection(_direction, sender.callStatus, sender.returnMessage);
     }
-
-    // Relay direction to the InstrumentCluster service
-    sender.InstrumentClusterTargetProxy->setDirection(_direction, sender.callStatus, sender.returnMessage);
-    sender.HeadUnitTargetProxy->setDirection(_direction, sender.callStatus, sender.returnMessage);
 
     // Reply to the caller
     _reply("");
