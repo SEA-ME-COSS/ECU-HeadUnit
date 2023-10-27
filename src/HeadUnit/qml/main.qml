@@ -374,7 +374,7 @@ Window {
             minimumValue: 0
             maximumValue: 128
             stepSize: 16
-            value: 128
+            value: valueSource.red
 
             style: SliderStyle {
                 groove: Rectangle {
@@ -394,11 +394,22 @@ Window {
 
             // Update red value and set light color
             onValueChanged: {
-                valueSource.red = redSlider.value.toString(16)
-                if (valueSource.red.length === 1) {
-                    valueSource.red = "0" + valueSource.red
+                valueSource.red_string = redSlider.value.toString(16)
+                if (valueSource.red_string.length === 1) {
+                    valueSource.red_string = "0" + valueSource.red_string
                 }
-                manager.setLight(valueSource.light)
+
+                valueSource.green_string = greenSlider.value.toString(16)
+                if (valueSource.green_string.length === 1) {
+                    valueSource.green_string = "0" + valueSource.green_string
+                }
+
+                valueSource.blue_string = blueSlider.value.toString(16)
+                if (valueSource.blue_string.length === 1) {
+                    valueSource.blue_string = "0" + valueSource.blue_string
+                }
+
+                manager.setIPCManagerLight("#" + valueSource.red_string + valueSource.green_string + valueSource.blue_string)
             }
         }
 
@@ -411,7 +422,7 @@ Window {
             minimumValue: 0
             maximumValue: 128
             stepSize: 16
-            value: 128
+            value: valueSource.green
 
             style: SliderStyle {
                 groove: Rectangle {
@@ -431,11 +442,22 @@ Window {
 
             // Update green value and set light color
             onValueChanged: {
-                valueSource.green = greenSlider.value.toString(16)
-                if (valueSource.green.length === 1) {
-                    valueSource.green = "0" + valueSource.green
+                valueSource.red_string = redSlider.value.toString(16)
+                if (valueSource.red_string.length === 1) {
+                    valueSource.red_string = "0" + valueSource.red_string
                 }
-                manager.setLight(valueSource.light)
+
+                valueSource.green_string = greenSlider.value.toString(16)
+                if (valueSource.green_string.length === 1) {
+                    valueSource.green_string = "0" + valueSource.green_string
+                }
+
+                valueSource.blue_string = blueSlider.value.toString(16)
+                if (valueSource.blue_string.length === 1) {
+                    valueSource.blue_string = "0" + valueSource.blue_string
+                }
+
+                manager.setIPCManagerLight("#" + valueSource.red_string + valueSource.green_string + valueSource.blue_string)
             }
         }
 
@@ -448,7 +470,7 @@ Window {
             minimumValue: 0
             maximumValue: 128
             stepSize: 16
-            value: 128
+            value: valueSource.blue
 
             style: SliderStyle {
                 groove: Rectangle {
@@ -468,11 +490,22 @@ Window {
 
             // Update blue value and set light color
             onValueChanged: {
-                valueSource.blue = blueSlider.value.toString(16)
-                if (valueSource.blue.length === 1) {
-                    valueSource.blue = "0" + valueSource.blue
+                valueSource.red_string = redSlider.value.toString(16)
+                if (valueSource.red_string.length === 1) {
+                    valueSource.red_string = "0" + valueSource.red_string
                 }
-                manager.setLight(valueSource.light)
+
+                valueSource.green_string = greenSlider.value.toString(16)
+                if (valueSource.green_string.length === 1) {
+                    valueSource.green_string = "0" + valueSource.green_string
+                }
+
+                valueSource.blue_string = blueSlider.value.toString(16)
+                if (valueSource.blue_string.length === 1) {
+                    valueSource.blue_string = "0" + valueSource.blue_string
+                }
+
+                manager.setIPCManagerLight("#" + valueSource.red_string + valueSource.green_string + valueSource.blue_string)
             }
         }
 

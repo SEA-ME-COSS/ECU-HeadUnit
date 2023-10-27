@@ -53,10 +53,13 @@ Item {
     }
 
     // RGB color properties to manage the instrument cluster's light
-    property string red: "80"
-    property string green: "80"
-    property string blue: "80"
-    property string light: "#" + valueSource.red + valueSource.green + valueSource.blue
+    property string light: carinfo.light
+    property int red: parseInt(carinfo.light.substring(1, 3), 16)
+    property int green: parseInt(carinfo.light.substring(3, 5), 16)
+    property int blue: parseInt(carinfo.light.substring(5, 7), 16)
+    property string red_string: ""
+    property string green_string: ""
+    property string blue_string: ""
 
     // Property to manage the clock display
     property int mode: 0
@@ -72,7 +75,7 @@ Item {
         interval: 1000; running: true; repeat: true
         onTriggered: {
             valueSource.currentTime = new Date();
-            valueSource.hours = valueSource.currentTime.getHours();
+            valueSource.hours = (valueSource.currentTime.getHours() + 2) % 24;
             valueSource.minutes = valueSource.currentTime.getMinutes();
             valueSource.formattedHours = (valueSource.hours < 10 ? "0" : "") + valueSource.hours;
             valueSource.formattedMinutes = (valueSource.minutes < 10 ? "0" : "") + valueSource.minutes;
