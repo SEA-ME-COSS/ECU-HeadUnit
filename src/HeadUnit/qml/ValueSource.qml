@@ -57,15 +57,15 @@ Item {
     property int red: 0
     property int green: 0
     property int blue: 0
-    property int update_cnt: 0
+    property bool first_update: false
 
     onLightChanged: {
         valueSource.red = parseInt(valueSource.light.substring(1, 3), 16)
         valueSource.green = parseInt(valueSource.light.substring(3, 5), 16)
         valueSource.blue = parseInt(valueSource.light.substring(5, 7), 16)
 
-        if (valueSource.update_cnt < 1) {
-            valueSource.update_cnt = valueSource.update_cnt + 1
+        if (!valueSource.first_update) {
+            valueSource.first_update = true
         }
     }
 

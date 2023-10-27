@@ -394,7 +394,7 @@ Window {
 
             // Update red value and set light color
             onValueChanged: {
-                if (valueSource.update_cnt === 1) {
+                if (valueSource.first_update) {
                     valueSource.red_string = redSlider.value.toString(16)
                     if (valueSource.red_string.length === 1) {
                         valueSource.red_string = "0" + valueSource.red_string
@@ -444,7 +444,7 @@ Window {
 
             // Update green value and set light color
             onValueChanged: {
-                if (valueSource.update_cnt === 1) {
+                if (valueSource.first_update) {
                     valueSource.red_string = redSlider.value.toString(16)
                     if (valueSource.red_string.length === 1) {
                         valueSource.red_string = "0" + valueSource.red_string
@@ -494,7 +494,7 @@ Window {
 
             // Update blue value and set light color
             onValueChanged: {
-                if (valueSource.update_cnt === 1) {
+                if (valueSource.first_update) {
                     valueSource.red_string = redSlider.value.toString(16)
                     if (valueSource.red_string.length === 1) {
                         valueSource.red_string = "0" + valueSource.red_string
