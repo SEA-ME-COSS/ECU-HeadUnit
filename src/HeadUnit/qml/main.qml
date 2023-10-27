@@ -251,7 +251,7 @@ Window {
             height: 100
             rotation: 90
             fillMode: Image.PreserveAspectFit
-            opacity: (valueSource.right_on_off) ? 1.0 : 0.2
+            opacity: (valueSource.right_on_off) ? 0.2 : 1.0
             x: parent.width / 2 - width / 2 + 170
             y: 485
 
