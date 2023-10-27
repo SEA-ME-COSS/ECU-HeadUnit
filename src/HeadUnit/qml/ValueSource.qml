@@ -54,9 +54,9 @@ Item {
 
     // RGB color properties to manage the instrument cluster's light
     property string light: carinfo.light
-    property int red: parseInt(carinfo.light.substring(1, 3), 16)
-    property int green: parseInt(carinfo.light.substring(3, 5), 16)
-    property int blue: parseInt(carinfo.light.substring(5, 7), 16)
+    property int red: parseInt(valueSource.light.substring(1, 3), 16)
+    property int green: parseInt(valueSource.light.substring(3, 5), 16)
+    property int blue: parseInt(valueSource.light.substring(5, 7), 16)
     property string red_string: ""
     property string green_string: ""
     property string blue_string: ""
