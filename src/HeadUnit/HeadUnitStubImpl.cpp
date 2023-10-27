@@ -27,15 +27,15 @@ void HeadUnitStubImpl::setTurnSignal(const std::shared_ptr<CommonAPI::ClientId> 
     // Update the steering value in the 'carinfo' instance
     if (_turnSignal == 0.0) // straight
     {
-        carinfo.setSteering((uint16_t)0);
+        carinfo.setSteering(0);
     }
     else if (_turnSignal == -1.0) // left
     {
-        carinfo.setSteering((uint16_t)1);
+        carinfo.setSteering(1);
     }
     else if (_turnSignal == 1.0) // right
     {
-        carinfo.setSteering((uint16_t)2);
+        carinfo.setSteering(2);
     }
 
     // Send an empty reply

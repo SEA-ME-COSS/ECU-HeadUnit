@@ -10,14 +10,23 @@ Item {
 
     // Properties to manage gear and direction
     property int gear: carinfo.gear
-    property int direction: 0
+    property int direction: carinfo.direction
 
     // Properties for controlling blinking and direction indicators
-    property bool blink: false
-    property bool left_direction: false
-    property bool right_direction: false
+    property bool blink: !(valueSource.direction === 0)
+    property bool left_direction: (valueSource.direction === 1 || valueSource.direction === 3)
+    property bool right_direction: (valueSource.direction === 2 || valueSource.direction === 3)
     property bool left_on_off: false
     property bool right_on_off: false
+
+    // Handler for direction changes
+    onDirectionChanged: {
+        valueSource.blink = !(valueSource.direction === 0);
+        valueSource.left_direction = (valueSource.direction === 1 || valueSource.direction === 3);
+        valueSource.right_direction = (valueSource.direction === 2 || valueSource.direction === 3);
+        valueSource.left_on_off = false;
+        valueSource.right_on_off = false;
+    }
 
     // Function to control the blinking behavior
     function blinking() {

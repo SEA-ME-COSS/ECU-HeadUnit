@@ -50,8 +50,14 @@ void IPCManagerStubImpl::setGearMode(const std::shared_ptr<CommonAPI::ClientId> 
 // Set direction and relay it to the InstrumentCluster service
 void IPCManagerStubImpl::setDirection(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _direction, setDirectionReply_t _reply)
 {
-    // Set direction to piracer
-    piracer.setDirection(_direction);
+    if (piracer.getDirection() == _direction)
+    {
+        piracer.setDirection(0);
+    }
+    else
+    {
+        piracer.setDirection(_direction);
+    }
 
     // Relay direction to the InstrumentCluster service
     sender.InstrumentClusterTargetProxy->setDirection(_direction, sender.callStatus, sender.returnMessage);

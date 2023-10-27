@@ -239,29 +239,7 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    if (valueSource.direction === 1) {
-                        manager.setDirection(0)
-                        valueSource.direction = 0
-
-                        valueSource.blink = false
-                        valueSource.left_direction = false
-                        valueSource.right_direction = false
-                        valueSource.left_on_off = false
-                        valueSource.right_on_off = false
-
-                        valueSource.freeDirection = false
-                    } else {
-                        manager.setDirection(1)
-                        valueSource.direction = 1
-
-                        valueSource.blink = true
-                        valueSource.left_direction = true
-                        valueSource.right_direction = false
-                        valueSource.left_on_off = true
-                        valueSource.right_on_off = false
-
-                        valueSource.freeDirection = false
-                    }
+                    manager.setIPCManagerDirection(1)
                 }
             }
         }
@@ -290,29 +268,7 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    if (valueSource.direction === 2) {
-                        manager.setDirection(0)
-                        valueSource.direction = 0
-
-                        valueSource.blink = false
-                        valueSource.left_direction = false
-                        valueSource.right_direction = false
-                        valueSource.left_on_off = false
-                        valueSource.right_on_off = false
-
-                        valueSource.freeDirection = false
-                    } else {
-                        manager.setDirection(2)
-                        valueSource.direction = 2
-
-                        valueSource.blink = true
-                        valueSource.left_direction = false
-                        valueSource.right_direction = true
-                        valueSource.left_on_off = false
-                        valueSource.right_on_off = true
-
-                        valueSource.freeDirection = false
-                    }
+                    manager.setIPCManagerDirection(2)
                 }
             }
         }
@@ -348,29 +304,7 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    if (valueSource.direction === 3) {
-                        manager.setDirection(0)
-                        valueSource.direction = 0
-
-                        valueSource.blink = false
-                        valueSource.left_direction = false
-                        valueSource.right_direction = false
-                        valueSource.left_on_off = false
-                        valueSource.right_on_off = false
-
-                        valueSource.freeDirection = false
-                    } else {
-                        manager.setDirection(3)
-                        valueSource.direction = 3
-
-                        valueSource.blink = true
-                        valueSource.left_direction = true
-                        valueSource.right_direction = true
-                        valueSource.left_on_off = true
-                        valueSource.right_on_off = true
-
-                        valueSource.freeDirection = false
-                    }
+                    manager.setIPCManagerDirection(3)
                 }
             }
         }
