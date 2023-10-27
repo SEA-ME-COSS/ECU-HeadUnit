@@ -54,14 +54,19 @@ Item {
 
     // RGB color properties to manage the instrument cluster's light
     property string light: carinfo.light
-    property int red: 1
-    property int green: 1
-    property int blue: 1
+    property int red: 0
+    property int green: 0
+    property int blue: 0
+    property int update_cnt: 0
 
     onLightChanged: {
         valueSource.red = parseInt(valueSource.light.substring(1, 3), 16)
         valueSource.green = parseInt(valueSource.light.substring(3, 5), 16)
         valueSource.blue = parseInt(valueSource.light.substring(5, 7), 16)
+
+        if (valueSource.update_cnt < 10) {
+            valueSource.update_cnt = valueSource.update_cnt + 1
+        }
     }
 
     property string red_string: ""
