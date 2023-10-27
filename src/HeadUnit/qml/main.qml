@@ -371,7 +371,7 @@ Window {
             width: 140
             x: 870
             y: 130
-            minimumValue: 0
+            minimumValue: -1
             maximumValue: 128
             stepSize: 16
             value: valueSource.red
@@ -421,7 +421,7 @@ Window {
             width: 140
             x: 870
             y: 160
-            minimumValue: 0
+            minimumValue: -1
             maximumValue: 128
             stepSize: 16
             value: valueSource.green
@@ -471,7 +471,7 @@ Window {
             width: 140
             x: 870
             y: 190
-            minimumValue: 0
+            minimumValue: -1
             maximumValue: 128
             stepSize: 16
             value: valueSource.blue
