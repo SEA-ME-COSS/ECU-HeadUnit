@@ -20,6 +20,8 @@ ControllerClass::ControllerClass()
     steering = 0.0;
     pre_throttle = 0.0;
     pre_steering = 0.0;
+    
+    cnt = 0;
 }
 
 // Destructor for the ControllerClass
@@ -53,7 +55,7 @@ void ControllerClass::readControl()
     pSteering = PyObject_GetAttrString(pInput, "analog_stick_left");
     pSteering = PyObject_GetAttrString(pSteering, "x");
     
-    pButtonA = PyObject_GetAttrString(pInput, "analog_stick_right");
+    //pButtonA = PyObject_GetAttrString(pInput, "analog_stick_right");
     //button_A = PyObject_IsTrue(pButtonA);
     
     /*if (pButton_A == Py_True)
@@ -76,6 +78,9 @@ void ControllerClass::readControl()
     // Convert Python float values to C++ doubles
     throttle = PyFloat_AsDouble(pThrottle);
     steering = PyFloat_AsDouble(pSteering);
+    
+    cnt ++;
+    std::cout<<cnt<<std::endl;
     
     return;
 }

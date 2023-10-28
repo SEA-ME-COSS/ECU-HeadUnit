@@ -18,6 +18,8 @@ private:
     bool button_B;
     bool button_X;
     bool button_Y;
+    
+    int cnt;
 
 public:
     // Constructor for the ControllerClass
