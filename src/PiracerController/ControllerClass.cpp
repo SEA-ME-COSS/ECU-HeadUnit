@@ -21,7 +21,10 @@ ControllerClass::ControllerClass()
     pre_throttle = 0.0;
     pre_steering = 0.0;
     
-    read_data_call_cnt = 0;
+    button_A = false;
+    button_B = false;
+    button_X = false;
+    button_Y = false;
 }
 
 // Destructor for the ControllerClass
@@ -29,6 +32,9 @@ ControllerClass::~ControllerClass()
 {
     // Release Python objects to avoid memory leaks
     Py_DECREF(pButtonA);
+    Py_DECREF(pButtonB);
+    Py_DECREF(pButtonX);
+    Py_DECREF(pButtonY);
     Py_DECREF(pThrottle);
     Py_DECREF(pSteering);
     Py_DECREF(pInput);
@@ -49,48 +55,28 @@ void ControllerClass::readControl()
     // Call the "read_data" method on the gamepad instance
     pInput = PyObject_CallMethod(pInstance, "read_data", NULL);
     
+    pThrottle = PyObject_GetAttrString(pInput, "analog_stick_right");
+    pThrottle = PyObject_GetAttrString(pThrottle, "y");
+    throttle = PyFloat_AsDouble(pThrottle);
     
-    PyObject* pDir = PyObject_Dir(pInput);
-
-    if (PyList_Check(pDir)) {
-        Py_ssize_t len = PyList_Size(pDir);
-        for (Py_ssize_t i = 0; i < len; ++i) {
-            PyObject* pName = PyList_GetItem(pDir, i);
-            if (PyUnicode_Check(pName)) {
-                const char* memberName = PyUnicode_AsUTF8(pName);
-                // 멤버 변수 이름 출력
-                printf("멤버 변수 이름: %s\n", memberName);
-            }
-        }
-    }
+    pSteering = PyObject_GetAttrString(pInput, "analog_stick_left");
+    pSteering = PyObject_GetAttrString(pSteering, "x");
+    steering = PyFloat_AsDouble(pSteering);
     
-    
-    
-    
-    
-    /*
-    if (read_data_call_cnt < 24)
+    pButtonA = PyObject_GetAttrString(pInput, "button_a");
+    if (pButtonA != NULL)
     {
-        read_data_call_cnt ++;
+        std::cout<<"000"<<std::endl;
     }
-    
-    if (read_data_call_cnt == 24)
-    {
-        // Get the analog stick values for throttle and steering
-        pThrottle = PyObject_GetAttrString(pInput, "analog_stick_right");
-        pThrottle = PyObject_GetAttrString(pThrottle, "y");
-        pSteering = PyObject_GetAttrString(pInput, "analog_stick_left");
-        pSteering = PyObject_GetAttrString(pSteering, "x");
-    
-        pButtonA = PyObject_GetAttrString(pInput, "button_a");
-        if (pButtonA == NULL)
-        {
-            std::cout<<"000"<<std::endl;
-        }
+        
+        
         
         //button_A = PyObject_IsTrue(pButtonA);
     
-        if (pButton_A == Py_True)
+    
+    
+    
+        /*if (pButton_A == Py_True)
         {
             std::cout<<"\n"<<"A"<<std::endl;
         }
@@ -105,12 +91,9 @@ void ControllerClass::readControl()
         if (pButton_Y == Py_True)
         {
             std::cout<<"\n"<<"Y"<<std::endl;
-        }
+        }*/
     
-        // Convert Python float values to C++ doubles
-        throttle = PyFloat_AsDouble(pThrottle);
-        steering = PyFloat_AsDouble(pSteering);
-    }*/
+    
     
     return;
 }
