@@ -7,8 +7,12 @@ class ControllerClass
 {
 private:
     PyObject *pModule, *pClass, *pInstance, *pInput, *pThrottle, *pSteering;
+    
     double throttle;  // Stores the throttle value
     double steering;  // Stores the steering value
+    
+    double pre_throttle;  // Stores the previous throttle value
+    double pre_steering;  // Stores the previous steering value
 
 public:
     // Constructor for the ControllerClass
@@ -25,6 +29,12 @@ public:
 
     // Get the current steering value
     double getSteering();
+    
+    // Get the previous throttle value
+    double getPreThrottle();
+
+    // Get the previous steering value
+    double getPreSteering();
 };
 
 #endif

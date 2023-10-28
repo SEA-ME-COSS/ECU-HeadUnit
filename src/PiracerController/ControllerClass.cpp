@@ -14,6 +14,11 @@ ControllerClass::ControllerClass()
 
     // Create an instance of the "ShanWanGamepad" class
     pInstance = PyObject_CallObject(pClass, NULL);
+    
+    throttle = 0.0;
+    steering = 0.0;
+    pre_throttle = 0.0;
+    pre_steering = 0.0;
 }
 
 // Destructor for the ControllerClass
@@ -34,6 +39,9 @@ ControllerClass::~ControllerClass()
 // Read control input from the gamepad
 void ControllerClass::readControl()
 {
+    pre_throttle = throttle;
+    pre_steering = steering;
+
     // Call the "read_data" method on the gamepad instance
     pInput = PyObject_CallMethod(pInstance, "read_data", NULL);
     
@@ -44,7 +52,7 @@ void ControllerClass::readControl()
     pSteering = PyObject_GetAttrString(pSteering, "x");
     
     // Convert Python float values to C++ doubles
-    throttle = PyFloat_AsDouble(pThrottle) * 0.5;
+    throttle = PyFloat_AsDouble(pThrottle);
     steering = PyFloat_AsDouble(pSteering);
     
     return;
@@ -60,5 +68,17 @@ double ControllerClass::getThrottle()
 double ControllerClass::getSteering()
 {
     return steering;
+}
+
+// Get the previous throttle value
+double ControllerClass::getPreThrottle()
+{
+    return pre_throttle;
+}
+
+// Get the previous steering value
+double ControllerClass::getPreSteering()
+{
+    return pre_steering;
 }
 

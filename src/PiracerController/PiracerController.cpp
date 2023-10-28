@@ -32,8 +32,14 @@ int main()
         controller.readControl();
 
 	// Send control data to IPCManager
-        IPCManagertargetProxy->setThrottle(controller.getThrottle(), callStatus, returnMessage);
-	IPCManagertargetProxy->setSteering(controller.getSteering(), callStatus, returnMessage);
+	if (controller.getPreThrottle() != controller.getThrottle())
+	{
+            IPCManagertargetProxy->setThrottle(controller.getThrottle(), callStatus, returnMessage);
+	}
+	if (controller.getPreSteering() != controller.getSteering())
+	{
+	    IPCManagertargetProxy->setSteering(controller.getSteering(), callStatus, returnMessage);
+        }
     }
 
     return 0;
