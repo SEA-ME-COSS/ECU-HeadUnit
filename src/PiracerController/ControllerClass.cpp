@@ -56,8 +56,8 @@ void ControllerClass::readControl()
     pSteering = PyObject_GetAttrString(pInput, "analog_stick_left");
     pSteering = PyObject_GetAttrString(pSteering, "x");
     
-    /*pButton_A = PyObject_GetAttrString(pInput, "button_a");
-    pButton_B = PyObject_GetAttrString(pInput, "button_b");
+    pButton_A = PyObject_GetAttrString(pInput, "button_a");
+    /*pButton_B = PyObject_GetAttrString(pInput, "button_b");
     pButton_X = PyObject_GetAttrString(pInput, "button_x");
     pButton_Y = PyObject_GetAttrString(pInput, "button_y");*/
     
