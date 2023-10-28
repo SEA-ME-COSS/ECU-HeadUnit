@@ -26,6 +26,7 @@ ControllerClass::ControllerClass()
 ControllerClass::~ControllerClass()
 {
     // Release Python objects to avoid memory leaks
+    py_DECREF(pButton_A);
     Py_DECREF(pThrottle);
     Py_DECREF(pSteering);
     Py_DECREF(pInput);
@@ -52,7 +53,8 @@ void ControllerClass::readControl()
     pSteering = PyObject_GetAttrString(pInput, "analog_stick_left");
     pSteering = PyObject_GetAttrString(pSteering, "x");
     
-    button_A = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_a"));
+    pButton_A = PyObject_GetAttrString(pInput, "button_a");
+    pButton_A = PyObject_IsTrue(pButton_A);
     
     /*if (pButton_A == Py_True)
     {
@@ -79,12 +81,6 @@ void ControllerClass::readControl()
 }
 
 /*
-    pInput = PyObject_GetAttrString(pReadData, "button_y");
-    gamepad_button_y = PyObject_IsTrue(pInput);
-    pInput = PyObject_GetAttrString(pReadData, "button_x");
-    gamepad_button_x = PyObject_IsTrue(pInput);
-    pInput = PyObject_GetAttrString(pReadData, "button_b");
-    gamepad_button_b = PyObject_IsTrue(pInput);
     pInput = PyObject_GetAttrString(pReadData, "button_a");
     gamepad_button_a = PyObject_IsTrue(pInput);
 */
