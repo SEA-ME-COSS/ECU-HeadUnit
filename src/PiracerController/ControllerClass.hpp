@@ -19,6 +19,8 @@ private:
     bool button_X;
     bool button_Y;
     
+    int read_data_call_cnt;
+    
 public:
     // Constructor for the ControllerClass
     ControllerClass();

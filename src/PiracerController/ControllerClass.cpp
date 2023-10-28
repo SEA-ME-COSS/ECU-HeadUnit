@@ -25,6 +25,8 @@ ControllerClass::ControllerClass()
     button_B = false;
     button_X = false;
     button_Y = false;
+    
+    read_data_call_cnt = 0;
 }
 
 // Destructor for the ControllerClass
@@ -54,6 +56,7 @@ void ControllerClass::readControl()
 
     // Call the "read_data" method on the gamepad instance
     pInput = PyObject_CallMethod(pInstance, "read_data", NULL);
+    read_data_call_cnt++;
     
     pThrottle = PyObject_GetAttrString(pInput, "analog_stick_right");
     pThrottle = PyObject_GetAttrString(pThrottle, "y");
@@ -63,15 +66,17 @@ void ControllerClass::readControl()
     pSteering = PyObject_GetAttrString(pSteering, "x");
     steering = PyFloat_AsDouble(pSteering);
     
-    std::cout<<"000"<<std::endl;
+    std::cout<<read_data_call_cnt<<std::endl;
     
-    pButtonA = PyObject_GetAttrString(pInput, "button_a");
-    if (pButtonA != NULL)
+    if (read_data_call_cnt >= 24)
     {
-        button_A = PyObject_IsTrue(pButtonA);
-        std::cout<<"000"<<std::endl;
+        pButtonA = PyObject_GetAttrString(pInput, "button_a");
+        if (pButtonA != NULL)
+        {
+            button_A = PyObject_IsTrue(pButtonA);
+            std::cout<<"000"<<std::endl;
+        }
     }
-        
         
         
         //button_A = PyObject_IsTrue(pButtonA);
