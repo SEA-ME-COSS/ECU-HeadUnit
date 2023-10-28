@@ -63,11 +63,12 @@ void ControllerClass::readControl()
     pSteering = PyObject_GetAttrString(pSteering, "x");
     steering = PyFloat_AsDouble(pSteering);
     
-    //pButtonA = PyObject_GetAttrString(pInput, "button_a");
-    //if (pButtonA != NULL)
-    //{
-    //    std::cout<<"000"<<std::endl;
-    //}
+    pButtonA = PyObject_GetAttrString(pInput, "button_a");
+    if (pButtonA != NULL)
+    {
+        button_A = PyObject_IsTrue(pButtonA);
+        std::cout<<"000"<<std::endl;
+    }
         
         
         
