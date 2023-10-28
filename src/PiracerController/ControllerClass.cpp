@@ -48,42 +48,44 @@ void ControllerClass::readControl()
 
     // Call the "read_data" method on the gamepad instance
     pInput = PyObject_CallMethod(pInstance, "read_data", NULL);
-    
-    // Get the analog stick values for throttle and steering
-    //pThrottle = PyObject_GetAttrString(pInput, "analog_stick_right");
-    //pThrottle = PyObject_GetAttrString(pThrottle, "y");
-    //pSteering = PyObject_GetAttrString(pInput, "analog_stick_left");
-    //pSteering = PyObject_GetAttrString(pSteering, "x");
-    
-    //pButtonA = PyObject_GetAttrString(pInput, "analog_stick_right");
-    //button_A = PyObject_IsTrue(pButtonA);
-    
-    /*if (pButton_A == Py_True)
-    {
-        std::cout<<"\n"<<"A"<<std::endl;
-    }
-    if (pButton_B == Py_True)
-    {
-        std::cout<<"\n"<<"B"<<std::endl;
-    }
-    if (pButton_X == Py_True)
-    {
-        std::cout<<"\n"<<"X"<<std::endl;
-    }
-    if (pButton_Y == Py_True)
-    {
-        std::cout<<"\n"<<"Y"<<std::endl;
-    }*/
-    
-    // Convert Python float values to C++ doubles
-    //throttle = PyFloat_AsDouble(pThrottle);
-    //steering = PyFloat_AsDouble(pSteering);
-    
     if (read_data_call_cnt < 24)
     {
         read_data_call_cnt ++;
     }
-    std::cout<<read_data_call_cnt<<std::endl;
+    
+    if (read_data_call_cnt == 24)
+    {
+        // Get the analog stick values for throttle and steering
+        pThrottle = PyObject_GetAttrString(pInput, "analog_stick_right");
+        pThrottle = PyObject_GetAttrString(pThrottle, "y");
+        pSteering = PyObject_GetAttrString(pInput, "analog_stick_left");
+        pSteering = PyObject_GetAttrString(pSteering, "x");
+    
+        //pButtonA = PyObject_GetAttrString(pInput, "analog_stick_right");
+        //button_A = PyObject_IsTrue(pButtonA);
+    
+        /*if (pButton_A == Py_True)
+        {
+            std::cout<<"\n"<<"A"<<std::endl;
+        }
+        if (pButton_B == Py_True)
+        {
+            std::cout<<"\n"<<"B"<<std::endl;
+        }
+        if (pButton_X == Py_True)
+        {
+            std::cout<<"\n"<<"X"<<std::endl;
+        }
+        if (pButton_Y == Py_True)
+        {
+            std::cout<<"\n"<<"Y"<<std::endl;
+        }*/
+    
+        // Convert Python float values to C++ doubles
+        throttle = PyFloat_AsDouble(pThrottle);
+        steering = PyFloat_AsDouble(pSteering);
+    }
+    
     return;
 }
 
