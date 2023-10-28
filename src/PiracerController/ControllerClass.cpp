@@ -68,7 +68,7 @@ void ControllerClass::readControl()
     
     std::cout<<read_data_call_cnt<<std::endl;
     
-    if (PyObject_HasAttrString(pInput, "analog_stick_left")
+    if (PyObject_HasAttrString(pInput, "analog_stick_left"))
     {
         std::cout<<"000"<<std::endl;
     }
