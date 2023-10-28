@@ -26,7 +26,6 @@ ControllerClass::ControllerClass()
 ControllerClass::~ControllerClass()
 {
     // Release Python objects to avoid memory leaks
-    Py_DECREF(pButton_A);
     Py_DECREF(pThrottle);
     Py_DECREF(pSteering);
     Py_DECREF(pInput);
@@ -53,7 +52,7 @@ void ControllerClass::readControl()
     pSteering = PyObject_GetAttrString(pInput, "analog_stick_left");
     pSteering = PyObject_GetAttrString(pSteering, "x");
     
-    pButton_A = PyObject_GetAttrString(pInput, "button_a");
+    button_A = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_a"));
     
     /*if (pButton_A == Py_True)
     {
