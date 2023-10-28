@@ -1,4 +1,5 @@
 #include "ControllerClass.hpp"
+#include "iostream"
 
 // Constructor for the ControllerClass
 ControllerClass::ControllerClass()
@@ -60,8 +61,9 @@ void ControllerClass::readControl()
         pSteering = PyObject_GetAttrString(pInput, "analog_stick_left");
         pSteering = PyObject_GetAttrString(pSteering, "x");
     
-        pButtonA = PyObject_GetAttrString(pInput, "button_a");
-        button_A = PyObject_IsTrue(pButtonA);
+        button_A = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_a"));
+        std::cout<<button_A<<std::endl;
+        //button_A = PyObject_IsTrue(pButtonA);
     
         /*if (pButton_A == Py_True)
         {
