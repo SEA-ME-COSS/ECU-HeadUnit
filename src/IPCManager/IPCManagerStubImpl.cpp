@@ -112,7 +112,7 @@ void IPCManagerStubImpl::setSteering(const std::shared_ptr<CommonAPI::ClientId> 
     // Apply steering to piracer
     piracer.applySteering(_steering);
     
-    std::cout<<_steering<<std::endl;
+    std::cout<<"\n"<<"*****"<<_steering<<"*****"<<std::endl;
     
     if ((piracer.getDirection() == 1) && (piracer.getFreeDirection() == false) && (_steering == -0.5))
     {
