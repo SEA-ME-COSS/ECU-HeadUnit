@@ -94,12 +94,4 @@ Item {
             valueSource.clock = valueSource.formattedHours + ":" + valueSource.formattedMinutes;
         }
     }
-
-    // Handle changes in direction
-    Timer {
-        interval: 500; running: true; repeat: true
-        onTriggered: {
-            manager.getIPCManagerDirection()
-        }
-    }
 }
