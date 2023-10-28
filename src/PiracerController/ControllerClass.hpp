@@ -6,7 +6,7 @@
 class ControllerClass
 {
 private:
-    PyObject *pModule, *pClass, *pInstance, *pInput, *pTemp, *pThrottle, *pSteering;
+    PyObject *pModule, *pClass, *pInstance, *pInput, *pThrottle, *pSteering, *pButtonA;
     
     double throttle;  // Stores the throttle value
     double steering;  // Stores the steering value
