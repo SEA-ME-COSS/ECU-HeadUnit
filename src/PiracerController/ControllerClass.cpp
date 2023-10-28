@@ -1,4 +1,5 @@
 #include "ControllerClass.hpp"
+#include <iostream>
 
 // Constructor for the ControllerClass
 ControllerClass::ControllerClass()
@@ -27,6 +28,10 @@ ControllerClass::~ControllerClass()
     // Release Python objects to avoid memory leaks
     Py_DECREF(pThrottle);
     Py_DECREF(pSteering);
+    Py_DECREF(pButton_A);
+    Py_DECREF(pButton_B);
+    Py_DECREF(pButton_X);
+    Py_DECREF(pButton_Y);
     Py_DECREF(pInput);
     Py_DECREF(pInstance);
     Py_DECREF(pClass);
@@ -50,6 +55,28 @@ void ControllerClass::readControl()
     pThrottle = PyObject_GetAttrString(pThrottle, "y");
     pSteering = PyObject_GetAttrString(pInput, "analog_stick_left");
     pSteering = PyObject_GetAttrString(pSteering, "x");
+    
+    pButton_A = PyObject_GetAttrString(pInput, "button_a");
+    pButton_B = PyObject_GetAttrString(pInput, "button_b");
+    pButton_X = PyObject_GetAttrString(pInput, "button_x");
+    pButton_Y = PyObject_GetAttrString(pInput, "button_y");
+    
+    if (pButton_A == Py_True)
+    {
+        std::cout<<"\n"<<"A"<<std::endl;
+    }
+    if (pButton_B == Py_True)
+    {
+        std::cout<<"\n"<<"B"<<std::endl;
+    }
+    if (pButton_X == Py_True)
+    {
+        std::cout<<"\n"<<"X"<<std::endl;
+    }
+    if (pButton_Y == Py_True)
+    {
+        std::cout<<"\n"<<"Y"<<std::endl;
+    }
     
     // Convert Python float values to C++ doubles
     throttle = PyFloat_AsDouble(pThrottle);
