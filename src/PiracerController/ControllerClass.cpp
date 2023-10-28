@@ -28,7 +28,6 @@ ControllerClass::~ControllerClass()
     // Release Python objects to avoid memory leaks
     Py_DECREF(pThrottle);
     Py_DECREF(pSteering);
-    Py_DECREF(pTemp);
     Py_DECREF(pInput);
     Py_DECREF(pInstance);
     Py_DECREF(pClass);
@@ -48,13 +47,13 @@ void ControllerClass::readControl()
     pInput = PyObject_CallMethod(pInstance, "read_data", NULL);
     
     // Get the analog stick values for throttle and steering
-    pTemp = PyObject_GetAttrString(pInput, "analog_stick_right");
-    pThrottle = PyObject_GetAttrString(pTemp, "y");
-    pTemp = PyObject_GetAttrString(pInput, "analog_stick_left");
-    pSteering = PyObject_GetAttrString(pTemp, "x");
+    pThrottle = PyObject_GetAttrString(pInput, "analog_stick_right");
+    pThrottle = PyObject_GetAttrString(pThrottle, "y");
+    pSteering = PyObject_GetAttrString(pInput, "analog_stick_left");
+    pSteering = PyObject_GetAttrString(pSteering, "x");
     
-    pTemp = PyObject_GetAttrString(pInput, "button_a");
-    button_A = PyObject_IsTrue(pTemp);
+    //pTemp = PyObject_GetAttrString(pInput, "button_a");
+    //button_A = PyObject_IsTrue(pTemp);
     
     /*if (pButton_A == Py_True)
     {
