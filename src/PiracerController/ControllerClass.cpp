@@ -68,6 +68,12 @@ void ControllerClass::readControl()
     
     std::cout<<read_data_call_cnt<<std::endl;
     
+    if (PyObject_HasAttrString(pInput, "analog_stick_left")
+    {
+        std::cout<<"000"<<std::endl;
+    }
+    
+    /*
     if (read_data_call_cnt >= 24)
     {
         pButtonA = PyObject_GetAttrString(pInput, "button_a");
@@ -77,7 +83,7 @@ void ControllerClass::readControl()
             std::cout<<"000"<<std::endl;
         }
     }
-        
+    */  
         
         //button_A = PyObject_IsTrue(pButtonA);
     
