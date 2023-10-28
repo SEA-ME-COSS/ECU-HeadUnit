@@ -53,6 +53,8 @@ void ControllerClass::readControl()
     pTemp = PyObject_GetAttrString(pInput, "analog_stick_left");
     pSteering = PyObject_GetAttrString(pTemp, "x");
     
+    pTemp = PyObject_GetAttrString(pInput, "button_a");
+    
     /*if (pButton_A == Py_True)
     {
         std::cout<<"\n"<<"A"<<std::endl;
