@@ -54,7 +54,7 @@ void ControllerClass::readControl()
     pSteering = PyObject_GetAttrString(pTemp, "x");
     
     pTemp = PyObject_GetAttrString(pInput, "button_a");
-    Py_DECREF(pTemp);
+    button_A = PyObject_IsTrue(pTemp);
     
     /*if (pButton_A == Py_True)
     {
