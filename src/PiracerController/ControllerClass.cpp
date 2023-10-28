@@ -83,7 +83,7 @@ void ControllerClass::readControl()
     {
         read_data_call_cnt ++;
     }
-    std::cout<<cnt<<std::endl;
+    std::cout<<read_data_call_cnt<<std::endl;
     return;
 }
 
