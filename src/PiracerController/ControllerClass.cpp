@@ -53,8 +53,8 @@ void ControllerClass::readControl()
     pSteering = PyObject_GetAttrString(pInput, "analog_stick_left");
     pSteering = PyObject_GetAttrString(pSteering, "x");
     
-    pButtonA = PyObject_GetAttrString(pInput, "button_a");
-    button_A = PyObject_IsTrue(pButtonA);
+    pButtonA = PyObject_GetAttrString(pInput, "analog_stick_right");
+    //button_A = PyObject_IsTrue(pButtonA);
     
     /*if (pButton_A == Py_True)
     {
@@ -79,11 +79,6 @@ void ControllerClass::readControl()
     
     return;
 }
-
-/*
-    pInput = PyObject_GetAttrString(pReadData, "button_a");
-    gamepad_button_a = PyObject_IsTrue(pInput);
-*/
 
 // Get the current throttle value
 double ControllerClass::getThrottle()
