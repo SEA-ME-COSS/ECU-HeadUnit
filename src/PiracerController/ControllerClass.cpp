@@ -48,6 +48,27 @@ void ControllerClass::readControl()
 
     // Call the "read_data" method on the gamepad instance
     pInput = PyObject_CallMethod(pInstance, "read_data", NULL);
+    
+    
+    PyObject* pDir = PyObject_Dir(pInput);
+
+    if (PyList_Check(pDir)) {
+        Py_ssize_t len = PyList_Size(pDir);
+        for (Py_ssize_t i = 0; i < len; ++i) {
+            PyObject* pName = PyList_GetItem(pDir, i);
+            if (PyUnicode_Check(pName)) {
+                const char* memberName = PyUnicode_AsUTF8(pName);
+                // 멤버 변수 이름 출력
+                printf("멤버 변수 이름: %s\n", memberName);
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    /*
     if (read_data_call_cnt < 24)
     {
         read_data_call_cnt ++;
@@ -69,7 +90,7 @@ void ControllerClass::readControl()
         
         //button_A = PyObject_IsTrue(pButtonA);
     
-        /*if (pButton_A == Py_True)
+        if (pButton_A == Py_True)
         {
             std::cout<<"\n"<<"A"<<std::endl;
         }
@@ -84,12 +105,12 @@ void ControllerClass::readControl()
         if (pButton_Y == Py_True)
         {
             std::cout<<"\n"<<"Y"<<std::endl;
-        }*/
+        }
     
         // Convert Python float values to C++ doubles
         throttle = PyFloat_AsDouble(pThrottle);
         steering = PyFloat_AsDouble(pSteering);
-    }
+    }*/
     
     return;
 }
