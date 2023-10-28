@@ -61,7 +61,7 @@ void ControllerClass::readControl()
     pButton_X = PyObject_GetAttrString(pInput, "button_x");
     pButton_Y = PyObject_GetAttrString(pInput, "button_y");
     
-    if (pButton_A == Py_True)
+    /*if (pButton_A == Py_True)
     {
         std::cout<<"\n"<<"A"<<std::endl;
     }
@@ -76,7 +76,7 @@ void ControllerClass::readControl()
     if (pButton_Y == Py_True)
     {
         std::cout<<"\n"<<"Y"<<std::endl;
-    }
+    }*/
     
     // Convert Python float values to C++ doubles
     throttle = PyFloat_AsDouble(pThrottle);
