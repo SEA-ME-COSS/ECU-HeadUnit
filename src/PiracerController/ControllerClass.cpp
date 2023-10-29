@@ -64,7 +64,7 @@ void ControllerClass::readControl()
     button_X = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_x"));
     button_Y = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_y"));
     
-    if (button_A)
+    /*if (button_A)
     {
         std::cout<<"\n"<<"A"<<std::endl;
     }
@@ -79,7 +79,7 @@ void ControllerClass::readControl()
     if (button_Y)
     {
         std::cout<<"\n"<<"Y"<<std::endl;
-    }
+    }*/
     
     return;
 }
