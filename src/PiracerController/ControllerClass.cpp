@@ -21,10 +21,17 @@ ControllerClass::ControllerClass()
     pre_throttle = 0.0;
     pre_steering = 0.0;
     
+    button_l1 = false;
+    button_l2 = false;
+    button_r1 = false;
+    button_r2 = false;
     button_A = false;
     button_B = false;
     button_X = false;
     button_Y = false;
+    button_select = false;
+    button_start = false;
+    button_home = false;
 }
 
 // Destructor for the ControllerClass
@@ -59,10 +66,17 @@ void ControllerClass::readControl()
     pSteering = PyObject_GetAttrString(pSteering, "x");
     steering = PyFloat_AsDouble(pSteering);
     
+    button_l1 = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_l1"));
+    button_l2 = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_l2"));
+    button_r1 = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_r1"));
+    button_r2 = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_r2"));
     button_A = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_a"));
     button_B = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_b"));
     button_X = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_x"));
     button_Y = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_y"));
+    button_select = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_select"));
+    button_start = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_start"));
+    button_home = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_home"));
     
     /*if (button_A)
     {
