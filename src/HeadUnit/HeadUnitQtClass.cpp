@@ -5,19 +5,12 @@ HeadUnitQtClass::HeadUnitQtClass(QObject *parent) : QObject(parent)
 {
     // Initialize sensorRpm and steering to 0
     QsensorRpm = 0;
-    Qsteering = 0;
 }
 
 // Getter for sensorRpm
 quint16 HeadUnitQtClass::sensorRpm() const
 {
     return QsensorRpm;
-}
-
-// Getter for steering
-quint16 HeadUnitQtClass::steering() const
-{
-    return Qsteering;
 }
 
 // Getter for gear
@@ -46,14 +39,6 @@ void HeadUnitQtClass::setSensorRpm(uint16_t _sensorRpm)
     emit sensorRpmChanged();
 }
 
-// Setter for steering
-void HeadUnitQtClass::setSteering(uint16_t _steering)
-{
-    Qsteering = _steering;
-    // Emit the signal to notify changes to QML
-    emit steeringChanged();
-}
-
 // Setter for gear
 void HeadUnitQtClass::setGear(uint16_t _gear)
 {
@@ -70,7 +55,7 @@ void HeadUnitQtClass::setDirection(uint16_t _direction)
     emit directionChanged();
 }
 
-// Setter for steering
+// Setter for light
 void HeadUnitQtClass::setLight(QString _light)
 {
     Qlight = _light;
@@ -94,11 +79,6 @@ Q_INVOKABLE void HeadUnitQtClass::setIPCManagerDirection(quint16 _direction)
 Q_INVOKABLE void HeadUnitQtClass::setIPCManagerLight(QString _light)
 {
     sender.IPCManagerTargetProxy->setLight(_light.toStdString(), sender.callStatus, sender.returnMessage);
-}
-
-Q_INVOKABLE void HeadUnitQtClass::getIPCManagerDirection()
-{
-    sender.IPCManagerTargetProxy->getDirection("HeadUnit", sender.callStatus, sender.returnMessage);
 }
 
 // QML-invokable method to power off the system

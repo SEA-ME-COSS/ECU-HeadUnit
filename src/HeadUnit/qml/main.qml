@@ -74,15 +74,16 @@ Window {
                 }
             }
 
-            // Mouse area to handle clicks on "P" gear
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    if (carinfo.sensorRpm === 0) {
-                        manager.setIPCManagerGear(0)
-                    }
-                }
-            }
+            // # Mouse area to handle clicks on "P" gear
+            // # Uncomment the following code if you want to change the gear mode by touching the head unit display
+            // MouseArea {
+            //     anchors.fill: parent
+            //     onClicked: {
+            //         if (carinfo.sensorRpm === 0) {
+            //             manager.setIPCManagerGear(0)
+            //         }
+            //     }
+            // }
         }
 
         // Rectangle and functionality for the "R" gear
@@ -111,15 +112,16 @@ Window {
                 }
             }
 
-            // Mouse area to handle clicks on "R" gear
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    if (carinfo.sensorRpm === 0) {
-                        manager.setIPCManagerGear(1)
-                    }
-                }
-            }
+            // # Mouse area to handle clicks on "R" gear
+            // # Uncomment the following code if you want to change the gear mode by touching the head unit display
+            // MouseArea {
+            //     anchors.fill: parent
+            //     onClicked: {
+            //         if (carinfo.sensorRpm === 0) {
+            //             manager.setIPCManagerGear(1)
+            //         }
+            //     }
+            // }
         }
 
         // Rectangle and functionality for the "N" gear
@@ -148,15 +150,16 @@ Window {
                 }
             }
 
-            // Mouse area to handle clicks on "N" gear
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    if (carinfo.sensorRpm === 0) {
-                        manager.setIPCManagerGear(2)
-                    }
-                }
-            }
+            // # Mouse area to handle clicks on "N" gear
+            // # Uncomment the following code if you want to change the gear mode by touching the head unit display
+            // MouseArea {
+            //     anchors.fill: parent
+            //     onClicked: {
+            //         if (carinfo.sensorRpm === 0) {
+            //             manager.setIPCManagerGear(2)
+            //         }
+            //     }
+            // }
         }
 
         // Rectangle and functionality for the "D" gear
@@ -185,15 +188,16 @@ Window {
                 }
             }
 
-            // Mouse area to handle clicks on "D" gear
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    if (carinfo.sensorRpm === 0) {
-                        manager.setIPCManagerGear(3)
-                    }
-                }
-            }
+            // # Mouse area to handle clicks on "D" gear
+            // # Uncomment the following code if you want to change the gear mode by touching the head unit display
+            // MouseArea {
+            //     anchors.fill: parent
+            //     onClicked: {
+            //         if (carinfo.sensorRpm === 0) {
+            //             manager.setIPCManagerGear(3)
+            //         }
+            //     }
+            // }
         }
 
         // Vertical line to separate
