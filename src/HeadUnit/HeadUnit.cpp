@@ -46,6 +46,9 @@ int main(int argc, char *argv[])
     // Load the QML file and start the application event loop
     engine.load(url);
     
+    QCursor cursor(Qt::BlankCursor);
+    app.setOverrideCursor(cursor);
+    
     HeadUnitSenderClass sender;
     sender.IPCManagerTargetProxy->getGearMode("HeadUnit", sender.callStatus, sender.returnMessage);
     sender.IPCManagerTargetProxy->getDirection("HeadUnit", sender.callStatus, sender.returnMessage);
