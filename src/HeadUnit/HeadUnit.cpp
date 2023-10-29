@@ -23,6 +23,9 @@ int main(int argc, char *argv[])
     // Initialize the Qt Application
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
+    
+    QCursor cursor(Qt::BlankCursor);
+    app.setOverrideCursor(cursor);
 
     // Register the HeadUnitQtClass as a QML type
     qmlRegisterType<HeadUnitQtClass>("DataModule", 1, 0, "HeadUnitQtClass");
@@ -46,9 +49,6 @@ int main(int argc, char *argv[])
 
     // Load the QML file and start the application event loop
     engine.load(url);
-    
-    QCursor cursor(Qt::BlankCursor);
-    app.setOverrideCursor(cursor);
     
     HeadUnitSenderClass sender;
     sender.IPCManagerTargetProxy->getGearMode("HeadUnit", sender.callStatus, sender.returnMessage);
