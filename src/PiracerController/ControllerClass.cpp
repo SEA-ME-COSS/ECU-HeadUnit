@@ -18,20 +18,19 @@ ControllerClass::ControllerClass()
     
     throttle = 0.0;
     steering = 0.0;
+    
     pre_throttle = 0.0;
     pre_steering = 0.0;
     
-    button_l1 = false;
-    button_l2 = false;
-    button_r1 = false;
-    button_r2 = false;
-    button_A = false;
-    button_B = false;
-    button_X = false;
-    button_Y = false;
-    button_select = false;
-    button_start = false;
-    button_home = false;
+    button_p = false;
+    button_r = false;
+    button_n = false;
+    button_d = false;
+    
+    pre_button_p = false;
+    pre_button_r = false;
+    pre_button_n = false;
+    pre_button_d = false;
 }
 
 // Destructor for the ControllerClass
@@ -54,6 +53,11 @@ void ControllerClass::readControl()
 {
     pre_throttle = throttle;
     pre_steering = steering;
+    
+    pre_button_p = button_p;
+    pre_button_r = button_r;
+    pre_button_n = button_n;
+    pre_button_d = button_d;
 
     // Call the "read_data" method on the gamepad instance
     pInput = PyObject_CallMethod(pInstance, "read_data", NULL);
@@ -66,62 +70,10 @@ void ControllerClass::readControl()
     pSteering = PyObject_GetAttrString(pSteering, "x");
     steering = PyFloat_AsDouble(pSteering);
     
-    button_l1 = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_l1"));
-    button_l2 = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_l2"));
-    button_r1 = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_r1"));
-    button_r2 = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_r2"));
-    button_A = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_a"));
-    button_B = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_b"));
-    button_X = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_x"));
-    button_Y = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_y"));
-    button_select = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_select"));
-    button_start = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_start"));
-    button_home = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_home"));
-    
-    if (button_l1)
-    {
-        std::cout<<"\n"<<"l1"<<std::endl;
-    }
-    if (button_l2)
-    {
-        std::cout<<"\n"<<"l2"<<std::endl;
-    }
-    if (button_r1)
-    {
-        std::cout<<"\n"<<"r1"<<std::endl;
-    }
-    if (button_r2)
-    {
-        std::cout<<"\n"<<"r2"<<std::endl;
-    }
-    if (button_A)
-    {
-        std::cout<<"\n"<<"A"<<std::endl;
-    }
-    if (button_B)
-    {
-        std::cout<<"\n"<<"B"<<std::endl;
-    }
-    if (button_X)
-    {
-        std::cout<<"\n"<<"X"<<std::endl;
-    }
-    if (button_Y)
-    {
-        std::cout<<"\n"<<"Y"<<std::endl;
-    }
-    if (button_select)
-    {
-        std::cout<<"\n"<<"select"<<std::endl;
-    }
-    if (button_start)
-    {
-        std::cout<<"\n"<<"start"<<std::endl;
-    }
-    if (button_home)
-    {
-        std::cout<<"\n"<<"home"<<std::endl;
-    }
+    button_p = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_x"));
+    button_r = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_y"));
+    button_n = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_b"));
+    button_d = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_l1"));
     
     return;
 }
@@ -148,5 +100,45 @@ double ControllerClass::getPreThrottle()
 double ControllerClass::getPreSteering()
 {
     return pre_steering;
+}
+
+bool ControllerClass::getButtonP()
+{
+    return button_p;
+}
+
+bool ControllerClass::getButtonR()
+{
+    return button_r;
+}
+
+bool ControllerClass::getButtonN()
+{
+    return button_n;
+}
+
+bool ControllerClass::getButtonD()
+{
+    return button_d;
+}
+
+bool ControllerClass::getPreButtonP()
+{
+    return pre_button_p;
+}
+
+bool ControllerClass::getPreButtonR()
+{
+    return pre_button_r;
+}
+
+bool ControllerClass::getPreButtonN()
+{
+    return pre_button_n;
+}
+
+bool ControllerClass::getPreButtonD()
+{
+    return pre_button_d;
 }
 
