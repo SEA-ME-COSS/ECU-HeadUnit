@@ -1,6 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QCursor>
 
 #include "HeadUnitStubImpl.hpp"
 #include "HeadUnitQtClass.hpp"
