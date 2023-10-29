@@ -1,5 +1,5 @@
 #include "ControllerClass.hpp"
-#include "iostream"
+#include <iostream>
 
 // Constructor for the ControllerClass
 ControllerClass::ControllerClass()
@@ -25,8 +25,6 @@ ControllerClass::ControllerClass()
     button_B = false;
     button_X = false;
     button_Y = false;
-    
-    read_data_call_cnt = 0;
 }
 
 // Destructor for the ControllerClass
@@ -56,7 +54,6 @@ void ControllerClass::readControl()
 
     // Call the "read_data" method on the gamepad instance
     pInput = PyObject_CallMethod(pInstance, "read_data", NULL);
-    read_data_call_cnt++;
     
     pThrottle = PyObject_GetAttrString(pInput, "analog_stick_right");
     pThrottle = PyObject_GetAttrString(pThrottle, "y");
@@ -66,46 +63,27 @@ void ControllerClass::readControl()
     pSteering = PyObject_GetAttrString(pSteering, "x");
     steering = PyFloat_AsDouble(pSteering);
     
-    std::cout<<read_data_call_cnt<<std::endl;
+    button_A = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_a"));
+    button_B = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_b"));
+    button_X = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_x"));
+    button_Y = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_y"));
     
-    if (PyObject_HasAttrString(pInput, "button_a"))
+    if (button_A)
     {
-        std::cout<<"000"<<std::endl;
+        std::cout<<"\n"<<"A"<<std::endl;
     }
-    
-    /*
-    if (read_data_call_cnt >= 24)
+    if (button_B)
     {
-        pButtonA = PyObject_GetAttrString(pInput, "button_a");
-        if (pButtonA != NULL)
-        {
-            button_A = PyObject_IsTrue(pButtonA);
-            std::cout<<"000"<<std::endl;
-        }
+        std::cout<<"\n"<<"B"<<std::endl;
     }
-    */  
-        
-        //button_A = PyObject_IsTrue(pButtonA);
-    
-    
-    
-    
-        /*if (pButton_A == Py_True)
-        {
-            std::cout<<"\n"<<"A"<<std::endl;
-        }
-        if (pButton_B == Py_True)
-        {
-            std::cout<<"\n"<<"B"<<std::endl;
-        }
-        if (pButton_X == Py_True)
-        {
-            std::cout<<"\n"<<"X"<<std::endl;
-        }
-        if (pButton_Y == Py_True)
-        {
-            std::cout<<"\n"<<"Y"<<std::endl;
-        }*/
+    if (button_X)
+    {
+        std::cout<<"\n"<<"X"<<std::endl;
+    }
+    if (button_Y)
+    {
+        std::cout<<"\n"<<"Y"<<std::endl;
+    }
     
     return;
 }
