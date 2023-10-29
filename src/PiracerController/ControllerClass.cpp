@@ -31,10 +31,6 @@ ControllerClass::ControllerClass()
 ControllerClass::~ControllerClass()
 {
     // Release Python objects to avoid memory leaks
-    Py_DECREF(pButtonA);
-    Py_DECREF(pButtonB);
-    Py_DECREF(pButtonX);
-    Py_DECREF(pButtonY);
     Py_DECREF(pThrottle);
     Py_DECREF(pSteering);
     Py_DECREF(pInput);
