@@ -7,6 +7,7 @@ PiracerClass::PiracerClass()
     pClass = PyObject_GetAttrString(pModule, "PiRacerStandard"); // Get the Python class "PiRacerStandard" from the module
     pInstance = PyObject_CallObject(pClass, NULL); // Create an instance of the Python class
 
+    sensorRpm = 0; // Initialize the sensor rpm to 0 (default)
     gearMode = 0; // Initialize the gear mode to 0 (default)
     direction = 0; // Initialize the direction to 0 (default)
     light = "#808080"; // Initialize the light to #808080 (default)
@@ -19,6 +20,13 @@ PiracerClass::~PiracerClass()
     Py_DECREF(pClass); // Release the Python class
     Py_DECREF(pModule); // Release the Python module
     Py_Finalize(); // Finalize the Python interpreter to clean up resources
+}
+
+void PiracerClass::setSensorRpm(uint16_t _sensorRpm)
+{
+    sensorRpm = _sensorRpm; // Update the sensor rpm
+
+    return;
 }
 
 void PiracerClass::setGearMode(uint16_t _gearMode)
@@ -67,6 +75,11 @@ std::string PiracerClass::getLight()
 bool PiracerClass::getFreeDirection()
 {
     return freeDirection;
+}
+
+uint16_t PiracerClass::getSensorRpm()
+{
+    return sensorRpm;
 }
 
 void PiracerClass::applyThrottle(double throttle)

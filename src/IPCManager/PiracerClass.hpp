@@ -11,6 +11,7 @@ class PiracerClass
     private:
         PyObject *pModule, *pClass, *pInstance; // Private Python objects and gearMode variable
 
+        uint16_t sensorRpm; // Private member variable to store sensor rpm
         uint16_t gearMode; // Private member variable to store gear mode
         uint16_t direction; // Private member variable to store direction
         std::string light; // Private member variable to store light
@@ -19,6 +20,9 @@ class PiracerClass
     public:
         PiracerClass(); // Constructor for PiracerClass
         ~PiracerClass(); // Destructor for PiracerClass
+        
+        // Method to set the sensor rpm
+        void setSensorRpm(uint16_t _sensorRpm);
 
         // Method to set the gear mode
         void setGearMode(uint16_t _gearMode);
@@ -43,6 +47,9 @@ class PiracerClass
         
         // Method to get the direction-freeing condition
         bool getFreeDirection();
+        
+        // Method to get the sensor rpm
+        uint16_t getSensorRpm();
         
         // Method to apply throttle to the PiRacer vehicle
         void applyThrottle(double throttle);

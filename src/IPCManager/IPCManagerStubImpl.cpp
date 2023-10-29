@@ -9,6 +9,9 @@ IPCManagerStubImpl::~IPCManagerStubImpl() { }
 // Set sensor RPM and relay it to appropriate services
 void IPCManagerStubImpl::setSensorRpm(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _sensorRpm, setSensorRpmReply_t _reply)
 {
+    // Set sensor rpm to piracer
+    piracer.setSensorRpm(_sensorRpm);
+    
     // Relay sensor RPM to InstrumentCluster and HeadUnit services
     sender.InstrumentClusterTargetProxy->setSpeedRpm(_sensorRpm, sender.callStatus, sender.returnMessage);
     sender.HeadUnitTargetProxy->setSensorRpm(_sensorRpm, sender.callStatus, sender.returnMessage);
@@ -34,12 +37,15 @@ void IPCManagerStubImpl::setBatteryLevel(const std::shared_ptr<CommonAPI::Client
 // Set gear mode and relay it to the InstrumentCluster service
 void IPCManagerStubImpl::setGearMode(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _gearMode, setGearModeReply_t _reply)
 {
-    // Set gear mode to piracer
-    piracer.setGearMode(_gearMode);
-
-    // Relay gear mode to the InstrumentCluster service
-    sender.InstrumentClusterTargetProxy->setGear(_gearMode, sender.callStatus, sender.returnMessage);
-    sender.HeadUnitTargetProxy->setGear(_gearMode, sender.callStatus, sender.returnMessage);
+    if (piracer.getSensorRpm() == 0)
+    {
+        // Set gear mode to piracer
+        piracer.setGearMode(_gearMode);
+        
+        // Relay gear mode to the InstrumentCluster service
+        sender.InstrumentClusterTargetProxy->setGear(_gearMode, sender.callStatus, sender.returnMessage);
+        sender.HeadUnitTargetProxy->setGear(_gearMode, sender.callStatus, sender.returnMessage);
+    }
 
     // Reply to the caller
     _reply("");
