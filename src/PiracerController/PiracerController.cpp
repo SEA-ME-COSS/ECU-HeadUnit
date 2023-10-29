@@ -40,6 +40,22 @@ int main()
 	{
 	    IPCManagertargetProxy->setSteering(controller.getSteering(), callStatus, returnMessage);
         }
+        if (controller.getPreButtonP() != controller.getButtonP())
+	{
+	    IPCManagertargetProxy->setGearMode(0, callStatus, returnMessage);
+        }
+        if (controller.getPreButtonR() != controller.getButtonR())
+	{
+	    IPCManagertargetProxy->setGearMode(1, callStatus, returnMessage);
+        }
+        if (controller.getPreButtonN() != controller.getButtonN())
+	{
+	    IPCManagertargetProxy->setGearMode(2, callStatus, returnMessage);
+        }
+        if (controller.getPreButtonD() != controller.getButtonD())
+	{
+	    IPCManagertargetProxy->setGearMode(3, callStatus, returnMessage);
+        }
     }
 
     return 0;
