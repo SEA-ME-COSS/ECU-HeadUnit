@@ -78,7 +78,23 @@ void ControllerClass::readControl()
     button_start = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_start"));
     button_home = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_home"));
     
-    /*if (button_A)
+    if (button_l1)
+    {
+        std::cout<<"\n"<<"l1"<<std::endl;
+    }
+    if (button_l2)
+    {
+        std::cout<<"\n"<<"l2"<<std::endl;
+    }
+    if (button_r1)
+    {
+        std::cout<<"\n"<<"r1"<<std::endl;
+    }
+    if (button_r2)
+    {
+        std::cout<<"\n"<<"r2"<<std::endl;
+    }
+    if (button_A)
     {
         std::cout<<"\n"<<"A"<<std::endl;
     }
@@ -93,7 +109,19 @@ void ControllerClass::readControl()
     if (button_Y)
     {
         std::cout<<"\n"<<"Y"<<std::endl;
-    }*/
+    }
+    if (button_select)
+    {
+        std::cout<<"\n"<<"select"<<std::endl;
+    }
+    if (button_start)
+    {
+        std::cout<<"\n"<<"start"<<std::endl;
+    }
+    if (button_home)
+    {
+        std::cout<<"\n"<<"home"<<std::endl;
+    }
     
     return;
 }
