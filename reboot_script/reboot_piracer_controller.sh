@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the name of the process to be managed
-process_name="PiracerOperator"
+process_name="PiracerController"
 
 # Check if a process with the specified name is already running
 if pgrep -x "$process_name" > /dev/null

@@ -14,19 +14,9 @@ interface PiracerSender {
 }
 
 
-// Define the 'PiracerOperator' interface.
-interface PiracerOperator {
+// Define the 'PiracerController' interface.
+interface PiracerController {
   version {major 1 minor 0} // Interface version information.
-
-  // Define a method with input and output parameters.
-  method setGearMode {
-    in {
-      UInt16 GearMode // Input parameter: GearMode of type UInt16.
-    }
-    out {
-      String message // Output parameter: message of type String.
-    }
-  }
 }
 
 
@@ -69,7 +59,15 @@ interface IPCManager {
   }
   method setLight {
     in {
-      String light // Input parameter: light of type String.
+      String Light // Input parameter: Light of type String.
+    }
+    out {
+      String message // Output parameter: message of type String.
+    }
+  }
+  method setThrottle {
+    in {
+      Double Throttle // Input parameter: Throttle of type Double.
     }
     out {
       String message // Output parameter: message of type String.
@@ -77,10 +75,34 @@ interface IPCManager {
   }
   method setSteering {
     in {
-      UInt16 Steering // Input parameter: Steering of type UInt16.
+      Double Steering // Input parameter: Steering of type Double.
     }
     out {
       String message // Output parameter: message of type String.
+    }
+  }
+  method getGearMode {
+    in {
+      String message1 // Input parameter: message of type String.
+    }
+    out {
+      String message2 // Output parameter: message of type String.
+    }
+  }
+  method getDirection {
+    in {
+      String message1 // Input parameter: message of type String.
+    }
+    out {
+      String message2 // Output parameter: message of type String.
+    }
+  }
+  method getLight {
+    in {
+      String message1 // Input parameter: message of type String.
+    }
+    out {
+      String message2 // Output parameter: message of type String.
     }
   }
 }
@@ -125,7 +147,7 @@ interface InstrumentCluster {
   }
   method setLight {
     in {
-      String light // Input parameter: light of type String.
+      String Light // Input parameter: Light of type String.
     }
     out {
       String message // Output parameter: message of type String.
@@ -147,9 +169,25 @@ interface HeadUnit {
       String message // Output parameter: message of type String.
     }
   }
-  method setSteering {
+  method setGear {
     in {
-      UInt16 Steering // Input parameter: Steering of type UInt16.
+      UInt16 Gear // Input parameter: Gear of type UInt16.
+    }
+    out {
+      String message // Output parameter: message of type String.
+    }
+  }
+  method setDirection {
+    in {
+      UInt16 Direction // Input parameter: Direction of type UInt16.
+    }
+    out {
+      String message // Output parameter: message of type String.
+    }
+  }
+  method setLight {
+    in {
+      String Light // Input parameter: Light of type String.
     }
     out {
       String message // Output parameter: message of type String.
