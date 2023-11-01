@@ -4,26 +4,38 @@ Each directory represents an independent process, and these processes exchange d
 
 ---
 
-## [CANSender](https://github.com/SEA-ME-COSS/DES-Head-Unit/tree/making_main/src/CANSender)
+## [CANSender](./CANSender/)
+CANSender is designed to process vehicle speed data from an external source and relay this data to the IPCManager after filtering.
 
-This process is implemented with two threads. One thread is responsible for storing vehicle speed data received from the external source via the CAN shield into a circular queue buffer. The other thread periodically retrieves the most recent data from the buffer, filters it through a Kalman filter, and then forwards the value to the IPCManager. The reason for the existence of the buffer is to eliminate delays in the synchronization of communication speeds and during the filtering process. Both threads are synchronized through the use of mutexes to access the shared resource.
 
-## [HeadUnit](https://github.com/SEA-ME-COSS/DES-Head-Unit/tree/making_main/src/HeadUnit)
+This process utilizes two threads. The first thread captures vehicle speed data from the external source through the CAN shield and stores it into a circular queue buffer. Meanwhile, the second thread periodically fetches the latest data from this buffer, subjects it to a Kalman filter for accuracy, and then passes the refined value to the IPCManager. The buffer's primary purpose is to mitigate potential delays arising from communication speed discrepancies and the filtering process. Mutual exclusion (mutexes) ensures both threads coordinate seamlessly when accessing the shared resource.
 
-This GUI is developed in Qt and allows user interaction through touch input. Users can engage with functions such as selecting gear modes, operating turn signals, accessing GPS, playing MP3 and MP4, and more. It receives data regarding speed and steering from the IPCManager and, in turn, sends data related to gear mode selection, ambient lighting colors, and turn signals. Users can also power off the OS, similar to turning off a vehicle with a power button.
+## [HeadUnit](./HeadUnit/)
+HeadUnit is a Qt-based GUI that offers various vehicle-related user interactions, including gear mode selection and media playback.
 
-## [IPCManager](https://github.com/SEA-ME-COSS/DES-Head-Unit/tree/making_main/src/IPCManager)
 
-It serves as a bridge, ensuring that data flows correctly between all processes. It can rapidly distribute data in an asynchronous manner. Additionally, it checks the connectivity of other processes and, in case of issues, can terminate and restart the problematic process using reboot scripts.
+Developed in Qt, this GUI caters to touch input, enabling users to interact with multiple functions such as selecting gear modes, toggling turn signals, using GPS, and playing media files like MP3 and MP4. It derives data on speed and steering from the IPCManager. Concurrently, it relays data about the chosen gear mode, ambient lighting preferences, and turn signal status. One of its distinctive features is allowing users to power off the OS, analogous to switching off a vehicle.
 
-## [InstrumentCluster](https://github.com/SEA-ME-COSS/DES-Head-Unit/tree/making_main/src/InstrumentCluster)
+## [IPCManager](./IPCManager/)
+IPCManager functions as a conduit, ensuring seamless data exchange between all processes.
 
-This GUI is developed in Qt and displays real-time speed and RPM information of the vehicle to the user. It also shows the current battery level and gear mode status of the vehicle. Additionally, it reflects changes in ambient lighting based on user interactions with the HeadUnit.
 
-## [PiracerOperator](https://github.com/SEA-ME-COSS/DES-Head-Unit/tree/making_main/src/PiracerOperator)
+Primarily, the IPCManager ensures the correct flow of data amongst all processes. It is adept at asynchronously disseminating data. A noteworthy feature is its capability to monitor the connectivity of other processes. If it detects a malfunction or disconnect, it can swiftly terminate the erring process and initiate a restart via reboot scripts(only in rasbian version).
 
-To enable the integration of the piracer-py Python library with vsomeip communication, this process is implemented by binding the Python language within C++. It receives input data from the gamepad controller and controls the vehicle's drive and steering based on the current gear mode. It receives gear mode information from the IPC Manager and, in turn, sends steering information in the opposite direction.
+## [InstrumentCluster](./InstrumentCluster/)
+InstrumentCluster is a Qt-based interface that displays crucial vehicle data to the user in real-time.
 
-## [PiracerSender](https://github.com/SEA-ME-COSS/DES-Head-Unit/tree/making_main/src/PiracerSender)
 
-To enable the integration of the piracer-py Python library with vsomeip communication, this process is implemented by binding the Python language within C++. This process periodically measures the voltage from the vehicle's battery and calculates the remaining battery level from it. It then sends this information to the IPCManager.
+Built using Qt, this GUI presents the vehicle's speed, RPM, battery level, and current gear mode status to the user. An additional feature is its ability to dynamically adjust ambient lighting based on user inputs sourced from the HeadUnit.
+
+## [PiracerController](./PiracerController/)
+PiracerController integrates the piracer-py Python library with vsomeip communication to control vehicle movements based on gamepad input.
+
+
+To meld the piracer-py Python library with vsomeip communication, this process incorporates Python within C++. It processes input from the gamepad controller, directing the vehicle's movement and steering according to the selected gear mode. The gear mode data is sourced from the IPC Manager, while steering information is relayed back to the IPC Manager.
+
+## [PiracerSender](./PiracerSender/)
+PiracerSender gauges the vehicle's battery voltage, computes the remaining charge, and communicates this data to the IPCManager.
+
+
+This process, integrating the piracer-py Python library with vsomeip communication, is devised by embedding Python within C++. It periodically measures the vehicle's battery voltage, derives the remaining battery percentage, and subsequently forwards this critical information to the IPCManager.
