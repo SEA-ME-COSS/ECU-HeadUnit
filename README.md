@@ -12,17 +12,17 @@
 <tr border="0">
     <td width="140" height="100" align="center">
         <a href="#">
-            <img alt="Yocto Logo" src="images/yocto-logo.png">
+            <img alt="Yocto Logo" src="images/logo/yocto-logo.png">
         </a>
     </td>
     <td width="140" height="100" align="center">
         <a href="#">
-            <img alt="Qt Logo" src="images/qt-logo.png">
+            <img alt="Qt Logo" src="images/logo/qt-logo.png">
         </a>
     </td>
     <td width="140" height="100" align="center">
         <a href="#">
-            <img alt="Covesa Logo" src="images/covesa-logo.png">
+            <img alt="Covesa Logo" src="images/logo/covesa-logo.png">
         </a>
     </td>
 </tr>
