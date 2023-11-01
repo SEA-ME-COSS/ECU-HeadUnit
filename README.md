@@ -4,23 +4,23 @@
 
 # Result
 
-<img src=/Images/demonstration/ambient_lighting.gif alt="ambient_lighting" width="100%" height="100%"/>
+<img src=/images/demonstration/ambient_lighting.gif alt="ambient_lighting" width="100%" height="100%"/>
 
 # Introduction
 
 <table border="0" rules="none">
 <tr border="0">
-    <td width="140" height="100" align="center">
+    <td width="280" height="200" align="center">
         <a href="#">
             <img alt="Yocto Logo" src="images/logo/yocto-logo.png">
         </a>
     </td>
-    <td width="140" height="100" align="center">
+    <td width="280" height="200" align="center">
         <a href="#">
             <img alt="Qt Logo" src="images/logo/qt-logo.png">
         </a>
     </td>
-    <td width="140" height="100" align="center">
+    <td width="350" height="200" align="center">
         <a href="#">
             <img alt="Covesa Logo" src="images/logo/covesa-logo.png">
         </a>
@@ -29,7 +29,7 @@
 </table>
 
 
-This repository presents the final version of developing the Instrument Cluster and Head Unit for the PiRacer vehicle. Through the design of IPC mechanisms, it enables the implementation of functionalities on a Raspberry Pi that closely resemble those found in a real vehicle.
+This repository presents of developing the Instrument Cluster and Head Unit for the PiRacer vehicle. Through the design of IPC mechanisms, it enables the implementation of functionalities on a Raspberry Pi4 that closely resemble those found in a real vehicle.
 
 The 'DES Project' stands for Distributed Embedded Systems. The primary focus of this Head Unit project is to implement communication algorithms within the vehicle and facilitate Inter-Process Communication (IPC) among various processes. An essential challenge in this endeavor is to ensure that all of these interactions occur within an operating system developed based on Yocto.
 
@@ -39,19 +39,16 @@ A key communication protocol emphasized in this project is 'vsomeip' It is integ
 2. Another process calculates real-time remaining battery levels.
 3. A separate process is responsible for controlling vehicle drive and steering, adapting its behavior based on the selected gear mode.
 
-There are two interfaces, Instrument Cluster and Head Unit, both developed using Qt. These interfaces receive data from these processes and enable user interaction.
-
-Through this project, practical insights into IPC methods are gained, and an understanding of embedded vehicle communication is developed. Additionally, by building an operating system based on Yocto, the project provides valuable experience in dealing with the broader context of vehicle software development.
 
 # Architecture
 
-<img src=/Images/diagram/software_architecture.png alt="software_architecture" width="100%" height="100%"/>
+<img src=/images/diagram/software_architecture.png alt="software_architecture" width="100%" height="100%"/>
 
 # Setting
 
 ## Requirements
 
-Detailed information regarding setup and configuration can be found within the "settings" folder. Following the content within this folder should allow you to reproduce the test environment we have implemented.
+Detailed information regarding setup and configuration can be found within the [settings folder](./setting/). Following the content within this folder should allow you to reproduce the test environment we have implemented.
 
 Below are the specifications of the hardware used in the project.
 
@@ -68,13 +65,13 @@ Below are the specifications of the hardware used in the project.
 - CAN-BUS Shield V2.0 (MCP2515)
 - IR infrared Speed Sensor (LM393)
 
-<img src=/Images/diagram/hardware_architecture.png alt="hardware_architecture" width="100%" height="100%"/>
+<img src=/images/diagram/hardware_architecture.png alt="hardware_architecture" width="100%" height="100%"/>
 
 # Usage
 
-To run it on a Yocto-based OS, check out the 'kirkstone' branch.
+To run it on a Yocto-based OS go to our [meta-infotainment](https://github.com/SEA-ME-COSS/meta-infotainment) repo.
 
-Additionally, for executing it on Raspbian OS, use the following code:
+Additionally, for executing it on Raspbian OS after [setting](./setting/), use the following code:
 
 ```bash
 mkdir build
