@@ -1,5 +1,17 @@
 #!/bin/bash
 
+# Mutex: lock file path
+lockfile="/tmp/PiracerSender.lock"
+
+# Check for the existence of the lock file
+if [ -e "$lockfile" ]; then
+    echo "Another instance of this script is running. Exiting."
+    exit 1
+fi
+
+# Create the lock file
+touch "$lockfile"
+
 # Define the name of the process to be managed
 process_name="PiracerSender"
 
@@ -18,3 +30,6 @@ cd ../build
 
 # Sleep for 3 seconds to allow the process to start and run in the background
 sleep 3
+
+# Remove the lock file
+rm -f "$lockfile"

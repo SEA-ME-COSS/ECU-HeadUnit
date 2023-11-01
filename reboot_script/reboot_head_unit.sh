@@ -1,5 +1,17 @@
 #!/bin/bash
 
+# Mutex: lock file path
+lockfile="/tmp/HeadUnit.lock"
+
+# Check for the existence of the lock file
+if [ -e "$lockfile" ]; then
+    echo "Another instance of this script is running. Exiting."
+    exit 1
+fi
+
+# Create the lock file
+touch "$lockfile"
+
 # Define the process name to be checked and controlled
 process_name="HeadUnit"
 
@@ -15,3 +27,6 @@ cd ../build
 
 # Run the specified process with '-platform eglfs' and '&' to execute it in the background
 ./"$process_name" -platform eglfs &
+
+# Remove the lock file
+rm -f "$lockfile"

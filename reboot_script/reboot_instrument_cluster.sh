@@ -1,5 +1,17 @@
 #!/bin/bash
 
+# Mutex: lock file path
+lockfile="/tmp/InstrumentCluster.lock"
+
+# Check for the existence of the lock file
+if [ -e "$lockfile" ]; then
+    echo "Another instance of this script is running. Exiting."
+    exit 1
+fi
+
+# Create the lock file
+touch "$lockfile"
+
 # Define the process name to be checked and controlled
 process_name="InstrumentCluster"
 

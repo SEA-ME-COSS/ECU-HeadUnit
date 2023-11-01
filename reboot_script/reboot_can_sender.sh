@@ -1,13 +1,24 @@
 #!/bin/bash
 
+# Mutex: lock file path
+lockfile="/tmp/CANSender.lock"
+
+# Check for the existence of the lock file
+if [ -e "$lockfile" ]; then
+    echo "Another instance of this script is running. Exiting."
+    exit 1
+fi
+
+# Create the lock file
+touch "$lockfile"
+
 # Define the process name to be checked and controlled
 process_name="CANSender"
 
 # Check if a process with the specified name is running
-if pgrep -x "$process_name" > /dev/null
-then
-  # If the process is running, gracefully terminate it using pkill
-  pkill -x "$process_name"
+if pgrep -x "$process_name" > /dev/null; then
+    # If the process is running, gracefully terminate it using pkill
+    pkill -x "$process_name"
 fi
 
 # Set up and configure the CAN interface 'can0'
@@ -22,3 +33,6 @@ cd ../build
 
 # Run the specified process with '&' to execute it in the background
 ./"$process_name" &
+
+# Remove the lock file
+rm -f "$lockfile"
