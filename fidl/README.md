@@ -2,7 +2,7 @@
 
 Franca IDL is utilized for CommonAPI. In '.fidl' file, interfaces for inter-process communication are defined, along with the methods that will be executed within those interfaces. '.fdepl' files assign unique IDs to objects defined in the .fidl file.
 
-These two files exist for the purpose of code generation and are not required during the compilation phase managed by CMake. Code generation is accomplished through the core-generator and someip-generator, and you can learn more about installing these generators through the instructions provided in the "settings" folder. The following is the command for generating the code.
+These two files exist for the purpose of code generation and are not required during the compilation phase managed by CMake. Code generation is accomplished through the core-generator and someip-generator, and you can learn more about installing these generators through the instructions provided in the [settings folder](../setting/). The following is the command for generating the code.
 
 ```bash
 cd ..
