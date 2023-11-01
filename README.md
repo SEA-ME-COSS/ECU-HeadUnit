@@ -4,11 +4,30 @@
 
 # Result
 
-This project is developed for a Yocto-based OS, and it is also testable on the Raspbian OS.
-
 <img src=/Images/demonstration/ambient_lighting.gif alt="ambient_lighting" width="100%" height="100%"/>
 
 # Introduction
+
+<table border="0" rules="none">
+<tr border="0">
+    <td width="140" height="100" align="center">
+        <a href="#">
+            <img alt="Yocto Logo" src="images/yocto-logo.png">
+        </a>
+    </td>
+    <td width="140" height="100" align="center">
+        <a href="#">
+            <img alt="Qt Logo" src="images/qt-logo.png">
+        </a>
+    </td>
+    <td width="140" height="100" align="center">
+        <a href="#">
+            <img alt="Covesa Logo" src="images/covesa-logo.png">
+        </a>
+    </td>
+</tr>
+</table>
+
 
 This repository presents the final version of developing the Instrument Cluster and Head Unit for the PiRacer vehicle. Through the design of IPC mechanisms, it enables the implementation of functionalities on a Raspberry Pi that closely resemble those found in a real vehicle.
 
