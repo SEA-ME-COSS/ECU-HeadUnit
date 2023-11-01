@@ -26,5 +26,3 @@ $$
 For instance, if the wheel's circumference is 2m and the RPM is 30, the speed would be 3**0 x 2 = 60m/min** or **1m/s**. 
 
 So, while the code doesn't provide speed directly, it offers the foundational rotational data that, combined with additional information (like wheel circumference), can facilitate this.
-
-If you want to know more about it, go to our "arduino _can" repo
