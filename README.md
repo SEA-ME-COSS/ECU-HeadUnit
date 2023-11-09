@@ -42,7 +42,7 @@ A key communication protocol emphasized in this project is 'vsomeip' It is integ
 
 # Architecture
 
-<img src=/images/diagram/software_architecture.png alt="software_architecture" width="100%" height="100%"/>
+<img src=/images/diagram/software-architecture.png alt="software_architecture" width="100%" height="100%"/>
 
 # Setting
 
@@ -65,7 +65,7 @@ Below are the specifications of the hardware used in the project.
 - CAN-BUS Shield V2.0 (MCP2515)
 - IR infrared Speed Sensor (LM393)
 
-<img src=/images/diagram/hardware_architecture.png alt="hardware_architecture" width="100%" height="100%"/>
+<img src=/images/diagram/hardware-architecture.png alt="hardware_architecture" width="100%" height="100%"/>
 
 # Usage
 
