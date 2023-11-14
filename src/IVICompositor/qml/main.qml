@@ -11,14 +11,6 @@ WaylandCompositor {
             visible: true
 
             Rectangle {
-                width: 1024
-                height: 600
-                anchors.centerIn: parent
-                color: "black"
-                z: 0
-            }
-
-            Rectangle {
                 id: headUnitArea
                 width: 1024
                 height: 600
