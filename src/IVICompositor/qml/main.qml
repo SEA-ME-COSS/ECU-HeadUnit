@@ -41,7 +41,7 @@ WaylandCompositor {
                         target: container
                         property: "pdcOpacity"
                         easing.type: Easing.InOutSine
-                        duration: 2000
+                        duration: 1000
                     }
                 }
             }
