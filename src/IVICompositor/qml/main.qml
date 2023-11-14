@@ -23,7 +23,6 @@ WaylandCompositor {
                 width: 1024
                 height: 600
                 anchors.centerIn: parent
-                color: "white"
                 z: (carinfo.gear === 1 ? 1 : 2)
             }
 
@@ -32,7 +31,6 @@ WaylandCompositor {
                 width: 600
                 height: 600
                 anchors.centerIn: parent
-                color: "black"
                 z: (carinfo.gear === 1 ? 2 : 1)
             }
         }

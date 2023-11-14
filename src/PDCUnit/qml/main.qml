@@ -10,32 +10,39 @@ Window {
     height: 300
     visible: true
 
-    Item {
-        id: container
+    Rectangle {
         width: 300
         height: 300
         anchors.centerIn: parent
-        scale: 0.5
-
-        Camera {
-            id: camera
-            objectName: "camera"
-            captureMode: Camera.CaptureViewfinder
-        }
-
-        VideoOutput {
-            id: viewfinder
-            objectName: "viewfinder"
-            source: camera
-            anchors.fill: parent
-        }
-
-        Rectangle {
-            color: "white"
-            opacity: 0.7
-            anchors.fill: parent
-        }
+        color: "black"
     }
+
+    // Item {
+    //     id: container
+    //     width: 300
+    //     height: 300
+    //     anchors.centerIn: parent
+    //     scale: 0.5
+
+    //     Camera {
+    //         id: camera
+    //         objectName: "camera"
+    //         captureMode: Camera.CaptureViewfinder
+    //     }
+
+    //     VideoOutput {
+    //         id: viewfinder
+    //         objectName: "viewfinder"
+    //         source: camera
+    //         anchors.fill: parent
+    //     }
+
+    //     Rectangle {
+    //         color: "white"
+    //         opacity: 0.7
+    //         anchors.fill: parent
+    //     }
+    // }
 }
 
 
