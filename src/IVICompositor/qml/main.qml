@@ -22,7 +22,7 @@ WaylandCompositor {
                     width: 1024
                     height: 600
                     anchors.centerIn: parent
-                    // z: (carinfo.gear === 1 ? 1 : 2)
+                    z: (carinfo.gear === 1 ? 1 : 2)
                 }
 
                 Rectangle {
@@ -30,7 +30,7 @@ WaylandCompositor {
                     width: 850
                     height: 600
                     anchors.right: parent.right
-                    // z: (carinfo.gear === 1 ? 2 : 1)
+                    z: (carinfo.gear === 1 ? 2 : 1)
                 }
             }
         }
