@@ -25,8 +25,10 @@ fi
 # Change the working directory to '../build'
 cd ../build
 
-# Run the specified process with '-platform wayland' and '&' to execute it in the background
-./"$process_name" -platform wayland &
+export LIBGL_ALWAYS_SOFTWARE=1
+
+# Run the specified process with '-platform eglfs' and '&' to execute it in the background
+./"$process_name" -platform eglfs &
 
 # Remove the lock file
 rm -f "$lockfile"
