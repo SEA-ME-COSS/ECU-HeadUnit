@@ -15,6 +15,7 @@ WaylandCompositor {
                 height: 600
                 anchors.centerIn: parent
                 color: "black"
+                z: 0
             }
 
             Rectangle {
@@ -23,7 +24,7 @@ WaylandCompositor {
                 height: 600
                 anchors.centerIn: parent
                 color: "white"
-                z: (carinfo.gear === 1 ? 0 : 1)
+                z: (carinfo.gear === 1 ? 1 : 2)
             }
 
             Rectangle {
@@ -32,7 +33,7 @@ WaylandCompositor {
                 height: 600
                 anchors.centerIn: parent
                 color: "white"
-                z: (carinfo.gear === 1 ? 1 : 0)
+                z: (carinfo.gear === 1 ? 2 : 1)
             }
         }
     }
@@ -42,11 +43,11 @@ WaylandCompositor {
         ShellSurfaceItem {
             anchors.fill: parent
             onSurfaceDestroyed: destroy()
-            onWidthChanged: handleResized()
-            onHeightChanged: handleResized()
-            function handleResized() {
-                shellSurface.sendConfigure(Qt.size(width, height));
-            }
+            //onWidthChanged: handleResized()
+            //onHeightChanged: handleResized()
+            //function handleResized() {
+            //    shellSurface.sendConfigure(Qt.size(width, height));
+            //}
         }
     }
 
