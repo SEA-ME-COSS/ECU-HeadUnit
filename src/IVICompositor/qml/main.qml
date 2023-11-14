@@ -31,6 +31,13 @@ WaylandCompositor {
                     height: 600
                     anchors.right: parent.right
                     // z: (carinfo.gear === 1 ? 2 : 1)
+
+                    gradient: Gradient {
+                        GradientStop { position: 0.0; color: "transparent" }
+                        GradientStop { position: 0.4; color: "white" }
+                        GradientStop { position: 0.6; color: "white" }
+                        GradientStop { position: 1.0; color: "transparent" }
+                    }
                 }
             }
         }
