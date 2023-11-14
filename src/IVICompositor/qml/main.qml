@@ -34,7 +34,7 @@ WaylandCompositor {
                     z: (carinfo.gear === 1 ? 2 : 1)
                 }
 
-                property real pdcOpacity: 0
+                property real pdcOpacity: (carinfo.gear === 1 ? 1.0 : 0.0)
 
                 Behavior on pdcOpacity {
                     NumberAnimation {
