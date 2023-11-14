@@ -45,8 +45,8 @@ Window {
             font.family: font.name
             font.pixelSize: 30
             color: "black"
-            x: 0
-            y: 0
+            anchors.horizontalCenter: parent.horizontalCenter
+            y: 20
         }
     }
 }
