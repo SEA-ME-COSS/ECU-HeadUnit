@@ -30,7 +30,19 @@ WaylandCompositor {
                     width: 850
                     height: 600
                     anchors.right: parent.right
+                    opacity: container.pdcOpacity
                     z: (carinfo.gear === 1 ? 2 : 1)
+                }
+
+                property real pdcOpacity: 0
+
+                Behavior on pdcOpacity {
+                    NumberAnimation {
+                        target: container
+                        property: "pdcOpacity"
+                        easing.type: Easing.InOutSine
+                        duration: 1000
+                    }
                 }
             }
         }
