@@ -29,6 +29,7 @@ WaylandCompositor {
                     width: 500
                     height: 600
                     anchors.centerIn: parent
+                    opacity: 0.5
                 }
             }
         }
