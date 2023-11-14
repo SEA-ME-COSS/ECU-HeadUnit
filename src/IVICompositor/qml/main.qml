@@ -27,7 +27,7 @@ WaylandCompositor {
 
                 Rectangle {
                     id: pdcUnitArea
-                    width: 850
+                    width: 900
                     height: 600
                     anchors.right: parent.right
                     //z: (carinfo.gear === 1 ? 2 : 1)
