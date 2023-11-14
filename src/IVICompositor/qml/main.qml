@@ -51,7 +51,7 @@ WaylandCompositor {
 
     IviApplication {
         onIviSurfaceCreated: {
-            var surfaceArea = iviSurface.iviId === 1111 ? pdcUnitArea : headUnitArea;
+            var surfaceArea = iviSurface.iviId === 1110 ? pdcUnitArea : headUnitArea;
             var item = chromeComponent.createObject(surfaceArea, { "shellSurface": iviSurface } );
             //item.handleResized();
         }
