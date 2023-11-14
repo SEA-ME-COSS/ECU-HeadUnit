@@ -49,6 +49,21 @@ WaylandCompositor {
                         duration: 1000
                     }
                 }
+
+                FontLoader {
+                    id: font
+                    source: "../font/Nebula-Regular.otf"
+                }
+
+                Text {
+                    text: "Parking Distance Control"
+                    font.family: font.name
+                    font.pixelSize: 40
+                    color: "white"
+                    anchors.horizontalCenter: pdcUnitArea.horizontalCenter
+                    y: 30
+                    z: (carinfo.gear === 1 ? 3 : 0)
+                }
             }
         }
     }
