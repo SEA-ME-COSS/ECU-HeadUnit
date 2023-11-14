@@ -19,7 +19,7 @@ WaylandCompositor {
 
                 Rectangle {
                     id: headUnitArea
-                    width: 500
+                    width: 1024
                     height: 600
                     anchors.left: parent.left
                     color: "cornflowerblue"
