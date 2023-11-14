@@ -10,6 +10,11 @@ Window {
     height: 600
     visible: true
 
+    FontLoader {
+        id: font
+        source: "../font/Nebula-Regular.otf"
+    }
+
     Item {
         id: container
         width: 1024
@@ -33,6 +38,19 @@ Window {
             color: "white"
             opacity: 0.5
             anchors.fill: parent
+        }
+
+        Text {
+            text: "Parking Distance Control"
+            font.family: font.name
+            font.pixelSize: 40
+            color: "white"
+            anchors.horizontalCenter: parent.horizontalCenter
+            y: 30
+
+            transform: Scale {
+                xScale: -1
+            }
         }
     }
 }

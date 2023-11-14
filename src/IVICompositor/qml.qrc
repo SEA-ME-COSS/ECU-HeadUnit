@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/">
         <file>qml/main.qml</file>
-        <file>font/Nebula-Regular.otf</file>
     </qresource>
 </RCC>
