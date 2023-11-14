@@ -41,19 +41,19 @@ WaylandCompositor {
         ShellSurfaceItem {
             anchors.fill: parent
             onSurfaceDestroyed: destroy()
-            //onWidthChanged: handleResized()
-            //onHeightChanged: handleResized()
-            //function handleResized() {
-            //    shellSurface.sendConfigure(Qt.size(width, height));
-            //}
+            onWidthChanged: handleResized()
+            onHeightChanged: handleResized()
+            function handleResized() {
+               shellSurface.sendConfigure(Qt.size(width, height));
+            }
         }
     }
 
     IviApplication {
         onIviSurfaceCreated: {
-            var surfaceArea = iviSurface.iviId === 1110 ? pdcUnitArea : headUnitArea;
+            var surfaceArea = iviSurface.iviId === 1111 ? pdcUnitArea : headUnitArea;
             var item = chromeComponent.createObject(surfaceArea, { "shellSurface": iviSurface } );
-            //item.handleResized();
+            item.handleResized();
         }
     }
 }
