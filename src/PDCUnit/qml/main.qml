@@ -45,7 +45,7 @@ Window {
             font.family: font.name
             font.pixelSize: 40
             color: "white"
-            x: parent / 2 - width - width / 2
+            x: 512 - width - width / 2
             y: 30
 
             transform: Scale {
