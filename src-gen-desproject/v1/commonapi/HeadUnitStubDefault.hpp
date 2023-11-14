@@ -84,6 +84,12 @@ public:
         std::string message = "";
         _reply(message);
     }
+    COMMONAPI_EXPORT virtual void setDistance(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _Distance, setDistanceReply_t _reply) {
+        (void)_client;
+        (void)_Distance;
+        std::string message = "";
+        _reply(message);
+    }
 
 
 protected:

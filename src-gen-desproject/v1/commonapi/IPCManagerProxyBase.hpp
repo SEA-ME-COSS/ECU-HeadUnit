@@ -44,6 +44,7 @@ public:
     typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> SetLightAsyncCallback;
     typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> SetThrottleAsyncCallback;
     typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> SetSteeringAsyncCallback;
+    typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> SetDistanceAsyncCallback;
     typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> GetGearModeAsyncCallback;
     typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> GetDirectionAsyncCallback;
     typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> GetLightAsyncCallback;
@@ -62,6 +63,8 @@ public:
     virtual std::future<CommonAPI::CallStatus> setThrottleAsync(const double &_Throttle, SetThrottleAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr) = 0;
     virtual void setSteering(double _Steering, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr) = 0;
     virtual std::future<CommonAPI::CallStatus> setSteeringAsync(const double &_Steering, SetSteeringAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr) = 0;
+    virtual void setDistance(uint16_t _Distance, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr) = 0;
+    virtual std::future<CommonAPI::CallStatus> setDistanceAsync(const uint16_t &_Distance, SetDistanceAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr) = 0;
     virtual void getGearMode(std::string _message1, CommonAPI::CallStatus &_internalCallStatus, std::string &_message2, const CommonAPI::CallInfo *_info = nullptr) = 0;
     virtual std::future<CommonAPI::CallStatus> getGearModeAsync(const std::string &_message1, GetGearModeAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr) = 0;
     virtual void getDirection(std::string _message1, CommonAPI::CallStatus &_internalCallStatus, std::string &_message2, const CommonAPI::CallInfo *_info = nullptr) = 0;

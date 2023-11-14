@@ -81,6 +81,14 @@ interface IPCManager {
       String message // Output parameter: message of type String.
     }
   }
+  method setDistance {
+    in {
+      UInt16 Distance // Input parameter: Distance of type UInt16.
+    }
+    out {
+      String message // Output parameter: message of type String.
+    }
+  }
   method getGearMode {
     in {
       String message1 // Input parameter: message of type String.
@@ -188,6 +196,14 @@ interface HeadUnit {
   method setLight {
     in {
       String Light // Input parameter: Light of type String.
+    }
+    out {
+      String message // Output parameter: message of type String.
+    }
+  }
+  method setDistance {
+    in {
+      UInt16 Distance // Input parameter: Distance of type UInt16.
     }
     out {
       String message // Output parameter: message of type String.

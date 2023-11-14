@@ -152,6 +152,27 @@ public:
      * It will provide the same value for CallStatus as will be handed to the callback.
      */
     virtual std::future<CommonAPI::CallStatus> setLightAsync(const std::string &_Light, SetLightAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr);
+    /**
+     * Calls setDistance with synchronous semantics.
+     *
+     * All const parameters are input parameters to this method.
+     * All non-const parameters will be filled with the returned values.
+     * The CallStatus will be filled when the method returns and indicate either
+     * "SUCCESS" or which type of error has occurred. In case of an error, ONLY the CallStatus
+     * will be set.
+     */
+    virtual void setDistance(uint16_t _Distance, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr);
+    /**
+     * Calls setDistance with asynchronous semantics.
+     *
+     * The provided callback will be called when the reply to this call arrives or
+     * an error occurs during the call. The CallStatus will indicate either "SUCCESS"
+     * or which type of error has occurred. In case of any error, ONLY the CallStatus
+     * will have a defined value.
+     * The std::future returned by this method will be fulfilled at arrival of the reply.
+     * It will provide the same value for CallStatus as will be handed to the callback.
+     */
+    virtual std::future<CommonAPI::CallStatus> setDistanceAsync(const uint16_t &_Distance, SetDistanceAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr);
 
 
 
@@ -210,6 +231,15 @@ void HeadUnitProxy<_AttributeExtensions...>::setLight(std::string _Light, Common
 template <typename ... _AttributeExtensions>
 std::future<CommonAPI::CallStatus> HeadUnitProxy<_AttributeExtensions...>::setLightAsync(const std::string &_Light, SetLightAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
     return delegate_->setLightAsync(_Light, _callback, _info);
+}
+template <typename ... _AttributeExtensions>
+void HeadUnitProxy<_AttributeExtensions...>::setDistance(uint16_t _Distance, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
+    delegate_->setDistance(_Distance, _internalCallStatus, _message, _info);
+}
+
+template <typename ... _AttributeExtensions>
+std::future<CommonAPI::CallStatus> HeadUnitProxy<_AttributeExtensions...>::setDistanceAsync(const uint16_t &_Distance, SetDistanceAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+    return delegate_->setDistanceAsync(_Distance, _callback, _info);
 }
 
 template <typename ... _AttributeExtensions>

@@ -3,8 +3,9 @@
 // Constructor for HeadUnitQtClass
 HeadUnitQtClass::HeadUnitQtClass(QObject *parent) : QObject(parent)
 {
-    // Initialize sensorRpm and steering to 0
+    // Initialize sensorRpm and distance to 0
     QsensorRpm = 0;
+    Qdistance = 0;
 }
 
 // Getter for sensorRpm
@@ -29,6 +30,12 @@ quint16 HeadUnitQtClass::direction() const
 QString HeadUnitQtClass::light() const
 {
     return Qlight;
+}
+
+// Getter for distance
+quint16 HeadUnitQtClass::distance() const
+{
+    return Qdistance;
 }
 
 // Setter for sensorRpm
@@ -61,6 +68,14 @@ void HeadUnitQtClass::setLight(QString _light)
     Qlight = _light;
     // Emit the signal to notify changes to QML
     emit lightChanged();
+}
+
+// Setter for distance
+void HeadUnitQtClass::setDistance(uint16_t _distance)
+{
+    Qdistance = _distance;
+    // Emit the signal to notify changes to QML
+    emit distanceChanged();
 }
 
 // QML-invokable method to set the gear using IPCManagerTargetProxy

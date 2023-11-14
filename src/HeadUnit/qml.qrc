@@ -12,8 +12,14 @@
         <file>image/play.png</file>
         <file>image/pause.png</file>
         <file>image/off.png</file>
+        <file>image/pdc_car.png</file>
+        <file>image/pdc_red_indicator.png</file>
+        <file>image/pdc_yellow_indicator.png</file>
+        <file>image/pdc_green_indicator.png</file>
+        <file>image/pdc_path_straight.png</file> 
         <file>media/music.mp3</file>
         <file>media/movie.mp4</file>
         <file>qml/ValueSource.qml</file>
+        <file>qml/PDCWindow.qml</file>
     </qresource>
 </RCC>

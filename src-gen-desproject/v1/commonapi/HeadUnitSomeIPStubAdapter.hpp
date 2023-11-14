@@ -85,6 +85,14 @@ public:
         std::tuple< CommonAPI::SomeIP::StringDeployment>
     > setLightStubDispatcher;
     
+    CommonAPI::SomeIP::MethodWithReplyStubDispatcher<
+        ::v1::commonapi::HeadUnitStub,
+        std::tuple< uint16_t>,
+        std::tuple< std::string>,
+        std::tuple< CommonAPI::SomeIP::IntegerDeployment<uint16_t>>,
+        std::tuple< CommonAPI::SomeIP::StringDeployment>
+    > setDistanceStubDispatcher;
+    
     HeadUnitSomeIPStubAdapterInternal(
         const CommonAPI::SomeIP::Address &_address,
         const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection,
@@ -126,11 +134,20 @@ public:
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)),
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
         
+        ,
+        setDistanceStubDispatcher(
+            &HeadUnitStub::setDistance,
+            false,
+            _stub->hasElement(4),
+            std::make_tuple(static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr)),
+            std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
+        
     {
-        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x73) }, &setSensorRpmStubDispatcher );
-        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x74) }, &setGearStubDispatcher );
-        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x75) }, &setDirectionStubDispatcher );
-        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x76) }, &setLightStubDispatcher );
+        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x74) }, &setSensorRpmStubDispatcher );
+        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x75) }, &setGearStubDispatcher );
+        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x76) }, &setDirectionStubDispatcher );
+        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x77) }, &setLightStubDispatcher );
+        HeadUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x78) }, &setDistanceStubDispatcher );
         // Provided events/fields
     }
 
