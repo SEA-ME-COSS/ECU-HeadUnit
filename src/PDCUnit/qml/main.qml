@@ -21,6 +21,11 @@ Window {
         height: 600
         anchors.centerIn: parent
 
+        transform: Scale {
+            xScale: -1
+            origin.x: parent.width / 2
+        }
+
         Camera {
             id: camera
             objectName: "camera"
