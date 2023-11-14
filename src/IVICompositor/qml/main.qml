@@ -32,7 +32,7 @@ WaylandCompositor {
                 width: 600
                 height: 600
                 anchors.centerIn: parent
-                color: "white"
+                color: "black"
                 z: (carinfo.gear === 1 ? 2 : 1)
             }
         }
