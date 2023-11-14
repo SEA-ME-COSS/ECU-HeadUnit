@@ -27,7 +27,7 @@ WaylandCompositor {
 
                 Rectangle {
                     id: pdcUnitArea
-                    width: 900
+                    width: 850
                     height: 600
                     anchors.right: parent.right
                     //opacity: 0.7
