@@ -32,6 +32,15 @@ WaylandCompositor {
                     anchors.right: parent.right
                     opacity: container.pdcOpacity
                     z: (carinfo.gear === 1 ? 2 : 1)
+
+                    Text {
+                        text: "asdfasdf;lkja;s"
+                        //font.family: font.name
+                        //font.pixelSize: 15
+                        color: "black"
+                        x: 0
+                        y: 0
+                    }
                 }
 
                 property real pdcOpacity: (carinfo.gear === 1 ? 1.0 : 0.0)
