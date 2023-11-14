@@ -23,7 +23,7 @@ then
 fi
 
 export LIBGL_ALWAYS_SOFTWARE=1
-export QT_WAYLAND_SHELL_INTEGRATION=ivi_shell
+export QT_WAYLAND_SHELL_INTEGRATION=ivi-shell
 export QT_IVI_SURFACE_ID=1111
 
 # Change the working directory to '../build'
