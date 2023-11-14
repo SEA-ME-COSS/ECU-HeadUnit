@@ -132,11 +132,12 @@ PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(HeadUnit
 PRIVATE Qt5::Core Qt5::Quick Qt5::Gui Qt5::Multimedia CommonAPI CommonAPI-SomeIP vsomeip3)
 
-add_executable(wayland
-        src/wayland/wayland.cpp
-        src/wayland/qml.qrc
+
+add_executable(IVICompositor
+        src/IVICompositor/IVICompositor.cpp
+        src/IVICompositor/qml.qrc
 )
-target_compile_definitions(wayland
+target_compile_definitions(IVICompositor
 PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
-target_link_libraries(wayland
+target_link_libraries(IVICompositor
 PRIVATE Qt5::Core Qt5::Quick Qt5::Gui Qt5::Multimedia Qt5::WaylandCompositor)

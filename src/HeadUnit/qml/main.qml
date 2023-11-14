@@ -839,29 +839,5 @@ Window {
                 }
             }
         }
-
-        // parking distance control content display (visible when in R gear mode)
-        PDCWindow {
-            id: pdcWindow
-        }
-
-        // property int gear: carinfo.gear
-        // onGearChanged: {
-        //     if (gear === 1) {
-        //         root.visible = true
-        //         delayTimer.start()
-        //         pdcWindow.visible = true
-        //     } else {
-        //         root.visible = true
-        //         delayTimer.start()
-        //         pdcWindow.visible = false
-        //     }
-        // }
-
-        // Timer {
-        //     id: delayTimer
-        //     interval: 1000
-        //     onTriggered: { }
-        // }
     }
 }

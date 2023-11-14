@@ -2,8 +2,6 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QCursor>
-#include <QCamera>
-#include <QCameraInfo>
 
 #include "HeadUnitStubImpl.hpp"
 #include "HeadUnitQtClass.hpp"
@@ -34,17 +32,6 @@ int main(int argc, char *argv[])
 
     // Initialize the QML Application Engine
     QQmlApplicationEngine engine;
-    
-    QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
-    
-    if (cameras.isEmpty()) {
-        qWarning("No camera available");
-        return -1;
-    }
-
-    QCamera camera(cameras[0]);
-
-    engine.rootContext()->setContextProperty("camera", &camera);
 
     engine.rootContext()->setContextProperty("carinfo", &carinfo);
 

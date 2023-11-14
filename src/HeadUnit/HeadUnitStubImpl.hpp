@@ -27,9 +27,6 @@ public:
     
     // Handle a request to update the light color of the Head Unit
     virtual void setLight(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _light, setLightReply_t _return);
-    
-    // Handle a request to update the distance of the Head Unit
-    virtual void setDistance(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _distance, setDistanceReply_t _return);
 };
 
 #endif

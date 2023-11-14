@@ -15,7 +15,6 @@ class HeadUnitQtClass : public QObject
     Q_PROPERTY(quint16 gear READ gear WRITE setGear NOTIFY gearChanged)
     Q_PROPERTY(quint16 direction READ direction WRITE setDirection NOTIFY directionChanged)
     Q_PROPERTY(QString light READ light WRITE setLight NOTIFY lightChanged)
-    Q_PROPERTY(quint16 distance READ distance WRITE setDistance NOTIFY distanceChanged)
 
 private:
     HeadUnitSenderClass sender;  // Create an instance of HeadUnitSenderClass for communication
@@ -24,7 +23,6 @@ private:
     quint16 Qgear;       // Gear mode property.
     quint16 Qdirection;  // Direction property.
     QString Qlight;      // Light color property.
-    quint16 Qdistance;   // Distance property.
 
 public:
     explicit HeadUnitQtClass(QObject *parent = nullptr);
@@ -33,13 +31,11 @@ public:
     quint16 gear() const;
     quint16 direction() const;
     QString light() const;
-    quint16 distance() const;
 
     void setSensorRpm(uint16_t _sensorRpm);  // Setter for sensor RPM
     void setGear(uint16_t _gear);
     void setDirection(uint16_t _direction);
     void setLight(QString _light);
-    void setDistance(uint16_t _distance);
 
 public Q_SLOTS:
     Q_INVOKABLE void setIPCManagerGear(quint16 _gear);          // QML-invokable method to set gear
@@ -52,7 +48,6 @@ signals:
     void gearChanged();
     void directionChanged();
     void lightChanged();
-    void distanceChanged();
 };
 
 extern HeadUnitQtClass carinfo;  // Create a global instance of HeadUnitQtClass named 'carinfo'
