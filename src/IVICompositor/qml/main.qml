@@ -32,6 +32,11 @@ WaylandCompositor {
                     anchors.right: parent.right
                     opacity: container.pdcOpacity
                     z: (carinfo.gear === 1 ? 2 : 1)
+
+                    transform: Scale {
+                        xScale: -1
+                        origin.x: parent.width / 2
+                    }
                 }
 
                 property real pdcOpacity: (carinfo.gear === 1 ? 1.0 : 0.0)
