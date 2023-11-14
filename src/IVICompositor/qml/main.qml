@@ -10,27 +10,35 @@ WaylandCompositor {
             height: 600
             visible: true
 
-            Rectangle {
-                id: headUnitArea
-                width: 500
-                height: parent.height
-                anchors.left: parent.left
-                color: "cornflowerblue"
-                Text {
-                    anchors.centerIn: parent
-                    text: "Ivi surface with id 1337"
-                }
-            }
+            Item {
+                id: container
+                width: 1024
+                height: 600
+                anchors.centerIn: parent
+                scale: 0.5
 
-            Rectangle {
-                id: pdcUnitArea
-                width: 500
-                height: parent.height
-                anchors.right: parent.right
-                color: "burlywood"
-                Text {
-                    anchors.centerIn: parent
-                    text: "Other surfaces"
+                Rectangle {
+                    id: headUnitArea
+                    width: 500
+                    height: 600
+                    anchors.left: parent.left
+                    color: "cornflowerblue"
+                    Text {
+                        anchors.centerIn: parent
+                        text: "Ivi surface with id 1337"
+                    }
+                }
+
+                Rectangle {
+                    id: pdcUnitArea
+                    width: 500
+                    height: 600
+                    anchors.right: parent.right
+                    color: "burlywood"
+                    Text {
+                        anchors.centerIn: parent
+                        text: "Other surfaces"
+                    }
                 }
             }
         }
