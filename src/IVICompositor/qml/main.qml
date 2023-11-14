@@ -21,24 +21,14 @@ WaylandCompositor {
                     id: headUnitArea
                     width: 1024
                     height: 600
-                    anchors.left: parent.left
-                    color: "cornflowerblue"
-                    Text {
-                        anchors.centerIn: parent
-                        text: "Ivi surface with id 1337"
-                    }
+                    anchors.centerIn: parent
                 }
 
                 Rectangle {
                     id: pdcUnitArea
                     width: 500
                     height: 600
-                    anchors.right: parent.right
-                    color: "burlywood"
-                    Text {
-                        anchors.centerIn: parent
-                        text: "Other surfaces"
-                    }
+                    anchors.centerIn: parent
                 }
             }
         }
