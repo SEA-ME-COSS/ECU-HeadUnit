@@ -7,32 +7,35 @@ WaylandCompositor {
         sizeFollowsWindow: true
         window: Window {
             width: 1024
-            height: 768
+            height: 600
             visible: true
+
             Rectangle {
-                id: leftArea
-                width: parent.width / 2
-                height: parent.height
-                anchors.left: parent.left
-                color: "cornflowerblue"
-                Text {
-                    anchors.centerIn: parent
-                    text: "Ivi surface with id 1337"
-                }
+                width: 1024
+                height: 600
+                anchors.centerIn: parent
+                color: "black"
             }
+
+            Item {
+                id: headUnitArea
+                width: 1024
+                height: 600
+                anchors.centerIn: parent
+                z: (carinfo.gear === 1 ? 0 : 1)
+            }
+
             Rectangle {
-                id: rightArea
-                width: parent.width / 2
-                height: parent.height
-                anchors.right: parent.right
-                color: "burlywood"
-                Text {
-                    anchors.centerIn: parent
-                    text: "Other surfaces"
-                }
+                id: parkingDistanceControlArea
+                width: 512
+                height: 600
+                color: "white"
+                anchors.centerIn: parent
+                z: (carinfo.gear === 1 ? 1 : 0)
             }
         }
     }
+
     Component {
         id: chromeComponent
         ShellSurfaceItem {
@@ -45,9 +48,10 @@ WaylandCompositor {
             }
         }
     }
+
     IviApplication {
         onIviSurfaceCreated: {
-            var surfaceArea = iviSurface.iviId === 1337 ? leftArea : rightArea;
+            var surfaceArea = iviSurface.iviId === 1111 ? parkingDistanceControlArea : headUnitArea;
             var item = chromeComponent.createObject(surfaceArea, { "shellSurface": iviSurface } );
             item.handleResized();
         }

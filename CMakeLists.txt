@@ -43,7 +43,7 @@ link_directories(
 )
 
 
-# Create executables and link libraries for the CANSender, PiracerSender, PiracerController, IPCManager, InstrumentCluster, HeadUnit and PiracerSignal targets
+# Create executables and link libraries for the CANSender, PiracerSender, PiracerController, IPCManager, InstrumentCluster, HeadUnit and IVICompositor targets
 add_executable(CANSender
         src/CANSender/CANSender.cpp
         src/CANSender/ReadCANThread.c
