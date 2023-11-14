@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Mutex: lock file path
-lockfile="/tmp/HeadUnit.lock"
+lockfile="/tmp/IVICompositor.lock"
 
 # Check for the existence of the lock file
 if [ -e "$lockfile" ]; then
@@ -13,7 +13,7 @@ fi
 touch "$lockfile"
 
 # Define the process name to be checked and controlled
-process_name="HeadUnit"
+process_name="IVICompositor"
 
 # Check if a process with the specified name is running
 if pgrep -x "$process_name" > /dev/null
