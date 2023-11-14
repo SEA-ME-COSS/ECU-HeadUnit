@@ -15,7 +15,6 @@ Window {
         width: 1024
         height: 600
         anchors.centerIn: parent
-        scale: 0.5
 
         Camera {
             id: camera
