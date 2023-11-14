@@ -8,6 +8,7 @@
 #include <v1/commonapi/PiracerControllerProxy.hpp>
 #include <v1/commonapi/InstrumentClusterProxy.hpp>
 #include <v1/commonapi/HeadUnitProxy.hpp>
+#include <v1/commonapi/PDCUnitProxy.hpp>
 #include <v1/commonapi/IVICompositorProxy.hpp>
 
 using namespace v1_0::commonapi;  // Use the v1_0::commonapi namespace
@@ -25,6 +26,7 @@ public:
     std::shared_ptr<PiracerControllerProxy<>> PiracerControllerTargetProxy;
     std::shared_ptr<InstrumentClusterProxy<>> InstrumentClusterTargetProxy;
     std::shared_ptr<HeadUnitProxy<>> HeadUnitTargetProxy;
+    std::shared_ptr<PDCUnitProxy<>> PDCUnitTargetProxy;
     std::shared_ptr<IVICompositorProxy<>> IVICompositorTargetProxy;
 
     CommonAPI::CallStatus callStatus;

@@ -33,7 +33,7 @@ std::shared_ptr<CommonAPI::SomeIP::Proxy> createIVICompositorSomeIPProxy(
 void initializeIVICompositorSomeIPProxy() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
         "local:commonapi.IVICompositor:v1_0:IVICompositor",
-        0x3ee, 0x2716, 1, 0);
+        0x3ef, 0x2717, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerProxyCreateMethod(
         "commonapi.IVICompositor:v1_0",
         &createIVICompositorSomeIPProxy);

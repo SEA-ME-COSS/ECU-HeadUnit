@@ -92,12 +92,11 @@ public:
     typedef std::function<void (std::string _message)> setGearReply_t;
     typedef std::function<void (std::string _message)> setDirectionReply_t;
     typedef std::function<void (std::string _message)> setLightReply_t;
-    typedef std::function<void (std::string _message)> setDistanceReply_t;
 
     virtual ~HeadUnitStub() {}
     void lockInterfaceVersionAttribute(bool _lockAccess) { static_cast<void>(_lockAccess); }
     bool hasElement(const uint32_t _id) const {
-        return (_id < 5);
+        return (_id < 4);
     }
     virtual const CommonAPI::Version& getInterfaceVersion(std::shared_ptr<CommonAPI::ClientId> _client) = 0;
 
@@ -109,8 +108,6 @@ public:
     virtual void setDirection(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _Direction, setDirectionReply_t _reply) = 0;
     /// This is the method that will be called on remote calls on the method setLight.
     virtual void setLight(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _Light, setLightReply_t _reply) = 0;
-    /// This is the method that will be called on remote calls on the method setDistance.
-    virtual void setDistance(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _Distance, setDistanceReply_t _reply) = 0;
 
 
     using CommonAPI::Stub<HeadUnitStubAdapter, HeadUnitStubRemoteEvent>::initStubAdapter;

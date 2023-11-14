@@ -43,7 +43,7 @@ link_directories(
 )
 
 
-# Create executables and link libraries for the CANSender, PiracerSender, PiracerController, IPCManager, InstrumentCluster, HeadUnit and IVICompositor targets
+# Create executables and link libraries for the CANSender, PiracerSender, PiracerController, IPCManager, InstrumentCluster, HeadUnit, PDCUnit and IVICompositor targets
 add_executable(CANSender
         src/CANSender/CANSender.cpp
         src/CANSender/ReadCANThread.c
@@ -95,6 +95,8 @@ add_executable(IPCManager
         src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/HeadUnitSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp
+        src-gen-desproject/v1/commonapi/PDCUnitSomeIPProxy.cpp
+        src-gen-desproject/v1/commonapi/PDCUnitSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/IVICompositorSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/IVICompositorSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAdapter.cpp
@@ -134,6 +136,20 @@ PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(HeadUnit
 PRIVATE Qt5::Core Qt5::Quick Qt5::Gui Qt5::Multimedia CommonAPI CommonAPI-SomeIP vsomeip3)
 
+add_executable(PDCUnit
+        src/PDCUnit/PDCUnit.cpp
+        src/PDCUnit/PDCUnitStubImpl.cpp
+        src/PDCUnit/PDCUnitQtClass.cpp
+        src/PDCUnit/qml.qrc
+        src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
+        src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
+        src-gen-desproject/v1/commonapi/PDCUnitSomeIPStubAdapter.cpp
+        src-gen-desproject/v1/commonapi/PDCUnitSomeIPDeployment.cpp
+)
+target_compile_definitions(PDCUnit
+PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
+target_link_libraries(PDCUnit
+PRIVATE Qt5::Core Qt5::Quick Qt5::Gui Qt5::Multimedia CommonAPI CommonAPI-SomeIP vsomeip3)
 
 add_executable(IVICompositor
         src/IVICompositor/IVICompositor.cpp

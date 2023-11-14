@@ -25,11 +25,10 @@ WaylandCompositor {
                 z: (carinfo.gear === 1 ? 0 : 1)
             }
 
-            Rectangle {
-                id: parkingDistanceControlArea
+            Item {
+                id: pdcUnitArea
                 width: 512
                 height: 600
-                color: "white"
                 anchors.centerIn: parent
                 z: (carinfo.gear === 1 ? 1 : 0)
             }
@@ -51,7 +50,7 @@ WaylandCompositor {
 
     IviApplication {
         onIviSurfaceCreated: {
-            var surfaceArea = iviSurface.iviId === 1111 ? parkingDistanceControlArea : headUnitArea;
+            var surfaceArea = iviSurface.iviId === 1111 ? pdcUnitArea : headUnitArea;
             var item = chromeComponent.createObject(surfaceArea, { "shellSurface": iviSurface } );
             item.handleResized();
         }

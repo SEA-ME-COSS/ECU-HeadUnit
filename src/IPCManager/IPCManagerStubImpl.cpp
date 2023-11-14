@@ -154,7 +154,7 @@ void IPCManagerStubImpl::setSteering(const std::shared_ptr<CommonAPI::ClientId> 
 // Set distance
 void IPCManagerStubImpl::setDistance(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _distance, setDistanceReply_t _reply)
 {
-    sender.HeadUnitTargetProxy->setDistance(_distance, sender.callStatus, sender.returnMessage);
+    sender.PDCUnitTargetProxy->setDistance(_distance, sender.callStatus, sender.returnMessage);
     
     // Reply to the caller
     _reply("");

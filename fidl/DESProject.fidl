@@ -201,6 +201,13 @@ interface HeadUnit {
       String message // Output parameter: message of type String.
     }
   }
+}
+
+// Define the 'PDCUnit' interface.
+interface PDCUnit {
+  version {major 1 minor 0} // Interface version information.
+
+  // Define methods for various functionalities with input and output parameters.
   method setDistance {
     in {
       UInt16 Distance // Input parameter: Distance of type UInt16.
