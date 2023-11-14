@@ -7,10 +7,11 @@ WaylandCompositor {
         sizeFollowsWindow: true
         window: Window {
             width: 1024
-            height: 768
+            height: 600
             visible: true
+
             Rectangle {
-                id: leftArea
+                id: headUnitArea
                 width: parent.width / 2
                 height: parent.height
                 anchors.left: parent.left
@@ -20,8 +21,9 @@ WaylandCompositor {
                     text: "Ivi surface with id 1337"
                 }
             }
+
             Rectangle {
-                id: rightArea
+                id: pdcUnitArea
                 width: parent.width / 2
                 height: parent.height
                 anchors.right: parent.right
@@ -33,6 +35,7 @@ WaylandCompositor {
             }
         }
     }
+
     Component {
         id: chromeComponent
         ShellSurfaceItem {
@@ -45,9 +48,10 @@ WaylandCompositor {
             }
         }
     }
+
     IviApplication {
         onIviSurfaceCreated: {
-            var surfaceArea = iviSurface.iviId === 1111 ? leftArea : rightArea;
+            var surfaceArea = iviSurface.iviId === 1111 ? pdcUnitArea : headUnitArea;
             var item = chromeComponent.createObject(surfaceArea, { "shellSurface": iviSurface } );
             item.handleResized();
         }
