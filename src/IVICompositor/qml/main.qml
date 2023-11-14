@@ -59,10 +59,10 @@ WaylandCompositor {
                     text: "Parking Distance Control"
                     font.family: font.name
                     font.pixelSize: 40
-                    color: "white"
+                    color: "black"
                     anchors.horizontalCenter: pdcUnitArea.horizontalCenter
                     y: 30
-                    z: (carinfo.gear === 1 ? 3 : 0)
+                    z: 5
                 }
             }
         }
