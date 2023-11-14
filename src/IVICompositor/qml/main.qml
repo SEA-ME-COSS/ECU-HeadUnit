@@ -7,27 +7,32 @@ WaylandCompositor {
         sizeFollowsWindow: true
         window: Window {
             width: 1024
-            height: 600
+            height: 768
             visible: true
-
             Rectangle {
-                id: headUnitArea
-                width: 1024
-                height: 600
-                anchors.centerIn: parent
-                z: (carinfo.gear === 1 ? 1 : 2)
+                id: leftArea
+                width: parent.width / 2
+                height: parent.height
+                anchors.left: parent.left
+                color: "cornflowerblue"
+                Text {
+                    anchors.centerIn: parent
+                    text: "Ivi surface with id 1337"
+                }
             }
-
             Rectangle {
-                id: pdcUnitArea
-                width: 600
-                height: 600
-                anchors.centerIn: parent
-                z: (carinfo.gear === 1 ? 2 : 1)
+                id: rightArea
+                width: parent.width / 2
+                height: parent.height
+                anchors.right: parent.right
+                color: "burlywood"
+                Text {
+                    anchors.centerIn: parent
+                    text: "Other surfaces"
+                }
             }
         }
     }
-
     Component {
         id: chromeComponent
         ShellSurfaceItem {
@@ -36,14 +41,13 @@ WaylandCompositor {
             onWidthChanged: handleResized()
             onHeightChanged: handleResized()
             function handleResized() {
-               shellSurface.sendConfigure(Qt.size(width, height));
+                shellSurface.sendConfigure(Qt.size(width, height));
             }
         }
     }
-
     IviApplication {
         onIviSurfaceCreated: {
-            var surfaceArea = iviSurface.iviId === 1111 ? pdcUnitArea : headUnitArea;
+            var surfaceArea = iviSurface.iviId === 1111 ? leftArea : rightArea;
             var item = chromeComponent.createObject(surfaceArea, { "shellSurface": iviSurface } );
             item.handleResized();
         }

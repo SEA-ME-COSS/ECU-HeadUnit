@@ -6,43 +6,36 @@ import QtMultimedia 5.15
 Window {
     id: root
     title: "PDC Unit"
-    width: 300
-    height: 300
+    width: 1024
+    height: 600
     visible: true
 
-    Rectangle {
-        width: 300
-        height: 300
+    Item {
+        id: container
+        width: 1024
+        height: 600
         anchors.centerIn: parent
-        color: "black"
+        scale: 0.5
+
+        Camera {
+            id: camera
+            objectName: "camera"
+            captureMode: Camera.CaptureViewfinder
+        }
+
+        VideoOutput {
+            id: viewfinder
+            objectName: "viewfinder"
+            source: camera
+            anchors.fill: parent
+        }
+
+        Rectangle {
+            color: "white"
+            opacity: 0.5
+            anchors.fill: parent
+        }
     }
-
-    // Item {
-    //     id: container
-    //     width: 300
-    //     height: 300
-    //     anchors.centerIn: parent
-    //     scale: 0.5
-
-    //     Camera {
-    //         id: camera
-    //         objectName: "camera"
-    //         captureMode: Camera.CaptureViewfinder
-    //     }
-
-    //     VideoOutput {
-    //         id: viewfinder
-    //         objectName: "viewfinder"
-    //         source: camera
-    //         anchors.fill: parent
-    //     }
-
-    //     Rectangle {
-    //         color: "white"
-    //         opacity: 0.7
-    //         anchors.fill: parent
-    //     }
-    // }
 }
 
 
