@@ -133,3 +133,17 @@ define org.genivi.commonapi.someip.deployment for provider as Service {
         }
 }
 
+define org.genivi.commonapi.someip.deployment for interface commonapi.IVICompositor {
+        SomeIpServiceID = 1006
+
+        method setGear {
+                SomeIpMethodID = 121
+        }
+}
+define org.genivi.commonapi.someip.deployment for provider as Service {
+        instance commonapi.IVICompositor {
+                InstanceId = "IVICompositor"
+                SomeIpInstanceID = 10006
+        }
+}
+

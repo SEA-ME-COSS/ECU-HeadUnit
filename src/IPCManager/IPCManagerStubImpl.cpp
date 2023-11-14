@@ -45,6 +45,7 @@ void IPCManagerStubImpl::setGearMode(const std::shared_ptr<CommonAPI::ClientId> 
         // Relay gear mode to the InstrumentCluster service
         sender.InstrumentClusterTargetProxy->setGear(_gearMode, sender.callStatus, sender.returnMessage);
         sender.HeadUnitTargetProxy->setGear(_gearMode, sender.callStatus, sender.returnMessage);
+        sender.IVICompositorTargetProxy->setGear(_gearMode, sender.callStatus, sender.returnMessage);
     }
 
     // Reply to the caller
@@ -171,6 +172,10 @@ void IPCManagerStubImpl::getGearMode(const std::shared_ptr<CommonAPI::ClientId> 
     else if (_input == "HeadUnit")
     {
         sender.HeadUnitTargetProxy->setGear(piracer.getGearMode(), sender.callStatus, sender.returnMessage);
+    }
+    else if (_input == "IVICompositor")
+    {
+        sender.IVICompositorTargetProxy->setGear(piracer.getGearMode(), sender.callStatus, sender.returnMessage);
     }
 
     // Reply to the caller

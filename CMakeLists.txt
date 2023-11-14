@@ -95,6 +95,8 @@ add_executable(IPCManager
         src-gen-desproject/v1/commonapi/InstrumentClusterSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/HeadUnitSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/HeadUnitSomeIPDeployment.cpp
+        src-gen-desproject/v1/commonapi/IVICompositorSomeIPProxy.cpp
+        src-gen-desproject/v1/commonapi/IVICompositorSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAdapter.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
 )
@@ -135,9 +137,16 @@ PRIVATE Qt5::Core Qt5::Quick Qt5::Gui Qt5::Multimedia CommonAPI CommonAPI-SomeIP
 
 add_executable(IVICompositor
         src/IVICompositor/IVICompositor.cpp
+        src/IVICompositor/IVICompositorStubImpl.cpp
+        src/IVICompositor/IVICompositorQtClass.cpp
+        src/IVICompositor/IVICompositorSenderClass.cpp
         src/IVICompositor/qml.qrc
+        src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
+        src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
+        src-gen-desproject/v1/commonapi/IVICompositorSomeIPStubAdapter.cpp
+        src-gen-desproject/v1/commonapi/IVICompositorSomeIPDeployment.cpp
 )
 target_compile_definitions(IVICompositor
 PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(IVICompositor
-PRIVATE Qt5::Core Qt5::Quick Qt5::Gui Qt5::Multimedia Qt5::WaylandCompositor)
+PRIVATE Qt5::Core Qt5::Quick Qt5::Gui Qt5::Multimedia Qt5::WaylandCompositor CommonAPI CommonAPI-SomeIP vsomeip3)

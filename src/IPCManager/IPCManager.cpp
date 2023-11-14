@@ -22,6 +22,10 @@ int main()
 
     while (1)
     {
+        if (!sender.IVICompositorTargetProxy->isAvailable()) {
+            exitCode = system("sh ../reboot_script/reboot_ivi_compositor.sh");
+            // Check if IVICompositorTargetProxy is not available and execute a reboot script
+        }
         if (!sender.CANSenderTargetProxy->isAvailable()) {
             exitCode = system("sh ../reboot_script/reboot_can_sender.sh");
             // Check if CANSenderTargetProxy is not available and execute a reboot script
