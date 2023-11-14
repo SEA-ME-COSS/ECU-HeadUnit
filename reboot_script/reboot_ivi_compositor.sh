@@ -25,8 +25,6 @@ fi
 # Change the working directory to '../build'
 cd ../build
 
-export LIBGL_ALWAYS_SOFTWARE=1
-
 # Run the specified process with '-platform eglfs' and '&' to execute it in the background
 ./"$process_name" -platform eglfs &
 

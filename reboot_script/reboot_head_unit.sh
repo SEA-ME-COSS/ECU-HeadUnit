@@ -22,6 +22,8 @@ then
   pkill -x "$process_name"
 fi
 
+export LIBGL_ALWAYS_SOFTWARE=1
+
 # Change the working directory to '../build'
 cd ../build
 
