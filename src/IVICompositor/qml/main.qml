@@ -17,7 +17,7 @@ WaylandCompositor {
                 color: "black"
             }
 
-            Item {
+            Rectangle {
                 id: headUnitArea
                 width: 1024
                 height: 600
