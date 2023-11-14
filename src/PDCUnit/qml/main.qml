@@ -6,15 +6,13 @@ import QtMultimedia 5.15
 Window {
     id: root
     title: "PDC Unit"
-    // width: 1024
-    width: 500
+    width: 1024
     height: 600
     visible: true
 
     Item {
         id: container
-        // width: 1024
-        width: 500
+        width: 1024
         height: 600
         anchors.centerIn: parent
         scale: 0.5
@@ -34,7 +32,7 @@ Window {
 
         Rectangle {
             color: "white"
-            opacity: 0.5
+            opacity: 0.7
             anchors.fill: parent
         }
     }

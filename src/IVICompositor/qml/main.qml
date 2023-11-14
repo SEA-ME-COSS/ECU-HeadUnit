@@ -13,7 +13,7 @@ WaylandCompositor {
             Rectangle {
                 id: headUnitArea
                 width: 500
-                height: 600
+                height: parent.height
                 anchors.left: parent.left
                 color: "cornflowerblue"
                 Text {
@@ -25,7 +25,7 @@ WaylandCompositor {
             Rectangle {
                 id: pdcUnitArea
                 width: 500
-                height: 600
+                height: parent.height
                 anchors.right: parent.right
                 color: "burlywood"
                 Text {
