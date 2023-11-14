@@ -10,6 +10,11 @@ WaylandCompositor {
             height: 600
             visible: true
 
+            FontLoader {
+                id: font
+                source: "../font/Nebula-Regular.otf"
+            }
+
             Item {
                 id: container
                 width: 1024
@@ -48,11 +53,6 @@ WaylandCompositor {
                         easing.type: Easing.InOutSine
                         duration: 1000
                     }
-                }
-
-                FontLoader {
-                    id: font
-                    source: "../font/Nebula-Regular.otf"
                 }
 
                 Text {
