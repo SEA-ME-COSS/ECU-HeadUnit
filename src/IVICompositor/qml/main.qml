@@ -29,13 +29,13 @@ WaylandCompositor {
                     id: pdcUnitArea
                     width: 850
                     height: 600
-                    anchors.right: parent.right
+                    x: 1024
+                    anchors.verticalCenter: parent.verticalCenter
                     opacity: container.pdcOpacity
                     z: (carinfo.gear === 1 ? 2 : 1)
 
                     transform: Scale {
                         xScale: -1
-                        // origin.x: parent.width / 2
                     }
                 }
 
