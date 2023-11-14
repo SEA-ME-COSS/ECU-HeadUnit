@@ -22,16 +22,16 @@ WaylandCompositor {
                 width: 1024
                 height: 600
                 anchors.centerIn: parent
-                z: (carinfo.gear === 1 ? 0 : 1)
+                z: (carinfo.gear === 1 ? 1 : 2)
             }
 
             Rectangle {
                 id: pdcUnitArea
-                width: 512
+                width: 600
                 height: 600
                 anchors.centerIn: parent
                 color: "white"
-                z: (carinfo.gear === 1 ? 1 : 0)
+                z: (carinfo.gear === 1 ? 2 : 1)
             }
         }
     }
