@@ -35,7 +35,7 @@ WaylandCompositor {
 
                     transform: Scale {
                         xScale: -1
-                        origin.x: parent.width / 2
+                        // origin.x: parent.width / 2
                     }
                 }
 
