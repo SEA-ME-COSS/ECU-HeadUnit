@@ -43,10 +43,10 @@ Window {
         Text {
             text: "Parking Distance Control"
             font.family: font.name
-            font.pixelSize: 30
-            color: "black"
+            font.pixelSize: 40
+            color: "white"
             anchors.horizontalCenter: parent.horizontalCenter
-            y: 20
+            y: 30
         }
     }
 }
