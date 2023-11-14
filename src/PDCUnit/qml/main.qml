@@ -6,13 +6,15 @@ import QtMultimedia 5.15
 Window {
     id: root
     title: "PDC Unit"
-    width: 1024
+    // width: 1024
+    width: 500
     height: 600
     visible: true
 
     Item {
         id: container
-        width: 1024
+        // width: 1024
+        width: 500
         height: 600
         anchors.centerIn: parent
         scale: 0.5
