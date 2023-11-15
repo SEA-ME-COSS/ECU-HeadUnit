@@ -10,6 +10,7 @@
 #include <v1/commonapi/HeadUnitProxy.hpp>
 #include <v1/commonapi/PDCUnitProxy.hpp>
 #include <v1/commonapi/IVICompositorProxy.hpp>
+#include <v1/commonapi/RemoteSpeakerProxy.hpp>
 
 using namespace v1_0::commonapi;  // Use the v1_0::commonapi namespace
 
@@ -28,6 +29,7 @@ public:
     std::shared_ptr<HeadUnitProxy<>> HeadUnitTargetProxy;
     std::shared_ptr<PDCUnitProxy<>> PDCUnitTargetProxy;
     std::shared_ptr<IVICompositorProxy<>> IVICompositorTargetProxy;
+    std::shared_ptr<RemoteSpeakerProxy<>> RemoteSpeakerTargetProxy;
 
     CommonAPI::CallStatus callStatus;
     std::string returnMessage;

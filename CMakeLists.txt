@@ -99,6 +99,8 @@ add_executable(IPCManager
         src-gen-desproject/v1/commonapi/PDCUnitSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/IVICompositorSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/IVICompositorSomeIPDeployment.cpp
+        src-gen-desproject/v1/commonapi/RemoteSpeakerSomeIPProxy.cpp
+        src-gen-desproject/v1/commonapi/RemoteSpeakerSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPStubAdapter.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
 )
@@ -167,3 +169,12 @@ target_compile_definitions(IVICompositor
 PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(IVICompositor
 PRIVATE Qt5::Core Qt5::Quick Qt5::Gui Qt5::Multimedia Qt5::WaylandCompositor CommonAPI CommonAPI-SomeIP vsomeip3)
+
+add_executable(RemoteSpeaker
+        src/RemoteSpeaker/RemoteSpeaker.cpp
+        src/RemoteSpeaker/RemoteSpeakerStubImpl.cpp
+        src/RemoteSpeaker/DataBuffer.cpp
+        src-gen-desproject/v1/commonapi/RemoteSpeakerSomeIPStubAdapter.cpp
+        src-gen-desproject/v1/commonapi/RemoteSpeakerSomeIPDeployment.cpp
+)
+target_link_libraries(RemoteSpeaker CommonAPI CommonAPI-SomeIP vsomeip3)

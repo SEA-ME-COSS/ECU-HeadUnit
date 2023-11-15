@@ -249,3 +249,26 @@ interface IVICompositor {
   }
 }
 
+// Define the 'Speaker' interface.
+interface RemoteSpeaker {
+  version {major 1 minor 0} // Interface version information.
+
+  // Define methods for various functionalities with input and output parameters.
+  method setGear {
+    in {
+      UInt16 Gear // Input parameter: Gear of type UInt16.
+    }
+    out {
+      String message // Output parameter: message of type String.
+    }
+  }
+  method setDistance {
+    in {
+      UInt16 Distance // Input parameter: Distance of type UInt16.
+    }
+    out {
+      String message // Output parameter: message of type String.
+    }
+  }
+}
+

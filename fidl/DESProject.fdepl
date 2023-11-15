@@ -164,3 +164,20 @@ define org.genivi.commonapi.someip.deployment for provider as Service {
         }
 }
 
+define org.genivi.commonapi.someip.deployment for interface commonapi.RemoteSpeaker {
+        SomeIpServiceID = 1008
+
+        method setGear {
+                SomeIpMethodID = 124
+        }
+        method setDistance {
+                SomeIpMethodID = 125
+        }
+}
+define org.genivi.commonapi.someip.deployment for provider as Service {
+        instance commonapi.RemoteSpeaker {
+                InstanceId = "RemoteSpeaker"
+                SomeIpInstanceID = 10008
+        }
+}
+

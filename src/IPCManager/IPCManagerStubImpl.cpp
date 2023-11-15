@@ -46,6 +46,7 @@ void IPCManagerStubImpl::setGearMode(const std::shared_ptr<CommonAPI::ClientId> 
         sender.InstrumentClusterTargetProxy->setGear(_gearMode, sender.callStatus, sender.returnMessage);
         sender.HeadUnitTargetProxy->setGear(_gearMode, sender.callStatus, sender.returnMessage);
         sender.IVICompositorTargetProxy->setGear(_gearMode, sender.callStatus, sender.returnMessage);
+        sender.RemoteSpeakerTargetProxy->setGear(_gearMode, sender.callStatus, sender.returnMessage);
     }
 
     // Reply to the caller
@@ -156,6 +157,7 @@ void IPCManagerStubImpl::setSteering(const std::shared_ptr<CommonAPI::ClientId> 
 void IPCManagerStubImpl::setDistance(const std::shared_ptr<CommonAPI::ClientId> _client, uint16_t _distance, setDistanceReply_t _reply)
 {
     sender.PDCUnitTargetProxy->setDistance(_distance, sender.callStatus, sender.returnMessage);
+    sender.RemoteSpeakerTargetProxy->setDistance(_distance, sender.callStatus, sender.returnMessage);
     
     // Reply to the caller
     _reply("");
