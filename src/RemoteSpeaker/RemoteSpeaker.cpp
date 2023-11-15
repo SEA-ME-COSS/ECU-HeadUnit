@@ -31,11 +31,11 @@ int main()
             }
             else if (DistanceBuffer < 20)
             {
-                sleep_time = 500000;
+                sleep_time = 350000;
             }
             else if (DistanceBuffer < 30)
             {
-                sleep_time = 1000000;
+                sleep_time = 500000;
             }
             else
             {
