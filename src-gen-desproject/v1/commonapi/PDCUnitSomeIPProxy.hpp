@@ -57,6 +57,10 @@ public:
 
     virtual std::future<CommonAPI::CallStatus> setDistanceAsync(const uint16_t &_Distance, SetDistanceAsyncCallback _callback, const CommonAPI::CallInfo *_info);
 
+    virtual void setSteering(double _Steering, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info);
+
+    virtual std::future<CommonAPI::CallStatus> setSteeringAsync(const double &_Steering, SetSteeringAsyncCallback _callback, const CommonAPI::CallInfo *_info);
+
     virtual void getOwnVersion(uint16_t &_major, uint16_t &_minor) const;
 
     virtual std::future<void> getCompletionFuture();

@@ -2,6 +2,7 @@ import QtQuick 2.2
 import QtQuick.Window 2.1
 import QtQuick.Controls 1.4
 import QtMultimedia 5.15
+import DataModule 1.0
 
 Window {
     id: root
@@ -13,6 +14,10 @@ Window {
     FontLoader {
         id: font
         source: "../font/Nebula-Regular.otf"
+    }
+
+    HeadUnitQtClass {
+        id: manager
     }
 
     Item {
@@ -52,69 +57,43 @@ Window {
                 xScale: -1
             }
         }
+
+        Image {
+            source: "../image/pdc_red_indicator.png"
+            visible: (carinfo.distance < 10)
+            width: 675
+            height: 675
+            fillMode: Image.PreserveAspectFit
+            anchors.centerIn: parent
+
+            rotation: carinfo.steering * 30
+        }
+
+        Image {
+            source: "../image/pdc_yellow_indicator.png"
+            visible: (carinfo.distance < 20)
+            width: 675
+            height: 675
+            fillMode: Image.PreserveAspectFit
+            anchors.centerIn: parent
+            
+            rotation: carinfo.steering * 30
+        }
+
+        Image {
+            source: "../image/pdc_green_indicator.png"
+            visible: (carinfo.distance < 30)
+            width: 675
+            height: 675
+            fillMode: Image.PreserveAspectFit
+            anchors.centerIn: parent
+            
+            rotation: carinfo.steering * 30
+        }
+    }
+
+    Timer {
+        interval: 500; running: true; repeat: true
+        onTriggered: manager.getIPCManagerSteering()
     }
 }
-
-
-// //////////////////////
-
-//         // parking distance control content display (visible when in R gear mode)
-//         Rectangle {
-//             visible: (valueSource.gear === 1)
-//             width: 675
-//             height: 600
-//             color: "#555555"
-//             anchors.centerIn: parent
-
-//             Text {
-//                 text: "Parking Distance Control"
-//                 font.family: font.name
-//                 font.pixelSize: 30
-//                 color: "white"
-//                 anchors.horizontalCenter: parent.horizontalCenter
-//                 y: 30
-//             }
-
-//             Image {
-//                 source: "../image/pdc_path_straight.png"
-//                 width: 675
-//                 height: 675
-//                 fillMode: Image.PreserveAspectFit
-//                 anchors.centerIn: parent
-//             }
-
-//             Image {
-//                 source: "../image/pdc_car.png"
-//                 width: 675
-//                 height: 675
-//                 fillMode: Image.PreserveAspectFit
-//                 anchors.centerIn: parent
-//             }
-
-//             Image {
-//                 source: "../image/pdc_red_indicator.png"
-//                 visible: (carinfo.distance < 10)
-//                 width: 675
-//                 height: 675
-//                 fillMode: Image.PreserveAspectFit
-//                 anchors.centerIn: parent
-//             }
-
-//             Image {
-//                 source: "../image/pdc_yellow_indicator.png"
-//                 visible: (carinfo.distance < 20)
-//                 width: 675
-//                 height: 675
-//                 fillMode: Image.PreserveAspectFit
-//                 anchors.centerIn: parent
-//             }
-
-//             Image {
-//                 source: "../image/pdc_green_indicator.png"
-//                 visible: (carinfo.distance < 30)
-//                 width: 675
-//                 height: 675
-//                 fillMode: Image.PreserveAspectFit
-//                 anchors.centerIn: parent
-//             }
-//         }

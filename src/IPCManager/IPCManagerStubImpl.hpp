@@ -52,6 +52,9 @@ public:
     
     // Define a function to get light.
     virtual void getLight(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _input, getLightReply_t _return);
+    
+    // Define a function to get steering.
+    virtual void getSteering(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _input, getSteeringReply_t _return);
 };
 
 #endif

@@ -97,6 +97,10 @@ public:
 
     virtual std::future<CommonAPI::CallStatus> getLightAsync(const std::string &_message1, GetLightAsyncCallback _callback, const CommonAPI::CallInfo *_info);
 
+    virtual void getSteering(std::string _message1, CommonAPI::CallStatus &_internalCallStatus, std::string &_message2, const CommonAPI::CallInfo *_info);
+
+    virtual std::future<CommonAPI::CallStatus> getSteeringAsync(const std::string &_message1, GetSteeringAsyncCallback _callback, const CommonAPI::CallInfo *_info);
+
     virtual void getOwnVersion(uint16_t &_major, uint16_t &_minor) const;
 
     virtual std::future<void> getCompletionFuture();

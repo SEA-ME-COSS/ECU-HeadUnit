@@ -71,6 +71,9 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.IPCManager
         method getLight {
         	SomeIpMethodID = 110
         }
+        method getSteering {
+        	SomeIpMethodID = 111
+        }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.IPCManager {
@@ -84,19 +87,19 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.Instrument
         SomeIpServiceID = 1004
 
         method setSpeedRpm {
-                SomeIpMethodID = 111
-        }
-        method setBattery {
                 SomeIpMethodID = 112
         }
-        method setGear {
+        method setBattery {
                 SomeIpMethodID = 113
         }
-        method setDirection {
+        method setGear {
                 SomeIpMethodID = 114
         }
-        method setLight {
+        method setDirection {
                 SomeIpMethodID = 115
+        }
+        method setLight {
+                SomeIpMethodID = 116
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
@@ -111,16 +114,16 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.HeadUnit {
         SomeIpServiceID = 1005
 
         method setSensorRpm {
-                SomeIpMethodID = 116
-        }
-        method setGear {
                 SomeIpMethodID = 117
         }
-        method setDirection {
+        method setGear {
                 SomeIpMethodID = 118
         }
-        method setLight {
+        method setDirection {
                 SomeIpMethodID = 119
+        }
+        method setLight {
+                SomeIpMethodID = 120
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
@@ -134,7 +137,10 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.PDCUnit {
         SomeIpServiceID = 1006
 
         method setDistance {
-                SomeIpMethodID = 120
+                SomeIpMethodID = 121
+        }
+        method setSteering {
+                SomeIpMethodID = 122
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
@@ -148,7 +154,7 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.IVIComposi
         SomeIpServiceID = 1007
 
         method setGear {
-                SomeIpMethodID = 121
+                SomeIpMethodID = 123
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {

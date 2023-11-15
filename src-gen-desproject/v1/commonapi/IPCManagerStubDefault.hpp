@@ -126,6 +126,12 @@ public:
         std::string message2 = "";
         _reply(message2);
     }
+    COMMONAPI_EXPORT virtual void getSteering(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _message1, getSteeringReply_t _reply) {
+        (void)_client;
+        (void)_message1;
+        std::string message2 = "";
+        _reply(message2);
+    }
 
 
 protected:

@@ -140,6 +140,7 @@ add_executable(PDCUnit
         src/PDCUnit/PDCUnit.cpp
         src/PDCUnit/PDCUnitStubImpl.cpp
         src/PDCUnit/PDCUnitQtClass.cpp
+        src/PDCUnit/PDCUnitSenderClass.cpp
         src/PDCUnit/qml.qrc
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp

@@ -17,3 +17,14 @@ void PDCUnitStubImpl::setDistance(const std::shared_ptr<CommonAPI::ClientId> _cl
     return;
 }
 
+void PDCUnitStubImpl::setSteering(const std::shared_ptr<CommonAPI::ClientId> _client, double _steering, setSteeringReply_t _reply)
+{
+    // Update the steering property in the carinfo object.
+    carinfo.setSteering(_steering);
+
+    // Respond to the client's request by invoking the reply callback.
+    _reply("");
+
+    return;
+}
+

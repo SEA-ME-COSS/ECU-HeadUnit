@@ -143,11 +143,11 @@ public:
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
         
     {
-        InstrumentClusterSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x6f) }, &setSpeedRpmStubDispatcher );
-        InstrumentClusterSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x70) }, &setBatteryStubDispatcher );
-        InstrumentClusterSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x71) }, &setGearStubDispatcher );
-        InstrumentClusterSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x72) }, &setDirectionStubDispatcher );
-        InstrumentClusterSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x73) }, &setLightStubDispatcher );
+        InstrumentClusterSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x70) }, &setSpeedRpmStubDispatcher );
+        InstrumentClusterSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x71) }, &setBatteryStubDispatcher );
+        InstrumentClusterSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x72) }, &setGearStubDispatcher );
+        InstrumentClusterSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x73) }, &setDirectionStubDispatcher );
+        InstrumentClusterSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x74) }, &setLightStubDispatcher );
         // Provided events/fields
     }
 

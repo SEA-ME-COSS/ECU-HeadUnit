@@ -61,6 +61,14 @@ public:
         std::tuple< CommonAPI::SomeIP::StringDeployment>
     > setDistanceStubDispatcher;
     
+    CommonAPI::SomeIP::MethodWithReplyStubDispatcher<
+        ::v1::commonapi::PDCUnitStub,
+        std::tuple< double>,
+        std::tuple< std::string>,
+        std::tuple< CommonAPI::EmptyDeployment>,
+        std::tuple< CommonAPI::SomeIP::StringDeployment>
+    > setSteeringStubDispatcher;
+    
     PDCUnitSomeIPStubAdapterInternal(
         const CommonAPI::SomeIP::Address &_address,
         const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection,
@@ -78,8 +86,17 @@ public:
             std::make_tuple(static_cast< CommonAPI::SomeIP::IntegerDeployment<uint16_t>* >(nullptr)),
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
         
+        ,
+        setSteeringStubDispatcher(
+            &PDCUnitStub::setSteering,
+            false,
+            _stub->hasElement(1),
+            std::make_tuple(static_cast< CommonAPI::EmptyDeployment* >(nullptr)),
+            std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
+        
     {
-        PDCUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x78) }, &setDistanceStubDispatcher );
+        PDCUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x79) }, &setDistanceStubDispatcher );
+        PDCUnitSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x7a) }, &setSteeringStubDispatcher );
         // Provided events/fields
     }
 

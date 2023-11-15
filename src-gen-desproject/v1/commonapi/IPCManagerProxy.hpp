@@ -299,6 +299,27 @@ public:
      * It will provide the same value for CallStatus as will be handed to the callback.
      */
     virtual std::future<CommonAPI::CallStatus> getLightAsync(const std::string &_message1, GetLightAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr);
+    /**
+     * Calls getSteering with synchronous semantics.
+     *
+     * All const parameters are input parameters to this method.
+     * All non-const parameters will be filled with the returned values.
+     * The CallStatus will be filled when the method returns and indicate either
+     * "SUCCESS" or which type of error has occurred. In case of an error, ONLY the CallStatus
+     * will be set.
+     */
+    virtual void getSteering(std::string _message1, CommonAPI::CallStatus &_internalCallStatus, std::string &_message2, const CommonAPI::CallInfo *_info = nullptr);
+    /**
+     * Calls getSteering with asynchronous semantics.
+     *
+     * The provided callback will be called when the reply to this call arrives or
+     * an error occurs during the call. The CallStatus will indicate either "SUCCESS"
+     * or which type of error has occurred. In case of any error, ONLY the CallStatus
+     * will have a defined value.
+     * The std::future returned by this method will be fulfilled at arrival of the reply.
+     * It will provide the same value for CallStatus as will be handed to the callback.
+     */
+    virtual std::future<CommonAPI::CallStatus> getSteeringAsync(const std::string &_message1, GetSteeringAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr);
 
 
 
@@ -420,6 +441,15 @@ void IPCManagerProxy<_AttributeExtensions...>::getLight(std::string _message1, C
 template <typename ... _AttributeExtensions>
 std::future<CommonAPI::CallStatus> IPCManagerProxy<_AttributeExtensions...>::getLightAsync(const std::string &_message1, GetLightAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
     return delegate_->getLightAsync(_message1, _callback, _info);
+}
+template <typename ... _AttributeExtensions>
+void IPCManagerProxy<_AttributeExtensions...>::getSteering(std::string _message1, CommonAPI::CallStatus &_internalCallStatus, std::string &_message2, const CommonAPI::CallInfo *_info) {
+    delegate_->getSteering(_message1, _internalCallStatus, _message2, _info);
+}
+
+template <typename ... _AttributeExtensions>
+std::future<CommonAPI::CallStatus> IPCManagerProxy<_AttributeExtensions...>::getSteeringAsync(const std::string &_message1, GetSteeringAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+    return delegate_->getSteeringAsync(_message1, _callback, _info);
 }
 
 template <typename ... _AttributeExtensions>

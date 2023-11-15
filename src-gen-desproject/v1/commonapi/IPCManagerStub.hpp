@@ -99,11 +99,12 @@ public:
     typedef std::function<void (std::string _message2)> getGearModeReply_t;
     typedef std::function<void (std::string _message2)> getDirectionReply_t;
     typedef std::function<void (std::string _message2)> getLightReply_t;
+    typedef std::function<void (std::string _message2)> getSteeringReply_t;
 
     virtual ~IPCManagerStub() {}
     void lockInterfaceVersionAttribute(bool _lockAccess) { static_cast<void>(_lockAccess); }
     bool hasElement(const uint32_t _id) const {
-        return (_id < 11);
+        return (_id < 12);
     }
     virtual const CommonAPI::Version& getInterfaceVersion(std::shared_ptr<CommonAPI::ClientId> _client) = 0;
 
@@ -129,6 +130,8 @@ public:
     virtual void getDirection(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _message1, getDirectionReply_t _reply) = 0;
     /// This is the method that will be called on remote calls on the method getLight.
     virtual void getLight(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _message1, getLightReply_t _reply) = 0;
+    /// This is the method that will be called on remote calls on the method getSteering.
+    virtual void getSteering(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _message1, getSteeringReply_t _reply) = 0;
 
 
     using CommonAPI::Stub<IPCManagerStubAdapter, IPCManagerStubRemoteEvent>::initStubAdapter;

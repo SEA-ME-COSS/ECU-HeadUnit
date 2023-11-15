@@ -74,7 +74,7 @@ void IVICompositorSomeIPProxy::setGear(uint16_t _Gear, CommonAPI::CallStatus &_i
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x79),
+        CommonAPI::SomeIP::method_id_t(0x7b),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -102,7 +102,7 @@ std::future<CommonAPI::CallStatus> IVICompositorSomeIPProxy::setGearAsync(const 
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x79),
+        CommonAPI::SomeIP::method_id_t(0x7b),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),

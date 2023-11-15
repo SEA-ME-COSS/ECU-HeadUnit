@@ -27,6 +27,9 @@ int main(int argc, char *argv[])
     
     QCursor cursor(Qt::BlankCursor);
     app.setOverrideCursor(cursor);
+    
+    // Register the PDCUnitQtClass as a QML type
+    qmlRegisterType<PDCUnitQtClass>("DataModule", 1, 0, "PDCUnitQtClass");
 
     // Initialize the QML Application Engine
     QQmlApplicationEngine engine;

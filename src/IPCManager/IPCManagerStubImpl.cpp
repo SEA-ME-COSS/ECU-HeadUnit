@@ -117,6 +117,7 @@ void IPCManagerStubImpl::setSteering(const std::shared_ptr<CommonAPI::ClientId> 
 {
     // Apply steering to piracer
     piracer.applySteering(_steering);
+    piracer.setSteering(_steering);
     
     // ==================================================
     
@@ -214,6 +215,20 @@ void IPCManagerStubImpl::getLight(const std::shared_ptr<CommonAPI::ClientId> _cl
         sender.HeadUnitTargetProxy->setLight(piracer.getLight(), sender.callStatus, sender.returnMessage);
     }
 
+    // Reply to the caller
+    _reply("");
+
+    return;
+}
+
+// Get steering
+void IPCManagerStubImpl::getSteering(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _input, getSteeringReply_t _reply)
+{    
+    if (_input == "PDCUnit")
+    {
+        sender.PDCUnitTargetProxy->setSteering(piracer.getSteering(), sender.callStatus, sender.returnMessage);
+    }
+    
     // Reply to the caller
     _reply("");
 

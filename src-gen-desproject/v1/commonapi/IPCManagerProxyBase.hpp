@@ -48,6 +48,7 @@ public:
     typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> GetGearModeAsyncCallback;
     typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> GetDirectionAsyncCallback;
     typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> GetLightAsyncCallback;
+    typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> GetSteeringAsyncCallback;
 
     virtual void setSensorRpm(uint16_t _SensorRpm, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr) = 0;
     virtual std::future<CommonAPI::CallStatus> setSensorRpmAsync(const uint16_t &_SensorRpm, SetSensorRpmAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr) = 0;
@@ -71,6 +72,8 @@ public:
     virtual std::future<CommonAPI::CallStatus> getDirectionAsync(const std::string &_message1, GetDirectionAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr) = 0;
     virtual void getLight(std::string _message1, CommonAPI::CallStatus &_internalCallStatus, std::string &_message2, const CommonAPI::CallInfo *_info = nullptr) = 0;
     virtual std::future<CommonAPI::CallStatus> getLightAsync(const std::string &_message1, GetLightAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr) = 0;
+    virtual void getSteering(std::string _message1, CommonAPI::CallStatus &_internalCallStatus, std::string &_message2, const CommonAPI::CallInfo *_info = nullptr) = 0;
+    virtual std::future<CommonAPI::CallStatus> getSteeringAsync(const std::string &_message1, GetSteeringAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr) = 0;
 
     virtual std::future<void> getCompletionFuture() = 0;
 };

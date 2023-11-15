@@ -12,6 +12,7 @@ PiracerClass::PiracerClass()
     direction = 0; // Initialize the direction to 0 (default)
     light = "#808080"; // Initialize the light to #808080 (default)
     freeDirection = false; // Initialize the direction-freeing condition to false (default)
+    steering = 0.0;
 }
 
 PiracerClass::~PiracerClass()
@@ -57,6 +58,13 @@ void PiracerClass::setFreeDirection(bool _freeDirection)
     return;
 }
 
+void PiracerClass::setSteering(double _steering)
+{
+    steering = _steering;
+    
+    return;
+}
+
 uint16_t PiracerClass::getGearMode()
 {
     return gearMode;
@@ -80,6 +88,11 @@ bool PiracerClass::getFreeDirection()
 uint16_t PiracerClass::getSensorRpm()
 {
     return sensorRpm;
+}
+
+double PiracerClass::getSteering()
+{
+    return steering;
 }
 
 void PiracerClass::applyThrottle(double throttle)

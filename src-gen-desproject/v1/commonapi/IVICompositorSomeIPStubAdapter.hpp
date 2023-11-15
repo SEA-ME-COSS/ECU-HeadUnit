@@ -79,7 +79,7 @@ public:
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
         
     {
-        IVICompositorSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x79) }, &setGearStubDispatcher );
+        IVICompositorSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x7b) }, &setGearStubDispatcher );
         // Provided events/fields
     }
 
