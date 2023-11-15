@@ -46,7 +46,7 @@ int main()
         
         if (enable_sound)
         {
-            std::cout << '\a';
+            std::cout << '\a' << std::endl;
             usleep(sleep_time);
         }
     }
