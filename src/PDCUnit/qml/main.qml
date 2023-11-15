@@ -16,7 +16,7 @@ Window {
         source: "../font/Nebula-Regular.otf"
     }
 
-    HeadUnitQtClass {
+    PDCUnitQtClass {
         id: manager
     }
 
