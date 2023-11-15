@@ -25,17 +25,17 @@ int main()
         {
             enable_sound = true;
             
-            if (DistanceBuffer < 10)
+            if (DistanceBuffer < 20)
             {
-                sleep_time = 200000;
+                sleep_time = 250000;
             }
-            else if (DistanceBuffer < 20)
-            {
-                sleep_time = 350000;
-            }
-            else if (DistanceBuffer < 30)
+            else if (DistanceBuffer < 40)
             {
                 sleep_time = 500000;
+            }
+            else if (DistanceBuffer < 60)
+            {
+                sleep_time = 750000;
             }
             else
             {

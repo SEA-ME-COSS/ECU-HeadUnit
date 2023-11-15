@@ -60,7 +60,7 @@ Window {
 
         Image {
             source: "../image/pdc_red_indicator.png"
-            visible: (carinfo.distance < 10)
+            visible: (carinfo.distance < 20)
             width: 675
             height: 675
             fillMode: Image.PreserveAspectFit
@@ -71,7 +71,7 @@ Window {
 
         Image {
             source: "../image/pdc_yellow_indicator.png"
-            visible: (carinfo.distance < 20)
+            visible: (carinfo.distance < 40)
             width: 675
             height: 675
             fillMode: Image.PreserveAspectFit
@@ -82,7 +82,7 @@ Window {
 
         Image {
             source: "../image/pdc_green_indicator.png"
-            visible: (carinfo.distance < 30)
+            visible: (carinfo.distance < 60)
             width: 675
             height: 675
             fillMode: Image.PreserveAspectFit
