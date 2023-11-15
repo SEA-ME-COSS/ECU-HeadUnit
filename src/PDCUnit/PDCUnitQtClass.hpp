@@ -12,7 +12,7 @@ class PDCUnitQtClass : public QObject
     Q_PROPERTY(qreal steering READ steering WRITE setSteering NOTIFY steeringChanged)
 
 private:
-    PDCUnitQtClass sender;  // Create an instance of PDCUnitQtClass for communication
+    PDCUnitSenderClass sender;  // Create an instance of PDCUnitSenderClass for communication
 
     quint16 Qdistance;   // Distance property.
     qreal Qsteering;    // Steering property.
