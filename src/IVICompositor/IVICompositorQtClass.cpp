@@ -1,7 +1,10 @@
 #include "IVICompositorQtClass.hpp"
 
 // Constructor for IVICompositorQtClass
-IVICompositorQtClass::IVICompositorQtClass(QObject *parent) : QObject(parent) { }
+IVICompositorQtClass::IVICompositorQtClass(QObject *parent) : QObject(parent)
+{
+    Qgear = 0;
+}
 
 // Getter for gear
 quint16 IVICompositorQtClass::gear() const
