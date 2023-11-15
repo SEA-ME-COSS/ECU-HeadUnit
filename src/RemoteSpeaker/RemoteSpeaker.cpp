@@ -27,7 +27,7 @@ int main()
             
             if (DistanceBuffer < 20)
             {
-                sleep_time = 250000;
+                sleep_time = 330000;
             }
             else if (DistanceBuffer < 40)
             {
