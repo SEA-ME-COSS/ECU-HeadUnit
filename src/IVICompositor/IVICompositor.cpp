@@ -5,7 +5,10 @@
 
 #include "IVICompositorStubImpl.hpp"
 #include "IVICompositorQtClass.hpp"
-#include "IVICompositorSenderClass.hpp"
+
+#include <CommonAPI/CommonAPI.hpp>
+#include <v1/commonapi/IPCManagerProxy.hpp>
+#include <string>
 
 using namespace v1_0::commonapi;
 
@@ -19,6 +22,15 @@ int main(int argc, char *argv[])
     runtime = CommonAPI::Runtime::get();
     IVICompositorService = std::make_shared<IVICompositorStubImpl>();
     runtime->registerService("local", "IVICompositor", IVICompositorService);
+    
+    
+
+    std::shared_ptr<IPCManagerProxy<>> IPCManagerTargetProxy;
+    IPCManagerTargetProxy = runtime->buildProxy<IPCManagerProxy>("local", "IPCManager");
+    CommonAPI::CallStatus callStatus;
+    std::string returnMessage;
+
+    
 
     // Initialize the Qt Application
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -46,10 +58,7 @@ int main(int argc, char *argv[])
     // Load the QML file and start the application event loop
     engine.load(url);
     
-    IVICompositorSenderClass sender;
-    sender.IPCManagerTargetProxy->getGearMode("HeadUnit", sender.callStatus, sender.returnMessage);
-    
-    std::cout<<"0000000000000000000000000000000000000000000"<<std::endl;
+    IPCManagerTargetProxy->getGearMode("IVICompositor", callStatus, returnMessage);
 
     return app.exec();
 }

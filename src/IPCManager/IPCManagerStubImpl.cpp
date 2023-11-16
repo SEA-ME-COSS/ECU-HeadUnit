@@ -181,7 +181,6 @@ void IPCManagerStubImpl::getGearMode(const std::shared_ptr<CommonAPI::ClientId> 
     }
     else if (_input == "IVICompositor")
     {
-        std::cout<<"00000000000000000000000000000000000000000000000000000000000000000000000000"<<std::endl;
         sender.IVICompositorTargetProxy->setGear(piracer.getGearMode(), sender.callStatus, sender.returnMessage);
     }
 

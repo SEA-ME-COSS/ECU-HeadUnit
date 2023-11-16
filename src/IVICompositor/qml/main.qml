@@ -10,10 +10,6 @@ WaylandCompositor {
             height: 600
             visible: true
 
-            ValueSource {
-                id: valueSource
-            }
-
             Item {
                 id: container
                 width: 1024
@@ -26,7 +22,7 @@ WaylandCompositor {
                     width: 1024
                     height: 600
                     anchors.centerIn: parent
-                    z: !(valueSource.gear === 1)
+                    z: !(carinfo.gear === 1)
                 }
 
                 Rectangle {
@@ -36,7 +32,7 @@ WaylandCompositor {
                     x: 1024
                     anchors.verticalCenter: parent.verticalCenter
                     opacity: container.pdcOpacity
-                    z: (valueSource.gear === 1)
+                    z: (carinfo.gear === 1)
 
                     transform: Scale {
                         xScale: -1
@@ -44,14 +40,14 @@ WaylandCompositor {
                 }
 
                 Text {
-                    text: valueSource.gear
+                    text: carinfo.gear
                     color: "black"
                     x: 100
                     y: 100
                     z: 5
                 }
 
-                property real pdcOpacity: (valueSource.gear === 1 ? 1.0 : 0.0)
+                property real pdcOpacity: (carinfo.gear === 1 ? 1.0 : 0.0)
 
                 Behavior on pdcOpacity {
                     NumberAnimation {
