@@ -180,6 +180,10 @@ void IPCManagerStubImpl::getGearMode(const std::shared_ptr<CommonAPI::ClientId> 
     {
         sender.IVICompositorTargetProxy->setGear(piracer.getGearMode(), sender.callStatus, sender.returnMessage);
     }
+    else if (_input == "RemoteSpeaker")
+    {
+        sender.RemoteSpeakerTargetProxy->setGear(piracer.getGearMode(), sender.callStatus, sender.returnMessage);
+    }
 
     // Reply to the caller
     _reply("");

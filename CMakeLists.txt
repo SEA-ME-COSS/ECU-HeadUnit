@@ -173,6 +173,8 @@ add_executable(RemoteSpeaker
         src/RemoteSpeaker/RemoteSpeaker.cpp
         src/RemoteSpeaker/RemoteSpeakerStubImpl.cpp
         src/RemoteSpeaker/DataBuffer.cpp
+        src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
+        src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp
         src-gen-desproject/v1/commonapi/RemoteSpeakerSomeIPStubAdapter.cpp
         src-gen-desproject/v1/commonapi/RemoteSpeakerSomeIPDeployment.cpp
 )
