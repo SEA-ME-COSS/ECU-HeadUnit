@@ -7,9 +7,9 @@
 #include "IVICompositorQtClass.hpp"
 #include "IVICompositorSenderClass.hpp"
 
-#include <CommonAPI/CommonAPI.hpp>
-#include <v1/commonapi/IPCManagerProxy.hpp>
-#include <string>
+//#include <CommonAPI/CommonAPI.hpp>
+//#include <v1/commonapi/IPCManagerProxy.hpp>
+//#include <string>
 
 using namespace v1_0::commonapi;
 
@@ -26,10 +26,10 @@ int main(int argc, char *argv[])
     
     
 
-    std::shared_ptr<IPCManagerProxy<>> IPCManagerTargetProxy;
-    IPCManagerTargetProxy = runtime->buildProxy<IPCManagerProxy>("local", "IPCManager");
-    CommonAPI::CallStatus callStatus;
-    std::string returnMessage;
+    //std::shared_ptr<IPCManagerProxy<>> IPCManagerTargetProxy;
+    //IPCManagerTargetProxy = runtime->buildProxy<IPCManagerProxy>("local", "IPCManager");
+    //CommonAPI::CallStatus callStatus;
+    //std::string returnMessage;
 
     
 
@@ -59,7 +59,9 @@ int main(int argc, char *argv[])
     // Load the QML file and start the application event loop
     engine.load(url);
     
-    IPCManagerTargetProxy->getGearMode("IVICompositor", callStatus, returnMessage);
+    IVICompositorSenderClass sender;
+    //IPCManagerTargetProxy->getGearMode("IVICompositor", callStatus, returnMessage);
+    sender.IPCManagerTargetProxy->getGearMode("IVICompositor", sender.callStatus, sender.returnMessage);
 
     return app.exec();
 }
