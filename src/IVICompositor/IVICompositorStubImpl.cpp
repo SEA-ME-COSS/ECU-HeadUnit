@@ -1,4 +1,5 @@
 #include "IVICompositorStubImpl.hpp"
+#include <iostream>
 
 // Constructor for IVICompositorStubImpl
 IVICompositorStubImpl::IVICompositorStubImpl() { }
@@ -10,6 +11,8 @@ void IVICompositorStubImpl::setGear(const std::shared_ptr<CommonAPI::ClientId> _
 {
     // Update the gear mode property in the carinfo object.
     carinfo.setGear(_gear);
+    
+    std::cout<<"************************************************************************************************************"<<_gear<<std::endl;
     
     // Respond to the client's request by invoking the reply callback.
     _reply("");
