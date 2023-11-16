@@ -1,4 +1,5 @@
 #include "IVICompositorQtClass.hpp"
+#include <iostream>
 
 // Constructor for IVICompositorQtClass
 IVICompositorQtClass::IVICompositorQtClass(QObject *parent) : QObject(parent) { }
@@ -14,6 +15,9 @@ void IVICompositorQtClass::setGear(uint16_t _gear)
 {
     Qgear = _gear;
     // Emit the signal to notify changes to QML
+    
+    std::cout<<"************************************************************"<<_gear<<"************************************************************"<<std::endl;
+    
     emit gearChanged();
 }
 
