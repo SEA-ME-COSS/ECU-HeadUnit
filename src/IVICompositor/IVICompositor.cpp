@@ -47,8 +47,9 @@ int main(int argc, char *argv[])
     engine.load(url);
     
     IVICompositorSenderClass sender;
-    //sender.IPCManagerTargetProxy->getGearMode("IVICompositor", sender.callStatus, sender.returnMessage);
-    sender.IPCManagerTargetProxy->getGearMode("HeadUnit", sender.callStatus, sender.returnMessage);
+    sender.IPCManagerTargetProxy->getGearMode("IVICompositor", sender.callStatus, sender.returnMessage);
+    
+    std::cout<<"0000000000000000000000000000000000000000000"<<std::endl;
 
     return app.exec();
 }
