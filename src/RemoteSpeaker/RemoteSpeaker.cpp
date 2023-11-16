@@ -6,7 +6,6 @@
 
 #include "RemoteSpeakerStubImpl.hpp"
 #include "DataBuffer.hpp"
-#include <iostream>
 
 using namespace v1_0::commonapi;
 
@@ -28,8 +27,6 @@ int main()
 
     bool enable_sound = false;
     int sleep_time = 0;
-    
-    std::cout << "000000000000000000000000000000000000" << std::endl;
 
     while (1)
     {
