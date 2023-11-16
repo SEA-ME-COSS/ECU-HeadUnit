@@ -22,7 +22,7 @@ int main()
 
     while (1)
     {
-        if (!sender.IVICompositorTargetProxy->isAvailable()) {
+        /* if (!sender.IVICompositorTargetProxy->isAvailable()) {
             exitCode = system("sh ../reboot_script/reboot_ivi_compositor.sh");
             // Check if IVICompositorTargetProxy is not available and execute a reboot script
         }
@@ -49,7 +49,7 @@ int main()
         if (!sender.PDCUnitTargetProxy->isAvailable()) {
             exitCode = system("sh ../reboot_script/reboot_pdc_unit.sh");
             // Check if PDCUnitTargetProxy is not available and execute a reboot script
-        }
+        } */
 
         usleep(1000000); // Sleep for one second
     }
