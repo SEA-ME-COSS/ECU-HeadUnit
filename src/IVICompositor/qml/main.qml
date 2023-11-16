@@ -31,7 +31,7 @@ WaylandCompositor {
                     height: 600
                     x: 1024
                     anchors.verticalCenter: parent.verticalCenter
-                    opacity: container.pdcOpacity
+                    //opacity: container.pdcOpacity
                     z: (carinfo.gear === 1 ? 2 : 1)
 
                     transform: Scale {
