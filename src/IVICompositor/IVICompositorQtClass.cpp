@@ -3,7 +3,7 @@
 // Constructor for IVICompositorQtClass
 IVICompositorQtClass::IVICompositorQtClass(QObject *parent) : QObject(parent)
 {
-    Qgear = 1;
+    Qgear = 0;
 }
 
 // Getter for gear
