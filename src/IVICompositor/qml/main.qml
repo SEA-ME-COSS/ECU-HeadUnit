@@ -22,7 +22,7 @@ WaylandCompositor {
                     width: 1024
                     height: 600
                     anchors.centerIn: parent
-                    z: (carinfo.gear === 1 ? 1 : 2)
+                    z: (carinfo.gear === 1 ? 0 : 1)
                 }
 
                 Rectangle {
@@ -31,8 +31,8 @@ WaylandCompositor {
                     height: 600
                     x: 1024
                     anchors.verticalCenter: parent.verticalCenter
-                    //opacity: container.pdcOpacity
-                    z: (carinfo.gear === 1 ? 2 : 1)
+                    opacity: container.pdcOpacity
+                    z: (carinfo.gear === 1 ? 1 : 0)
 
                     transform: Scale {
                         xScale: -1
