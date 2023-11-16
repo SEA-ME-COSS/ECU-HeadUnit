@@ -158,6 +158,7 @@ add_executable(IVICompositor
         src/IVICompositor/IVICompositor.cpp
         src/IVICompositor/IVICompositorStubImpl.cpp
         src/IVICompositor/IVICompositorQtClass.cpp
+        src/IVICompositor/IVICompositorSenderClass.cpp
         src/IVICompositor/qml.qrc
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPProxy.cpp
         src-gen-desproject/v1/commonapi/IPCManagerSomeIPDeployment.cpp

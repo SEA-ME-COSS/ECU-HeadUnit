@@ -5,6 +5,7 @@
 
 #include "IVICompositorStubImpl.hpp"
 #include "IVICompositorQtClass.hpp"
+#include "IVICompositorSenderClass.hpp"
 
 #include <CommonAPI/CommonAPI.hpp>
 #include <v1/commonapi/IPCManagerProxy.hpp>
