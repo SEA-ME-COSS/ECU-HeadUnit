@@ -7,7 +7,7 @@
 #include "IVICompositorQtClass.hpp"
 #include "IVICompositorSenderClass.hpp"
 
-//using namespace v1_0::commonapi;
+using namespace v1_0::commonapi;
 
 int main(int argc, char *argv[])
 {
