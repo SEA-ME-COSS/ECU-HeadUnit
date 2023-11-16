@@ -168,6 +168,7 @@ void IPCManagerStubImpl::setDistance(const std::shared_ptr<CommonAPI::ClientId> 
 // Get gear mode
 void IPCManagerStubImpl::getGearMode(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _input, getGearModeReply_t _reply)
 {   
+    std::cout<<"0000000000000000000000"<<std::endl;
     if (_input == "InstrumentCluster")
     {
         sender.InstrumentClusterTargetProxy->setGear(piracer.getGearMode(), sender.callStatus, sender.returnMessage);
