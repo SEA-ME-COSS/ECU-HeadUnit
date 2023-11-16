@@ -22,7 +22,7 @@ WaylandCompositor {
                     width: 1024
                     height: 600
                     anchors.centerIn: parent
-                    z: (carinfo.pdcMode ? 1 : 2)
+                    z: (container.pdcMode ? 1 : 2)
                 }
 
                 Rectangle {
@@ -32,18 +32,21 @@ WaylandCompositor {
                     x: 1024
                     anchors.verticalCenter: parent.verticalCenter
                     opacity: container.pdcOpacity
-                    z: (carinfo.pdcMode ? 2 : 1)
+                    z: (container.pdcMode ? 2 : 1)
 
                     transform: Scale {
                         xScale: -1
                     }
                 }
 
-                property int gear: carinfo.gear
-                property bool pdcMode: false
+                property bool pdcMode: (carinfo.gear === 1)
 
-                onGearChanged: {
-                    container.pdcMode = (container.gear === 1)
+                // Initialize
+                Timer {
+                    interval: 500; running: true; repeat: false
+                    onTriggered: {
+                        container.pdcMode = (carinfo.gear === 1)
+                    }
                 }
 
                 property real pdcOpacity: (carinfo.gear === 1 ? 1.0 : 0.0)
