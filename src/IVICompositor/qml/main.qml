@@ -39,14 +39,6 @@ WaylandCompositor {
                     }
                 }
 
-                Text {
-                    text: carinfo.gear
-                    color: "black"
-                    x: 100
-                    y: 100
-                    z: 5
-                }
-
                 property real pdcOpacity: (carinfo.gear === 1 ? 1.0 : 0.0)
 
                 Behavior on pdcOpacity {
