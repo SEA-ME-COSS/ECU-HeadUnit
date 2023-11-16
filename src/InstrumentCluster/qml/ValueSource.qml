@@ -10,7 +10,7 @@ Item {
     property int battery: carinfo.battery
     property int gear: carinfo.gear
     property int direction: carinfo.direction
-    property string light: carinfo.light
+    property string light: (carinfo.light[0] === '#' ? carinfo.light : "#808080")
 
     // Properties for indicating blink and direction states
     property bool blink: !(valueSource.direction === 0)
@@ -34,7 +34,7 @@ Item {
             target: valueSource
             property: "speed"
             easing.type: Easing.InOutSine
-            duration: 1000
+            duration: 500
         }
     }
     Behavior on rpm {
@@ -42,7 +42,7 @@ Item {
             target: valueSource
             property: "rpm"
             easing.type: Easing.InOutSine
-            duration: 1000
+            duration: 500
         }
     }
     Behavior on battery {
@@ -50,7 +50,7 @@ Item {
             target: valueSource
             property: "battery"
             easing.type: Easing.InOutSine
-            duration: 1000
+            duration: 500
         }
     }
 

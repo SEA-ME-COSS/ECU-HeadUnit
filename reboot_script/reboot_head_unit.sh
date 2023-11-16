@@ -22,11 +22,13 @@ then
   pkill -x "$process_name"
 fi
 
+export LIBGL_ALWAYS_SOFTWARE=1
+
 # Change the working directory to '../build'
 cd ../build
 
-# Run the specified process with '-platform eglfs' and '&' to execute it in the background
-./"$process_name" -platform eglfs &
+# Run the specified process with '-platform wayland' and '&' to execute it in the background
+./"$process_name" -platform wayland &
 
 # Remove the lock file
 rm -f "$lockfile"

@@ -59,14 +59,20 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.IPCManager
         method setSteering {
                 SomeIpMethodID = 106
         }
-        method getGearMode {
-        	SomeIpMethodID = 107
+        method setDistance {
+                SomeIpMethodID = 107
         }
-        method getDirection {
+        method getGearMode {
         	SomeIpMethodID = 108
         }
-        method getLight {
+        method getDirection {
         	SomeIpMethodID = 109
+        }
+        method getLight {
+        	SomeIpMethodID = 110
+        }
+        method getSteering {
+        	SomeIpMethodID = 111
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
@@ -81,19 +87,19 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.Instrument
         SomeIpServiceID = 1004
 
         method setSpeedRpm {
-                SomeIpMethodID = 110
-        }
-        method setBattery {
-                SomeIpMethodID = 111
-        }
-        method setGear {
                 SomeIpMethodID = 112
         }
-        method setDirection {
+        method setBattery {
                 SomeIpMethodID = 113
         }
-        method setLight {
+        method setGear {
                 SomeIpMethodID = 114
+        }
+        method setDirection {
+                SomeIpMethodID = 115
+        }
+        method setLight {
+                SomeIpMethodID = 116
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
@@ -108,22 +114,70 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.HeadUnit {
         SomeIpServiceID = 1005
 
         method setSensorRpm {
-                SomeIpMethodID = 115
-        }
-        method setGear {
-                SomeIpMethodID = 116
-        }
-        method setDirection {
                 SomeIpMethodID = 117
         }
-        method setLight {
+        method setGear {
                 SomeIpMethodID = 118
+        }
+        method setDirection {
+                SomeIpMethodID = 119
+        }
+        method setLight {
+                SomeIpMethodID = 120
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.HeadUnit {
                 InstanceId = "HeadUnit"
                 SomeIpInstanceID = 10005
+        }
+}
+
+define org.genivi.commonapi.someip.deployment for interface commonapi.PDCUnit {
+        SomeIpServiceID = 1006
+
+        method setDistance {
+                SomeIpMethodID = 121
+        }
+        method setSteering {
+                SomeIpMethodID = 122
+        }
+}
+define org.genivi.commonapi.someip.deployment for provider as Service {
+        instance commonapi.PDCUnit {
+                InstanceId = "PDCUnit"
+                SomeIpInstanceID = 10006
+        }
+}
+
+define org.genivi.commonapi.someip.deployment for interface commonapi.IVICompositor {
+        SomeIpServiceID = 1007
+
+        method setGear {
+                SomeIpMethodID = 123
+        }
+}
+define org.genivi.commonapi.someip.deployment for provider as Service {
+        instance commonapi.IVICompositor {
+                InstanceId = "IVICompositor"
+                SomeIpInstanceID = 10007
+        }
+}
+
+define org.genivi.commonapi.someip.deployment for interface commonapi.RemoteSpeaker {
+        SomeIpServiceID = 1008
+
+        method setGear {
+                SomeIpMethodID = 124
+        }
+        method setDistance {
+                SomeIpMethodID = 125
+        }
+}
+define org.genivi.commonapi.someip.deployment for provider as Service {
+        instance commonapi.RemoteSpeaker {
+                InstanceId = "RemoteSpeaker"
+                SomeIpInstanceID = 10008
         }
 }
 

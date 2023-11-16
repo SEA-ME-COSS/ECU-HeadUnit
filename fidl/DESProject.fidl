@@ -81,6 +81,14 @@ interface IPCManager {
       String message // Output parameter: message of type String.
     }
   }
+  method setDistance {
+    in {
+      UInt16 Distance // Input parameter: Distance of type UInt16.
+    }
+    out {
+      String message // Output parameter: message of type String.
+    }
+  }
   method getGearMode {
     in {
       String message1 // Input parameter: message of type String.
@@ -98,6 +106,14 @@ interface IPCManager {
     }
   }
   method getLight {
+    in {
+      String message1 // Input parameter: message of type String.
+    }
+    out {
+      String message2 // Output parameter: message of type String.
+    }
+  }
+  method getSteering {
     in {
       String message1 // Input parameter: message of type String.
     }
@@ -188,6 +204,67 @@ interface HeadUnit {
   method setLight {
     in {
       String Light // Input parameter: Light of type String.
+    }
+    out {
+      String message // Output parameter: message of type String.
+    }
+  }
+}
+
+// Define the 'PDCUnit' interface.
+interface PDCUnit {
+  version {major 1 minor 0} // Interface version information.
+
+  // Define methods for various functionalities with input and output parameters.
+  method setDistance {
+    in {
+      UInt16 Distance // Input parameter: Distance of type UInt16.
+    }
+    out {
+      String message // Output parameter: message of type String.
+    }
+  }
+  method setSteering {
+    in {
+      Double Steering // Input parameter: Steering of type Double.
+    }
+    out {
+      String message // Output parameter: message of type String.
+    }
+  }
+}
+
+// Define the 'IVICompositor' interface.
+interface IVICompositor {
+  version {major 1 minor 0} // Interface version information.
+
+  // Define methods for various functionalities with input and output parameters.
+  method setGear {
+    in {
+      UInt16 Gear // Input parameter: Gear of type UInt16.
+    }
+    out {
+      String message // Output parameter: message of type String.
+    }
+  }
+}
+
+// Define the 'Speaker' interface.
+interface RemoteSpeaker {
+  version {major 1 minor 0} // Interface version information.
+
+  // Define methods for various functionalities with input and output parameters.
+  method setGear {
+    in {
+      UInt16 Gear // Input parameter: Gear of type UInt16.
+    }
+    out {
+      String message // Output parameter: message of type String.
+    }
+  }
+  method setDistance {
+    in {
+      UInt16 Distance // Input parameter: Distance of type UInt16.
     }
     out {
       String message // Output parameter: message of type String.
