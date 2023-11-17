@@ -6,5 +6,11 @@
         <file>image/pdc_straight_green.png</file>
         <file>image/pdc_straight_yellow.png</file>
         <file>image/pdc_straight_red.png</file>
+        <file>image/pdc_left_green.png</file>
+        <file>image/pdc_left_yellow.png</file>
+        <file>image/pdc_left_red.png</file>
+        <file>image/pdc_right_green.png</file>
+        <file>image/pdc_right_yellow.png</file>
+        <file>image/pdc_right_red.png</file>
     </qresource>
 </RCC>

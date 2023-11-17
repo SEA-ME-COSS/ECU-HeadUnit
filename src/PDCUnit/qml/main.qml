@@ -70,7 +70,7 @@ Window {
 
         Image {
             source: "../image/pdc_straight_green.png"
-            visible: (carinfo.distance < 50)
+            visible: ((carinfo.steering === 0) && (carinfo.distance < 50))
             width: 700
             height: 700
             fillMode: Image.PreserveAspectFit
@@ -80,7 +80,7 @@ Window {
 
         Image {
             source: "../image/pdc_straight_yellow.png"
-            visible: (carinfo.distance < 30)
+            visible: ((carinfo.steering === 0) && (carinfo.distance < 30))
             width: 700
             height: 700
             fillMode: Image.PreserveAspectFit
@@ -90,7 +90,67 @@ Window {
 
         Image {
             source: "../image/pdc_straight_red.png"
-            visible: (carinfo.distance < 15)
+            visible: ((carinfo.steering === 0) && (carinfo.distance < 15))
+            width: 700
+            height: 700
+            fillMode: Image.PreserveAspectFit
+            anchors.horizontalCenter: parent.horizontalCenter
+            opacity: 0.5
+        }
+
+        Image {
+            source: "../image/pdc_right_green.png"
+            visible: ((carinfo.steering < 0) && (carinfo.distance < 50))
+            width: 700
+            height: 700
+            fillMode: Image.PreserveAspectFit
+            anchors.horizontalCenter: parent.horizontalCenter
+            opacity: 0.5
+        }
+
+        Image {
+            source: "../image/pdc_right_yellow.png"
+            visible: ((carinfo.steering < 0) && (carinfo.distance < 30))
+            width: 700
+            height: 700
+            fillMode: Image.PreserveAspectFit
+            anchors.horizontalCenter: parent.horizontalCenter
+            opacity: 0.5
+        }
+
+        Image {
+            source: "../image/pdc_right_red.png"
+            visible: ((carinfo.steering < 0) && (carinfo.distance < 15))
+            width: 700
+            height: 700
+            fillMode: Image.PreserveAspectFit
+            anchors.horizontalCenter: parent.horizontalCenter
+            opacity: 0.5
+        }
+
+        Image {
+            source: "../image/pdc_left_green.png"
+            visible: ((carinfo.steering > 0) && (carinfo.distance < 50))
+            width: 700
+            height: 700
+            fillMode: Image.PreserveAspectFit
+            anchors.horizontalCenter: parent.horizontalCenter
+            opacity: 0.5
+        }
+
+        Image {
+            source: "../image/pdc_left_yellow.png"
+            visible: ((carinfo.steering > 0) && (carinfo.distance < 30))
+            width: 700
+            height: 700
+            fillMode: Image.PreserveAspectFit
+            anchors.horizontalCenter: parent.horizontalCenter
+            opacity: 0.5
+        }
+
+        Image {
+            source: "../image/pdc_left_red.png"
+            visible: ((carinfo.steering > 0) && (carinfo.distance < 15))
             width: 700
             height: 700
             fillMode: Image.PreserveAspectFit
