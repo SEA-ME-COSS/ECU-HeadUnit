@@ -59,36 +59,40 @@ Window {
         }
 
         Image {
-            source: "../image/pdc_red_indicator.png"
-            visible: (carinfo.distance < 15)
+            source: "../image/pdc_base_line.png"
+            visible: true
             width: 675
             height: 675
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
-
-            rotation: carinfo.steering * 30
+            opacity: 0.5
         }
 
         Image {
-            source: "../image/pdc_yellow_indicator.png"
-            visible: (carinfo.distance < 30)
-            width: 675
-            height: 675
-            fillMode: Image.PreserveAspectFit
-            anchors.centerIn: parent
-            
-            rotation: carinfo.steering * 30
-        }
-
-        Image {
-            source: "../image/pdc_green_indicator.png"
+            source: "../image/pdc_straight_green.png"
             visible: (carinfo.distance < 50)
             width: 675
             height: 675
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
-            
-            rotation: carinfo.steering * 30
+        }
+
+        Image {
+            source: "../image/pdc_straight_yellow.png"
+            visible: (carinfo.distance < 30)
+            width: 675
+            height: 675
+            fillMode: Image.PreserveAspectFit
+            anchors.centerIn: parent
+        }
+
+        Image {
+            source: "../image/pdc_straight_red.png"
+            visible: (carinfo.distance < 15)
+            width: 675
+            height: 675
+            fillMode: Image.PreserveAspectFit
+            anchors.centerIn: parent
         }
     }
 
