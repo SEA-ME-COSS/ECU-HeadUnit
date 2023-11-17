@@ -32,20 +32,20 @@ int main(int argc, char *argv[])
     {
         if (GearBuffer == 1)
         {
-            if (DistanceBuffer < 20)
+            if (DistanceBuffer < 15)
             {
                 std::cout << '\a' << std::endl;
-                usleep(330000);
+                usleep(200000);
             }
-            else if (DistanceBuffer < 40)
+            else if (DistanceBuffer < 30)
             {
                 std::cout << '\a' << std::endl;
-                usleep(660000);
+                usleep(500000);
             }
-            else if (DistanceBuffer < 60)
+            else if (DistanceBuffer < 50)
             {
                 std::cout << '\a' << std::endl;
-                usleep(1000000);
+                usleep(700000);
             }  
         }
     }
