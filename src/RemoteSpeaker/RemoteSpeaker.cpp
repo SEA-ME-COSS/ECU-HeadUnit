@@ -3,13 +3,14 @@
 
 #include <CommonAPI/CommonAPI.hpp>
 #include <v1/commonapi/IPCManagerProxy.hpp>
+#include <string>
 
 #include "RemoteSpeakerStubImpl.hpp"
 #include "DataBuffer.hpp"
 
 using namespace v1_0::commonapi;
 
-int main()
+int main(int argc, char *argv[])
 {
     std::shared_ptr<CommonAPI::Runtime> runtime;
     std::shared_ptr<RemoteSpeakerStubImpl> RemoteSpeakerService;
