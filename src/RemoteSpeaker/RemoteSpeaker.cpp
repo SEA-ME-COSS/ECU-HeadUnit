@@ -23,6 +23,8 @@ int main(int argc, char *argv[])
     IPCManagerTargetProxy = runtime->buildProxy<IPCManagerProxy>("local", "IPCManager");
     CommonAPI::CallStatus callStatus;
     std::string returnMessage;
+    
+    usleep(1000000);
 
     IPCManagerTargetProxy->getGearMode("RemoteSpeaker", callStatus, returnMessage);
 
