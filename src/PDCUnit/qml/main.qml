@@ -61,8 +61,8 @@ Window {
         Image {
             source: "../image/pdc_base_line.png"
             visible: true
-            width: 675
-            height: 675
+            width: 700
+            height: 700
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
             opacity: 0.5
@@ -71,28 +71,31 @@ Window {
         Image {
             source: "../image/pdc_straight_green.png"
             visible: (carinfo.distance < 50)
-            width: 675
-            height: 675
+            width: 700
+            height: 700
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
+            opacity: 0.5
         }
 
         Image {
             source: "../image/pdc_straight_yellow.png"
             visible: (carinfo.distance < 30)
-            width: 675
-            height: 675
+            width: 700
+            height: 700
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
+            opacity: 0.5
         }
 
         Image {
             source: "../image/pdc_straight_red.png"
             visible: (carinfo.distance < 15)
-            width: 675
-            height: 675
+            width: 700
+            height: 700
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
+            opacity: 0.5
         }
     }
 
