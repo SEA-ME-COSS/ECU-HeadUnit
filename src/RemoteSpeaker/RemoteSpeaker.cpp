@@ -28,40 +28,25 @@ int main(int argc, char *argv[])
 
     IPCManagerTargetProxy->getGearMode("RemoteSpeaker", callStatus, returnMessage);
 
-    bool enable_sound = false;
-    int sleep_time = 0;
-
     while (1)
     {
-        enable_sound = false;
-    
         if (GearBuffer == 1)
         {
-            enable_sound = true;
-            
             if (DistanceBuffer < 20)
             {
-                sleep_time = 330000;
+                std::cout << '\a' << std::endl;
+                usleep(330000);
             }
             else if (DistanceBuffer < 40)
             {
-                sleep_time = 660000;
+                std::cout << '\a' << std::endl;
+                usleep(660000);
             }
             else if (DistanceBuffer < 60)
             {
-                sleep_time = 1000000;
-            }
-            else
-            {
-                enable_sound = false;
-            }
-            
-        }
-        
-        if (enable_sound)
-        {
-            std::cout << '\a' << std::endl;
-            usleep(sleep_time);
+                std::cout << '\a' << std::endl;
+                usleep(1000000);
+            }  
         }
     }
 
