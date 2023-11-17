@@ -167,7 +167,7 @@ void IPCManagerStubImpl::setDistance(const std::shared_ptr<CommonAPI::ClientId> 
 
 // Get gear mode
 void IPCManagerStubImpl::getGearMode(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _input, getGearModeReply_t _reply)
-{   
+{
     if (_input == "InstrumentCluster")
     {
         sender.InstrumentClusterTargetProxy->setGear(piracer.getGearMode(), sender.callStatus, sender.returnMessage);
@@ -179,6 +179,10 @@ void IPCManagerStubImpl::getGearMode(const std::shared_ptr<CommonAPI::ClientId> 
     else if (_input == "IVICompositor")
     {
         sender.IVICompositorTargetProxy->setGear(piracer.getGearMode(), sender.callStatus, sender.returnMessage);
+    }
+    else if (_input == "RemoteSpeaker")
+    {
+        sender.RemoteSpeakerTargetProxy->setGear(piracer.getGearMode(), sender.callStatus, sender.returnMessage);
     }
 
     // Reply to the caller
