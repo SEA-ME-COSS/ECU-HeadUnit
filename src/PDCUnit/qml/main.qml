@@ -64,7 +64,8 @@ Window {
             width: 700
             height: 700
             fillMode: Image.PreserveAspectFit
-            anchors.centerIn: parent
+            anchors.horizontalCenter: parent.horizontalCenter
+            y: 100
             opacity: 0.5
         }
 
@@ -74,7 +75,8 @@ Window {
             width: 700
             height: 700
             fillMode: Image.PreserveAspectFit
-            anchors.centerIn: parent
+            anchors.horizontalCenter: parent.horizontalCenter
+            y: 100
             opacity: 0.5
         }
 
@@ -84,7 +86,8 @@ Window {
             width: 700
             height: 700
             fillMode: Image.PreserveAspectFit
-            anchors.centerIn: parent
+            anchors.horizontalCenter: parent.horizontalCenter
+            y: 100
             opacity: 0.5
         }
 
@@ -94,7 +97,8 @@ Window {
             width: 700
             height: 700
             fillMode: Image.PreserveAspectFit
-            anchors.centerIn: parent
+            anchors.horizontalCenter: parent.horizontalCenter
+            y: 100
             opacity: 0.5
         }
     }
