@@ -85,7 +85,7 @@ Q_INVOKABLE void HeadUnitQtClass::setIPCManagerLight(QString _light)
 Q_INVOKABLE void HeadUnitQtClass::poweroff()
 {
     // Execute the system command to power off the system
-    int exitCode = system("poweroff");
+    int exitCode = system("sudo poweroff");
 }
 
 // Create an instance of HeadUnitQtClass named carinfo
