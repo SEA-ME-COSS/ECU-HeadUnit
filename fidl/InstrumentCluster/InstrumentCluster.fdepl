@@ -1,0 +1,30 @@
+import "platform:/plugin/org.genivi.commonapi.someip/deployment/CommonAPI-4-SOMEIP_deployment_spec.fdepl"
+import "InstrumentCluster.fidl"
+
+
+define org.genivi.commonapi.someip.deployment for interface commonapi.InstrumentCluster {
+        SomeIpServiceID = 5000
+
+        method setSpeedRpm {
+                SomeIpMethodID = 500
+        }
+        method setBattery {
+                SomeIpMethodID = 501
+        }
+        method setGear {
+                SomeIpMethodID = 502
+        }
+        method setDirection {
+                SomeIpMethodID = 503
+        }
+        method setLight {
+                SomeIpMethodID = 504
+        }
+}
+define org.genivi.commonapi.someip.deployment for provider as Service {
+        instance commonapi.InstrumentCluster {
+                InstanceId = "InstrumentCluster"
+                SomeIpInstanceID = 50000
+        }
+}
+

@@ -1,12 +1,4 @@
-# fidl and fdepl
-
-Franca IDL is utilized for CommonAPI. In '.fidl' file, interfaces for inter-process communication are defined, along with the methods that will be executed within those interfaces. '.fdepl' files assign unique IDs to objects defined in the .fidl file.
-
-These two files exist for the purpose of code generation and are not required during the compilation phase managed by CMake. Code generation is accomplished through the core-generator and someip-generator, and you can learn more about installing these generators through the instructions provided in the "settings" folder. The following is the command for generating the code.
-
-```bash
-cd ..
-
+#!/bin/bash
 
 ~/generator/core-generator/commonapi-core-generator-linux-x86_64 --skel --dest-common ./src-gen/CANSender/core/common --dest-proxy ./src-gen/CANSender/core/proxy --dest-stub ./src-gen/CANSender/core/stub --dest-skel ./src-gen/CANSender/core/skel ./fidl/CANSender/CANSender.fidl
 
@@ -51,8 +43,4 @@ cd ..
 ~/generator/core-generator/commonapi-core-generator-linux-x86_64 --skel --dest-common ./src-gen/RemoteSpeaker/core/common --dest-proxy ./src-gen/RemoteSpeaker/core/proxy --dest-stub ./src-gen/RemoteSpeaker/core/stub --dest-skel ./src-gen/RemoteSpeaker/core/skel ./fidl/RemoteSpeaker/RemoteSpeaker.fidl
 
 ~/generator/someip-generator/commonapi-someip-generator-linux-x86_64 --dest-common ./src-gen/RemoteSpeaker/someip/common --dest-proxy ./src-gen/RemoteSpeaker/someip/proxy --dest-stub ./src-gen/RemoteSpeaker/someip/stub ./fidl/RemoteSpeaker/RemoteSpeaker.fdepl
-
-```
-
-These commands create a folder named "src-gen" and saves the generated code inside it.
 
