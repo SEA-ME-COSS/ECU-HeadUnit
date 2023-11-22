@@ -33,7 +33,7 @@ std::shared_ptr<CommonAPI::SomeIP::Proxy> createCANSenderSomeIPProxy(
 void initializeCANSenderSomeIPProxy() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
         "local:commonapi.CANSender:v1_0:CANSender",
-        0x3e8, 0x2710, 1, 0);
+        0x3e9, 0x2711, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerProxyCreateMethod(
         "commonapi.CANSender:v1_0",
         &createCANSenderSomeIPProxy);

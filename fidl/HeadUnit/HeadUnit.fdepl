@@ -3,7 +3,7 @@ import "HeadUnit.fidl"
 
 
 define org.genivi.commonapi.someip.deployment for interface commonapi.HeadUnit {
-        SomeIpServiceID = 6000
+        SomeIpServiceID = 1006
 
         method setSensorRpm {
                 SomeIpMethodID = 600
@@ -21,7 +21,7 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.HeadUnit {
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.HeadUnit {
                 InstanceId = "HeadUnit"
-                SomeIpInstanceID = 60000
+                SomeIpInstanceID = 10006
         }
 }
 

@@ -3,7 +3,7 @@ import "RemoteSpeaker.fidl"
 
 
 define org.genivi.commonapi.someip.deployment for interface commonapi.RemoteSpeaker {
-        SomeIpServiceID = 9000
+        SomeIpServiceID = 1009
 
         method setGear {
                 SomeIpMethodID = 900
@@ -15,7 +15,7 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.RemoteSpea
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.RemoteSpeaker {
                 InstanceId = "RemoteSpeaker"
-                SomeIpInstanceID = 90000
+                SomeIpInstanceID = 10009
         }
 }
 

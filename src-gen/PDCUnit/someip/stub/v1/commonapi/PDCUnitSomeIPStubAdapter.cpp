@@ -35,7 +35,7 @@ std::shared_ptr<CommonAPI::SomeIP::StubAdapter> createPDCUnitSomeIPStubAdapter(
 void initializePDCUnitSomeIPStubAdapter() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
         "local:commonapi.PDCUnit:v1_0:PDCUnit",
-         0x1b58, 0x11170, 1, 0);
+         0x3ef, 0x2717, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerStubAdapterCreateMethod(
         "commonapi.PDCUnit:v1_0",
         &createPDCUnitSomeIPStubAdapter);

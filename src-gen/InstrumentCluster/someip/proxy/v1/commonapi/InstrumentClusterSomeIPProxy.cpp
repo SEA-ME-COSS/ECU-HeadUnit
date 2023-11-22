@@ -33,7 +33,7 @@ std::shared_ptr<CommonAPI::SomeIP::Proxy> createInstrumentClusterSomeIPProxy(
 void initializeInstrumentClusterSomeIPProxy() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
         "local:commonapi.InstrumentCluster:v1_0:InstrumentCluster",
-        0x1388, 0xc350, 1, 0);
+        0x3ed, 0x2715, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerProxyCreateMethod(
         "commonapi.InstrumentCluster:v1_0",
         &createInstrumentClusterSomeIPProxy);

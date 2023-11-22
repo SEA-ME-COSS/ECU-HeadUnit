@@ -3,12 +3,12 @@ import "PiracerSender.fidl"
 
 
 define org.genivi.commonapi.someip.deployment for interface commonapi.PiracerSender {
-        SomeIpServiceID = 2000
+        SomeIpServiceID = 1002
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.PiracerSender {
                 InstanceId = "PiracerSender"
-                SomeIpInstanceID = 20000
+                SomeIpInstanceID = 10002
         }
 }
 

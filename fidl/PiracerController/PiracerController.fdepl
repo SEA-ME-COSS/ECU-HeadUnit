@@ -3,12 +3,12 @@ import "PiracerController.fidl"
 
 
 define org.genivi.commonapi.someip.deployment for interface commonapi.PiracerController {
-        SomeIpServiceID = 3000
+        SomeIpServiceID = 1003
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.PiracerController {
                 InstanceId = "PiracerController"
-                SomeIpInstanceID = 30000
+                SomeIpInstanceID = 10003
         }
 }
 

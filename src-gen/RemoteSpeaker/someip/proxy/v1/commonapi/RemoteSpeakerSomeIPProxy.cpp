@@ -33,7 +33,7 @@ std::shared_ptr<CommonAPI::SomeIP::Proxy> createRemoteSpeakerSomeIPProxy(
 void initializeRemoteSpeakerSomeIPProxy() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
         "local:commonapi.RemoteSpeaker:v1_0:RemoteSpeaker",
-        0x2328, 0x15f90, 1, 0);
+        0x3f1, 0x2719, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerProxyCreateMethod(
         "commonapi.RemoteSpeaker:v1_0",
         &createRemoteSpeakerSomeIPProxy);

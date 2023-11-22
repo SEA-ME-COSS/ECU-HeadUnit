@@ -33,7 +33,7 @@ std::shared_ptr<CommonAPI::SomeIP::Proxy> createIPCManagerSomeIPProxy(
 void initializeIPCManagerSomeIPProxy() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
         "local:commonapi.IPCManager:v1_0:IPCManager",
-        0xfa0, 0x9c40, 1, 0);
+        0x3ec, 0x2714, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerProxyCreateMethod(
         "commonapi.IPCManager:v1_0",
         &createIPCManagerSomeIPProxy);

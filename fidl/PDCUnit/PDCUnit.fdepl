@@ -3,7 +3,7 @@ import "PDCUnit.fidl"
 
 
 define org.genivi.commonapi.someip.deployment for interface commonapi.PDCUnit {
-        SomeIpServiceID = 7000
+        SomeIpServiceID = 1007
 
         method setDistance {
                 SomeIpMethodID = 700
@@ -15,7 +15,7 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.PDCUnit {
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.PDCUnit {
                 InstanceId = "PDCUnit"
-                SomeIpInstanceID = 70000
+                SomeIpInstanceID = 10007
         }
 }
 

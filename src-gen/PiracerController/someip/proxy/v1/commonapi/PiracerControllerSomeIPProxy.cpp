@@ -33,7 +33,7 @@ std::shared_ptr<CommonAPI::SomeIP::Proxy> createPiracerControllerSomeIPProxy(
 void initializePiracerControllerSomeIPProxy() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
         "local:commonapi.PiracerController:v1_0:PiracerController",
-        0xbb8, 0x7530, 1, 0);
+        0x3eb, 0x2713, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerProxyCreateMethod(
         "commonapi.PiracerController:v1_0",
         &createPiracerControllerSomeIPProxy);

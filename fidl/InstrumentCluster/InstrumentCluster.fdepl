@@ -3,7 +3,7 @@ import "InstrumentCluster.fidl"
 
 
 define org.genivi.commonapi.someip.deployment for interface commonapi.InstrumentCluster {
-        SomeIpServiceID = 5000
+        SomeIpServiceID = 1005
 
         method setSpeedRpm {
                 SomeIpMethodID = 500
@@ -24,7 +24,7 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.Instrument
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.InstrumentCluster {
                 InstanceId = "InstrumentCluster"
-                SomeIpInstanceID = 50000
+                SomeIpInstanceID = 10005
         }
 }
 

@@ -33,7 +33,7 @@ std::shared_ptr<CommonAPI::SomeIP::Proxy> createHeadUnitSomeIPProxy(
 void initializeHeadUnitSomeIPProxy() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
         "local:commonapi.HeadUnit:v1_0:HeadUnit",
-        0x1770, 0xea60, 1, 0);
+        0x3ee, 0x2716, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerProxyCreateMethod(
         "commonapi.HeadUnit:v1_0",
         &createHeadUnitSomeIPProxy);

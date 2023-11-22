@@ -35,7 +35,7 @@ std::shared_ptr<CommonAPI::SomeIP::StubAdapter> createIVICompositorSomeIPStubAda
 void initializeIVICompositorSomeIPStubAdapter() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
         "local:commonapi.IVICompositor:v1_0:IVICompositor",
-         0x1f40, 0x13880, 1, 0);
+         0x3f0, 0x2718, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerStubAdapterCreateMethod(
         "commonapi.IVICompositor:v1_0",
         &createIVICompositorSomeIPStubAdapter);
