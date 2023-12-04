@@ -4,6 +4,7 @@
 #include <string>
 #include <CommonAPI/CommonAPI.hpp>
 #include <v1/commonapi/IPCManagerStubDefault.hpp>
+
 #include "IPCManagerSenderClass.hpp"
 #include "PiracerClass.hpp"
 
