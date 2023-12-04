@@ -4,7 +4,6 @@ using namespace v1_0::commonapi;
 
 void *SendSomeipThread(void *arg)
 {
-    // Initialize runtime and related components
     std::shared_ptr<CommonAPI::Runtime> runtime;
     std::shared_ptr<CANSenderStubImpl> CANSenderService;
     std::shared_ptr<IPCManagerProxy<>> IPCManagertargetProxy;
@@ -156,4 +155,3 @@ void matrix_multiply(double A[SIZE][SIZE], double B[SIZE][SIZE], double result[S
         }
     }
 }
-
