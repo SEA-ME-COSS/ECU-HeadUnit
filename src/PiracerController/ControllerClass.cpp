@@ -73,7 +73,7 @@ void ControllerClass::readControl()
     
     pThrottle = PyObject_GetAttrString(pInput, "analog_stick_right");
     pThrottle = PyObject_GetAttrString(pThrottle, "y");
-    throttle = PyFloat_AsDouble(pThrottle);
+    throttle = PyFloat_AsDouble(pThrottle) * -1.0;
     if ((-1.0 <= throttle) && (throttle < -0.8))
     {
         throttle = -1.0;
