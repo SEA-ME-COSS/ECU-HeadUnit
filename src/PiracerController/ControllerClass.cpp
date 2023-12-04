@@ -74,26 +74,25 @@ void ControllerClass::readControl()
     pThrottle = PyObject_GetAttrString(pInput, "analog_stick_right");
     pThrottle = PyObject_GetAttrString(pThrottle, "y");
     throttle = PyFloat_AsDouble(pThrottle);
-    throttle *= 0.5;
-    if ((-0.5 <= throttle) && (throttle < -0.4))
+    if ((-1.0 <= throttle) && (throttle < -0.8))
+    {
+        throttle = -1.0;
+    }
+    else if ((-0.8 <= throttle) && (throttle < -0.2))
     {
         throttle = -0.5;
     }
-    else if ((-0.4 <= throttle) && (throttle < -0.1))
-    {
-        throttle = -0.25;
-    }
-    else if ((-0.1 <= throttle) && (throttle <= 0.1))
+    else if ((-0.2 <= throttle) && (throttle <= 0.2))
     {
         throttle = 0.0;
     }
-    else if ((0.1 < throttle) && (throttle <= 0.4))
-    {
-        throttle = 0.25;
-    }
-    else if ((0.4 < throttle) && (throttle <= 0.5))
+    else if ((0.2 < throttle) && (throttle <= 0.8))
     {
         throttle = 0.5;
+    }
+    else if ((0.8 < throttle) && (throttle <= 1.0))
+    {
+        throttle = 1.0;
     }
     
     pSteering = PyObject_GetAttrString(pInput, "analog_stick_left");
