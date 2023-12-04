@@ -74,6 +74,7 @@ void ControllerClass::readControl()
     pThrottle = PyObject_GetAttrString(pInput, "analog_stick_right");
     pThrottle = PyObject_GetAttrString(pThrottle, "y");
     throttle = PyFloat_AsDouble(pThrottle);
+    throttle *= 0.5;
     if ((-0.5 <= throttle) && (throttle < -0.4))
     {
         throttle = -0.5;
@@ -119,13 +120,13 @@ void ControllerClass::readControl()
         steering = 1.0;
     }
     
-    button_p = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_x"));
+    button_p = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_a"));
     button_r = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_y"));
     button_n = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_b"));
-    button_d = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_l1"));
+    button_d = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_x"));
     
-    button_left_turn = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_l2"));
-    button_right_turn = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_r2"));
+    button_left_turn = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_l1"));
+    button_right_turn = PyObject_IsTrue(PyObject_GetAttrString(pInput, "button_r1"));
     
     return;
 }
