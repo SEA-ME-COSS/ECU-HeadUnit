@@ -1,5 +1,6 @@
-#include "ControllerClass.hpp"
 #include <iostream>
+
+#include "ControllerClass.hpp"
 
 ControllerClass::ControllerClass()
 {
