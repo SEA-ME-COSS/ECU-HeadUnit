@@ -6,12 +6,12 @@ void *SendSomeipThread(void *arg)
 {
     std::shared_ptr<CommonAPI::Runtime> runtime;
     std::shared_ptr<CANSenderStubImpl> CANSenderService;
-    std::shared_ptr<IPCManagerProxy<>> IPCManagertargetProxy;
+    std::shared_ptr<IPCManagerProxy<>> IPCManagerTargetProxy;
     
     runtime = CommonAPI::Runtime::get();
     CANSenderService = std::make_shared<CANSenderStubImpl>();
     runtime->registerService("local", "CANSender", CANSenderService);
-    IPCManagertargetProxy = runtime->buildProxy<IPCManagerProxy>("local", "IPCManager");
+    IPCManagerTargetProxy = runtime->buildProxy<IPCManagerProxy>("local", "IPCManager");
     
     CommonAPI::CallStatus callStatus;
     std::string returnMessage;
@@ -54,7 +54,7 @@ void *SendSomeipThread(void *arg)
 
         // Round the filtered speed value and send it to IPCManager
         uint16_t kf_speed_sensor_rpm = (uint16_t)round(speed_sensor_renewed_e[0]);
-        IPCManagertargetProxy->setSensorRpm(kf_speed_sensor_rpm, callStatus, returnMessage);
+        IPCManagerTargetProxy->setSensorRpm(kf_speed_sensor_rpm, callStatus, returnMessage);
         
         // (UP) Sending speed data
         // ==================================================
@@ -70,7 +70,7 @@ void *SendSomeipThread(void *arg)
         uint16_t distance = DistanceBuffer[currentIndex];
         pthread_mutex_unlock(&DistanceBufferMutex);
 
-        IPCManagertargetProxy->setDistance(distance, callStatus, returnMessage);
+        IPCManagerTargetProxy->setDistance(distance, callStatus, returnMessage);
         
         usleep(300000);  // Sleep for 300 ms
     }
