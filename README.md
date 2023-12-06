@@ -4,7 +4,10 @@
 
 # Result
 
-<img src=/images/demonstration/ambient_lighting.gif alt="ambient_lighting" width="100%" height="100%"/>
+<video width="100%" height="100%" controls>
+    <source src="images/demonstration/video.mp4" type="video/mp4">
+</video>
+
 
 # Introduction
 
