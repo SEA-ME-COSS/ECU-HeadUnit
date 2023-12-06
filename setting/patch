@@ -1,0 +1,16 @@
+class ShanWanGamepadInput:
+    def __init__(self) -> None:
+        self.analog_stick_left = Vector3f()
+        self.analog_stick_right = Vector3f()
+        self.button_l1 = False
+        self.button_l2 = False
+        self.button_r1 = False
+        self.button_r2 = False
+        self.button_x = False
+        self.button_a = False
+        self.button_b = False
+        self.button_y = False
+        self.button_select = False
+        self.button_start = False
+        self.button_home = False
+
