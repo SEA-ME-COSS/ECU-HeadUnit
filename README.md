@@ -4,8 +4,6 @@
 
 # Result
 
-[![Video Label](http://img.youtube.com/vi/eyP3rA9Oqrc/0.jpg)](https://youtu.be/eyP3rA9Oqrc)
-
 
 # Introduction
 
