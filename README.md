@@ -7,6 +7,8 @@
 https://github.com/SEA-ME-COSS/In-Vehicle-Infotainment/assets/138571365/dcbd66a4-180e-49f2-ae53-7439cfcd650e
 
 
+[youtube link](https://www.youtube.com/watch?v=rZjfliSumWo)
+
 # Introduction
 
 <table border="0" rules="none">
