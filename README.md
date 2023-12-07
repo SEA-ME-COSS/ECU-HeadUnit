@@ -39,7 +39,7 @@ Therefore, if you want to precisely follow this project, you need to have the ex
 
 # Architecture
 
-<img src=//media/diagram/software-architecture.png alt="software_architecture" width="100%" height="100%"/>
+<img src=/media/diagram/software-architecture.png alt="software_architecture" width="100%" height="100%"/>
 
 # Setting
 
@@ -64,7 +64,7 @@ Below are the specifications of the hardware used in the project.
 - Unistorm Raspberry Pi 4 Camera
 - Arduino ultrasonic sensor (HY-SRF05)
 
-<img src=//media/diagram/hardware-architecture.png alt="hardware_architecture" width="100%" height="100%"/>
+<img src=/media/diagram/hardware-architecture.png alt="hardware_architecture" width="100%" height="100%"/>
 
 # Usage
 
