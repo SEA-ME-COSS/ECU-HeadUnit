@@ -4,7 +4,7 @@
 
 # Result
 
-{% include video.html id="eyP3rA9Oqrc" %}
+[{% include video.html id="eyP3rA9Oqrc" %}](https://www.youtube.com/watch?v=eyP3rA9Oqrc&t=1s)
 
 
 # Introduction
