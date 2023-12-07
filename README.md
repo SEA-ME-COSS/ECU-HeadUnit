@@ -4,9 +4,7 @@
 
 # Result
 
-<video width="100%" height="100%" controls>
-    <source src="images/demonstration/driving.mp4" type="video/mp4">
-</video>
+[![Video Label](http://img.youtube.com/vi/eyP3rA9Oqrc/0.jpg)](https://youtu.be/eyP3rA9Oqrc)
 
 
 # Introduction
