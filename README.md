@@ -79,13 +79,13 @@ make
 # Key Concept
 
 ## Qt
-**Brief on Qt** 
+### Brief on Qt
 - Qt is a cross-platform C++ framework used for developing both GUI and non-GUI applications. It is popular for creating applications that can run on various operating systems and includes modules for networking, databases, and graphics.
 
-**Brief on Qt Compositor** 
+### Brief on Qt Compositor
 - Qt Compositor, part of the Qt framework, is used for developing Wayland compositors. It enables developers to create their custom compositors for managing application windows on the screen, integrating well with Qt's robust graphics capabilities.
 
-**Why Qt Compositor for Headunit Development**
+### Why Qt Compositor for Headunit Development
 
 1. Modularity: Enables handling each application as an independent window, simplifying the addition or removal of applications.
 2. Independent Development: Facilitates developing applications separately and integrating them smoothly.  
@@ -94,9 +94,9 @@ make
   
 These strengths of Qt Compositor make it an ideal choice for developing sophisticated and responsive headunit systems.
 
-## vsomeip & commonapi
+## vSomeIP & CommonAPI
 
-**vSomeIP**
+### vSomeIP
 
 - vSomeIP is the open-source implementation of SOME/IP, which stands for "Scalable service-Oriented MiddlewarE over IP".
 
@@ -105,7 +105,7 @@ These strengths of Qt Compositor make it an ideal choice for developing sophisti
 - vSomeIP supports features like service discovery, service-oriented communication, and event notification, making it suitable for complex automotive systems that require reliable and scalable communication solutions.
 
 
-**CommonAPI**
+### CommonAPI
 
 - CommonAPI is one of the developments by the GENIVI Alliance to standardize middleware communication in automotive software.
 
