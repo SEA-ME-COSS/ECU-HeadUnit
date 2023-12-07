@@ -171,3 +171,25 @@ Generally, we set up raspi-config in order to use the camera on raspberry pi. Ho
 ```bash
 start_x=1
 ```
+
+## Piracer package configuration
+
+The piracer package can only receive input by two joysticks when first installed, and in order to use other buttons, the code needs to be modified after installing the package. Therefore change code to the following in ~/.local/lib/python3.xx/site-packages/piracer/gamepads.py
+
+```python3
+class ShanWanGamepadInput:
+    def __init__(self) -> None:
+        self.analog_stick_left = Vector3f()
+        self.analog_stick_right = Vector3f()
+        self.button_l1 = False
+        self.button_l2 = False
+        self.button_r1 = False
+        self.button_r2 = False
+        self.button_x = False
+        self.button_a = False
+        self.button_b = False
+        self.button_y = False
+        self.button_select = False
+        self.button_start = False
+        self.button_home = False
+```
