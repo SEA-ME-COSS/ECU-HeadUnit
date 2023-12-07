@@ -26,20 +26,42 @@ Primarily, the IPCManager ensures the correct flow of data amongst all processes
 
 In addition to its role in managing data flow and process connectivity, the IPCManager also acts as a repository for storing vital information. Analogous to the engine of a vehicle, it utilizes this stored information to control hardware components. This dual functionality underscores the IPCManager's importance, not only in maintaining seamless communication among processes but also in leveraging stored data to effectively control hardware, resembling the way a vehicle's engine manages and regulates various components.
 
+## [IVICompositor](./IVICompositor/)
+IVICompositor is a Qt-based GUI provisioning process designed for constructing In-Vehicle Infotainment systems.
+
+
+Utilizing the Qt Wayland Compositor, IVICompositor can concurrently display screens from multiple processes. Screens from both HeadUnit and PDCUnit are utilized and managed as layers. Depending on the gear mode, with selections like P (Park), N (Neutral), and D (Drive), the HeadUnit screen takes precedence when displayed. However, when the gear mode transitions to R (Reverse), activating the Parking Distance Control (PDC) feature, the PDCUnit screen appears above the HeadUnit screen. This layered management ensures dynamic visibility based on the vehicle's gear mode, enhancing the user interface for both HeadUnit and PDCUnit functionalities.
+
 ## [InstrumentCluster](./InstrumentCluster/)
 InstrumentCluster is a Qt-based interface that displays crucial vehicle data to the user in real-time.
 
 
 Built using Qt, this GUI presents the vehicle's speed, RPM, battery level, and current gear mode status to the user. An additional feature is its ability to dynamically adjust ambient lighting based on user inputs sourced from the HeadUnit.
 
+## [PDCUnit](./PDCUnit/)
+Similar to the HeadUnit, the PDCUnit is also part of the In-Vehicle Infotainment system, featuring a Qt-based GUI.
+
+
+It serves the functionality of displaying the rearview camera's perspective during reverse parking on the screen. The GUI operates on the wayland platform in Qt, ensuring a smooth and responsive user experience within the vehicle's infotainment system. The display incorporates color-coded indicators, with green, yellow, and red signals appearing on the screen based on the distance from rear objects. This visual representation assists the driver in perceiving distances accurately and enhances overall awareness during reverse parking scenarios.
+
 ## [PiracerController](./PiracerController/)
-PiracerController integrates the piracer-py Python library with vsomeip communication to control vehicle movements based on gamepad input.
+PiracerController serves as a bridge between hardware control and controller input, delivering controller input information to the IPC Manager without directly manipulating the hardware. The IPC Manager receives this information and utilizes it to control the vehicle's hardware components.
 
 
-To meld the piracer-py Python library with vsomeip communication, this process incorporates Python within C++. It processes input from the gamepad controller, directing the vehicle's movement and steering according to the selected gear mode. The gear mode data is sourced from the IPC Manager, while steering information is relayed back to the IPC Manager.
+In achieving this functionality, PiracerController seamlessly integrates the piracer-py Python package with vsomeip communication. This integration involves incorporating Python within a C++ framework. 
 
 ## [PiracerSender](./PiracerSender/)
 PiracerSender gauges the vehicle's battery voltage, computes the remaining charge, and communicates this data to the IPCManager.
 
 
-This process, integrating the piracer-py Python library with vsomeip communication, is devised by embedding Python within C++. It periodically measures the vehicle's battery voltage, derives the remaining battery percentage, and subsequently forwards this critical information to the IPCManager.
+This process, integrating the piracer-py Python package with vsomeip communication, is devised by embedding Python within C++. It periodically measures the vehicle's battery voltage, derives the remaining battery percentage, and subsequently forwards this critical information to the IPCManager.
+
+## [RemoteSpeaker](./RemoteSpeaker/)
+RemoteSpeaker is specifically designed for the Parking Distance Control (PDC) functionality, serving as a process that provides users with audio alerts based on data from the rear distance sensor. It receives distance information from the IPC Manager and delivers alerts at varying speeds depending on the distance range.
+
+
+The method by which RemoteSpeaker generates sound is quite unique. Since there is no onboard speaker on Raspberry Pi and no additional speaker components are attached, an innovative approach is taken. A personal laptop is used to remotely connect to the Raspberry Pi, essentially functioning as an external speaker for the Raspberry Pi. The sound production method involves outputting the '\a' character in the terminal, which emits a beep sound.
+
+To set up and experience this, one needs to establish an SSH connection to the Raspberry Pi from a laptop and then run RemoteSpeaker executable file. Although the RemoteSpeaker process is running within the Raspberry Pi, the output results appear on the laptop's terminal, allowing users to hear the sound.
+
+It's important to note that the beep sound can be tested on the laptop's terminal by pressing the Tab key. If the beep sound is not produced, proper settings may need to be configured first.
