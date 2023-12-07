@@ -1,0 +1,27 @@
+import "platform:/plugin/org.genivi.commonapi.someip/deployment/CommonAPI-4-SOMEIP_deployment_spec.fdepl"
+import "HeadUnit.fidl"
+
+
+define org.genivi.commonapi.someip.deployment for interface commonapi.HeadUnit {
+        SomeIpServiceID = 1006
+
+        method setSensorRpm {
+                SomeIpMethodID = 600
+        }
+        method setGear {
+                SomeIpMethodID = 601
+        }
+        method setDirection {
+                SomeIpMethodID = 602
+        }
+        method setLight {
+                SomeIpMethodID = 603
+        }
+}
+define org.genivi.commonapi.someip.deployment for provider as Service {
+        instance commonapi.HeadUnit {
+                InstanceId = "HeadUnit"
+                SomeIpInstanceID = 10006
+        }
+}
+
