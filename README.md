@@ -61,7 +61,7 @@ Below are the specifications of the hardware used in the project.
 
 - CAN-BUS Shield V2.0 (MCP2515)
 - IR infrared Speed Sensor (LM393)
-- Unistorm Raspberry Pi 4 Camera
+- Raspberry Pi 4 Camera
 - Arduino ultrasonic sensor (HY-SRF05)
 
 <img src=/media/diagram/hardware-architecture.png alt="hardware_architecture" width="100%" height="100%"/>
@@ -92,10 +92,10 @@ make
 
 ### Why Qt Compositor for Headunit Development
 
-1. Modularity: Enables handling each application as an independent window, simplifying the addition or removal of applications.
-2. Independent Development: Facilitates developing applications separately and integrating them smoothly.  
-3. Enhanced User Experience: Supports seamless transitions and interactions between applications, vital for driver-focused systems.
-4. Resource Efficiency: Offers efficient resource management, essential in the resource-constrained environment of automotive systems.  
+1. **Modularity**: Enables handling each application as an independent window, simplifying the addition or removal of applications.
+2. **Independent Development**: Facilitates developing applications separately and integrating them smoothly.  
+3. **Enhanced User Experience**: Supports seamless transitions and interactions between applications, vital for driver-focused systems.
+4. **Resource Efficiency**: Offers efficient resource management, essential in the resource-constrained environment of automotive systems.  
   
 These strengths of Qt Compositor make it an ideal choice for developing sophisticated and responsive headunit systems.
 
