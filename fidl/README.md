@@ -6,3 +6,6 @@ These two files exist for the purpose of code generation and are not required du
 
 Running the 'src_gen_cmd' script in the main directory will create a folder named 'src-gen' and save the generated code inside it.
 
+```bash
+sh src_gen_cmd.sh
+```
