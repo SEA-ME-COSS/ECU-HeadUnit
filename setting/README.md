@@ -15,6 +15,8 @@ Before starting this guide, you will need the following components:
 7. Arduino UNO
 8. CAN-BUS Shield V2.0 (MCP2515)
 9. IR infrared Speed Sensor (LM393)
+10. Ultrasonic sensor (HY-SRF05)
+11. RPi Camera
 
 # Precautions
 
@@ -26,38 +28,42 @@ Before starting this guide, you will need the following components:
 
 # Hardware Setting
 
-<img src=/images/diagram/hardware_architecture.png alt="hardware_architecture" width="100%" height="100%"/>
+<img src=/media/diagram/hardware_architecture.png alt="hardware_architecture" width="100%" height="100%"/>
 
 1. Assemble the Raspberry Pi board with the CAN-BUS shield and a 7.9inch LCD, and then attach it on the PiRacer.
 2. Assemble the Arduino board with the CAN-BUS shield and attach it to the front of the PiRacer.
 
-<img src=/images/picture/arduino_assembly.jpg alt="arduino_assembly" width="100%" height="100%"/>
+<img src=/media/picture/arduino_assembly.jpg alt="arduino_assembly" width="100%" height="100%"/>
 
 3. Fix the 7inch LCD onto the PiRacer using a robust material like a metal frame to position it above the Arduino.
 
-<img src=/images/picture/display_assembly.jpg alt="display_assembly" width="100%" height="100%"/>
+<img src=/media/picture/display_assembly.jpg alt="display_assembly" width="100%" height="100%"/>
 
 4. Fix the speed sensor's rotor in a way that it aligns and rotates with the PiRacer's rear tires.
 
-<img src=/images/picture/speed_sensor_assembly.jpg alt="speed_sensor_assembly" width="100%" height="100%"/>
+<img src=/media/picture/speed_sensor_assembly.jpg alt="speed_sensor_assembly" width="100%" height="100%"/>
 
 5. Connect the receiver of the gamepad controller to one of the USB ports on the Raspberry Pi.
 
-<img src=/images/picture/gamepad_controller.jpg alt="gamepad_controller" width="100%" height="100%"/>
+<img src=/media/picture/gamepad_controller.jpg alt="gamepad_controller" width="100%" height="100%"/>
 
 6. (Optional) Install an auxiliary battery to provide additional power during PiRacer operation. Create a case for the auxiliary battery and position it at the rear of the PiRacer vehicle.
 
-<img src=/images/picture/power_bank.jpg alt="power_bank" width="100%" height="100%"/>
+<img src=/media/picture/power_bank.jpg alt="power_bank" width="100%" height="100%"/>
 
-<img src=/images/picture/power_bank_assembly.jpg alt="power_bank_assembly" width="100%" height="100%"/>
+<img src=/media/picture/power_bank_assembly.jpg alt="power_bank_assembly" width="100%" height="100%"/>
 
-7. Final result.
+7. Install RPi Camera and Ultrasonic sensor at the rear of the PiRacer vehicle.
 
-<img src=/images/picture/overall_hardware_1.jpg alt="overall_hardware" width="100%" height="100%"/>
+<img src=/media/picture/pdc_part_assembly.jpg alt="pdc_part_assembly" width="100%" height="100%"/>
 
-<img src=/images/picture/overall_hardware_2.jpg alt="overall_hardware" width="100%" height="100%"/>
+8. Final result.
 
-<img src=/images/picture/final_result.jpg alt="final_result" width="100%" height="100%"/>
+<img src=/media/picture/overall_hardware_1.jpg alt="overall_hardware" width="100%" height="100%"/>
+
+<img src=/media/picture/overall_hardware_2.jpg alt="overall_hardware" width="100%" height="100%"/>
+
+<img src=/media/picture/final_result.jpg alt="final_result" width="100%" height="100%"/>
 
 ---
 
@@ -144,6 +150,7 @@ For more detail about CommonAPI and vsomeip, visit [here](https://github.com/COV
 - [CAN-BUS Shield V2.0 (MCP2515)](https://github.com/autowp/arduino-mcp2515)
 - [Qt5](https://qengineering.eu/install-qt5-with-opencv-on-raspberry-pi-4.html)
 - [GStreamer plug-in](https://qengineering.eu/install-gstreamer-1.18-on-raspberry-pi-4.html)
+- [Qt wayland compositor](https://github.com/qt/qtwayland)
 
 ## Display configuration
 
@@ -155,4 +162,12 @@ hdmi_cvt 1024 1280 60 6 0 0 0
 
 Note that the 7inch display's specifications are recognized as larger than the actual hardware, so you may need to adjust the source files to align the application with the visible area. Typically, for applications developed for a 1024 x 600 screen size in Qt, reducing the scale by x0.5 will display the content correctly.
 
-<img src=/images/diagram/display_configuration.png alt="display_configuration" width="80%" height="80%"/>
+<img src=/media/diagram/display_configuration.png alt="display_configuration" width="80%" height="80%"/>
+
+## Camera configuration
+
+Generally, we set up raspi-config in order to use the camera on raspberry pi. However, this method makes it impossible to use two screens at the same time. Therefore write the following directly in /boot/config.txt.
+
+```bash
+start_x=1
+```
