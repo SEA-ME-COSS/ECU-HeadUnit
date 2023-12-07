@@ -28,7 +28,7 @@ Before starting this guide, you will need the following components:
 
 # Hardware Setting
 
-<img src=/media/diagram/hardware_architecture.png alt="hardware_architecture" width="100%" height="100%"/>
+<img src=/media/diagram/hardware-architecture.png alt="hardware_architecture" width="100%" height="100%"/>
 
 1. Assemble the Raspberry Pi board with the CAN-BUS shield and a 7.9inch LCD, and then attach it on the PiRacer.
 2. Assemble the Arduino board with the CAN-BUS shield and attach it to the front of the PiRacer.
