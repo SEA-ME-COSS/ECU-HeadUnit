@@ -25,27 +25,21 @@ Using an ultrasonic sensor, this code measures the distance by calculating the t
 - **Time Measurement (`duration`)**: The `pulseIn` function measures the round-trip time (in microseconds) it takes for the ultrasonic pulse to travel to an object and back.
 - **Distance Calculation (`distance`)**: The distance is calculated using the measured time (`duration`). The formula is as follows:
     
-    $$
     
     \[ \text{Distance (cm)} = \frac{\text{Time (microseconds)}}{29} \div 2 \]
     
-    $$
     
     This calculation is based on the speed of sound in air, which is approximately 343m/s (or about 34300cm/s). To find the distance traveled by the sound wave in the measured time, the formula is:
     
-    $$
     
     \[ \text{Distance (cm)} = \frac{34300 \text{ cm/s}}{1000000} \times \text{Time (microseconds)} \]
     
-    $$
     
     Simplifying this gives:
     
-    $$
     
     \[ \text{Distance (cm)} = \frac{\text{Time (microseconds)}}{29} \]
     
-    $$
     
     The division by 2 is necessary because the measured time is for the round trip (to the object and back), and the actual distance to the object is half of this total travel distance.
 
