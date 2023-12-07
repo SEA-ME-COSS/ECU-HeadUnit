@@ -1,4 +1,4 @@
-# **DES Project - Head Unit**
+# **In-Vehicle Infotainment**
 
 ---
 
@@ -15,17 +15,17 @@ https://github.com/SEA-ME-COSS/In-Vehicle-Infotainment/assets/138571365/dcbd66a4
 <tr border="0">
     <td width="280" height="200" align="center">
         <a href="#">
-            <img alt="Yocto Logo" src="images/logo/yocto-logo.png">
+            <img alt="Yocto Logo" src="/media/logo/yocto-logo.png">
         </a>
     </td>
     <td width="280" height="200" align="center">
         <a href="#">
-            <img alt="Qt Logo" src="images/logo/qt-logo.png">
+            <img alt="Qt Logo" src="/media/logo/qt-logo.png">
         </a>
     </td>
     <td width="350" height="200" align="center">
         <a href="#">
-            <img alt="Covesa Logo" src="images/logo/covesa-logo.png">
+            <img alt="Covesa Logo" src="/media/logo/covesa-logo.png">
         </a>
     </td>
 </tr>
@@ -39,7 +39,7 @@ Therefore, if you want to precisely follow this project, you need to have the ex
 
 # Architecture
 
-<img src=/images/diagram/software-architecture.png alt="software_architecture" width="100%" height="100%"/>
+<img src=//media/diagram/software-architecture.png alt="software_architecture" width="100%" height="100%"/>
 
 # Setting
 
@@ -61,8 +61,10 @@ Below are the specifications of the hardware used in the project.
 
 - CAN-BUS Shield V2.0 (MCP2515)
 - IR infrared Speed Sensor (LM393)
+- Unistorm Raspberry Pi 4 Camera
+- Arduino ultrasonic sensor (HY-SRF05)
 
-<img src=/images/diagram/hardware-architecture.png alt="hardware_architecture" width="100%" height="100%"/>
+<img src=//media/diagram/hardware-architecture.png alt="hardware_architecture" width="100%" height="100%"/>
 
 # Usage
 
@@ -76,6 +78,7 @@ cd build
 cmake ..
 make
 ./IPCManager
+
 ```
 
 # Key Concept
@@ -100,9 +103,7 @@ These strengths of Qt Compositor make it an ideal choice for developing sophisti
 
 ### vSomeIP
 
-- vSomeIP is the open-source implementation of SOME/IP, which stands for "Scalable service-Oriented MiddlewarE over IP".
-
-- It is a protocol designed for high-performance communication within vehicles and plays a crucial role in the Adaptive AUTOSAR architecture.
+- The SOME/IP protocol is a standard IPC within AUTOSAR, and vSomeIP is its open-source implementation.
 
 - vSomeIP supports features like service discovery, service-oriented communication, and event notification, making it suitable for complex automotive systems that require reliable and scalable communication solutions.
 
@@ -120,7 +121,7 @@ vSomeIP and CommonAPI are crucial parts of modern automotive software architectu
 
 ## Yocto Project
 
-- The Yocto Project is an open-source project designed to create custom Linux-based operating system images.
+- The Yocto Project is an open-source project designed to create custom Linux-based operating system /media.
 
 - This project assists developers in easily creating Linux distributions tailored for specific hardware. This enables the development of customized Linux environments suitable for a wide range of platforms including IoT (Internet of Things) devices, embedded systems, automotive applications, and mobile phones.
 
@@ -132,8 +133,8 @@ We have utilized the Yocto Project to develop a Linux environment optimized for 
 - Yocto Project. (2021). Yocto Project. https://www.yoctoproject.org/
 - Qt Project. (2021). Qt Project. https://www.qt.io/
 - Raspberry Pi Foundation. (2021). Raspberry Pi. https://www.raspberrypi.org/
-- CAN specification documents: These documents provide detailed information on the CAN (Controller Area Network) protocol and its implementation.
-- VsomIp/Autosar documents: These documents provide information on the Inter-Process Communication (IPC) frameworks VsomIp and Autosar and their implementation in the automotive industry.
+- [CAN specification documents](http://esd.cs.ucr.edu/webres/can20.pdf): These documents provide detailed information on the CAN (Controller Area Network) protocol and its implementation.
+- [VsomIp documents](https://github.com/COVESA/vsomeip/wiki/vsomeip-in-10-minutes): These documents provide information on the Inter-Process Communication (IPC) frameworks VsomIp and Autosar and their implementation in the automotive industry.
 
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
