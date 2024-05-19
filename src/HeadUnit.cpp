@@ -10,8 +10,8 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
     
-    QCursor cursor(Qt::BlankCursor);
-    app.setOverrideCursor(cursor);
+    // QCursor cursor(Qt::BlankCursor);
+    // app.setOverrideCursor(cursor);
     
     qmlRegisterType<HeadUnitQtClass>("DataModule", 1, 0, "HeadUnitQtClass");
 

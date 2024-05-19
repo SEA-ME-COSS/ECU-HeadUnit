@@ -362,8 +362,11 @@ Window {
             }
         }
 
-        // Red color slider
-        Slider {
+        //==================================================//
+        //                  Ambient Light                   //
+        //==================================================//
+
+        Slider {  // Red
             id: redSlider
             width: 140
             x: 870
@@ -380,7 +383,6 @@ Window {
                     color: "#FFCECE"
                     radius: 30
                 }
-
                 handle: Rectangle {
                     implicitWidth: 23
                     implicitHeight: 23
@@ -389,31 +391,17 @@ Window {
                 }
             }
 
-            // Update red value and set light color
             onValueChanged: {
-                if (valueSource.initial_update) {
-                    valueSource.red_string = redSlider.value.toString(16)
-                    if (valueSource.red_string.length === 1) {
-                        valueSource.red_string = "0" + valueSource.red_string
-                    }
-
-                    valueSource.green_string = greenSlider.value.toString(16)
-                    if (valueSource.green_string.length === 1) {
-                        valueSource.green_string = "0" + valueSource.green_string
-                    }
-
-                    valueSource.blue_string = blueSlider.value.toString(16)
-                    if (valueSource.blue_string.length === 1) {
-                        valueSource.blue_string = "0" + valueSource.blue_string
-                    }
-
-                    manager.setIPCManagerLight("#" + valueSource.red_string + valueSource.green_string + valueSource.blue_string)
+                valueSource.red_string = redSlider.value.toString(16)
+                if (valueSource.red_string.length === 1) {
+                    valueSource.red_string = "0" + valueSource.red_string
                 }
+
+                valueSource.light = "#" + valueSource.red_string + valueSource.green_string + valueSource.blue_string
             }
         }
 
-        // Green color slider
-        Slider {
+        Slider {  // Green
             id: greenSlider
             width: 140
             x: 870
@@ -430,7 +418,6 @@ Window {
                     color: "#AEFFAE"
                     radius: 30
                 }
-
                 handle: Rectangle {
                     implicitWidth: 23
                     implicitHeight: 23
@@ -439,31 +426,17 @@ Window {
                 }
             }
 
-            // Update green value and set light color
             onValueChanged: {
-                if (valueSource.initial_update) {
-                    valueSource.red_string = redSlider.value.toString(16)
-                    if (valueSource.red_string.length === 1) {
-                        valueSource.red_string = "0" + valueSource.red_string
-                    }
-
-                    valueSource.green_string = greenSlider.value.toString(16)
-                    if (valueSource.green_string.length === 1) {
-                        valueSource.green_string = "0" + valueSource.green_string
-                    }
-
-                    valueSource.blue_string = blueSlider.value.toString(16)
-                    if (valueSource.blue_string.length === 1) {
-                        valueSource.blue_string = "0" + valueSource.blue_string
-                    }
-
-                    manager.setIPCManagerLight("#" + valueSource.red_string + valueSource.green_string + valueSource.blue_string)
+                valueSource.green_string = greenSlider.value.toString(16)
+                if (valueSource.green_string.length === 1) {
+                    valueSource.green_string = "0" + valueSource.green_string
                 }
+
+                valueSource.light = "#" + valueSource.red_string + valueSource.green_string + valueSource.blue_string
             }
         }
 
-        // Blue color slider
-        Slider {
+        Slider {  // Blue
             id: blueSlider
             width: 140
             x: 870
@@ -480,7 +453,6 @@ Window {
                     color: "#B1CAFF"
                     radius: 30
                 }
-
                 handle: Rectangle {
                     implicitWidth: 23
                     implicitHeight: 23
@@ -489,28 +461,20 @@ Window {
                 }
             }
 
-            // Update blue value and set light color
             onValueChanged: {
-                if (valueSource.initial_update) {
-                    valueSource.red_string = redSlider.value.toString(16)
-                    if (valueSource.red_string.length === 1) {
-                        valueSource.red_string = "0" + valueSource.red_string
-                    }
-
-                    valueSource.green_string = greenSlider.value.toString(16)
-                    if (valueSource.green_string.length === 1) {
-                        valueSource.green_string = "0" + valueSource.green_string
-                    }
-
-                    valueSource.blue_string = blueSlider.value.toString(16)
-                    if (valueSource.blue_string.length === 1) {
-                        valueSource.blue_string = "0" + valueSource.blue_string
-                    }
-
-                    manager.setIPCManagerLight("#" + valueSource.red_string + valueSource.green_string + valueSource.blue_string)
+                valueSource.blue_string = blueSlider.value.toString(16)
+                if (valueSource.blue_string.length === 1) {
+                    valueSource.blue_string = "0" + valueSource.blue_string
                 }
+
+                valueSource.light = "#" + valueSource.red_string + valueSource.green_string + valueSource.blue_string
             }
         }
+
+
+
+
+
 
         // GPS mode button
         Rectangle {

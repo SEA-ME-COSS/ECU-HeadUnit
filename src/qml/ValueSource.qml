@@ -48,25 +48,26 @@ Item {
         }
     }
 
-    property string light: carinfo.light
-    property int red: 0
-    property int green: 0
-    property int blue: 0
-    property bool initial_update: false
+    //==================================================//
+    //                  Ambient Light                   //
+    //==================================================//
 
-    onLightChanged: {
-        valueSource.red = parseInt(valueSource.light.substring(1, 3), 16)
-        valueSource.green = parseInt(valueSource.light.substring(3, 5), 16)
-        valueSource.blue = parseInt(valueSource.light.substring(5, 7), 16)
+    property string light: "#808080"
 
-        if (!valueSource.initial_update) {
-            valueSource.initial_update = true
-        }
-    }
+    property int red: 128
+    property int green: 128
+    property int blue: 128
 
-    property string red_string: ""
-    property string green_string: ""
-    property string blue_string: ""
+    property string red_string: "80"
+    property string green_string: "80"
+    property string blue_string: "80"
+
+
+
+
+
+
+
 
     property int mode: 0
 
