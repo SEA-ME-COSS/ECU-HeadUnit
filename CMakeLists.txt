@@ -14,9 +14,9 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -std=c++0x")
 find_package(Qt5 COMPONENTS Core Quick Gui Multimedia REQUIRED)
 
 add_executable(HeadUnit
-        src/HeadUnit/HeadUnit.cpp
-        src/HeadUnit/HeadUnitQtClass.cpp
-        src/HeadUnit/qml.qrc
+        src/HeadUnit.cpp
+        src/HeadUnitQtClass.cpp
+        src/qml.qrc
 )
 target_compile_definitions(HeadUnit
 PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
