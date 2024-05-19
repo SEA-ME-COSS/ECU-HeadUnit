@@ -15,9 +15,7 @@ find_package(Qt5 COMPONENTS Core Quick Gui Multimedia REQUIRED)
 
 add_executable(HeadUnit
         src/HeadUnit/HeadUnit.cpp
-        src/HeadUnit/HeadUnitStubImpl.cpp
         src/HeadUnit/HeadUnitQtClass.cpp
-        src/HeadUnit/HeadUnitSenderClass.cpp
         src/HeadUnit/qml.qrc
 )
 target_compile_definitions(HeadUnit

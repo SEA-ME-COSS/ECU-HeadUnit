@@ -3,21 +3,10 @@
 #include <QQmlContext>
 #include <QCursor>
 
-#include "HeadUnitStubImpl.hpp"
 #include "HeadUnitQtClass.hpp"
-#include "HeadUnitSenderClass.hpp"
-
-using namespace v1_0::commonapi;
 
 int main(int argc, char *argv[])
 {
-    std::shared_ptr<CommonAPI::Runtime> runtime;
-    std::shared_ptr<HeadUnitStubImpl> HeadUnitService;
-
-    runtime = CommonAPI::Runtime::get();
-    HeadUnitService = std::make_shared<HeadUnitStubImpl>();
-    runtime->registerService("local", "HeadUnit", HeadUnitService);
-
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
     
@@ -40,12 +29,6 @@ int main(int argc, char *argv[])
     }, Qt::QueuedConnection);
 
     engine.load(url);
-    
-    HeadUnitSenderClass sender;
-    sender.IPCManagerTargetProxy->getGearMode("HeadUnit", sender.callStatus, sender.returnMessage);
-    sender.IPCManagerTargetProxy->getDirection("HeadUnit", sender.callStatus, sender.returnMessage);
-    sender.IPCManagerTargetProxy->getLight("HeadUnit", sender.callStatus, sender.returnMessage);
 
     return app.exec();
 }
-

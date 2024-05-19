@@ -6,8 +6,6 @@
 #include <QString>
 #include <cstdlib>
 
-#include "HeadUnitSenderClass.hpp"
-
 class HeadUnitQtClass : public QObject
 {
     Q_OBJECT
@@ -17,8 +15,6 @@ class HeadUnitQtClass : public QObject
     Q_PROPERTY(QString light READ light WRITE setLight NOTIFY lightChanged)
 
 private:
-    HeadUnitSenderClass sender;
-
     quint16 QsensorRpm;
     quint16 Qgear;
     quint16 Qdirection;
