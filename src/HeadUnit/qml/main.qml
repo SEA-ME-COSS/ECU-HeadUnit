@@ -3,8 +3,7 @@ import QtQuick.Window 2.1
 import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Extras 1.4
-import QtQuick.Layouts 1.15
-import QtMultimedia 5.15
+import QtMultimedia 5.12
 import DataModule 1.0
 
 Window {

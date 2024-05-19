@@ -49,25 +49,9 @@ void HeadUnitQtClass::setLight(QString _light)
     emit lightChanged();
 }
 
-Q_INVOKABLE void HeadUnitQtClass::setIPCManagerGear(quint16 _gear)
-{
-    sender.IPCManagerTargetProxy->setGearMode(_gear, sender.callStatus, sender.returnMessage);
-}
-
-Q_INVOKABLE void HeadUnitQtClass::setIPCManagerDirection(quint16 _direction)
-{
-    sender.IPCManagerTargetProxy->setDirection(_direction, sender.callStatus, sender.returnMessage);
-}
-
-Q_INVOKABLE void HeadUnitQtClass::setIPCManagerLight(QString _light)
-{
-    sender.IPCManagerTargetProxy->setLight(_light.toStdString(), sender.callStatus, sender.returnMessage);
-}
-
 Q_INVOKABLE void HeadUnitQtClass::poweroff()
 {
     int exitCode = system("sudo poweroff");
 }
 
 HeadUnitQtClass carinfo;
-

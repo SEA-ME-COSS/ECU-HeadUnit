@@ -34,9 +34,6 @@ public:
     void setLight(QString _light);
 
 public Q_SLOTS:
-    Q_INVOKABLE void setIPCManagerGear(quint16 _gear);
-    Q_INVOKABLE void setIPCManagerDirection(quint16 _direction);
-    Q_INVOKABLE void setIPCManagerLight(QString _light);
     Q_INVOKABLE void poweroff();
 
 signals:
