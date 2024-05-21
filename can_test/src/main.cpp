@@ -45,7 +45,7 @@ private slots:
                 }
 
                 for (int i = 0; i < PAYLOAD_SIZE; i++) {
-                    qDebug() << "Data" << i << ":" << QString::number(m_payloadData[i], 16).rightJustified(2, '0');
+                    qDebug() << "Data" << i << ":" << QString::number(data[i], 16).rightJustified(2, '0');
                 }
             }
         }
