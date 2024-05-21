@@ -8,10 +8,10 @@ class CanBusHandler : public QObject {
     Q_OBJECT
 
 public:
-    CanBusHandler(const QString &interfaceName, quint32 filterId, QObject *parent = nullptr)
-        : QObject(parent), m_filterId(filterId) {
+    CanBusHandler(QObject *parent = nullptr)
+        : QObject(parent) {
         // Obtain the CAN bus device
-        m_canDevice = QCanBus::instance()->createDevice("socketcan", interfaceName, &m_errorString);
+        m_canDevice = QCanBus::instance()->createDevice("socketcan", "can0", &m_errorString);
         if (!m_canDevice) {
             qCritical() << "Failed to create CAN device:" << m_errorString;
             return;
@@ -39,7 +39,7 @@ private slots:
     void processReceivedFrames() {
         while (m_canDevice->framesAvailable()) {
             QCanBusFrame frame = m_canDevice->readFrame();
-            if (frame.frameId() == m_filterId) {
+            if (frame.frameId() == QString("0x0").toUInt(nullptr, 16)) {
                 qDebug() << "Received frame with ID" << m_filterId << ":" << frame.toString();
             }
         }
@@ -48,7 +48,6 @@ private slots:
 private:
     QCanBusDevice *m_canDevice = nullptr;
     QString m_errorString;
-    quint32 m_filterId;
 };
 
 
@@ -59,7 +58,7 @@ int main(int argc, char *argv[]) {
     QString interfaceName = QString("can0");
     quint32 filterId = QString("0x0").toUInt(nullptr, 16);
 
-    CanBusHandler handler(interfaceName, filterId);
+    CanBusHandler handler;
 
     return app.exec();
 }
