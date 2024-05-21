@@ -51,7 +51,7 @@ void HeadUnitQtClass::processReceivedFrames() {
                 data[i] = static_cast<quint8>(payload[i]);
             }
 
-            // qDebug() << data[0] << data[1] << data[2] << data[3];
+            std::cout << data[0] << data[1] << data[2] << data[3] << std::endl;
 
             setThrottle(data[0]);
         }

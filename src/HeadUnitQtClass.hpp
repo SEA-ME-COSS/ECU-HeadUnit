@@ -1,6 +1,7 @@
 #ifndef HEADUNITQTCLASS_HPP
 #define HEADUNITQTCLASS_HPP
 
+#include <iostream>
 #include <QObject>
 #include <QCanBus>
 #include <QCanBusDevice>
