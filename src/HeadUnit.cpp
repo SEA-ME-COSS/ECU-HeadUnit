@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
-    engine.rootContext()->setContextProperty("carinfo", &carinfo);
+    engine.rootContext()->setContextProperty("carinfo", &handler);
 
     const QUrl url(QStringLiteral("qrc:/qml/main.qml"));
 
