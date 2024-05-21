@@ -2,34 +2,60 @@
 
 HeadUnitQtClass::HeadUnitQtClass(QObject *parent) : QObject(parent)
 {
-    QsensorRpm = 0;
+    Qthrottle = 0;
+
+    canDevice = QCanBus::instance()->createDevice("socketcan", "can0", &errorString);
+    if (!canDevice)
+    {
+        qCritical() << "Failed to create CAN device:" << errorString;
+        return;
+    }
+
+    connect(canDevice, &QCanBusDevice::framesReceived, this, &CanBusHandler::processReceivedFrames);
+
+    if (!canDevice->connectDevice())
+    {
+        qCritical() << "Failed to connect to CAN device:" << canDevice->errorString();
+        delete canDevice;
+        canDevice = nullptr;
+    }
 }
 
-quint16 HeadUnitQtClass::sensorRpm() const
+HeadUnitQtClass::~HeadUnitQtClass()
 {
-    return QsensorRpm;
+    if (canDevice)
+    {
+        canDevice->disconnectDevice();
+        delete canDevice;
+    }
 }
 
-quint16 HeadUnitQtClass::direction() const
+quint8 HeadUnitQtClass::throttle() const
 {
-    return Qdirection;
+    return Qthrottle;
 }
 
-void HeadUnitQtClass::setSensorRpm(uint16_t _sensorRpm)
+void HeadUnitQtClass::setThrottle(quint8 _throttle)
 {
-    QsensorRpm = _sensorRpm;
-    emit sensorRpmChanged();
+    Qthrottle = _throttle;
+    emit throttleChanged();
 }
 
-void HeadUnitQtClass::setDirection(uint16_t _direction)
-{
-    Qdirection = _direction;
-    emit directionChanged();
-}
+void HeadUnitQtClass::processReceivedFrames() {
+    while (canDevice->framesAvailable()) {
+        QCanBusFrame frame = canDevice->readFrame();
+        if (frame.frameId() == steering_id) {
+            QByteArray payload = frame.payload();
 
-Q_INVOKABLE void HeadUnitQtClass::poweroff()
-{
-    int exitCode = system("sudo poweroff");
+            for (int i = 0; i < PAYLOAD_SIZE; i++) {
+                data[i] = static_cast<quint8>(payload[i]);
+            }
+
+            qDebug() << data[0] << data[1] << data[2] << data[3];
+
+            setThrottle(data[0]);
+        }
+    }
 }
 
 HeadUnitQtClass carinfo;

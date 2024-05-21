@@ -1,35 +1,40 @@
 #ifndef HEADUNITQTCLASS_HPP
 #define HEADUNITQTCLASS_HPP
 
-#include <string>
 #include <QObject>
-#include <cstdlib>
+#include <QCanBus>
+#include <QCanBusDevice>
+#include <QCanBusFrame>
 
 class HeadUnitQtClass : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(quint16 sensorRpm READ sensorRpm WRITE setSensorRpm NOTIFY sensorRpmChanged)
-    Q_PROPERTY(quint16 direction READ direction WRITE setDirection NOTIFY directionChanged)
+    Q_PROPERTY(quint8 throttle READ throttle WRITE setThrottle NOTIFY throttleChanged)
 
 private:
-    quint16 QsensorRpm;
-    quint16 Qdirection;
+    quint8 Qthrottle;
+
+    QCanBusDevice *canDevice = nullptr;
+    QString errorString;
+
+    quint32 steering_id = QString("0x00").toUInt(nullptr, 16);
+
+    static const int PAYLOAD_SIZE = 4;
+    quint8 data[PAYLOAD_SIZE];
+
+private slots:
+    void processReceivedFrames();
 
 public:
     explicit HeadUnitQtClass(QObject *parent = nullptr);
+    explicit ~HeadUnitQtClass();
 
-    quint16 sensorRpm() const;
-    quint16 direction() const;
+    quint8 throttle() const;
 
-    void setSensorRpm(uint16_t _sensorRpm);
-    void setDirection(uint16_t _direction);
-
-public Q_SLOTS:
-    Q_INVOKABLE void poweroff();
+    void setThrottle(quint8 _throttle);
 
 signals:
-    void sensorRpmChanged();
-    void directionChanged();
+    void throttleChanged();
 };
 
 extern HeadUnitQtClass carinfo;
