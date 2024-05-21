@@ -10,34 +10,35 @@ class CanBusHandler : public QObject {
 public:
     CanBusHandler(QObject *parent = nullptr)
         : QObject(parent) {
+
         // Obtain the CAN bus device
-        m_canDevice = QCanBus::instance()->createDevice("socketcan", "can0", &m_errorString);
-        if (!m_canDevice) {
-            qCritical() << "Failed to create CAN device:" << m_errorString;
+        canDevice = QCanBus::instance()->createDevice("socketcan", "can0", &errorString);
+        if (!canDevice) {
+            qCritical() << "Failed to create CAN device:" << errorString;
             return;
         }
 
         // Connect the received signal to the slot
-        connect(m_canDevice, &QCanBusDevice::framesReceived, this, &CanBusHandler::processReceivedFrames);
+        connect(canDevice, &QCanBusDevice::framesReceived, this, &CanBusHandler::processReceivedFrames);
 
         // Try to connect to the CAN interface
-        if (!m_canDevice->connectDevice()) {
-            qCritical() << "Failed to connect to CAN device:" << m_canDevice->errorString();
-            delete m_canDevice;
-            m_canDevice = nullptr;
+        if (!canDevice->connectDevice()) {
+            qCritical() << "Failed to connect to CAN device:" << canDevice->errorString();
+            delete canDevice;
+            canDevice = nullptr;
         }
     }
 
     ~CanBusHandler() {
-        if (m_canDevice) {
-            m_canDevice->disconnectDevice();
-            delete m_canDevice;
+        if (canDevice) {
+            canDevice->disconnectDevice();
+            delete canDevice;
         }
     }
 
 private slots:
     void processReceivedFrames() {
-        while (m_canDevice->framesAvailable()) {
+        while (canDevice->framesAvailable()) {
             QCanBusFrame frame = m_canDevice->readFrame();
             if (frame.frameId() == QString("0x0").toUInt(nullptr, 16)) {
                 qDebug() << "helloworld" << frame.toString();
@@ -46,11 +47,9 @@ private slots:
     }
 
 private:
-    QCanBusDevice *m_canDevice = nullptr;
-    QString m_errorString;
+    QCanBusDevice *canDevice = nullptr;
+    QString errorString;
 };
-
-
 
 int main(int argc, char *argv[]) {
     QCoreApplication app(argc, argv);
