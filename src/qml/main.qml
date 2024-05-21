@@ -202,10 +202,10 @@ Window {
         }
 
         Text {
-            text: carinfo.sensorRpm
+            text: carinfo.throttle
             font.family: font.name
             font.pixelSize: 70
-            color: (carinfo.sensorRpm === 0) ? "black" : "#555555"
+            color: (carinfo.throttle === 0) ? "black" : "#555555"
             x: 200
             y: 5
         }

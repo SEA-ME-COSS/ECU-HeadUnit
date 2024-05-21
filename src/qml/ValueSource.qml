@@ -3,7 +3,10 @@ import QtQuick 2.2
 Item {
     id: valueSource
 
-    property int gear: carinfo.gear
+    property int throttle: carinfo.throttle
+
+
+
     property int direction: carinfo.direction
 
     // Properties for controlling blinking and direction indicators
