@@ -41,10 +41,12 @@ private slots:
 
                 QByteArray payload = frame.payload();
 
-                for (int i = 0; i < payload.size(); ++i) {
-                    qDebug() << payload[i];
-                }
+                qDebug() << payload.size();
 
+                // for (int i = 0; i < payload.size(); ++i) {
+                //     quint16 value = static_cast<quint16>(static_cast<unsigned char>(payload[i]));
+                //     qDebug() << "Byte" << i << ":" << QString::number(value, 16).rightJustified(2, '0');
+                // }
             }
         }
     }
