@@ -38,15 +38,15 @@ private slots:
         while (canDevice->framesAvailable()) {
             QCanBusFrame frame = canDevice->readFrame();
             if (frame.frameId() == steering_id) {
-
                 QByteArray payload = frame.payload();
 
-                qDebug() << payload.size();
+                for (int i = 0; i < PAYLOAD_SIZE; i++) {
+                    data[i] = static_cast<quint8>(payload[i]);
+                }
 
-                // for (int i = 0; i < payload.size(); ++i) {
-                //     quint16 value = static_cast<quint16>(static_cast<unsigned char>(payload[i]));
-                //     qDebug() << "Byte" << i << ":" << QString::number(value, 16).rightJustified(2, '0');
-                // }
+                for (int i = 0; i < PAYLOAD_SIZE; i++) {
+                    qDebug() << "Data" << i << ":" << QString::number(m_payloadData[i], 16).rightJustified(2, '0');
+                }
             }
         }
     }
@@ -56,6 +56,9 @@ private:
     QString errorString;
 
     quint32 steering_id = QString("0x00").toUInt(nullptr, 16);
+
+    static const int PAYLOAD_SIZE = 4;
+    quint8 data[PAYLOAD_SIZE];
 };
 
 int main(int argc, char *argv[]) {
