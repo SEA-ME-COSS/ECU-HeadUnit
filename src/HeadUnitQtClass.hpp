@@ -27,7 +27,7 @@ private slots:
 
 public:
     explicit HeadUnitQtClass(QObject *parent = nullptr);
-    explicit ~HeadUnitQtClass();
+    ~HeadUnitQtClass();
 
     quint8 throttle() const;
 
