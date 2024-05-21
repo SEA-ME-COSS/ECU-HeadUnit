@@ -51,16 +51,13 @@ private:
     quint32 m_filterId;
 };
 
+
+
 int main(int argc, char *argv[]) {
     QCoreApplication app(argc, argv);
 
-    if (argc != 3) {
-        qCritical() << "Usage:" << argv[0] << "<interface> <filter_id>";
-        return -1;
-    }
-
-    QString interfaceName = argv[1];
-    quint32 filterId = QString(argv[2]).toUInt(nullptr, 16);
+    QString interfaceName = QString("can0");
+    quint32 filterId = QString("0x0").toUInt(nullptr, 16);
 
     CanBusHandler handler(interfaceName, filterId);
 
