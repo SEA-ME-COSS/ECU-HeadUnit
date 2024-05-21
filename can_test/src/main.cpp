@@ -44,9 +44,7 @@ private slots:
                     data[i] = static_cast<quint8>(payload[i]);
                 }
 
-                for (int i = 0; i < PAYLOAD_SIZE; i++) {
-                    qDebug() << "Data" << i << ":" << QString::number(data[i], 16).rightJustified(2, '0');
-                }
+                qDebug() << data[0] << data[1] << data[2] << data[3];
             }
         }
     }
