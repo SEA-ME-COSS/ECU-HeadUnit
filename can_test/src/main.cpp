@@ -40,7 +40,7 @@ private slots:
         while (m_canDevice->framesAvailable()) {
             QCanBusFrame frame = m_canDevice->readFrame();
             if (frame.frameId() == QString("0x0").toUInt(nullptr, 16)) {
-                qDebug() << "Received frame with ID" << m_filterId << ":" << frame.toString();
+                qDebug() << "helloworld" << frame.toString();
             }
         }
     }
