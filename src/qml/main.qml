@@ -4,7 +4,6 @@ import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Extras 1.4
 import QtMultimedia 5.12
-import DataModule 1.0
 
 Window {
     id: root
@@ -20,10 +19,6 @@ Window {
 
     ValueSource {
         id: valueSource
-    }
-
-    HeadUnitQtClass {
-        id: manager
     }
 
     Item {
@@ -303,12 +298,12 @@ Window {
                 }
             }
 
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    manager.setIPCManagerDirection(3)
-                }
-            }
+            // MouseArea {
+            //     anchors.fill: parent
+            //     onClicked: {
+            //         manager.setIPCManagerDirection(3)
+            //     }
+            // }
         }
 
         Rectangle {
@@ -787,15 +782,15 @@ Window {
             x: 888
             y: 470
 
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    if ((carinfo.sensorRpm === 0) && (valueSource.gear === 0)) {
-                        Qt.quit()
-                        manager.poweroff()
-                    }
-                }
-            }
+            // MouseArea {
+            //     anchors.fill: parent
+            //     onClicked: {
+            //         if ((carinfo.sensorRpm === 0) && (valueSource.gear === 0)) {
+            //             Qt.quit()
+            //             manager.poweroff()
+            //         }
+            //     }
+            // }
         }
     }
 }

@@ -1,12 +1,7 @@
 import QtQuick 2.2
-import DataModule 1.0
 
 Item {
     id: valueSource
-
-    HeadUnitQtClass {
-        id: manager
-    }
 
     property int gear: carinfo.gear
     property int direction: carinfo.direction

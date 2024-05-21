@@ -12,8 +12,6 @@ int main(int argc, char *argv[])
     
     QCursor cursor(Qt::BlankCursor);
     app.setOverrideCursor(cursor);
-    
-    qmlRegisterType<HeadUnitQtClass>("DataModule", 1, 0, "HeadUnitQtClass");
 
     QQmlApplicationEngine engine;
 
