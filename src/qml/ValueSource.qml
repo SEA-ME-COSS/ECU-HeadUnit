@@ -49,6 +49,29 @@ Item {
     }
 
     //==================================================//
+    //                      Clock                       //
+    //==================================================//
+
+    property var currentTime: 0
+    property int hours: 0
+    property int minutes: 0
+    property string formattedHours: ""
+    property string formattedMinutes: ""
+    property string clock: "00:00"
+
+    Timer {
+        interval: 1000; running: true; repeat: true
+        onTriggered: {
+            valueSource.currentTime = new Date();
+            valueSource.hours = (valueSource.currentTime.getHours() + 2) % 24;
+            valueSource.minutes = valueSource.currentTime.getMinutes();
+            valueSource.formattedHours = (valueSource.hours < 10 ? "0" : "") + valueSource.hours;
+            valueSource.formattedMinutes = (valueSource.minutes < 10 ? "0" : "") + valueSource.minutes;
+            valueSource.clock = valueSource.formattedHours + ":" + valueSource.formattedMinutes;
+        }
+    }
+
+    //==================================================//
     //                  Ambient Light                   //
     //==================================================//
 
@@ -64,29 +87,5 @@ Item {
 
 
 
-
-
-
-
-
     property int mode: 0
-
-    property var currentTime: 0
-    property int hours: 0
-    property int minutes: 0
-    property string formattedHours: ""
-    property string formattedMinutes: ""
-    property string clock: "00:00"
-
-    Timer {
-        interval: 1000; running: true; repeat: true
-        onTriggered: {
-            valueSource.currentTime = new Date();
-            valueSource.hours = valueSource.currentTime.getHours();
-            valueSource.minutes = valueSource.currentTime.getMinutes();
-            valueSource.formattedHours = (valueSource.hours < 10 ? "0" : "") + valueSource.hours;
-            valueSource.formattedMinutes = (valueSource.minutes < 10 ? "0" : "") + valueSource.minutes;
-            valueSource.clock = valueSource.formattedHours + ":" + valueSource.formattedMinutes;
-        }
-    }
 }
