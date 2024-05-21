@@ -58,5 +58,3 @@ private:
     static const int PAYLOAD_SIZE = 4;
     quint8 data[PAYLOAD_SIZE];
 };
-
-// #include "main.moc"
