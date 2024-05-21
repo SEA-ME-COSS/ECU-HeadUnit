@@ -40,8 +40,8 @@ private slots:
     void processReceivedFrames() {
         while (canDevice->framesAvailable()) {
             QCanBusFrame frame = canDevice->readFrame();
-            if (frame.frameId() == QString("0x0").toUInt(nullptr, 16)) {
-                qDebug() << "helloworld" << frame.toString();
+            if (frame.frameId() == steering_id) {
+                qDebug() << "steering" << frame.toString();
             }
         }
     }
@@ -49,6 +49,8 @@ private slots:
 private:
     QCanBusDevice *canDevice = nullptr;
     QString errorString;
+
+    quint32 steering_id = QString("0x00").toUInt(nullptr, 16);
 };
 
 int main(int argc, char *argv[]) {
