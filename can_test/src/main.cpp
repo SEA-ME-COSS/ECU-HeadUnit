@@ -1,11 +1,70 @@
 #include <QCoreApplication>
-#include "CANBusReceiver.hpp"
+#include <QCanBus>
+#include <QCanBusDevice>
+#include <QCanBusFrame>
+#include <QDebug>
 
-int main(int argc, char *argv[])
-{
-    QCoreApplication a(argc, argv);
+class CanBusHandler : public QObject {
+    Q_OBJECT
 
-    CANBusReceiver receiver;
+public:
+    CanBusHandler(const QString &interfaceName, quint32 filterId, QObject *parent = nullptr)
+        : QObject(parent), m_filterId(filterId) {
+        // Obtain the CAN bus device
+        m_canDevice = QCanBus::instance()->createDevice("socketcan", interfaceName, &m_errorString);
+        if (!m_canDevice) {
+            qCritical() << "Failed to create CAN device:" << m_errorString;
+            return;
+        }
 
-    return a.exec();
+        // Connect the received signal to the slot
+        connect(m_canDevice, &QCanBusDevice::framesReceived, this, &CanBusHandler::processReceivedFrames);
+
+        // Try to connect to the CAN interface
+        if (!m_canDevice->connectDevice()) {
+            qCritical() << "Failed to connect to CAN device:" << m_canDevice->errorString();
+            delete m_canDevice;
+            m_canDevice = nullptr;
+        }
+    }
+
+    ~CanBusHandler() {
+        if (m_canDevice) {
+            m_canDevice->disconnectDevice();
+            delete m_canDevice;
+        }
+    }
+
+private slots:
+    void processReceivedFrames() {
+        while (m_canDevice->framesAvailable()) {
+            QCanBusFrame frame = m_canDevice->readFrame();
+            if (frame.frameId() == m_filterId) {
+                qDebug() << "Received frame with ID" << m_filterId << ":" << frame.toString();
+            }
+        }
+    }
+
+private:
+    QCanBusDevice *m_canDevice = nullptr;
+    QString m_errorString;
+    quint32 m_filterId;
+};
+
+int main(int argc, char *argv[]) {
+    QCoreApplication app(argc, argv);
+
+    if (argc != 3) {
+        qCritical() << "Usage:" << argv[0] << "<interface> <filter_id>";
+        return -1;
+    }
+
+    QString interfaceName = argv[1];
+    quint32 filterId = QString(argv[2]).toUInt(nullptr, 16);
+
+    CanBusHandler handler(interfaceName, filterId);
+
+    return app.exec();
 }
+
+#include "main.moc"
