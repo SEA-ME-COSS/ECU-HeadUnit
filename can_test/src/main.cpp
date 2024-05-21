@@ -55,12 +55,7 @@ private:
 int main(int argc, char *argv[]) {
     QCoreApplication app(argc, argv);
 
-    QString interfaceName = QString("can0");
-    quint32 filterId = QString("0x0").toUInt(nullptr, 16);
-
     CanBusHandler handler;
 
     return app.exec();
 }
-
-#include "main.moc"
