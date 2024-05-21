@@ -7,15 +7,15 @@ HeadUnitQtClass::HeadUnitQtClass(QObject *parent) : QObject(parent)
     canDevice = QCanBus::instance()->createDevice("socketcan", "can0", &errorString);
     if (!canDevice)
     {
-        qCritical() << "Failed to create CAN device:" << errorString;
+        // qCritical() << "Failed to create CAN device:" << errorString;
         return;
     }
 
-    connect(canDevice, &QCanBusDevice::framesReceived, this, &CanBusHandler::processReceivedFrames);
+    connect(canDevice, &QCanBusDevice::framesReceived, this, &HeadUnitQtClass::processReceivedFrames);
 
     if (!canDevice->connectDevice())
     {
-        qCritical() << "Failed to connect to CAN device:" << canDevice->errorString();
+        // qCritical() << "Failed to connect to CAN device:" << canDevice->errorString();
         delete canDevice;
         canDevice = nullptr;
     }
@@ -51,7 +51,7 @@ void HeadUnitQtClass::processReceivedFrames() {
                 data[i] = static_cast<quint8>(payload[i]);
             }
 
-            qDebug() << data[0] << data[1] << data[2] << data[3];
+            // qDebug() << data[0] << data[1] << data[2] << data[3];
 
             setThrottle(data[0]);
         }
