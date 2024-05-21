@@ -14,3 +14,6 @@ sudo apt install libqt5serialbus5*
 # disable blinking cursor in fullscreen linuxfb
 echo -e '\033[?17;0;0c' > /dev/tty1
 ```
+
++ CAN HAT setup
++ HDMI setup
