@@ -1,11 +1,11 @@
 #ifndef HEADUNITQTCLASS_HPP
 #define HEADUNITQTCLASS_HPP
 
-#include <iostream>
 #include <QObject>
 #include <QCanBus>
 #include <QCanBusDevice>
 #include <QCanBusFrame>
+#include <QDebug>
 
 class HeadUnitQtClass : public QObject
 {
