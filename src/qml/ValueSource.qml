@@ -9,16 +9,16 @@ Item {
 
     property real steering: carinfo.steering
 
-    property bool blink: !(valueSource.steering === 0)
-    property bool left_direction: (valueSource.steering < 0)
-    property bool right_direction: (valueSource.steering > 0)
+    property bool blink: !(valueSource.steering > -0.5 && valueSource.steering < 0.5)
+    property bool left_direction: (valueSource.steering < -0.5)
+    property bool right_direction: (valueSource.steering > 0.5)
     property bool left_on_off: false
     property bool right_on_off: false
 
     onSteeringChanged: {
-        valueSource.blink = !(valueSource.steering === 0);
-        valueSource.left_direction = (valueSource.steering < 0);
-        valueSource.right_direction = (valueSource.steering > 0);
+        valueSource.blink = !(valueSource.steering > -0.5 && valueSource.steering < 0.5);
+        valueSource.left_direction = (valueSource.steering < -0.5);
+        valueSource.right_direction = (valueSource.steering > 0.5);
         valueSource.left_on_off = false;
         valueSource.right_on_off = false;
     }
