@@ -473,14 +473,14 @@ Window {
             visible: valueSource.gps
             width: 675
             height: 395
-            color: "#555555"
+            color: "black"
             anchors.horizontalCenter: parent.horizontalCenter
             y: 75
 
             Image {
                 source: "../image/map.png"
-                width: 645
-                height: 650
+                width: 675
+                height: 395
                 fillMode: Image.PreserveAspectFit
                 anchors.centerIn: parent
             }
