@@ -102,7 +102,9 @@ Item {
     property string green_string: "80"
     property string blue_string: "80"
 
+    //==================================================//
+    //                       Mode                       //
+    //==================================================//
 
-
-    property int mode: 0
+    property bool gps: false
 }

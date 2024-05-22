@@ -188,7 +188,7 @@ Window {
             height: 100
             rotation: -90
             fillMode: Image.PreserveAspectFit
-            opacity: (valueSource.left_on_off ? 0.2 : 1.0)
+            opacity: valueSource.left_on_off ? 0.2 : 1.0
             x: parent.width / 2 - width / 2 - 170
             y: 485
 
@@ -208,7 +208,7 @@ Window {
             height: 100
             rotation: 90
             fillMode: Image.PreserveAspectFit
-            opacity: (valueSource.right_on_off ? 0.2 : 1.0)
+            opacity: valueSource.right_on_off ? 0.2 : 1.0
             x: parent.width / 2 - width / 2 + 170
             y: 485
 
@@ -228,7 +228,7 @@ Window {
 
         Image {
             source: "../image/warning-icon.png"
-            opacity: (valueSource.emergency_on_off ? 0.3 : 1.0)
+            opacity: valueSource.emergency_on_off ? 0.3 : 1.0
             width: 120
             height: 120
             fillMode: Image.PreserveAspectFit
@@ -261,19 +261,21 @@ Window {
             }
         }
 
-
-
-
-
-
+        //==================================================//
+        //                  Right Divider                   //
+        //==================================================//
 
         Rectangle {
             width: 5
             height: parent.height
             anchors.verticalCenter: parent.verticalCenter
             x: parent.width / 2 - width / 2 + 340
-            color: (carinfo.sensorRpm === 0) ? "black" : "#555555"
+            color: "black"
         }
+
+        //==================================================//
+        //                       Logo                       //
+        //==================================================//
 
         Image {
             source: "../image/logo.png"
@@ -316,7 +318,7 @@ Window {
                 text: valueSource.clock
                 font.family: font.name
                 font.pixelSize: 70
-                color: (carinfo.sensorRpm === 0) ? "black" : "#555555"
+                color: "black"
                 anchors.right: parent.right
                 y: 0
             }
@@ -431,12 +433,10 @@ Window {
             }
         }
 
+        //==================================================//
+        //                     GPS Mode                     //
+        //==================================================//
 
-
-
-
-
-        // GPS mode button
         Rectangle {
             width: 140
             height: 60
@@ -449,36 +449,29 @@ Window {
                 width: 130
                 height: 50
                 anchors.centerIn: parent
-                color: (valueSource.mode === 1) ? "#555555" : "white"
+                color: valueSource.gps ? "#555555" : "white"
                 radius: 15
 
                 Text {
                     text: "GPS"
                     font.family: font.name
                     font.pixelSize: 40
-                    color: (valueSource.mode === 1) ? "white" : "555555"
+                    color: valueSource.gps ? "white" : "555555"
                     x: 17
                     y: 1
                 }
             }
 
-            // Toggle GPS mode
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    if (valueSource.mode === 1) {
-                        valueSource.mode = 0
-                    } else {
-                        valueSource.mode = 1
-                        mp4Player.pause()
-                    }
+                    valueSource.gps = !valueSource.gps
                 }
             }
         }
 
-        // GPS content display (visible when in GPS mode)
         Rectangle {
-            visible: (valueSource.mode === 1)
+            visible: valueSource.gps
             width: 675
             height: 395
             color: "#555555"
@@ -494,7 +487,10 @@ Window {
             }
         }
 
-        // MP3 mode button
+        //==================================================//
+        //                     ADS Mode                     //
+        //==================================================//
+
         Rectangle {
             width: 140
             height: 60
@@ -507,112 +503,11 @@ Window {
                 width: 130
                 height: 50
                 anchors.centerIn: parent
-                color: (valueSource.mode === 2) ? "#555555" : "white"
-                radius: 15
-
-                Text {
-                    text: "MP3"
-                    font.family: font.name
-                    font.pixelSize: 40
-                    color: (valueSource.mode === 2) ? "white" : "555555"
-                    x: 17
-                    y: 1
-                }
-            }
-
-            // Toggle MP3 mode
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    if (valueSource.mode === 2) {
-                        valueSource.mode = 0
-                    } else {
-                        valueSource.mode = 2
-                        mp4Player.pause()
-                    }
-                }
-            }
-        }
-
-        // MP3 content display (visible when in MP3 mode)
-        Rectangle {
-            visible: (valueSource.mode === 2)
-            width: 675
-            height: 395
-            color: "#555555"
-            anchors.horizontalCenter: parent.horizontalCenter
-            y: 75
-
-            Image {
-                source: "../image/album.jpg"
-                width: 580
-                height: 580
-                fillMode: Image.PreserveAspectFit
-                anchors.centerIn: parent
-
-                Text {
-                    text: "Solo Cello Suite No.1"
-                    font.pixelSize: 40
-                    color: "white"
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    y: 120
-                }
-            }
-
-            MediaPlayer {
-                id: mp3Player
-            }
-
-            Image {
-                source: "../image/play.png"
-                width: 60
-                height: 50
-                rotation: 90
-                x: 360
-                y: 305
-
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        mp3Player.source = "../media/music.mp3"
-                        mp3Player.play()
-                    }
-                }
-            }
-
-            Image {
-                source: "../image/pause.png"
-                width: 60
-                height: 60
-                fillMode: Image.PreserveAspectFit
-                x: 440
-                y: 300
-
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        mp3Player.pause()
-                    }
-                }
-            }
-
-            Rectangle {
-                width: 60
-                height: 60
                 color: "white"
-                x: 530
-                y: 300
-
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        mp3Player.stop()
-                    }
-                }
+                radius: 15
             }
         }
 
-        // MP4 mode button
         Rectangle {
             width: 140
             height: 60
@@ -625,133 +520,23 @@ Window {
                 width: 130
                 height: 50
                 anchors.centerIn: parent
-                color: (valueSource.mode === 3) ? "#555555" : "white"
-                radius: 15
-
-                Text {
-                    text: "MP4"
-                    font.family: font.name
-                    font.pixelSize: 40
-                    color: (valueSource.mode === 3) ? "white" : "555555"
-                    x: 17
-                    y: 1
-                }
-            }
-
-            // Toggle MP4 mode
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    if (valueSource.mode === 3) {
-                        valueSource.mode = 0
-                        mp4Player.pause()
-                    } else {
-                        valueSource.mode = 3
-                    }
-                }
-            }
-        }
-
-        // MP4 content display (visible when in MP4 mode)
-        Rectangle {
-            visible: (valueSource.mode === 3)
-            width: 675
-            height: 395
-            color: "black"
-            anchors.horizontalCenter: parent.horizontalCenter
-            y: 75
-
-            Video {
-                id: mp4Player
-                anchors.fill: parent
-            }
-
-            Image {
-                source: "../image/play.png"
-                width: 40
-                height: 30
-                rotation: 90
-                x: parent.width / 2 - width / 2 - 80
-                y: 350
-
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        if (carinfo.sensorRpm === 0) {
-                            mp4Player.source = "../media/movie.mp4"
-                            mp4Player.play()
-                        }
-                    }
-                }
-            }
-
-            Image {
-                source: "../image/pause.png"
-                width: 40
-                height: 40
-                fillMode: Image.PreserveAspectFit
-                x: parent.width / 2 - width / 2
-                y: 345
-
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        mp4Player.pause()
-                    }
-                }
-            }
-
-            Rectangle {
-                width: 40
-                height: 40
                 color: "white"
-                x: parent.width / 2 - width / 2 + 90
-                y: 345
-
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        mp4Player.stop()
-                    }
-                }
-            }
-
-            property int sensorRpm: carinfo.sensorRpm
-
-            onSensorRpmChanged: {
-                if ((valueSource.mode === 3) && (sensorRpm !== 0)) {
-                    mp4Player.pause()
-                }
-            }
-
-            property int gear: carinfo.gear
-
-            onGearChanged: {
-                if ((valueSource.mode === 3) && (gear === 1)) {
-                    mp4Player.pause()
-                }
+                radius: 15
             }
         }
 
-        // Poweroff button
+        //==================================================//
+        //                   Power Button                   //
+        //==================================================//
+
         Image {
             source: "../image/off.png"
             width: 100
             height: 100
             fillMode: Image.PreserveAspectFit
-            opacity: ((carinfo.sensorRpm === 0) && (valueSource.gear === 0)) ? 1.0 : 0.5
+            opacity: 0.5
             x: 888
             y: 470
-
-            // MouseArea {
-            //     anchors.fill: parent
-            //     onClicked: {
-            //         if ((carinfo.sensorRpm === 0) && (valueSource.gear === 0)) {
-            //             Qt.quit()
-            //             manager.poweroff()
-            //         }
-            //     }
-            // }
         }
     }
 }
