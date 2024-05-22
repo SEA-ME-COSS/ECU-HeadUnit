@@ -260,7 +260,7 @@ Window {
 
         Image {
             source: "../image/warning-icon.png"
-            opacity: (valueSource.emergency_on_off ? 1.0 : 0.3)
+            opacity: (valueSource.emergency_on_off ? 0.3 : 1.0)
             width: 120
             height: 120
             fillMode: Image.PreserveAspectFit
