@@ -9,6 +9,7 @@
         <file>image/warning-icon.png</file>
         <file>image/map.png</file>
         <file>image/off.png</file>
+        <file>image/location.png</file>
         <file>qml/ValueSource.qml</file>
     </qresource>
 </RCC>

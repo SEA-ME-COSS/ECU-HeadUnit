@@ -484,6 +484,26 @@ Window {
                 fillMode: Image.PreserveAspectFit
                 anchors.centerIn: parent
             }
+
+            Rectangle {
+                width: 30
+                height: 30
+                color: "white"
+                radius: 15
+                opacity: 0.7
+
+                x: 61
+                y: 361
+                rotation: -(0)
+
+                Image {
+                    source: "../image/location.png"
+                    width: 30
+                    height: 30
+                    fillMode: Image.PreserveAspectFit
+                    anchors.centerIn: parent
+                }
+            }
         }
 
         //==================================================//
