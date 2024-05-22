@@ -202,7 +202,7 @@ Window {
         }
 
         Text {
-            text: carinfo.throttle
+            text: carinfo.steering
             font.family: font.name
             font.pixelSize: 70
             color: (carinfo.throttle === 0) ? "black" : "#555555"
