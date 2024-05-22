@@ -27,6 +27,10 @@ Window {
         height: 600
         anchors.centerIn: parent
 
+        //==================================================//
+        //                    Background                    //
+        //==================================================//
+
         Rectangle {
             id: background
             width: 600
@@ -41,42 +45,34 @@ Window {
             }
         }
 
-        // Rectangle and functionality for the "P" gear
-        Rectangle {
+        //==================================================//
+        //                    Gear Mode                     //
+        //==================================================//
+
+        Rectangle {  // P
             width: 130
             height: 130
             x: 20
             y: parent.height / 2 - height / 2 - 210
-            color: (carinfo.sensorRpm === 0) ? "black" : "#555555"
+            color: "black"
             radius: 30
 
             Rectangle {
                 width: 115
                 height: 115
                 anchors.centerIn: parent
-                color: (valueSource.gear === 0) ? ((carinfo.sensorRpm === 0) ? "#555555" : "#B0B0B0") : "white"
+                color: "white"
                 radius: 22
 
                 Text {
                     text: "P"
                     font.family: font.name
                     font.pixelSize: 130
-                    color: (valueSource.gear === 0) ? "white" : ((carinfo.sensorRpm === 0) ? "#555555" : "#B0B0B0")
+                    color: "#555555"
                     x: 13
                     y: -20
                 }
             }
-
-            // # Mouse area to handle clicks on "P" gear
-            // # Uncomment the following code if you want to change the gear mode by touching the head unit display
-            // MouseArea {
-            //     anchors.fill: parent
-            //     onClicked: {
-            //         if (carinfo.sensorRpm === 0) {
-            //             manager.setIPCManagerGear(0)
-            //         }
-            //     }
-            // }
         }
 
         // Rectangle and functionality for the "R" gear
