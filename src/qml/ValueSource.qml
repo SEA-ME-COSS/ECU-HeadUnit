@@ -15,7 +15,7 @@ Item {
     property bool left_on_off: false
     property bool right_on_off: false
 
-    onDirectionChanged: {
+    onSteeringChanged: {
         valueSource.blink = !(valueSource.steering === 0);
         valueSource.left_direction = (valueSource.steering < 0);
         valueSource.right_direction = (valueSource.steering > 0);
