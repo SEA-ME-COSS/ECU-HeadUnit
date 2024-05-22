@@ -75,119 +75,88 @@ Window {
             }
         }
 
-        // Rectangle and functionality for the "R" gear
-        Rectangle {
+        Rectangle {  // R
             width: 130
             height: 130
             x: 20
             y: parent.height / 2 - height / 2 - 70
-            color: (carinfo.sensorRpm === 0) ? "black" : "#555555"
+            color: "black"
             radius: 30
 
             Rectangle {
                 width: 115
                 height: 115
                 anchors.centerIn: parent
-                color: (valueSource.gear === 1) ? ((carinfo.sensorRpm === 0) ? "#FF6868" : "#FFCECE") : "white"
+                color: (carinfo.throttle < 0) ? "#FF6868" : "white"
                 radius: 22
 
                 Text {
                     text: "R"
                     font.family: font.name
                     font.pixelSize: 130
-                    color: (valueSource.gear === 1) ? "white" : ((carinfo.sensorRpm === 0) ? "#FF6868" : "#FFCECE")
+                    color: (carinfo.throttle < 0) ? "white" : "#FF6868"
                     x: 13
                     y: -20
                 }
             }
-
-            // # Mouse area to handle clicks on "R" gear
-            // # Uncomment the following code if you want to change the gear mode by touching the head unit display
-            // MouseArea {
-            //     anchors.fill: parent
-            //     onClicked: {
-            //         if (carinfo.sensorRpm === 0) {
-            //             manager.setIPCManagerGear(1)
-            //         }
-            //     }
-            // }
         }
 
-        // Rectangle and functionality for the "N" gear
-        Rectangle {
+        Rectangle {  // N
             width: 130
             height: 130
             x: 20
             y: parent.height / 2 - height / 2 + 70
-            color: (carinfo.sensorRpm === 0) ? "black" : "#555555"
+            color: "black"
             radius: 30
 
             Rectangle {
                 width: 115
                 height: 115
                 anchors.centerIn: parent
-                color: (valueSource.gear === 2) ? ((carinfo.sensorRpm === 0) ? "#35CA3D" : "#AEFFAE") : "white"
+                color: (carinfo.throttle === 0) ? "#35CA3D" : "white"
                 radius: 22
 
                 Text {
                     text: "N"
                     font.family: font.name
                     font.pixelSize: 130
-                    color: (valueSource.gear === 2) ? "white" : ((carinfo.sensorRpm === 0) ? "#35CA3D" : "#AEFFAE")
+                    color: (carinfo.throttle === 0) ? "white" : "#35CA3D"
                     x: 13
                     y: -20
                 }
             }
-
-            // # Mouse area to handle clicks on "N" gear
-            // # Uncomment the following code if you want to change the gear mode by touching the head unit display
-            // MouseArea {
-            //     anchors.fill: parent
-            //     onClicked: {
-            //         if (carinfo.sensorRpm === 0) {
-            //             manager.setIPCManagerGear(2)
-            //         }
-            //     }
-            // }
         }
 
-        // Rectangle and functionality for the "D" gear
-        Rectangle {
+        Rectangle {  // D
             width: 130
             height: 130
             x: 20
             y: parent.height / 2 - height / 2 + 210
-            color: (carinfo.sensorRpm === 0) ? "black" : "#555555"
+            color: "black"
             radius: 30
 
             Rectangle {
                 width: 115
                 height: 115
                 anchors.centerIn: parent
-                color: (valueSource.gear === 3) ? ((carinfo.sensorRpm === 0) ? "#555555" : "#B0B0B0") : "white"
+                color: (carinfo.throttle > 0) ? "#555555" : "white"
                 radius: 22
 
                 Text {
                     text: "D"
                     font.family: font.name
                     font.pixelSize: 130
-                    color: (valueSource.gear === 3) ? "white" : ((carinfo.sensorRpm === 0) ? "#555555" : "#B0B0B0")
+                    color: (carinfo.throttle > 0) ? "white" : "#555555"
                     x: 13
                     y: -20
                 }
             }
-
-            // # Mouse area to handle clicks on "D" gear
-            // # Uncomment the following code if you want to change the gear mode by touching the head unit display
-            // MouseArea {
-            //     anchors.fill: parent
-            //     onClicked: {
-            //         if (carinfo.sensorRpm === 0) {
-            //             manager.setIPCManagerGear(3)
-            //         }
-            //     }
-            // }
         }
+
+
+
+
+
 
         Rectangle {
             width: 5
