@@ -5,18 +5,16 @@
 
 #include "HeadUnitQtClass.hpp"
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
-
-    HeadUnitQtClass carinfo;
     
     QCursor cursor(Qt::BlankCursor);
     app.setOverrideCursor(cursor);
 
     QQmlApplicationEngine engine;
 
+    HeadUnitQtClass carinfo;
     engine.rootContext()->setContextProperty("carinfo", &carinfo);
 
     const QUrl url(QStringLiteral("qrc:/qml/main.qml"));
