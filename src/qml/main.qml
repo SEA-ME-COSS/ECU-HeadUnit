@@ -153,24 +153,27 @@ Window {
             }
         }
 
-
-
-
-
+        //==================================================//
+        //                   Left Divider                   //
+        //==================================================//
 
         Rectangle {
             width: 5
             height: parent.height
             anchors.verticalCenter: parent.verticalCenter
             x: parent.width / 2 - width / 2 - 340
-            color: (carinfo.sensorRpm === 0) ? "black" : "#555555"
+            color: "black"
         }
 
+        //==================================================//
+        //                     Throttle                     //
+        //==================================================//
+
         Text {
-            text: carinfo.throttle
+            text: carinfo.throttle * 100 + "%"
             font.family: font.name
             font.pixelSize: 70
-            color: (carinfo.throttle === 0) ? "black" : "#555555"
+            color: "black"
             x: 200
             y: 5
         }
