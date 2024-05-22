@@ -7,7 +7,7 @@ HeadUnitQtClass::HeadUnitQtClass(QObject *parent) : QObject(parent)
     canDevice = QCanBus::instance()->createDevice("socketcan", "can0", &errorString);
     if (!canDevice)
     {
-        // qCritical() << "Failed to create CAN device:" << errorString;
+        qDebug() << "Failed to create CAN device:" << errorString;
         return;
     }
 
@@ -15,7 +15,7 @@ HeadUnitQtClass::HeadUnitQtClass(QObject *parent) : QObject(parent)
 
     if (!canDevice->connectDevice())
     {
-        // qCritical() << "Failed to connect to CAN device:" << canDevice->errorString();
+        qDebug() << "Failed to connect to CAN device:" << canDevice->errorString();
         delete canDevice;
         canDevice = nullptr;
     }
@@ -57,5 +57,3 @@ void HeadUnitQtClass::processReceivedFrames() {
         }
     }
 }
-
-HeadUnitQtClass carinfo;

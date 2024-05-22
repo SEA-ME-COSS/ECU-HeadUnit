@@ -5,7 +5,6 @@
 #include <QCanBus>
 #include <QCanBusDevice>
 #include <QCanBusFrame>
-#include <QDebug>
 
 class HeadUnitQtClass : public QObject
 {
@@ -37,7 +36,5 @@ public:
 signals:
     void throttleChanged();
 };
-
-extern HeadUnitQtClass carinfo;
 
 #endif

@@ -10,14 +10,14 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
 
-    HeadUnitQtClass handler;
+    HeadUnitQtClass carinfo;
     
     QCursor cursor(Qt::BlankCursor);
     app.setOverrideCursor(cursor);
 
     QQmlApplicationEngine engine;
 
-    engine.rootContext()->setContextProperty("carinfo", &handler);
+    engine.rootContext()->setContextProperty("carinfo", &carinfo);
 
     const QUrl url(QStringLiteral("qrc:/qml/main.qml"));
 
