@@ -210,8 +210,11 @@ Window {
             y: 5
         }
 
-        // Left turn indicator
-        Image {
+        //==================================================//
+        //                    Direction                     //
+        //==================================================//
+
+        Image {  // Left
             source: "../image/turn-icon.png"
             width: 100
             height: 100
@@ -229,19 +232,9 @@ Window {
                 anchors.horizontalCenter: parent.horizontalCenter
                 y: 12
             }
-
-            // Mouse area for handling left turn indicator interaction
-            // # Uncomment the following code if you want to control turn indicator by touching the head unit display
-            // MouseArea {
-            //     anchors.fill: parent
-            //     onClicked: {
-            //         manager.setIPCManagerDirection(1)
-            //     }
-            // }
         }
 
-        // Right turn indicator
-        Image {
+        Image {  // Right
             source: "../image/turn-icon.png"
             width: 100
             height: 100
@@ -259,16 +252,11 @@ Window {
                 anchors.horizontalCenter: parent.horizontalCenter
                 y: 12
             }
-
-            // Mouse area for handling right turn indicator interaction
-            // # Uncomment the following code if you want to control turn indicator by touching the head unit display
-            // MouseArea {
-            //     anchors.fill: parent
-            //     onClicked: {
-            //         manager.setIPCManagerDirection(2)
-            //     }
-            // }
         }
+
+
+
+        
 
         // Warning icon with multiple layers
         Image {

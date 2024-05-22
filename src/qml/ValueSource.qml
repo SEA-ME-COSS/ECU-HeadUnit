@@ -3,27 +3,24 @@ import QtQuick 2.2
 Item {
     id: valueSource
 
-    property int throttle: carinfo.throttle
+    //==================================================//
+    //                    Direction                     //
+    //==================================================//
 
+    property real steering: carinfo.steering
 
-
-    property int direction: carinfo.direction
-
-    // Properties for controlling blinking and direction indicators
-    property bool blink: !(valueSource.direction === 0)
-    property bool left_direction: (valueSource.direction === 1 || valueSource.direction === 3)
-    property bool right_direction: (valueSource.direction === 2 || valueSource.direction === 3)
+    property bool blink: !(valueSource.steering === 0)
+    property bool left_direction: (valueSource.steering < 0)
+    property bool right_direction: (valueSource.steering > 0)
     property bool left_on_off: false
     property bool right_on_off: false
-    property bool initial_delay: !(valueSource.direction === 0)
 
     onDirectionChanged: {
-        valueSource.blink = !(valueSource.direction === 0);
-        valueSource.left_direction = (valueSource.direction === 1 || valueSource.direction === 3);
-        valueSource.right_direction = (valueSource.direction === 2 || valueSource.direction === 3);
+        valueSource.blink = !(valueSource.steering === 0);
+        valueSource.left_direction = (valueSource.steering < 0);
+        valueSource.right_direction = (valueSource.steering > 0);
         valueSource.left_on_off = false;
         valueSource.right_on_off = false;
-        valueSource.initial_delay = !(valueSource.direction === 0)
     }
 
     function blinking() {
@@ -38,11 +35,7 @@ Item {
     Timer {
         interval: 500; running: valueSource.blink; repeat: true
         onTriggered: {
-            if (valueSource.initial_delay) {
-                valueSource.initial_delay = false
-            } else {
-                valueSource.blinking()
-            }
+            valueSource.blinking()
         }
     }
 
