@@ -19,8 +19,10 @@ Item {
         valueSource.blink = !(valueSource.steering > -0.5 && valueSource.steering < 0.5);
         valueSource.left_direction = (valueSource.steering < -0.5);
         valueSource.right_direction = (valueSource.steering > 0.5);
-        valueSource.left_on_off = false;
-        valueSource.right_on_off = false;
+        if (!valueSource.emergency) {
+            valueSource.left_on_off = false;
+            valueSource.right_on_off = false;
+        }
     }
 
     function blinking_direction() {
