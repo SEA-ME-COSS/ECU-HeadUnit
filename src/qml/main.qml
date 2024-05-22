@@ -202,7 +202,7 @@ Window {
         }
 
         Text {
-            text: carinfo.steering
+            text: carinfo.throttle
             font.family: font.name
             font.pixelSize: 70
             color: (carinfo.throttle === 0) ? "black" : "#555555"
@@ -220,7 +220,7 @@ Window {
             height: 100
             rotation: -90
             fillMode: Image.PreserveAspectFit
-            opacity: (valueSource.left_on_off) ? 0.2 : 1.0
+            opacity: (valueSource.left_on_off ? 0.2 : 1.0)
             x: parent.width / 2 - width / 2 - 170
             y: 485
 
@@ -240,7 +240,7 @@ Window {
             height: 100
             rotation: 90
             fillMode: Image.PreserveAspectFit
-            opacity: (valueSource.right_on_off) ? 0.2 : 1.0
+            opacity: (valueSource.right_on_off ? 0.2 : 1.0)
             x: parent.width / 2 - width / 2 + 170
             y: 485
 
@@ -254,14 +254,13 @@ Window {
             }
         }
 
+        //==================================================//
+        //                    Emergency                     //
+        //==================================================//
 
-
-        
-
-        // Warning icon with multiple layers
         Image {
             source: "../image/warning-icon.png"
-            opacity: (valueSource.direction === 3) ? 1.0 : 0.3
+            opacity: (valueSource.emergency_on_off ? 1.0 : 0.3)
             width: 120
             height: 120
             fillMode: Image.PreserveAspectFit
@@ -286,13 +285,19 @@ Window {
                 }
             }
 
-            // MouseArea {
-            //     anchors.fill: parent
-            //     onClicked: {
-            //         manager.setIPCManagerDirection(3)
-            //     }
-            // }
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    valueSource.emergency = !valueSource.emergency
+                }
+            }
         }
+
+
+
+
+
+
 
         Rectangle {
             width: 5

@@ -23,7 +23,7 @@ Item {
         valueSource.right_on_off = false;
     }
 
-    function blinking() {
+    function blinking_direction() {
         if (valueSource.left_direction) {
             valueSource.left_on_off = !valueSource.left_on_off
         }
@@ -33,9 +33,35 @@ Item {
     }
 
     Timer {
-        interval: 500; running: valueSource.blink; repeat: true
+        interval: 500; running: (valueSource.blink && !valueSource.emergency); repeat: true
         onTriggered: {
-            valueSource.blinking()
+            valueSource.blinking_direction()
+        }
+    }
+
+    //==================================================//
+    //                    Emergency                     //
+    //==================================================//
+
+    property bool emergency: false
+    property bool emergency_on_off: false
+
+    onEmergencyChanged: {
+        valueSource.left_on_off = false;
+        valueSource.right_on_off = false;
+        valueSource.emergency_on_off = false;
+    }
+
+    function blinking_emergency() {
+        valueSource.left_on_off = !valueSource.left_on_off
+        valueSource.right_on_off = !valueSource.right_on_off
+        valueSource.emergency_on_off = !valueSource.emergency_on_off
+    }
+
+    Timer {
+        interval: 500; running: valueSource.emergency; repeat: true
+        onTriggered: {
+            valueSource.blinking_emergency()
         }
     }
 
