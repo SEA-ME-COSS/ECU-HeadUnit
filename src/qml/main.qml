@@ -24,6 +24,7 @@ Window {
         id: container
         width: 1024
         height: 600
+        scale: 0.5
         anchors.centerIn: parent
 
         //==================================================//
