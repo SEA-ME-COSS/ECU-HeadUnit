@@ -526,6 +526,15 @@ Window {
                 color: "white"
                 radius: 15
             }
+
+            Text {
+                    text: "ADS"
+                    font.family: font.name
+                    font.pixelSize: 40
+                    color: valueSource.gps ? "white" : "555555"
+                    x: 17
+                    y: 1
+                }
         }
 
         Rectangle {
