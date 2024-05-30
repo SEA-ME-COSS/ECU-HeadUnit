@@ -15,4 +15,3 @@ echo -e '\033[?17;0;0c' > /dev/tty1
 
 + CAN HAT setup
 + HDMI setup
-+ swapfile setup
