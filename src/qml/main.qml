@@ -494,7 +494,7 @@ Window {
                 radius: 15
                 opacity: 0.7
 
-                x: (carinfo.xposition < 0) ? 61 - Math.floor(carinfo.xposition * 75) : 61 + Math.floor(carinfo.xposition * 75)
+                x: (carinfo.xposition > 0) ? 61 + Math.floor(carinfo.xposition * 75) : 61
                 
                 
                 y: 361 - Math.floor(carinfo.yposition * 75)
