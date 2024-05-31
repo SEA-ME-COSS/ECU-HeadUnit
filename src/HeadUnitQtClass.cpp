@@ -113,7 +113,7 @@ void HeadUnitQtClass::processReceivedFrames() {
             continue;
         }
 
-        if (frame.frameId() == xposition_id) {  // yposition
+        if (frame.frameId() == yposition_id) {  // yposition
             decryption = data[1] + data[2] * 0.01;
             if (data[0] == 1) {
                 decryption *= -1;
