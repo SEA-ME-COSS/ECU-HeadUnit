@@ -169,7 +169,7 @@ Window {
         //==================================================//
 
         Text {
-            text: carinfo.yposition * 100 + "%"
+            text: carinfo.orientation * 100 + "%"
             font.family: font.name
             font.pixelSize: 70
             color: "black"
@@ -495,7 +495,7 @@ Window {
                 opacity: 0.7
 
                 x: 61 + Math.floor(carinfo.xposition * 100)
-                y: 361 + Math.floor(carinfo.yposition * 100)
+                y: 361 - Math.floor(carinfo.yposition * 100)
                 rotation: Math.floor(carinfo.orientation)
 
                 Image {
