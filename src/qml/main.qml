@@ -169,7 +169,7 @@ Window {
         //==================================================//
 
         Text {
-            text: carinfo.xposition * 100 + "%"
+            text: carinfo.throttle * 100 + "%"
             font.family: font.name
             font.pixelSize: 70
             color: "black"
@@ -494,9 +494,9 @@ Window {
                 radius: 15
                 opacity: 0.7
 
-                x: 61 + carinfo.xposition
-                y: 361 + carinfo.yposition
-                rotation: -(carinfo.orientation)
+                x: 61 + Math.floor(carinfo.xposition * 100)
+                y: 361 + Math.floor(carinfo.yposition * 100)
+                rotation: Math.floor(carinfo.orientation)
 
                 Image {
                     source: "../image/location.png"
