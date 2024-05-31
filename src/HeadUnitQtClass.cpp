@@ -3,6 +3,9 @@
 HeadUnitQtClass::HeadUnitQtClass(QObject *parent) : QObject(parent) {
     Qsteering = 0.0;
     Qthrottle = 0.0;
+    Qxposition = 0.0;
+    Qyposition = 0.0;
+    Qorientation = 0.0;
 
     canDevice = QCanBus::instance()->createDevice("socketcan", "can0", &errorString);
 
@@ -35,6 +38,18 @@ qreal HeadUnitQtClass::throttle() const {
     return Qthrottle;
 }
 
+qreal HeadUnitQtClass::xposition() const {
+    return Qxposition;
+}
+
+qreal HeadUnitQtClass::yposition() const {
+    return Qyposition;
+}
+
+qreal HeadUnitQtClass::orientation() const {
+    return Qorientation;
+}
+
 void HeadUnitQtClass::setSteering(qreal _steering) {
     Qsteering = _steering;
     emit steeringChanged();
@@ -43,6 +58,21 @@ void HeadUnitQtClass::setSteering(qreal _steering) {
 void HeadUnitQtClass::setThrottle(qreal _throttle) {
     Qthrottle = _throttle;
     emit throttleChanged();
+}
+
+void HeadUnitQtClass::setXposition(qreal _xposition) {
+    Qxposition = _xposition;
+    emit xpositionChanged();
+}
+
+void HeadUnitQtClass::setYposition(qreal _yposition) {
+    Qyposition = _yposition;
+    emit ypositionChanged();
+}
+
+void HeadUnitQtClass::setOrientation(qreal _orientation) {
+    Qorientation = _orientation;
+    emit orientationChanged();
 }
 
 void HeadUnitQtClass::processReceivedFrames() {
@@ -70,6 +100,33 @@ void HeadUnitQtClass::processReceivedFrames() {
             }
 
             setThrottle(decryption);
+            continue;
+        }
+
+        if (frame.frameId() == xposition_id) {  // xposition
+            decryption = data[1] + data[2] * 0.01;
+            if (data[0] == 1) {
+                decryption *= -1;
+            }
+
+            setXposition(decryption);
+            continue;
+        }
+
+        if (frame.frameId() == xposition_id) {  // yposition
+            decryption = data[1] + data[2] * 0.01;
+            if (data[0] == 1) {
+                decryption *= -1;
+            }
+
+            setYposition(decryption);
+            continue;
+        }
+
+        if (frame.frameId() == orientation_id) {  // orientation
+            decryption = data[0] + data[1] * 0.01;
+
+            setOrientation(decryption);
             continue;
         }
     }

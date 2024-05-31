@@ -437,6 +437,8 @@ Window {
         //==================================================//
 
         Rectangle {
+            visible: true
+
             width: 140
             height: 60
             x: 870
@@ -492,9 +494,9 @@ Window {
                 radius: 15
                 opacity: 0.7
 
-                x: 61
-                y: 361
-                rotation: -(0)
+                x: 61 + carinfo.xposition
+                y: 361 + carinfo.yposition
+                rotation: -(carinfo.orientation)
 
                 Image {
                     source: "../image/location.png"
@@ -503,53 +505,6 @@ Window {
                     fillMode: Image.PreserveAspectFit
                     anchors.centerIn: parent
                 }
-            }
-        }
-
-        //==================================================//
-        //                     ADS Mode                     //
-        //==================================================//
-
-        Rectangle {
-            width: 140
-            height: 60
-            x: 870
-            y: 310
-            color: "black"
-            radius: 20
-
-            Rectangle {
-                width: 130
-                height: 50
-                anchors.centerIn: parent
-                color: "white"
-                radius: 15
-            }
-
-            Text {
-                    text: "ADS"
-                    font.family: font.name
-                    font.pixelSize: 40
-                    color: valueSource.gps ? "white" : "555555"
-                    x: 17
-                    y: 1
-                }
-        }
-
-        Rectangle {
-            width: 140
-            height: 60
-            x: 870
-            y: 380
-            color: "black"
-            radius: 20
-
-            Rectangle {
-                width: 130
-                height: 50
-                anchors.centerIn: parent
-                color: "white"
-                radius: 15
             }
         }
 
