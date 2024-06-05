@@ -494,7 +494,8 @@ Window {
                 radius: 15
                 opacity: 0.7
 
-                x: 61 + (carinfo.xposition > 0) ? Math.floor(carinfo.xposition * 76.5) : 0
+                x: (carinfo.xposition > 0) ? ((61 + Math.floor(carinfo.xposition * 76.5) > 675) ? 675 : 61 + Math.floor(carinfo.xposition * 76.5)) : (61 - Math.floor(carinfo.xposition * -76.5))
+                // x: 61 + (carinfo.xposition > 0) ? Math.floor(carinfo.xposition * 76.5) : 0
                 y: (carinfo.yposition > 0) ? 361 - Math.floor(carinfo.yposition * 78.5) : 361
                 
                 rotation: Math.floor(carinfo.orientation)
