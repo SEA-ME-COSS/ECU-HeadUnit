@@ -169,7 +169,8 @@ Window {
         //==================================================//
 
         Text {
-            text: carinfo.throttle * 100 + "%"
+            // text: carinfo.throttle * 100 + "%"
+            text: carinfo.xposition
             font.family: font.name
             font.pixelSize: 70
             color: "black"
