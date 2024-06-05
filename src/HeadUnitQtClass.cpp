@@ -124,7 +124,10 @@ void HeadUnitQtClass::processReceivedFrames() {
         }
 
         if (frame.frameId() == orientation_id) {  // orientation
-            decryption = data[0] + data[1] * 0.01;
+            decryption = data[1];
+            if (data[0] == 1) {
+                decryption *= -1;
+            }
 
             setOrientation(decryption);
             continue;
