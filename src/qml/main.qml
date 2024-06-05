@@ -169,7 +169,7 @@ Window {
         //==================================================//
 
         Text {
-            text: carinfo.orientation * 100 + "%"
+            text: Math.floor(carinfo.xposition * 100) + "%"
             font.family: font.name
             font.pixelSize: 70
             color: "black"
