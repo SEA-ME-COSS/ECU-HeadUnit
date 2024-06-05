@@ -495,7 +495,7 @@ Window {
                 opacity: 0.7
 
                 x: (carinfo.xposition > 0) ? ((61 + Math.floor(carinfo.xposition * 76.5) > 675 - 15) ? 675 - 15 : 61 + Math.floor(carinfo.xposition * 76.5)) : (61 - Math.floor(carinfo.xposition * -76.5))
-                y: (carinfo.yposition > 0) ? ((361 - Math.floor(carinfo.yposition * 78.5) > 395 - 15) ? 395 - 15 : 361 - Math.floor(carinfo.yposition * 78.5)) : (361 + Math.floor(carinfo.yposition * -78.5))
+                y: (carinfo.yposition > 0) ? ((361 - Math.floor(carinfo.yposition * 78.5) < 0 - 15) ? 0 - 15 : 361 - Math.floor(carinfo.yposition * 78.5)) : (361 + Math.floor(carinfo.yposition * -78.5))
                 rotation: Math.floor(carinfo.orientation)
 
                 Image {
