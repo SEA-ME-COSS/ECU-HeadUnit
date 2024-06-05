@@ -169,7 +169,7 @@ Window {
         //==================================================//
 
         Text {
-            text: carinfo.throttle * 100 + "%"
+            text: carinfo.orientation * 100 + "%"
             font.family: font.name
             font.pixelSize: 70
             color: "black"
