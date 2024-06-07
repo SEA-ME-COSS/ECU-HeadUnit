@@ -109,4 +109,9 @@ Item {
     //==================================================//
 
     property bool gps: false
+    property bool ads: false
+
+    onAdsChanged: {
+        carinfo.sendAdsMessage(valueSource.ads);
+    }
 }

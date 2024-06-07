@@ -28,6 +28,7 @@ private:
     quint32 xposition_id = QString("0x02").toUInt(nullptr, 16);
     quint32 yposition_id = QString("0x03").toUInt(nullptr, 16);
     quint32 orientation_id = QString("0x04").toUInt(nullptr, 16);
+    quint32 adsmode_id = QString("0x05").toUInt(nullptr, 16);
 
     QCanBusDevice *canDevice = nullptr;
     QString errorString;
@@ -53,6 +54,8 @@ public:
     void setXposition(qreal _xposition);
     void setYposition(qreal _yposition);
     void setOrientation(qreal _orientation);
+
+    Q_INVOKABLE void sendAdsMessage(bool onoff);
 
 signals:
     void steeringChanged();

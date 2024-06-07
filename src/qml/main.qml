@@ -437,8 +437,6 @@ Window {
         //==================================================//
 
         Rectangle {
-            visible: true
-
             width: 140
             height: 60
             x: 870
@@ -504,6 +502,45 @@ Window {
                     height: 30
                     fillMode: Image.PreserveAspectFit
                     anchors.centerIn: parent
+                }
+            }
+        }
+
+        //==================================================//
+        //                     ADS Mode                     //
+        //==================================================//
+
+        Rectangle {
+            visible: true  // OTA UPDATE! [false -> true]
+
+            width: 140
+            height: 60
+            x: 870
+            y: 310
+            color: "black"
+            radius: 20
+
+            Rectangle {
+                width: 130
+                height: 50
+                anchors.centerIn: parent
+                color: valueSource.ads ? "#FF6868" : "white"
+                radius: 15
+
+                Text {
+                    text: "ADS"
+                    font.family: font.name
+                    font.pixelSize: 40
+                    color: valueSource.ads ? "white" : "#FF6868"
+                    x: 16
+                    y: 1
+                }
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    valueSource.ads = !valueSource.ads
                 }
             }
         }

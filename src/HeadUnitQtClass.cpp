@@ -134,3 +134,19 @@ void HeadUnitQtClass::processReceivedFrames() {
         }
     }
 }
+
+Q_INVOKABLE void HeadUnitQtClass::sendAdsMessage(bool onoff) {
+    QCanBusFrame frame;
+    QByteArray payload;
+
+    if (onoff) {
+        payload = QByteArray::fromHex("11223344");
+    } else {
+        payload = QByteArray::fromHex("55667788");
+    }
+
+    frame.setFrameId(adsmode_id);
+    frame.setPayload(payload);
+
+    canDevice->writeFrame(frame);
+}
