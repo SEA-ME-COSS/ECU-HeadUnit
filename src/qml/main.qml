@@ -22,6 +22,7 @@ Window {
 
     Item {
         id: container
+        scale: 0.5
         width: 1024
         height: 600
         anchors.centerIn: parent
@@ -511,7 +512,7 @@ Window {
         //==================================================//
 
         Rectangle {
-            visible: true  // OTA UPDATE! [false -> true]
+            visible: false  // OTA UPDATE! [false -> true]
 
             width: 140
             height: 60
