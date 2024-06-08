@@ -23,4 +23,4 @@ PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(HeadUnit
 PRIVATE Qt5::Core Qt5::Quick Qt5::SerialBus Qt5::Gui)
 
-install(TARGETS HeadUnit DESTINATION /usr/bin/HeadUnit)
+install(TARGETS HeadUnit DESTINATION /usr/bin/)
