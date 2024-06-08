@@ -511,7 +511,7 @@ Window {
         //==================================================//
 
         Rectangle {
-            visible: true  // OTA UPDATE! [false -> true]
+            visible: false  // OTA UPDATE! [false -> true]
 
             width: 140
             height: 60
