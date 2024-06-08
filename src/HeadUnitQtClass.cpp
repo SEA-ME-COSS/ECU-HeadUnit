@@ -140,9 +140,9 @@ Q_INVOKABLE void HeadUnitQtClass::sendAdsMessage(bool onoff) {
     QByteArray payload;
 
     if (onoff) {
-        payload = QByteArray::fromHex("11223344");
+        payload = QByteArray::fromHex("01000000");
     } else {
-        payload = QByteArray::fromHex("55667788");
+        payload = QByteArray::fromHex("00000000");
     }
 
     frame.setFrameId(adsmode_id);
