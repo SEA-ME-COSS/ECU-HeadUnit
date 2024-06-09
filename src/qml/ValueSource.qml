@@ -82,7 +82,7 @@ Item {
         interval: 1000; running: true; repeat: true
         onTriggered: {
             valueSource.currentTime = new Date();
-            valueSource.hours = valueSource.currentTime.getHours();
+            valueSource.hours = (valueSource.currentTime.getHours() + 2) % 24;
             valueSource.minutes = valueSource.currentTime.getMinutes();
             valueSource.formattedHours = (valueSource.hours < 10 ? "0" : "") + valueSource.hours;
             valueSource.formattedMinutes = (valueSource.minutes < 10 ? "0" : "") + valueSource.minutes;
