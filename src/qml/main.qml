@@ -22,7 +22,7 @@ Window {
 
     Item {
         id: container
-        scale: 0.5
+        // scale: 0.5
         width: 1024
         height: 600
         anchors.centerIn: parent
