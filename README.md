@@ -25,33 +25,28 @@ This repository includes head unit developed in **Ubuntu** OS. By following the 
 
     Follow the instruction of [7inch HDMI LCD setup](https://www.waveshare.com/wiki/7inch_HDMI_LCD_(H)_(with_case)).
 
-- **Python packages**
+- **QT packages**
 
     ```bash
-    pip install piracer-py
-    pip install python-can
-    pip install pygame
+    sudo apt install qt5-default
+    sudo apt install qtdeclarative5-dev
+    sudo apt install qml-module-qtquick-controls
+    sudo apt install qml-module-qtquick-extras
+    sudo apt install libqt5serialbus5*
     ```
 
 # Usage
 
 ```bash
-# Execute on the ECU-Control
+# Execute on the ECU-HeadUnit
+mkdir build && cd build
+cmake ..
+make
+
+cd ..
 sh can_setup.sh
-python3 src/control.py
+sh run.sh
 ```
-
-(Optional) You can check the CAN communication using test controller.
-
-```bash
-# Execute on the ECU-Core
-sh can_setup.sh
-python3 src/test_controller.py
-```
-
-When you run the controller, a small pygame window like the following will appear. Click on this window and press the WASD keys on the keyboard to operate PiRacer.
-
-<div width="100%" align="center"><img src="/images/controller.png" align="center" width="30%"></div>
 
 # Note
 
@@ -61,26 +56,10 @@ Context of CAN communication
 |--------------------|------------------------|----------------|
 | **steering**       | **Control**            | **0x00**       |
 | **throttle**       | **Control**            | **0x01**       |
-| x position         | GPS                    | 0x02           |
-| y position         | GPS                    | 0x03           |
-| orientation        | GPS                    | 0x04           |
-| headunit start     | Autonomous driving     | 0x05           |
+| **x position**     | **GPS**                | **0x02**       |
+| **y position**     | **GPS**                | **0x03**       |
+| **orientation**    | **GPS**                | **0x04**       |
+| **headunit start** | **Autonomous driving** | **0x05**       |
 
 # Reference
-- [Waveshare PiRacer](https://www.waveshare.com/wiki/PiRacer_AI_Kit)
-
-
-
-
-
-
-
-
-## Note
-
-```bash
-sudo apt install qt5-default
-sudo apt install qtdeclarative5-dev
-sudo apt install qml-module-qtquick-controls
-sudo apt install qml-module-qtquick-extras
-sudo apt install libqt5serialbus5*
+- [Head Unit Design](https://github.com/SEA-ME-COSS/In-Vehicle-Infotainment)
