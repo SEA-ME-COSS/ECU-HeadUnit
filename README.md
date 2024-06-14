@@ -19,10 +19,11 @@ This repository includes head unit developed in **Ubuntu** OS. By following the 
 
 - **CAN HAT setup**
 
-    Follow the instruction of [2-CH CAN FD HAT setup](https://www.waveshare.com/wiki/2-CH_CAN_FD_HAT) and enable **Single SPI Mode**
+    Follow the instruction of [2-CH CAN FD HAT setup](https://www.waveshare.com/wiki/2-CH_CAN_FD_HAT) and enable **Single SPI Mode**.
 
 - **HDMI display setup**
 
+    Follow the instruction of [7inch HDMI LCD setup](https://www.waveshare.com/wiki/7inch_HDMI_LCD_(H)_(with_case)).
 
 - **Python packages**
 
