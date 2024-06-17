@@ -1,6 +1,6 @@
 # About
 
-[DIAGRAM HERE]
+<img src=/images/Architecture_ECU-HeadUnit.png alt="Architecture_ECU-HeadUnit" width="100%" height="100%"/>
 
 This repository is for the **ECU-HeadUnit** part of the [Autonomous-Driving-System](https://github.com/SEA-ME-COSS/Autonomous-Driving-System) project. The ECU-HeadUnit is based on an independent RaspberryPi board and displays information such as vehicle's driving status and location on the head unit screen. The head unit was developed with QT5 and interacts with [ECU-Core](https://github.com/SEA-ME-COSS/ECU-Core) via CAN communication.
 
